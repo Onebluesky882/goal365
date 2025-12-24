@@ -1,0 +1,20 @@
+meta {
+  name: test insert big query
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:3009/fixtures?date=2025-12-20
+  body: none
+  auth: inherit
+}
+
+params:query {
+  date: 2025-12-20
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
