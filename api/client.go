@@ -21,7 +21,7 @@ func ApiFootball[T any](method string, url string) (*T, error) {
 
 	req, err := http.NewRequest(method, url, nil)
 	if err != nil {
-		return  nil, err
+		return nil, err
 	}
 	req.Header.Add("x-rapidapi-key", apiKey)
 	req.Header.Add("x-rapidapi-host", apiHost)

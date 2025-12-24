@@ -1,9 +1,9 @@
 package api
 
-import "mytipster/models"
+import models "mytipster/models/fixture"
 
-func Fixtures(method,  url string) (*models.RootFixtureREsponse , error) {
+func Fixtures(method, url string) (*models.RootFixtureREsponse, error) {
 
-	return  ApiFootball[models.RootFixtureREsponse]( method, url)
-	
+	return ApiFootball[models.RootFixtureREsponse](method, url)
+
 }

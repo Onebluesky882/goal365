@@ -3,16 +3,14 @@ package bigquery
 import (
 	"context"
 	"fmt"
-	"mytipster/models"
+	m "mytipster/models/fixture"
 	"os"
 
 	"cloud.google.com/go/bigquery"
 	"github.com/joho/godotenv"
 )
 
-func Service(rows []models.FixtureBigQuery) {
-
-
+func Service(rows []m.FixtureBigQuery) {
 
 	_ = godotenv.Load()
 	ctx := context.Background()
@@ -24,7 +22,7 @@ func Service(rows []models.FixtureBigQuery) {
 
 	inserter := client.Dataset(os.Getenv("DATASET")).Table(os.Getenv("TABLE")).Inserter()
 
-items := make([]*models.FixtureBigQuery, len(rows))
+	items := make([]*m.FixtureBigQuery, len(rows))
 	for i := range rows {
 		items[i] = &rows[i]
 	}

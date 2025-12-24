@@ -6,7 +6,7 @@ import (
 
 	"mytipster/api"
 	bqservice "mytipster/internal/bigquery"
-	"mytipster/models"
+	m "mytipster/models/fixture"
 
 	"cloud.google.com/go/bigquery"
 	"github.com/gofiber/fiber/v2"
@@ -65,38 +65,38 @@ func Service(c *fiber.Ctx) error {
 	}
 
 	// แปลง Response เป็น BigQuery rows
-	var rows []models.FixtureBigQuery
+	var rows []m.FixtureBigQuery
 
 	for _, f := range resp.Response {
-		row := models.FixtureBigQuery{
+		row := m.FixtureBigQuery{
 			IngestionTime: time.Now(), // เปลี่ยนจาก PartitionTime
-			
+
 			// Fixture
-			Fixture: models.FixtureBQ{
+			Fixture: m.FixtureBQ{
 				ID:        int64(f.Fixture.ID),
 				Referee:   toNullString(f.Fixture.Referee),
 				Timezone:  f.Fixture.Timezone,
 				Date:      f.Fixture.Date,
 				Timestamp: f.Fixture.Timestamp,
-				Periods: models.PeriodsBQ{
+				Periods: m.PeriodsBQ{
 					First:  toNullInt64(f.Fixture.Periods.First),
 					Second: toNullInt64(f.Fixture.Periods.Second),
 				},
-				Venue: models.VenueBQ{
+				Venue: m.VenueBQ{
 					ID:   toNullInt64(f.Fixture.Venue.ID),
 					Name: toNullString(f.Fixture.Venue.Name),
 					City: toNullString(f.Fixture.Venue.City),
 				},
-				Status: models.StatusBQ{
+				Status: m.StatusBQ{
 					Long:    f.Fixture.Status.Long,
 					Short:   f.Fixture.Status.Short,
 					Elapsed: toNullInt64(f.Fixture.Status.Elapsed),
 					Extra:   toNullInt64(f.Fixture.Status.Extra),
 				},
 			},
-			
+
 			// League
-			League: models.LeagueBQ{
+			League: m.LeagueBQ{
 				ID:        int64(f.League.ID),
 				Name:      f.League.Name,
 				Country:   f.League.Country,
@@ -106,44 +106,44 @@ func Service(c *fiber.Ctx) error {
 				Round:     f.League.Round,
 				Standings: f.League.Standings,
 			},
-			
+
 			// Teams
-			Teams: models.TeamsBQ{
-				Home: models.TeamBQ{
+			Teams: m.TeamsBQ{
+				Home: m.TeamBQ{
 					ID:     int64(f.Teams.Home.ID),
 					Name:   f.Teams.Home.Name,
 					Logo:   f.Teams.Home.Logo,
 					Winner: toNullBool(f.Teams.Home.Winner),
 				},
-				Away: models.TeamBQ{
+				Away: m.TeamBQ{
 					ID:     int64(f.Teams.Away.ID),
 					Name:   f.Teams.Away.Name,
 					Logo:   f.Teams.Away.Logo,
 					Winner: toNullBool(f.Teams.Away.Winner),
 				},
 			},
-			
+
 			// Goals
-			Goals: models.GoalsBQ{
+			Goals: m.GoalsBQ{
 				Home: toNullInt64(f.Goals.Home),
 				Away: toNullInt64(f.Goals.Away),
 			},
-			
+
 			// Score
-			Score: models.ScoreBQ{
-				Halftime: models.ScoreDetailBQ{
+			Score: m.ScoreBQ{
+				Halftime: m.ScoreDetailBQ{
 					Home: toNullInt64(f.Score.Halftime.Home),
 					Away: toNullInt64(f.Score.Halftime.Away),
 				},
-				Fulltime: models.ScoreDetailBQ{
+				Fulltime: m.ScoreDetailBQ{
 					Home: toNullInt64(f.Score.Fulltime.Home),
 					Away: toNullInt64(f.Score.Fulltime.Away),
 				},
-				Extratime: models.ScoreDetailBQ{
+				Extratime: m.ScoreDetailBQ{
 					Home: toNullInt64(f.Score.Extratime.Home),
 					Away: toNullInt64(f.Score.Extratime.Away),
 				},
-				Penalty: models.ScoreDetailBQ{
+				Penalty: m.ScoreDetailBQ{
 					Home: toNullInt64(f.Score.Penalty.Home),
 					Away: toNullInt64(f.Score.Penalty.Away),
 				},

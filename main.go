@@ -2,7 +2,9 @@ package main
 
 import (
 	"log"
-	"mytipster/internal/fixtures"
+	newFixture "mytipster/internal/newfixture"
+	"mytipster/internal/odds"
+	"mytipster/internal/predictions"
 	"os"
 
 	"github.com/gofiber/fiber/v2"
@@ -15,7 +17,9 @@ func main() {
 
 	app := fiber.New()
 
-	app.Get("/fixtures", fixtures.Service)
+	app.Get("/fixtures", newFixture.Service)
+	app.Get("/predictions", predictions.Service)
+	app.Get("/odds", odds.Service)
 
 	port := os.Getenv("PORT")
 	if port == "" {
