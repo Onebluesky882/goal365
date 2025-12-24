@@ -5,25 +5,19 @@ import (
 	"mytipster/api"
 	"mytipster/lib"
 	m "mytipster/models/odds"
-
-	"github.com/gofiber/fiber/v2"
+	odds_models "mytipster/models/odds"
 )
 
+func Service(id string) (map[int][]odds_models.Bet, error) {
 
-func Service(c *fiber.Ctx) error {
-
-	fixture := c.Query("fixture")
-	url := fmt.Sprintf("https://api-football-v1.p.rapidapi.com/v3/odds?fixture=%s", fixture)
+	url := fmt.Sprintf("https://api-football-v1.p.rapidapi.com/v3/odds?fixture=%s", id)
 
 	resp, err := api.ApiFootball[m.RootOdds]("GET", url)
 
 	if err != nil {
-		return c.Status(500).JSON(fiber.Map{
-			"error": err.Error(),
-		})
+		return nil, err
 	}
 
-	result := lib.FilterBookMarket(resp ,"Bet365")
-	return c.JSON(result)
+	result := lib.FilterBookMarket(resp, "Bet365")
+	return result, nil
 }
-
