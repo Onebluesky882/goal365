@@ -6,35 +6,13 @@ import (
 
 	"mytipster/api"
 	bqservice "mytipster/internal/bigquery"
+	"mytipster/lib/helper"
 	m "mytipster/models/fixture"
 
-	"cloud.google.com/go/bigquery"
 	"github.com/gofiber/fiber/v2"
 )
 
-// Helper: แปลง *int เป็น NullInt64
-func toNullInt64(v *int) bigquery.NullInt64 {
-	if v == nil {
-		return bigquery.NullInt64{Valid: false}
-	}
-	return bigquery.NullInt64{Int64: int64(*v), Valid: true}
-}
 
-// Helper: แปลง *string เป็น NullString
-func toNullString(v *string) bigquery.NullString {
-	if v == nil || *v == "" {
-		return bigquery.NullString{Valid: false}
-	}
-	return bigquery.NullString{StringVal: *v, Valid: true}
-}
-
-// Helper: แปลง *bool เป็น NullBool
-func toNullBool(v *bool) bigquery.NullBool {
-	if v == nil {
-		return bigquery.NullBool{Valid: false}
-	}
-	return bigquery.NullBool{Bool: *v, Valid: true}
-}
 
 func Service(c *fiber.Ctx) error {
 	date := c.Query("date")
@@ -74,24 +52,24 @@ func Service(c *fiber.Ctx) error {
 			// Fixture
 			Fixture: m.FixtureBQ{
 				ID:        int64(f.Fixture.ID),
-				Referee:   toNullString(f.Fixture.Referee),
+				Referee:   helper.ToNullString(f.Fixture.Referee),
 				Timezone:  f.Fixture.Timezone,
 				Date:      f.Fixture.Date,
 				Timestamp: f.Fixture.Timestamp,
 				Periods: m.PeriodsBQ{
-					First:  toNullInt64(f.Fixture.Periods.First),
-					Second: toNullInt64(f.Fixture.Periods.Second),
+					First:  helper.ToNullInt64(f.Fixture.Periods.First),
+					Second: helper.ToNullInt64(f.Fixture.Periods.Second),
 				},
 				Venue: m.VenueBQ{
-					ID:   toNullInt64(f.Fixture.Venue.ID),
-					Name: toNullString(f.Fixture.Venue.Name),
-					City: toNullString(f.Fixture.Venue.City),
+					ID:   helper.ToNullInt64(f.Fixture.Venue.ID),
+					Name: helper.ToNullString(f.Fixture.Venue.Name),
+					City: helper.ToNullString(f.Fixture.Venue.City),
 				},
 				Status: m.StatusBQ{
 					Long:    f.Fixture.Status.Long,
 					Short:   f.Fixture.Status.Short,
-					Elapsed: toNullInt64(f.Fixture.Status.Elapsed),
-					Extra:   toNullInt64(f.Fixture.Status.Extra),
+					Elapsed: helper.ToNullInt64(f.Fixture.Status.Elapsed),
+					Extra:   helper.ToNullInt64(f.Fixture.Status.Extra),
 				},
 			},
 
@@ -101,7 +79,7 @@ func Service(c *fiber.Ctx) error {
 				Name:      f.League.Name,
 				Country:   f.League.Country,
 				Logo:      f.League.Logo,
-				Flag:      toNullString(f.League.Flag),
+				Flag:      helper.ToNullString(f.League.Flag),
 				Season:    int64(f.League.Season),
 				Round:     f.League.Round,
 				Standings: f.League.Standings,
@@ -113,39 +91,39 @@ func Service(c *fiber.Ctx) error {
 					ID:     int64(f.Teams.Home.ID),
 					Name:   f.Teams.Home.Name,
 					Logo:   f.Teams.Home.Logo,
-					Winner: toNullBool(f.Teams.Home.Winner),
+					Winner: helper.ToNullBool(f.Teams.Home.Winner),
 				},
 				Away: m.TeamBQ{
 					ID:     int64(f.Teams.Away.ID),
 					Name:   f.Teams.Away.Name,
 					Logo:   f.Teams.Away.Logo,
-					Winner: toNullBool(f.Teams.Away.Winner),
+					Winner: helper.ToNullBool(f.Teams.Away.Winner),
 				},
 			},
 
 			// Goals
 			Goals: m.GoalsBQ{
-				Home: toNullInt64(f.Goals.Home),
-				Away: toNullInt64(f.Goals.Away),
+				Home: helper.ToNullInt64(f.Goals.Home),
+				Away: helper.ToNullInt64(f.Goals.Away),
 			},
 
 			// Score
 			Score: m.ScoreBQ{
 				Halftime: m.ScoreDetailBQ{
-					Home: toNullInt64(f.Score.Halftime.Home),
-					Away: toNullInt64(f.Score.Halftime.Away),
+					Home: helper.ToNullInt64(f.Score.Halftime.Home),
+					Away: helper.ToNullInt64(f.Score.Halftime.Away),
 				},
 				Fulltime: m.ScoreDetailBQ{
-					Home: toNullInt64(f.Score.Fulltime.Home),
-					Away: toNullInt64(f.Score.Fulltime.Away),
+					Home: helper.ToNullInt64(f.Score.Fulltime.Home),
+					Away: helper.ToNullInt64(f.Score.Fulltime.Away),
 				},
 				Extratime: m.ScoreDetailBQ{
-					Home: toNullInt64(f.Score.Extratime.Home),
-					Away: toNullInt64(f.Score.Extratime.Away),
+					Home: helper.ToNullInt64(f.Score.Extratime.Home),
+					Away: helper.ToNullInt64(f.Score.Extratime.Away),
 				},
 				Penalty: m.ScoreDetailBQ{
-					Home: toNullInt64(f.Score.Penalty.Home),
-					Away: toNullInt64(f.Score.Penalty.Away),
+					Home: helper.ToNullInt64(f.Score.Penalty.Home),
+					Away: helper.ToNullInt64(f.Score.Penalty.Away),
 				},
 			},
 		}
@@ -155,7 +133,7 @@ func Service(c *fiber.Ctx) error {
 
 	// Insert ข้อมูลทั้งหมดลง BigQuery
 	if len(rows) > 0 {
-		fmt.Printf("📤 Inserting %d fixtures to BigQuery...\n", len(rows))
+		fmt.Printf("📤 Inserting %d fixtures helper.To BigQuery...\n", len(rows))
 		bqservice.Service(rows)
 	}
 
