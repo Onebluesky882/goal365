@@ -14,10 +14,11 @@ type FixtureOddsPredictionType struct {
 	FixtureID   int
 	Predictions []prediction_models.PredictionResponse
 	Bookmaker   map[int][]odds_models.Bet
+	Result      string
+	Picked      bool
 }
 
 func service(id string) (*FixtureOddsPredictionType, error) {
-	
 
 	fixtureData, err := fixturebyid.Service(id)
 	if err != nil {

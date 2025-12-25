@@ -19,5 +19,6 @@ func Service(id string) (map[int][]odds_models.Bet, error) {
 	}
 
 	result := lib.FilterBookMarket(resp, "Bet365")
+
 	return result, nil
 }
