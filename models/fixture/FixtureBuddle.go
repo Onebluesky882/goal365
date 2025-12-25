@@ -13,6 +13,7 @@ type FixturePrediction struct {
 	FixtureID   int
 	Predictions []prediction.PredictionResponse
 	Bookmaker   map[int][]odds.Bet
+	Team        string
 	Result      string
 	Picked      bool
 }
