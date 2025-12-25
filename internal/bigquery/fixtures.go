@@ -1,11 +1,10 @@
-package fixtures
+package bigquery
 
 import (
 	"fmt"
 	"time"
 
 	"mytipster/api"
-	bqservice "mytipster/internal/bigquery"
 	"mytipster/lib/helper"
 	m "mytipster/models/fixture"
 
@@ -134,7 +133,7 @@ func Service(c *fiber.Ctx) error {
 	// Insert ข้อมูลทั้งหมดลง BigQuery
 	if len(rows) > 0 {
 		fmt.Printf("📤 Inserting %d fixtures helper.To BigQuery...\n", len(rows))
-		bqservice.Service(rows)
+		Bigquery(rows)
 	}
 
 	return c.JSON(fiber.Map{

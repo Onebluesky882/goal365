@@ -1,7 +1,6 @@
-package fixtureoddsprediction
+package fixtures
 
 import (
-	fixturebyid "mytipster/internal/fixtureById"
 	"mytipster/internal/odds"
 	"mytipster/internal/predictions"
 	odds_models "mytipster/models/odds"
@@ -18,9 +17,9 @@ type FixtureOddsPredictionType struct {
 	Picked      bool
 }
 
-func service(id string) (*FixtureOddsPredictionType, error) {
+func FixtureOddsPrediction(id string) (*FixtureOddsPredictionType, error) {
 
-	fixtureData, err := fixturebyid.Service(id)
+	fixtureData, err := GetFixtureById(id)
 	if err != nil {
 		return nil, err
 	}
@@ -46,7 +45,7 @@ func service(id string) (*FixtureOddsPredictionType, error) {
 
 func FixtureOddsPredictionHandler(c *fiber.Ctx) error {
 	id := c.Query("id")
-	result, err := service(id)
+	result, err := GetFixtureById(id)
 	if err != nil {
 		return c.Status(500).JSON(fiber.Map{
 			"error": err.Error(),

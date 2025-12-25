@@ -1,4 +1,4 @@
-package fixturebyid
+package fixtures
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	m "mytipster/models/fixture"
 )
 
-func Service(id string) (m.Fixture, error) {
+func GetFixtureById(id string) (m.Fixture, error) {
 
 	url := fmt.Sprintf("https://api-football-v1.p.rapidapi.com/v3/fixtures?id=%s", id)
 

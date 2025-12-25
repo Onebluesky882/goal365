@@ -10,7 +10,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func Service(rows []m.FixtureBigQuery) {
+func Bigquery(rows []m.FixtureBigQuery) {
 
 	_ = godotenv.Load()
 	ctx := context.Background()
