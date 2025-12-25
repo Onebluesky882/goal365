@@ -17,7 +17,7 @@ func main() {
 
 	app := fiber.New()
 
-	app.Get("/analytics" , fixtures.FixtureOddsPredictionHandler)
+	app.Get("/analytics" , fixtures.WorkerFixtureService)
 	app.Get("/predictions", fixtures.WorkerFixtureService)
 
 	port := os.Getenv("PORT")

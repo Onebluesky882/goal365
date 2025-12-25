@@ -6,12 +6,12 @@ import (
 )
 
 type FixturePredictionBundle struct {
-	FixtureIDs []int
-	Items      []FixturePrediction
+	Items []FixturePrediction
 }
 type FixturePrediction struct {
 	FixtureID   int
-	Predictions []prediction.PredictionResponse
+	Fixture     *Response
+	Predictions *prediction.PredictionResponse
 	Bookmaker   map[int][]odds.Bet
 	Team        string
 	Result      string
