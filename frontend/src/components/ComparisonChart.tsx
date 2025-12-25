@@ -30,7 +30,7 @@ const ComparisonChart: React.FC<ComparisonChartProps> = ({
   }));
 
   return (
-    <div className="h-[400px] w-full bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+    <div className="h-[100] w-full bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
       <div className="flex justify-between items-center mb-6">
         <h3 className="text-sm font-black text-slate-700 uppercase tracking-widest flex items-center gap-2">
           <svg

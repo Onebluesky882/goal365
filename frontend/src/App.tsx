@@ -23,8 +23,8 @@ const App: React.FC = () => {
               />
             </div>
             <div>
-              <h1 className="font-black text-lg tracking-tighter leading-none">
-                FOOTY-ANALYSIS PRO
+              <h1 className="font-black text-lg sm:text-md tracking-tighter leading-none">
+                MyTipster-ANALYSIS PRO
               </h1>
               <p className="text-[10px] text-slate-400 uppercase font-bold tracking-widest">
                 {Fixture.league.name} • {Fixture.league.country}
@@ -54,7 +54,7 @@ const App: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
           {/* Actual Match Result Section */}
           <div className="lg:col-span-8 bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200">
-            <div className="bg-gradient-to-br from-slate-800 via-slate-900 to-black p-8 text-white relative">
+            <div className="bg-linear-to-br from-slate-800 via-slate-900 to-black p-8 text-white relative">
               <div className="absolute top-4 left-4 bg-white/10 px-3 py-1 rounded-full text-[10px] font-black tracking-widest uppercase border border-white/10 backdrop-blur-md">
                 Final Result Summary
               </div>
@@ -360,7 +360,7 @@ const App: React.FC = () => {
             />
 
             <div className="bg-slate-900 rounded-3xl p-8 text-white shadow-2xl relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-500"></div>
+              <div className="absolute top-0 left-0 w-full h-1  bg-linear-to-r from-indigo-500 via-pink-500 to-yellow-500"></div>
               <h3 className="font-black text-sm uppercase tracking-widest text-indigo-400 mb-6">
                 Deep Data Analytics
               </h3>
@@ -416,8 +416,8 @@ const App: React.FC = () => {
 
       <footer className="mt-20 py-16 text-center border-t border-slate-200 bg-white/50 backdrop-blur-sm">
         <div className="max-w-md mx-auto px-4">
-          <p className="text-slate-400 text-xs font-black uppercase tracking-[0.3em] mb-4">
-            FootyPredict intelligence v2.0
+          <p className="text-slate-400 text-xl  sm:text-sm font-black uppercase tracking-[0.3em] mb-4">
+            Predict intelligence v2.0
           </p>
         </div>
       </footer>
