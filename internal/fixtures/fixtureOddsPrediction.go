@@ -3,23 +3,14 @@ package fixtures
 import (
 	"mytipster/internal/odds"
 	"mytipster/internal/predictions"
-	odds_models "mytipster/models/odds"
-	prediction_models "mytipster/models/prediction"
+	m "mytipster/models/fixture"
 
 	"github.com/gofiber/fiber/v2"
 )
 
-type FixtureOddsPredictionType struct {
-	FixtureID   int
-	Predictions []prediction_models.PredictionResponse
-	Bookmaker   map[int][]odds_models.Bet
-	Result      string
-	Picked      bool
-}
+func fixtureOddsPrediction(id string) (*m.FixturePrediction, error) {
 
-func FixtureOddsPrediction(id string) (*FixtureOddsPredictionType, error) {
-
-	fixtureData, err := GetFixtureById(id)
+	fixtureData, err := QueryFixtureById(id)
 	if err != nil {
 		return nil, err
 	}
@@ -33,7 +24,7 @@ func FixtureOddsPrediction(id string) (*FixtureOddsPredictionType, error) {
 		return nil, err
 	}
 
-	result := &FixtureOddsPredictionType{
+	result := &m.FixturePrediction{
 		FixtureID:   fixtureData.ID,
 		Predictions: predictionsData.Response,
 		Bookmaker:   oddsData,
@@ -43,9 +34,11 @@ func FixtureOddsPrediction(id string) (*FixtureOddsPredictionType, error) {
 
 }
 
+// main -> FixtureOddsPredictionHandler -> fixtureOddsPrediction
+
 func FixtureOddsPredictionHandler(c *fiber.Ctx) error {
 	id := c.Query("id")
-	result, err := GetFixtureById(id)
+	result, err := fixtureOddsPrediction(id)
 	if err != nil {
 		return c.Status(500).JSON(fiber.Map{
 			"error": err.Error(),

@@ -80,7 +80,7 @@ func FilterBetPairsNear2(values []m.Value, topPairs int) []m.Value {
 
 		homeOdd, err1 := strconv.ParseFloat(pair.HomeValue.Odd, 64)
 		awayOdd, err2 := strconv.ParseFloat(pair.AwayValue.Odd, 64)
-		
+
 		if err1 != nil || err2 != nil {
 			continue
 		}
@@ -164,7 +164,7 @@ func FilterBookMarket(root *m.RootOdds, bookmakerName string) map[int][]m.Bet {
 			var filteredBets []m.Bet
 			for _, bet := range bm.Bets {
 				filteredBet := bet
-name := strings.TrimSpace(bet.Name)
+				name := strings.TrimSpace(bet.Name)
 				switch name {
 				case "Asian Handicap", "Goals Over/Under":
 					// กรองแบบคู่ (Home/Away หรือ Over/Under) 3 คู่ = 6 values
@@ -192,7 +192,6 @@ name := strings.TrimSpace(bet.Name)
 			break // พบ bookmaker แล้ว หยุดวนลูป
 		}
 	}
-	 
-return  result 
+
+	return result
 }
- 

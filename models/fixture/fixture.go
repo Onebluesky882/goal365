@@ -4,7 +4,7 @@ import (
 	"time"
 )
 
-type RootFixtureREsponse struct {
+type RootFixtureResponse struct {
 	Get        string     `json:"get"`
 	Parameters Parameters `json:"parameters"`
 	Errors     any        `json:"errors"`

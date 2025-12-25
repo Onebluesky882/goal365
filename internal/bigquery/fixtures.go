@@ -11,8 +11,6 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-
-
 func Service(c *fiber.Ctx) error {
 	date := c.Query("date")
 	if date == "" {
