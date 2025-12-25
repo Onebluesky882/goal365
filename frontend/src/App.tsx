@@ -417,7 +417,7 @@ const App: React.FC = () => {
       <footer className="mt-20 py-16 text-center border-t border-slate-200 bg-white/50 backdrop-blur-sm">
         <div className="max-w-md mx-auto px-4">
           <p className="text-slate-400 text-xl  sm:text-sm font-black uppercase tracking-[0.3em] mb-4">
-            Predict intelligence v2.0
+            Predict intelligence v2.1
           </p>
         </div>
       </footer>
