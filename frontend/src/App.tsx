@@ -23,9 +23,7 @@ const App: React.FC = () => {
               />
             </div>
             <div>
-              <h1 className="font-black text-lg sm:text-md tracking-tighter leading-none">
-                MyTipster-ANALYSIS PRO
-              </h1>
+              <h2 className="font-bold text-[18px]"> MyTipster-ANALYSIS PRO</h2>
               <p className="text-[10px] text-slate-400 uppercase font-bold tracking-widest">
                 {Fixture.league.name} • {Fixture.league.country}
               </p>
