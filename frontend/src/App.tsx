@@ -75,19 +75,15 @@ const App: React.FC = () => {
                 </div>
 
                 <div className="text-center w-1/3 flex flex-col items-center">
-                  <div className="text-7xl font-black tracking-tighter flex justify-center items-center gap-3">
+                  <div className="text-3xl font-black tracking-tighter flex justify-center items-center gap-3">
                     <span className="text-slate-200">{Fixture.goals.home}</span>
                     <span className="text-4xl text-slate-600 font-light">
                       :
                     </span>
                     <span className="text-green-400">{Fixture.goals.away}</span>
                   </div>
-                  <div className="mt-2 bg-slate-800 px-4 py-1 rounded-full border border-slate-700">
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                      HT Score: 0 - 1
-                    </span>
-                  </div>
-                  <div className="mt-4 text-[10px] font-black text-indigo-400 uppercase tracking-[0.2em]">
+
+                  <div className="mt-2 text-[10px] font-black text-indigo-400 uppercase tracking-wide">
                     {Fixture.fixture.venue.name}
                   </div>
                 </div>
