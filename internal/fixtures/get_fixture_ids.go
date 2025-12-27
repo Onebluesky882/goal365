@@ -1,11 +1,17 @@
 package fixtures
 
-import m "mytipster/models/fixture"
+import (
+	"mytipster/internal/fixtures/service"
 
-func getFixtureIds(fixture *m.RootFixtureResponse) ([]int, error) {
-	var result = make([]int, 0, len(fixture.Response))
-	for _, id := range fixture.Response {
-		result = append(result, id.Fixture.ID)
+	"github.com/gofiber/fiber/v2"
+)
+
+func GetFixtureIds(c *fiber.Ctx) error {
+	date := c.Query("date")
+
+	resp, err := service.GetIds(date)
+	if err != nil {
+		return err
 	}
-	return result, nil
+	return c.JSON(resp)
 }

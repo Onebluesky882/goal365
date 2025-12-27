@@ -17,3 +17,4 @@ type FixturePrediction struct {
 	Result      string
 	Picked      bool
 }
+ 

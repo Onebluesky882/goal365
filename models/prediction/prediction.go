@@ -3,7 +3,7 @@ package prediction_models
 type PredictionsRoot struct {
 	Get        string               `json:"get"`
 	Parameters PredParameters       `json:"parameters"`
-	Errors     []interface{}        `json:"errors"`
+	Errors     any                  `json:"errors"`
 	Results    int                  `json:"results"`
 	Paging     Paging               `json:"paging"`
 	Response   []PredictionResponse `json:"response"`
