@@ -5,7 +5,6 @@ import (
 	"log"
 	"mytipster/internal/fixtures/service"
 	m "mytipster/models/fixture"
-	odds_models "mytipster/models/odds"
 	prediction_models "mytipster/models/prediction"
 	"time"
 )
@@ -39,33 +38,44 @@ func Retry[T any](
 	return zero, lastErr
 }
 func QueryFixtureIdRetry(id string) (*m.Response, error) {
-	// --- [ปรับจุดที่ 3] เพิ่มเป็น 5 ครั้ง และรอนานขึ้นรอบละ 3 วินาที ---
 	return Retry[*m.Response](5, 3000*time.Millisecond, func() (*m.Response, error) {
 		resp, err := service.QueryFixtureId(id)
 
+		// 1. ถ้า service คืน error (ซึ่งตอนนี้เราดัก len=0 ไว้แล้ว)
 		if err != nil {
 			return nil, err
 		}
-		// ถ้า API คืนค่าว่าง หรือหาไม่เจอ ให้คืน error เพื่อให้เกิดการ Retry
-		if resp == nil || resp.Fixture.ID == 0 {
-			return nil, fmt.Errorf("fixture %s data not ready yet", id)
+
+		// 2. เช็คกันเหนียว ถ้า resp หลุดมาเป็น nil
+		if resp == nil {
+			return nil, fmt.Errorf("fixture %s: response is nil", id)
+		}
+
+		// 3. เช็คค่า ID (ถ้าโครงสร้างข้างในเป็น pointer ต้องระวัง)
+		if resp.Fixture.ID == 0 {
+			return nil, fmt.Errorf("fixture %s: data incomplete", id)
 		}
 
 		return resp, nil
 	})
 }
-func QueryFixtureOddsSafe(id string) (map[int][]odds_models.Bet, error) {
-	odds, err := service.QueryFixtureOdds(id)
-	if err != nil {
-		return nil, nil
-	}
-	return odds, nil
-}
-func QueryPredictionSafe(id string) (*prediction_models.PredictionResponse, error) {
-	pred, err := service.QueryPrediction(id)
-	if err != nil {
-		// no prediction = normal
-		return nil, nil
-	}
-	return pred, nil
+func QueryPredictionRetry(id string) (*prediction_models.PredictionResponse, error) {
+	// รอ 1 วิ ก่อนเรียกครั้งแรก (Initial delay)
+	time.Sleep(1 * time.Second)
+
+	// ลอง 3 ครั้ง ห่างกันครั้งละ 2 วินาที
+	return Retry[*prediction_models.PredictionResponse](3, 2000*time.Millisecond, func() (*prediction_models.PredictionResponse, error) {
+		pred, err := service.QueryPrediction(id)
+
+		if err != nil {
+			return nil, err
+		}
+
+		// ❌ ถ้า Prediction เป็น nil หรือข้อมูลข้างในไม่มี
+		if pred == nil || pred.Predictions.Advice == "" {
+			return nil, fmt.Errorf("prediction for %s is still empty", id)
+		}
+
+		return pred, nil
+	})
 }

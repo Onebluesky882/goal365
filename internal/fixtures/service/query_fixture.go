@@ -39,7 +39,7 @@ func QueryFixtureId(id string) (*m.Response, error) {
 	}
 
 	if len(resp.Response) == 0 {
-		return nil, fmt.Errorf("no fixture found for id %s", id)
+		return nil, fmt.Errorf("no fixture found in api response")
 	}
 
 	return &resp.Response[0], nil
@@ -102,7 +102,7 @@ func QueryPrediction(id string) (*prediction_models.PredictionResponse, error) {
 	}
 
 	if len(resp.Response) == 0 {
-		return nil, fmt.Errorf("no prediction found for fixture %s", id)
+		return nil, fmt.Errorf("no fixture found in api response")
 	}
 	return &resp.Response[0], nil
 }
