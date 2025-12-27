@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"mytipster/internal/fixtures"
+	"mytipster/internal/worker"
 	"os"
 
 	"github.com/gofiber/fiber/v2"
@@ -19,7 +20,9 @@ func main() {
 	app.Get("/odds", fixtures.Odds)
 	app.Get("/prediction", fixtures.Predictions)
 	app.Get("/date", fixtures.GetFixtureDate)
-	// app.Get("/analytics", worker.AnalyticsFixture)
+
+	// -------------- * --------------
+	app.Get("/analytics", worker.AnalyticsFixtures)
 	// app.Get("/predictions", worker.AnalyticsFixture)
 
 	port := os.Getenv("PORT")

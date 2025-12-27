@@ -14,5 +14,7 @@ func GetFixtureById(c *fiber.Ctx) error {
 		return err
 	}
 
+	
+
 	return c.JSON(res)
 }

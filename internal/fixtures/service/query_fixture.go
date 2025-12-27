@@ -18,6 +18,7 @@ func GetIds(id string) ([]int, error) {
 	if err != nil {
 		return nil, err
 	}
+
 	for _, id := range resp {
 		result = append(result, id.Fixture.ID)
 	}
@@ -37,6 +38,10 @@ func QueryFixtureId(id string) (*m.Response, error) {
 		return nil, err
 	}
 
+	if len(resp.Response) == 0 {
+		return nil, fmt.Errorf("no fixture found for id %s", id)
+	}
+
 	return &resp.Response[0], nil
 }
 
@@ -52,6 +57,10 @@ func QueryFixtureOdds(id string) (map[int][]odds_models.Bet, error) {
 	resp, err := api.Odds("GET", url)
 	if err != nil {
 		return nil, err
+	}
+
+	if len(resp.Response) == 0 {
+		return nil, fmt.Errorf("no prediction found for fixture %s", id)
 	}
 	result := lib.FilterBookMarket(resp, "Bet365")
 
@@ -92,5 +101,8 @@ func QueryPrediction(id string) (*prediction_models.PredictionResponse, error) {
 		return nil, err
 	}
 
+	if len(resp.Response) == 0 {
+		return nil, fmt.Errorf("no prediction found for fixture %s", id)
+	}
 	return &resp.Response[0], nil
 }
