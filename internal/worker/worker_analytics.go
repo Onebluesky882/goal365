@@ -42,13 +42,13 @@ func AnalyticsFixtures(c *fiber.Ctx) error {
 	})
 }
 
-func HelpersGetFixtureByIds(ids []int) (*m.RootFixtureBundle, error) {
-	bundle := &m.RootFixtureBundle{
-		Items: []m.FixtureBuddle{},
+func HelpersGetFixtureByIds(ids []int) (*m.RootFixtureAnalytics, error) {
+	bundle := &m.RootFixtureAnalytics{
+		Items: []m.FixtureAnalytics{},
 	}
 
 	jobs := make(chan int, len(ids))
-	results := make(chan m.FixtureBuddle, len(ids))
+	results := make(chan m.FixtureAnalytics, len(ids))
 
 	// --- [ปรับจุดที่ 1] ลด Worker เหลือ 2-3 ตัว ---
 	// การมี Worker เยอะเกินไปในขณะที่ API ช้า จะยิ่งทำให้ติด Rate Limit
@@ -70,15 +70,11 @@ func HelpersGetFixtureByIds(ids []int) (*m.RootFixtureBundle, error) {
 					continue
 				}
 
-				pred, _ := QueryPredictionRetry(idStr)
+				// pred, _ := QueryPredictionRetry(idStr)
 
 				// 3. ผลลัพธ์ (เช็ค nil เพื่อความปลอดภัย)
 				if fixture != nil {
-					results <- m.FixtureBuddle{
-						FixtureID:   fixture.Fixture.ID,
-						Fixture:     fixture,
-						Predictions: pred,
-					}
+					results <- m.FixtureAnalytics{}
 				}
 
 				// --- [ปรับจุดที่ 2] พักระหว่างงานให้นานขึ้นเป็น 2-3 วินาที ---

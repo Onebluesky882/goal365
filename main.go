@@ -20,6 +20,7 @@ func main() {
 	app.Get("/odds", fixtures.Odds)
 	app.Get("/prediction", fixtures.Predictions)
 	app.Get("/date", fixtures.GetFixtureDate)
+	app.Get("/fixture-analytics", fixtures.Service)
 
 	// -------------- * --------------
 	app.Get("/analytics", worker.AnalyticsFixtures)
