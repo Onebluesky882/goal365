@@ -88,8 +88,12 @@ func Analytics(data map[int]m.BetPick) (*m.RootFixtureAnalytics, error) {
 		result.Items = append(result.Items, item)
 
 		time.Sleep(1000 * time.Millisecond)
+		fmt.Println("current count:", len(result.Items))
+
+		
+
 	}
-	return result, nil
+	return nil, nil
 
 }
 
