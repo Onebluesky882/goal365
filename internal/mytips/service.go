@@ -3,98 +3,201 @@ package mytips
 import (
 	"fmt"
 	"log"
+	"mytipster/internal/db"
 	"mytipster/internal/fixtures/service"
-	m "mytipster/models/fixture"
-	"strconv"
+	oddstoday "mytipster/internal/odds-today"
+	"mytipster/lib"
+	fixture_module "mytipster/models/fixture"
+	m "mytipster/models/mytips"
+	odds_models "mytipster/models/odds"
+	prediction_models "mytipster/models/prediction"
 	"sync"
+	"time"
 
 	"github.com/gofiber/fiber/v2"
 )
 
-/*
-1. get all fixture ids
+// Process single fixture with retry
+func processSingleFixture(fixtureID string, bets []odds_models.Bet) (*m.MyTipsAnalytics, error) {
+	var pred *prediction_models.PredictionResponse
+	var fx *fixture_module.Response
+	var err error
 
-2. loop odds with ids filter asia-handicap [ 0.25 , 0.5 , 0.75 ] everage price 1.80 - 2.20
+	// ดึง prediction พร้อม retry
+	err = RetryWithBackoff(func() error {
+		pred, err = service.QueryPrediction(fixtureID)
+		if err != nil {
+			return err
+		}
+		if pred == nil {
+			return fmt.Errorf("prediction is nil")
+		}
+		return nil
+	}, 3, 500*time.Millisecond)
 
-fixture today 84
-test normal ids -> odds
-3.
+	if err != nil {
+		return nil, fmt.Errorf("prediction error for %s: %w", fixtureID, err)
+	}
 
-4. insert db
-*/
-func MyTips(date string) (map[int]m.FixtureAnalytics, error) {
+	// ดึง fixture พร้อม retry
+	err = RetryWithBackoff(func() error {
+		time.Sleep(500 * time.Millisecond)
+		fx, err = service.QueryFixtureId(fixtureID)
+		if err != nil {
+			return err
+		}
+		if fx == nil {
+			return fmt.Errorf("fixture is nil")
+		}
+		return nil
+	}, 3, 500*time.Millisecond)
 
-	result := make(map[int]m.FixtureAnalytics)
-	var mu sync.Mutex
-	var wg sync.WaitGroup
+	if err != nil {
+		return nil, fmt.Errorf("fixture error for %s: %w", fixtureID, err)
+	}
 
-	ids, err := service.GetIds(date)
+	// สร้าง result
+	home, away := 0, 0
+	if fx.Goals.Home != nil {
+		home = *fx.Goals.Home
+	}
+	if fx.Goals.Away != nil {
+		away = *fx.Goals.Away
+	}
+
+	item := &m.MyTipsAnalytics{
+		FixtureID:       fx.Fixture.ID,
+		Date:            fx.Fixture.Date,
+		Country:         fx.League.Country,
+		League:          fx.League.Name,
+		Home:            pred.Teams.Home.Name,
+		Away:            pred.Teams.Away.Name,
+		HomeScore:       pred.Teams.Home.Last5.Form,
+		AwayScore:       pred.Teams.Away.Last5.Form,
+		MatchFinish:     fx.Fixture.Status.Long,
+		MatchResult:     fmt.Sprintf("%d-%d", home, away),
+		HomeFormScore14: lib.FormScore(14, pred.Teams.Home.League.Form),
+		AwayFormScore14: lib.FormScore(14, pred.Teams.Away.League.Form),
+		HomeFormScore12: lib.FormScore(12, pred.Teams.Home.League.Form),
+		AwayFormScore12: lib.FormScore(12, pred.Teams.Away.League.Form),
+		HomeFormScore10: lib.FormScore(10, pred.Teams.Home.League.Form),
+		AwayFormScore10: lib.FormScore(10, pred.Teams.Away.League.Form),
+		HomeFormScore7:  lib.FormScore(7, pred.Teams.Home.League.Form),
+		AwayFormScore7:  lib.FormScore(7, pred.Teams.Away.League.Form),
+		HomeFormScore5:  lib.FormScore(5, pred.Teams.Home.League.Form),
+		AwayFormScore5:  lib.FormScore(5, pred.Teams.Away.League.Form),
+		Handicap:        bets[0],
+		BetPick: m.BetPick{
+			Odds:   "",
+			Picked: "",
+			Stake:  "",
+		},
+	}
+
+	return item, nil
+}
+
+func Predictions(ids []string, oddsMap map[string][]odds_models.Bet) (*m.RootMyTipsAnalytics, error) {
+	dbConn, err := db.NewDB()
 	if err != nil {
 		return nil, err
 	}
-	sem := make(chan struct{}, 2)
-	for _, fixtureId := range ids {
-		wg.Add(1)
-		sem <- struct{}{}
+	defer dbConn.Close()
 
-		go func(fid int) {
+	// ใช้ concurrent processing
+	const maxConcurrent = 1 // จำกัด concurrent requests
+	sem := make(chan struct{}, maxConcurrent)
+
+	var mu sync.Mutex
+	results := make([]m.MyTipsAnalytics, 0, len(ids))
+	var wg sync.WaitGroup
+
+	successCount := 0
+	errorCount := 0
+
+	log.Printf("🚀 เริ่มประมวลผล %d fixtures...\n", len(ids))
+
+	for i, fixtureID := range ids {
+		// ตรวจสอบว่ามี odds หรือไม่
+		bets, ok := oddsMap[fixtureID]
+		if !ok || len(bets) == 0 {
+			log.Printf("⏭️  [%d/%d] Skip %s: no odds data\n", i+1, len(ids), fixtureID)
+			continue
+		}
+
+		wg.Add(1)
+		go func(id string, idx int, betData []odds_models.Bet) {
 			defer wg.Done()
+
+			// Rate limiting
+			sem <- struct{}{}
 			defer func() { <-sem }()
 
-			idStr := strconv.Itoa(fid)
-			oddsMap, err := service.QueryMyTipsOdds(idStr)
+			log.Printf("⏳ [%d/%d] Processing fixture %s...\n", idx+1, len(ids), id)
+
+			// Process with retry
+			item, err := processSingleFixture(id, betData)
+
+			mu.Lock()
+			defer mu.Unlock()
+
 			if err != nil {
-				log.Printf("[MyTips] odds error %d: %v", fid, err)
-				RetryLater(fid)
+				errorCount++
+				log.Printf("❌ [%d/%d] Failed %s: %v\n", idx+1, len(ids), id, err)
 				return
 			}
 
-			for _, bets := range oddsMap {
-				if len(bets) == 0 {
-					continue
-				}
-				mu.Lock()
-				result[fid] = m.FixtureAnalytics{
-					FixtureID: fid,
+			successCount++
+			results = append(results, *item)
+			log.Printf("✅ [%d/%d] Success %s (%s vs %s)\n",
+				idx+1, len(ids), id, item.Home, item.Away)
+		}(fixtureID, i, bets)
 
-					Handicap: bets[0],
-				}
-				mu.Unlock()
-				break
-			}
-		}(fixtureId)
+		// Rate limiting between goroutine starts
+		time.Sleep(300 * time.Millisecond)
 	}
-	// รอ goroutine หลัก
-	wg.Wait()
-	WaitRetryDone()
 
-	fmt.Println("result :", len(result))
-	return result, nil
+	// รอให้ทุก goroutine เสร็จ
+	wg.Wait()
+
+	log.Printf("\n📊 สรุปผลลัพธ์:\n")
+	log.Printf("   ✅ สำเร็จ: %d\n", successCount)
+	log.Printf("   ❌ ล้มเหลว: %d\n", errorCount)
+	log.Printf("   📦 รวมทั้งหมด: %d\n\n", len(results))
+
+	return &m.RootMyTipsAnalytics{
+		Items: results,
+	}, nil
 }
 
 func Service(c *fiber.Ctx) error {
-	date := c.Query("date")
-	result, err := MyTips(date)
+	log.Println("📂 อ่านไฟล์ output.json...")
+
+	oddsMap, err := oddstoday.ReadOddsMap("bin/output.json")
 	if err != nil {
-		return err
+		log.Printf("❌ ไม่สามารถอ่านไฟล์: %v\n", err)
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": "cannot read output.json",
+		})
 	}
 
-	return c.JSON(result)
+	log.Printf("✅ พบ %d fixtures ใน output.json\n", len(oddsMap))
+
+	// สร้าง slice ของ IDs
+	ids := make([]string, 0, len(oddsMap))
+	for id := range oddsMap {
+		ids = append(ids, id)
+	}
+
+	// ประมวลผล
+	resp, err := Predictions(ids, oddsMap)
+	if err != nil {
+		log.Printf("❌ Error in Predictions: %v\n", err)
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+
+	log.Printf("🎉 ส่งผลลัพธ์ %d รายการ\n", len(resp.Items))
+	return c.JSON(resp)
 }
-
-/*
-
-fixture, err := service.QueryFixtureId(idStr)
-			if err != nil {
-				log.Printf("[MyTips] fixture error %d: %v", fid, err)
-				return // ❌ ไม่ retry ซ้ำซ้อน
-			}
-
-			t, err := time.Parse(time.RFC3339, fixture.Fixture.Date)
-
-			loc, _ := time.LoadLocation("Asia/Bangkok")
-			bangkokTime := t.In(loc)
-
-			dateStr := bangkokTime.Format("2006-01-02 15:04:05")
-
-*/

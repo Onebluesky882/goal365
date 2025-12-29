@@ -1,48 +1,79 @@
 package mytips
 
 import (
+	"fmt"
 	"log"
-	"mytipster/internal/fixtures/service"
-	"strconv"
-	"sync"
 	"time"
 )
 
-var retryWG sync.WaitGroup
-var sem = make(chan struct{}, 1) // semaphore ขนาด 1 = ทำงานทีละตัว
+// RetryConfig กำหนดค่า retry
+type RetryConfig struct {
+	MaxRetries   int
+	InitialDelay time.Duration
+	MaxDelay     time.Duration
+	Multiplier   float64
+}
 
-func retryFixtureOdds(fixtureId int) {
-	idStr := strconv.Itoa(fixtureId)
+// DefaultRetryConfig ค่า default สำหรับ retry
+var DefaultRetryConfig = RetryConfig{
+	MaxRetries:   3,
+	InitialDelay: 500 * time.Millisecond,
+	MaxDelay:     10 * time.Second,
+	Multiplier:   2.0,
+}
 
-	for attempt := 1; attempt <= 3; attempt++ {
-		log.Printf("[Retry] fixture %d attempt %d/3", fixtureId, attempt)
+// Retry ลอง execute function หลายครั้งจนสำเร็จ
+func Retry(fn func() error, config RetryConfig) error {
+	var err error
+	delay := config.InitialDelay
 
-		_, err := service.QueryMyTipsOdds(idStr)
+	for attempt := 0; attempt < config.MaxRetries; attempt++ {
+		err = fn()
 		if err == nil {
-			log.Printf("[Retry] fixture %d success", fixtureId)
-			return
+			return nil
 		}
 
-		time.Sleep(4 * time.Second)
+		// ถ้ายังไม่ถึง max retries ให้รอก่อน retry
+		if attempt < config.MaxRetries-1 {
+			log.Printf("⚠️  Retry attempt %d/%d after %v: %v",
+				attempt+1, config.MaxRetries, delay, err)
+			time.Sleep(delay)
+
+			// Exponential backoff
+			delay = time.Duration(float64(delay) * config.Multiplier)
+			if delay > config.MaxDelay {
+				delay = config.MaxDelay
+			}
+		}
 	}
 
-	log.Printf("[Retry] fixture %d failed after 3 attempts", fixtureId)
+	return fmt.Errorf("failed after %d retries: %w", config.MaxRetries, err)
 }
 
-func RetryLater(fixtureId int) {
-	retryWG.Add(1)
-
-	go func(id int) {
-		defer retryWG.Done()
-
-		// ขอสิทธิ์ก่อนเข้า critical section
-		sem <- struct{}{}
-		defer func() { <-sem }() // ปล่อยสิทธิ์เมื่อเสร็จ
-
-		retryFixtureOdds(id)
-	}(fixtureId)
+// RetryWithBackoff ใช้ exponential backoff (shorthand)
+func RetryWithBackoff(fn func() error, maxRetries int, initialDelay time.Duration) error {
+	return Retry(fn, RetryConfig{
+		MaxRetries:   maxRetries,
+		InitialDelay: initialDelay,
+		MaxDelay:     30 * time.Second,
+		Multiplier:   2.0,
+	})
 }
 
-func WaitRetryDone() {
-	retryWG.Wait()
+// SimpleRetry retry แบบง่าย ไม่มี backoff
+func SimpleRetry(fn func() error, maxRetries int, delay time.Duration) error {
+	var err error
+
+	for attempt := 0; attempt < maxRetries; attempt++ {
+		err = fn()
+		if err == nil {
+			return nil
+		}
+
+		if attempt < maxRetries-1 {
+			time.Sleep(delay)
+		}
+	}
+
+	return fmt.Errorf("failed after %d retries: %w", maxRetries, err)
 }

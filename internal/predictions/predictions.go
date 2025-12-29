@@ -6,6 +6,7 @@ import (
 	"mytipster/internal/db"
 	"mytipster/internal/db/analytics"
 	"mytipster/internal/fixtures/service"
+	"mytipster/lib"
 	m "mytipster/models/fixture"
 
 	"github.com/gofiber/fiber/v2"
@@ -67,23 +68,24 @@ func Predictions(fixtureId string) (*m.RootFixtureAnalytics, error) {
 		AwayScore:       pred.Teams.Away.Last5.Form,
 		MatchFinish:     fx.Fixture.Status.Long,
 		MatchResult:     fmt.Sprintf("%d-%d", home, away),
-		HomeFormScore14: FormScore(14, pred.Teams.Home.League.Form),
-		AwayFormScore14: FormScore(14, pred.Teams.Away.League.Form),
-		HomeFormScore12: FormScore(12, pred.Teams.Home.League.Form),
-		AwayFormScore12: FormScore(12, pred.Teams.Away.League.Form),
-		HomeFormScore10: FormScore(10, pred.Teams.Home.League.Form),
-		AwayFormScore10: FormScore(10, pred.Teams.Away.League.Form),
-		HomeFormScore7:  FormScore(7, pred.Teams.Home.League.Form),
-		AwayFormScore7:  FormScore(7, pred.Teams.Away.League.Form),
-		HomeFormScore5:  FormScore(5, pred.Teams.Home.League.Form),
-		AwayFormScore5:  FormScore(5, pred.Teams.Away.League.Form),
+		HomeFormScore14: lib.FormScore(14, pred.Teams.Home.League.Form),
+		AwayFormScore14: lib.FormScore(14, pred.Teams.Away.League.Form),
+		HomeFormScore12: lib.FormScore(12, pred.Teams.Home.League.Form),
+		AwayFormScore12: lib.FormScore(12, pred.Teams.Away.League.Form),
+		HomeFormScore10: lib.FormScore(10, pred.Teams.Home.League.Form),
+		AwayFormScore10: lib.FormScore(10, pred.Teams.Away.League.Form),
+		HomeFormScore7:  lib.FormScore(7, pred.Teams.Home.League.Form),
+		AwayFormScore7:  lib.FormScore(7, pred.Teams.Away.League.Form),
+		HomeFormScore5:  lib.FormScore(5, pred.Teams.Home.League.Form),
+		AwayFormScore5:  lib.FormScore(5, pred.Teams.Away.League.Form),
 		BetPick: m.BetPick{
 			Odds:   "0.5",
 			Picked: "derby",
 			Stake:  "", // win or lose
 		},
 	}
-
+	
+	// insert db
 	if err = analytics.InsertData(ctx, db, &item); err != nil {
 		return nil, err
 	}
@@ -94,25 +96,4 @@ func Predictions(fixtureId string) (*m.RootFixtureAnalytics, error) {
 
 	return results, nil
 
-}
-
-func FormScore(match int, form string) int {
-
-	// set
-	score := 0
-
-	// running
-	count := 0
-
-	for i := len(form) - 1; i >= 0 && count < match; i-- {
-		switch form[i] {
-		case 'W':
-			score += 3
-		case 'D':
-			score += 1
-		case 'L':
-		}
-		count++
-	}
-	return score
 }
