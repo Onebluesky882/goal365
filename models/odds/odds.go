@@ -58,3 +58,9 @@ type Value struct {
 	Value any    `json:"value"`
 	Odd   string `json:"odd"`
 }
+
+type OddsMap map[string][]Bet
+
+type SimplifiedOdds struct {
+	Data OddsMap
+}

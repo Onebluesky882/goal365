@@ -120,9 +120,6 @@ func QueryMyTipsOdds(id string) (map[int][]odds_models.Bet, error) {
 		return nil, err
 	}
 
-	if len(resp.Response) == 0 {
-		return nil, fmt.Errorf("no prediction found for fixture %s", id)
-	}
 	result := lib.FilterOdds(resp, "Bet365")
 
 	return result, err

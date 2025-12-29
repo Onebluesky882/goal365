@@ -4,6 +4,7 @@ import (
 	"log"
 	"mytipster/internal/fixtures"
 	"mytipster/internal/mytips"
+	oddstoday "mytipster/internal/odds-today"
 	"mytipster/internal/predictions"
 	"os"
 
@@ -23,6 +24,15 @@ func main() {
 
 	app.Get("/tips", mytips.Service)
 	app.Get("/prediction", predictions.Service)
+
+	// -------------- * --------------
+
+	in := "/Users/onebluesky882/local_files/myjob/mytipster/bin/data.json"
+	out := "/Users/onebluesky882/local_files/myjob/mytipster/bin/output.json"
+
+	if err := oddstoday.ProcessOddsFile(in, out); err != nil {
+		log.Fatal(err)
+	}
 
 	// -------------- * --------------
 
