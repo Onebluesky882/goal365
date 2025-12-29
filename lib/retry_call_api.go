@@ -1,4 +1,4 @@
-package mytips
+package lib
 
 import (
 	"fmt"

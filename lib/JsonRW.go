@@ -1,4 +1,4 @@
-package oddstoday
+package lib
 
 import (
 	"encoding/json"
@@ -7,6 +7,8 @@ import (
 	oddsmap "mytipster/lib/odds_map"
 	odds_models "mytipster/models/odds"
 	"os"
+	"path/filepath"
+	"time"
 )
 
 func WriteJSON(path string, v any) error {
@@ -14,7 +16,31 @@ func WriteJSON(path string, v any) error {
 	if err != nil {
 		return err
 	}
+	dir := filepath.Dir(path)
+	if err := os.MkdirAll(dir, 0755); err != nil {
+		return fmt.Errorf("failed to create directory: %w", err)
+	}
+
 	return os.WriteFile(path, data, 0644)
+}
+
+// WriteJSONWithDate เขียนไฟล์ JSON โดยใช้ date เป็น folder
+// เช่น bin/2024-12-30/data.json
+func WriteJSONWithDate(filename string, v any) error {
+	// สร้าง date string (YYYY-MM-DD)
+	date := time.Now().Format("2006-01-02")
+
+	// สร้าง path: bin/{date}/{filename}
+	path := filepath.Join("bin", date, filename)
+
+	return WriteJSON(path, v)
+}
+
+func WriteJSONWithCustomDate(date string, filename string, v any) error {
+	// สร้าง path: bin/{date}/{filename}
+	path := filepath.Join("bin", date, filename)
+
+	return WriteJSON(path, v)
 }
 
 // อ่าน JSON ที่เป็น map structure
@@ -32,8 +58,8 @@ func ReadOddsMap(path string) (odds_models.OddsMap, error) {
 	return oddsMap, nil
 }
 
-// ฟังก์ชันหลักสำหรับ process odds file
-func ProcessOddsFile(inputPath, outputPath string) error {
+// Process single fixture odds with retry
+func ProcessOddsFile(inputPath string) error {
 	// อ่านข้อมูล
 	oddsMap, err := ReadOddsMap(inputPath)
 	if err != nil {
@@ -47,11 +73,13 @@ func ProcessOddsFile(inputPath, outputPath string) error {
 
 	log.Printf("\n🎯 ผลการกรอง:ที่ตรงเงื่อนไข  %d fixtures \n", len(filtered))
 
+	// แยก date จาก path (bin/2024-12-30/odds_data.json -> 2024-12-30)
+	dir := filepath.Dir(inputPath)
+	date := filepath.Base(dir)
 	// เขียนผลลัพธ์
-	if err := WriteJSON(outputPath, filtered); err != nil {
+	if err := WriteJSONWithCustomDate(date, "filtered_odds.json", filtered); err != nil {
 		return fmt.Errorf("error writing output: %w", err)
 	}
 
-	log.Printf("✅ บันทึกผลลัพธ์ที่: %s\n", outputPath)
 	return nil
 }

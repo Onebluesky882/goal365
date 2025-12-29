@@ -5,7 +5,6 @@ import (
 	"log"
 	"mytipster/internal/db"
 	"mytipster/internal/fixtures/service"
-	oddstoday "mytipster/internal/odds-today"
 	"mytipster/lib"
 	fixture_module "mytipster/models/fixture"
 	m "mytipster/models/mytips"
@@ -24,7 +23,7 @@ func processSingleFixture(fixtureID string, bets []odds_models.Bet) (*m.MyTipsAn
 	var err error
 
 	// ดึง prediction พร้อม retry
-	err = RetryWithBackoff(func() error {
+	err = lib.RetryWithBackoff(func() error {
 		pred, err = service.QueryPrediction(fixtureID)
 		if err != nil {
 			return err
@@ -40,7 +39,7 @@ func processSingleFixture(fixtureID string, bets []odds_models.Bet) (*m.MyTipsAn
 	}
 
 	// ดึง fixture พร้อม retry
-	err = RetryWithBackoff(func() error {
+	err = lib.RetryWithBackoff(func() error {
 		time.Sleep(500 * time.Millisecond)
 		fx, err = service.QueryFixtureId(fixtureID)
 		if err != nil {
@@ -173,7 +172,7 @@ func Predictions(ids []string, oddsMap map[string][]odds_models.Bet) (*m.RootMyT
 func Service(c *fiber.Ctx) error {
 	log.Println("📂 อ่านไฟล์ output.json...")
 
-	oddsMap, err := oddstoday.ReadOddsMap("bin/output.json")
+	oddsMap, err := lib.ReadOddsMap("bin/output.json")
 	if err != nil {
 		log.Printf("❌ ไม่สามารถอ่านไฟล์: %v\n", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{

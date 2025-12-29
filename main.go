@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"mytipster/internal/fixtures"
+	oddstoday "mytipster/internal/get-odds-today"
 	"mytipster/internal/mytips"
 	"mytipster/internal/predictions"
 	"os"
@@ -24,7 +25,9 @@ func main() {
 	app.Get("/tips", mytips.Service)
 	app.Get("/prediction", predictions.Service)
 
+	// todo
 	// -------------- * --------------
+	app.Get("/get-odds-today", oddstoday.Service)
 	app.Get("/mytips", mytips.Service)
 	// -------------- * --------------
 

@@ -10,7 +10,7 @@ import (
 
 func isAllHandicap(h float64) bool {
 	switch math.Abs(h) {
-	case 0.25, 0.5, 0.75:
+	case 0.25, 0.5, 0.75, 1.0:
 		return true
 	default:
 		return false
@@ -32,7 +32,7 @@ func parseHandicap(val string) (float64, bool) {
 }
 
 func isOddInRange(odd float64) bool {
-	return odd >= 1.80 && odd <= 2.20
+	return odd >= 1.75 && odd <= 2.20
 }
 
 // ฟังก์ชันใหม่สำหรับกรอง OddsMap
