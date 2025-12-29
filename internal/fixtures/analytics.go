@@ -1,7 +1,10 @@
 package fixtures
 
 import (
+	"context"
 	"fmt"
+	"mytipster/internal/db"
+	"mytipster/internal/db/analytics"
 	"mytipster/internal/fixtures/service"
 	m "mytipster/models/fixture"
 	"strconv"
@@ -37,6 +40,12 @@ TeamHome        string
 */
 
 func Analytics(data map[int]m.BetPick) (*m.RootFixtureAnalytics, error) {
+
+	ctx := context.Background()
+	db, err := db.NewDB()
+	if err != nil {
+		return nil, err
+	}
 
 	result := &m.RootFixtureAnalytics{
 		Items: []m.FixtureAnalytics{},
@@ -87,11 +96,9 @@ func Analytics(data map[int]m.BetPick) (*m.RootFixtureAnalytics, error) {
 
 		result.Items = append(result.Items, item)
 
-		time.Sleep(1000 * time.Millisecond)
+		err = analytics.InsertData(ctx, db, &item)
+		time.Sleep(2000 * time.Millisecond)
 		fmt.Println("current count:", len(result.Items))
-
-		
-
 	}
 	return nil, nil
 

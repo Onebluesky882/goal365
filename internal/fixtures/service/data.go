@@ -3,61 +3,60 @@ package service
 import m "mytipster/models/fixture"
 
 var Data = map[int]m.BetPick{
-	1485798: {
-		Handicap: "+0.5",
-		Picked:   "KAMAZ",
-		Stake:    "win",
-	},
-	1486269: {
-		Handicap: "+0.25",
-		Picked:   "AFC Wimbledon", Stake: "win",
-	},
-	1389669: {
-		Handicap: "+0.5",
-		Picked:   "Ashdod", Stake: "win",
-	},
+	// 1485798: {
+	// 	Handicap: "+0.5",
+	// 	Picked:   "KAMAZ",
+	// 	Stake:    "win",
+	// },
+	// 1486269: {
+	// 	Handicap: "+0.25",
+	// 	Picked:   "AFC Wimbledon", Stake: "win",
+	// },
+	// 1389669: {
+	// 	Handicap: "+0.5",
+	// 	Picked:   "Ashdod", Stake: "win",
+	// },
 
-	1394567: {
-		Handicap: "+0.25",
-		Picked:   "Rizespor", Stake: "win",
-	},
-	1379114: {
-		Handicap: "+0.5",
-		Picked:   "Leeds", Stake: "win",
-	},
+	// 1394567: {
+	// 	Handicap: "+0.25",
+	// 	Picked:   "Rizespor", Stake: "win",
+	// },
+	// 1379114: {
+	// 	Handicap: "+0.5",
+	// 	Picked:   "Leeds", Stake: "win",
+	// },
 	1387830: {
 		Handicap: "+0.5",
 		Picked:   "Angers", Stake: "win",
 	},
-	1378002: {
-		Handicap: "+0.5",
-		Picked:   "Genoa", Stake: "win",
-	},
+	// 1378002: {
+	// 	Handicap: "+0.5",
+	// 	Picked:   "Genoa", Stake: "win",
+	// },
 	1389674: {
 		Handicap: "+0.5",
 		Picked:   "Ironi Tiberias", Stake: "win",
 	},
-	1401121: {
-		Handicap: "+0.5",
-		Picked:   "Barry Town", Stake: "win",
-	},
+	// 1401121: {
+	// 	Handicap: "+0.5",
+	// 	Picked:   "Barry Town", Stake: "win",
+	// },
 	1486270: {
 		Handicap: "+0.5",
 		Picked:   "West Ham United U21", Stake: "win",
 	},
-	// here
-	1387326: {
-		Handicap: "+0.5",
-		Picked:   "Rotherham", Stake: "win",
-	},
-	1488408: {
-		Handicap: "+0.5",
-		Picked:   "Latina", Stake: "win",
-	},
-	1483270: {
-		Handicap: "+0.5",
-		Picked:   "Malavan", Stake: "win",
-	},
+	// 1387326: {
+	// 	Handicap: "+0.5",
+	// 	Picked:   "Rotherham", Stake: "win",
+	// },
+	// 1488408: {
+	// 	Handicap: "+0.5",
+	// 	Picked:   "Latina", Stake: "win",
+	// },
+	// 1483270: {
+	// 	Handicap: "+0.5",
+	// 	Picked:   "Malavan", Stake: "win",
+	// },
 	1483852: {
 		Handicap: "+0.5",
 		Picked:   "FK Košice", Stake: "win",
@@ -121,5 +120,9 @@ var Data = map[int]m.BetPick{
 	1419768: {
 		Handicap: "+0.25",
 		Picked:   "Avellino", Stake: "win",
+	},
+	1378025: {
+		Handicap: "+0.5",
+		Picked:   "Sassuolo", Stake: "win",
 	},
 }
