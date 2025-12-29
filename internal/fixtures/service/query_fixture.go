@@ -11,10 +11,10 @@ import (
 
 // get ids
 
-func GetIds(id string) ([]int, error) {
+func GetIds(date string) ([]int, error) {
 	var result = make([]int, 0)
 
-	resp, err := QueryFixtureDate(id)
+	resp, err := QueryFixtureDate(date)
 	if err != nil {
 		return nil, err
 	}
@@ -45,7 +45,7 @@ func QueryFixtureId(id string) (*m.Response, error) {
 	return &resp.Response[0], nil
 }
 
-// odds
+// odds FilterAsianHandicap
 
 func QueryFixtureOdds(id string) (map[int][]odds_models.Bet, error) {
 
@@ -62,7 +62,7 @@ func QueryFixtureOdds(id string) (map[int][]odds_models.Bet, error) {
 	if len(resp.Response) == 0 {
 		return nil, fmt.Errorf("no prediction found for fixture %s", id)
 	}
-	result := lib.FilterBookMarket(resp, "Bet365")
+	result := lib.FilterAsianHandicap(resp, "Bet365")
 
 	return result, err
 }
@@ -105,4 +105,25 @@ func QueryPrediction(id string) (*prediction_models.PredictionResponse, error) {
 		return nil, fmt.Errorf("no fixture found in api response")
 	}
 	return &resp.Response[0], nil
+}
+
+// my tips
+func QueryMyTipsOdds(id string) (map[int][]odds_models.Bet, error) {
+
+	url := fmt.Sprintf(
+		"https://api-football-v1.p.rapidapi.com/v3/odds?fixture=%s",
+		id,
+	)
+
+	resp, err := api.Odds("GET", url)
+	if err != nil {
+		return nil, err
+	}
+
+	if len(resp.Response) == 0 {
+		return nil, fmt.Errorf("no prediction found for fixture %s", id)
+	}
+	result := lib.FilterOdds(resp, "Bet365")
+
+	return result, err
 }

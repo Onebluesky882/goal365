@@ -1,9 +1,13 @@
 package fixture_module
 
-import "github.com/uptrace/bun"
+import (
+	odds_models "mytipster/models/odds"
+
+	"github.com/uptrace/bun"
+)
 
 type RootFixtureAnalytics struct {
-	Items []FixtureAnalytics `json:"items"`
+	Items FixtureAnalytics `json:"items"`
 }
 
 type FixtureAnalytics struct {
@@ -12,9 +16,13 @@ type FixtureAnalytics struct {
 	ID        int64  `bun:",pk,autoincrement" json:"-"`
 	FixtureID int    `bun:"fixture_id,notnull" json:"fixture_id"`
 	Date      string `bun:"date" json:"date"`
+	League    string `bun:"league" json:"league"`
 
-	TeamHome string `bun:"team_home" json:"team_home"`
-	TeamAway string `bun:"team_away" json:"team_away"`
+	Country     string          `bun:"country" json:"country"`
+	Home        string          `bun:"team_home" json:"home"`
+	Away        string          `bun:"team_away" json:"away"`
+	MatchFinish string          `bun:"match_finish" json:"match_finish"`
+	Handicap    odds_models.Bet `bun:"handicap" json:"handicap"`
 
 	HomeFormScore14 int `bun:"home_form_14" json:"home_form_14"`
 	AwayFormScore14 int `bun:"away_form_14" json:"away_form_14"`
@@ -40,7 +48,7 @@ type FixtureAnalytics struct {
 }
 
 type BetPick struct {
-	Handicap string `json:"handicap"`
-	Picked   string `json:"picked"`
-	Stake    string `json:"stake"`
+	Odds   string `json:"odds"`
+	Picked string `json:"picked"`
+	Stake  string `json:"stake"`
 }

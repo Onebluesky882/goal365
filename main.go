@@ -3,7 +3,8 @@ package main
 import (
 	"log"
 	"mytipster/internal/fixtures"
-	"mytipster/internal/worker"
+	"mytipster/internal/mytips"
+	"mytipster/internal/predictions"
 	"os"
 
 	"github.com/gofiber/fiber/v2"
@@ -18,13 +19,12 @@ func main() {
 	app.Get("/ids", fixtures.GetFixtureIds)
 	app.Get("/id", fixtures.GetFixtureById)
 	app.Get("/odds", fixtures.Odds)
-	app.Get("/prediction", fixtures.Predictions)
 	app.Get("/date", fixtures.GetFixtureDate)
-	app.Get("/fixture-analytics", fixtures.Service)
+
+	app.Get("/tips", mytips.Service)
+	app.Get("/prediction", predictions.Service)
 
 	// -------------- * --------------
-	app.Get("/analytics", worker.AnalyticsFixtures)
-	// app.Get("/predictions", worker.AnalyticsFixture)
 
 	port := os.Getenv("PORT")
 	if port == "" {

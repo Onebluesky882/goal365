@@ -139,7 +139,7 @@ func FilterMatchWinnerNear2(values []m.Value) []m.Value {
 	})
 
 	// จำกัดสูงสุด 3 ตัว
-	top := 3
+	top := 5
 	if len(temp) < top {
 		top = len(temp)
 	}
@@ -166,13 +166,9 @@ func FilterBookMarket(root *m.RootOdds, bookmakerName string) map[int][]m.Bet {
 				filteredBet := bet
 				name := strings.TrimSpace(bet.Name)
 				switch name {
-				case "Asian Handicap", "Goals Over/Under":
+				case "Asian Handicap":
 					// กรองแบบคู่ (Home/Away หรือ Over/Under) 3 คู่ = 6 values
 					filteredBet.Values = FilterBetPairsNear2(bet.Values, 3)
-
-				case "Match Winner":
-					// Match Winner กรอง 3 ตัวที่ใกล้ 2.0 ที่สุด
-					filteredBet.Values = FilterMatchWinnerNear2(bet.Values)
 
 				default:
 					// market อื่นๆ ข้ามไป
@@ -190,6 +186,39 @@ func FilterBookMarket(root *m.RootOdds, bookmakerName string) map[int][]m.Bet {
 			}
 
 			break // พบ bookmaker แล้ว หยุดวนลูป
+		}
+	}
+
+	return result
+}
+
+func FilterAsianHandicap(
+	root *m.RootOdds,
+	bookmakerName string,
+) map[int][]m.Bet {
+
+	result := make(map[int][]m.Bet)
+
+	for _, resp := range root.Response {
+		for _, bm := range resp.Bookmakers {
+
+			if bm.Name != bookmakerName {
+				continue
+			}
+
+			for _, bet := range bm.Bets {
+				if strings.TrimSpace(bet.Name) != "Asian Handicap" {
+					continue
+				}
+
+				// เอาทั้ง bet ไปเลย ไม่ filter values
+				result[resp.Fixture.ID] = append(
+					result[resp.Fixture.ID],
+					bet,
+				)
+			}
+
+			break // ใช้ bookmaker เดียว
 		}
 	}
 

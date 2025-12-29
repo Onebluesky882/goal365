@@ -1,13 +1,17 @@
 meta {
   name: analytics
   type: http
-  seq: 2
+  seq: 3
 }
 
 get {
-  url: http://localhost:3009/fixture-analytics
+  url: http://localhost:3009/prediction?fixture=1386834
   body: none
   auth: inherit
+}
+
+params:query {
+  fixture: 1386834
 }
 
 settings {
