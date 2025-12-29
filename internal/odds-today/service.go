@@ -42,29 +42,10 @@ func ProcessOddsFile(inputPath, outputPath string) error {
 
 	log.Printf("✅ โหลดข้อมูลสำเร็จ: %d fixtures\n", len(oddsMap))
 
-	// แสดงข้อมูลที่โหลดมา
-	for fixtureID, bets := range oddsMap {
-		log.Printf("📌 Fixture %s มี %d bet types\n", fixtureID, len(bets))
-		for _, bet := range bets {
-			log.Printf("   - %s: %d values\n", bet.Name, len(bet.Values))
-		}
-	}
-
 	// กรองข้อมูลตามเงื่อนไข
 	filtered := oddsmap.FilterOddsMap(oddsMap)
 
-	log.Printf("\n🎯 ผลการกรอง: %d fixtures ที่ตรงเงื่อนไข\n", len(filtered))
-
-	// แสดงผลลัพธ์
-	for fixtureID, bets := range filtered {
-		log.Printf("✓ Fixture %d:\n", fixtureID)
-		for _, bet := range bets {
-			log.Printf("  %s (%d values):\n", bet.Name, len(bet.Values))
-			for _, v := range bet.Values {
-				log.Printf("    - %v @ %s\n", v.Value, v.Odd)
-			}
-		}
-	}
+	log.Printf("\n🎯 ผลการกรอง:ที่ตรงเงื่อนไข  %d fixtures \n", len(filtered))
 
 	// เขียนผลลัพธ์
 	if err := WriteJSON(outputPath, filtered); err != nil {
