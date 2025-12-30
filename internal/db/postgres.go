@@ -23,7 +23,6 @@ func NewDB() (*bun.DB, error) {
 		return nil, fmt.Errorf("railway internal db used outside railway")
 	}
 
-	fmt.Println("DB DSN:", dsn)
 	sqldb := sql.OpenDB(pgdriver.NewConnector(
 		pgdriver.WithDSN(dsn),
 	))

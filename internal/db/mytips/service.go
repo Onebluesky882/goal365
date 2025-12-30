@@ -6,12 +6,12 @@ import (
 	"log"
 	"mytipster/internal/db/service"
 	m "mytipster/models/mytips"
-	mytips_module "mytipster/models/mytips"
 
 	"github.com/uptrace/bun"
 )
 
-func CreateTable(ctx context.Context, db *bun.DB) error {
+func CreateTable(db *bun.DB) error {
+	ctx := context.Background()
 	_, err := db.NewCreateTable().
 		Model((*m.MyTipsAnalytics)(nil)).IfNotExists().
 		Exec(ctx)
@@ -19,12 +19,10 @@ func CreateTable(ctx context.Context, db *bun.DB) error {
 
 }
 
-func InsertMany(items []mytips_module.MyTipsAnalytics) error {
-
+func InsertMany(items []m.MyTipsAnalytics) error {
 	ctx := context.Background()
 	db := service.WithContext(ctx)
-
-	var filtered []mytips_module.MyTipsAnalytics
+	var filtered []m.MyTipsAnalytics
 
 	for _, item := range items {
 		if item.FormLeagueHomeCount < 5 {
@@ -37,6 +35,7 @@ func InsertMany(items []mytips_module.MyTipsAnalytics) error {
 		fmt.Println("No records passed the filter, nothing to insert")
 		return nil
 	}
+
 	_, err := db.NewInsert().Model(&filtered).Exec(ctx)
 	if err != nil {
 		log.Fatalf("insert many error %v", err)
@@ -45,3 +44,16 @@ func InsertMany(items []mytips_module.MyTipsAnalytics) error {
 	fmt.Printf("✅ Inserted %d records\n", len(filtered))
 	return nil
 }
+
+func GetPredictionByDay(date string) ([]m.MyTipsAnalytics, error) {
+	ctx := context.Background()
+	db := service.WithContext(ctx)
+	var result []m.MyTipsAnalytics
+	err := db.NewSelect().Model(&result).Where("date = ?", date).Scan(ctx)
+	if err != nil {
+		log.Fatalf("query error: %v", err)
+	}
+	return result, nil
+}
+
+func Update() {}

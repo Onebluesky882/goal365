@@ -3,7 +3,6 @@ package mytips
 import (
 	"fmt"
 	"log"
-	"mytipster/internal/db"
 	"mytipster/internal/fixtures/service"
 	"mytipster/lib"
 	fixture_module "mytipster/models/fixture"
@@ -99,11 +98,6 @@ func processSingleFixture(fixtureID string, bets []odds_models.Bet) (*m.MyTipsAn
 }
 
 func Predictions(ids []string, oddsMap map[string][]odds_models.Bet) (*m.RootMyTipsAnalytics, error) {
-	dbConn, err := db.NewDB()
-	if err != nil {
-		return nil, err
-	}
-	defer dbConn.Close()
 
 	// ใช้ concurrent processing
 	const maxConcurrent = 1 // จำกัด concurrent requests

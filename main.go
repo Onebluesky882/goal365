@@ -17,6 +17,7 @@ func main() {
 
 	_ = godotenv.Load()
 	service.InitDB()
+
 	app := fiber.New()
 	app.Get("/ids", fixtures.GetFixtureIds)
 	app.Get("/id", fixtures.GetFixtureById)
@@ -24,7 +25,7 @@ func main() {
 	app.Get("/date", fixtures.GetFixtureDate)
 
 	app.Get("/tips", mytips.Service)
-	app.Get("/prediction", predictions.Service)
+	app.Get("/prediction-id", predictions.Service)
 
 	// -------------- * --------------
 	// step 1
@@ -36,16 +37,9 @@ func main() {
 	app.Get("/upload", mytips.Insert)
 	// -------------- * -------------
 
-	// todo
+	// api crud get
 
-	/*
-		insert prediction to db
-
-		post pick match
-
-		post check result update goal match finish
-
-	*/
+	app.Get("/today", mytips.GetPredictionByDay)
 
 	port := os.Getenv("PORT")
 	if port == "" {
