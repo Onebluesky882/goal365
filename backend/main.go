@@ -22,32 +22,32 @@ func main() {
 	app := fiber.New()
 
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "http://localhost:5173,https://mytipster-production.up.railway.app,https://goal365.thaimongkon777.workers.dev/,http://localhost:8787",
+		AllowOrigins: "http://localhost:5173,https://mytipster-production.up.railway.api,https://goal365.thaimongkon777.workers.dev/,http://localhost:8787",
 		AllowMethods: "GET,POST,PUT,DELETE,OPTIONS",
 		AllowHeaders: "Origin, Content-Type, Accept, Authorization",
 	}))
+	api := app.Group("/api")
+	api.Get("/ids", fixtures.GetFixtureIds)
+	api.Get("/id", fixtures.GetFixtureById)
+	api.Get("/odds", fixtures.Odds)
+	api.Get("/date", fixtures.GetFixtureDate)
 
-	app.Get("/ids", fixtures.GetFixtureIds)
-	app.Get("/id", fixtures.GetFixtureById)
-	app.Get("/odds", fixtures.Odds)
-	app.Get("/date", fixtures.GetFixtureDate)
-
-	app.Get("/tips", mytips.Service)
-	app.Get("/prediction-id", predictions.Service)
+	api.Get("/tips", mytips.Service)
+	api.Get("/prediction-id", predictions.Service)
 
 	// -------------- * --------------
 	// step 1
-	app.Get("/get-odds-today", oddstoday.Service)
+	api.Get("/get-odds-today", oddstoday.Service)
 	// step 2
-	app.Get("/mytips", mytips.Service)
+	api.Get("/mytips", mytips.Service)
 
 	// upload bin/date/prediontion.json to db
-	app.Get("/upload", mytips.Insert)
+	api.Get("/upload", mytips.Insert)
 	// -------------- * -------------
 
 	// api crud get
 
-	app.Get("/today", mytips.GetPredictionByDay)
+	api.Get("/today", mytips.GetPredictionByDay)
 
 	port := os.Getenv("PORT")
 	if port == "" {
