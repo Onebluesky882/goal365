@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"mytipster/internal/db/service"
 	"mytipster/internal/fixtures"
 	oddstoday "mytipster/internal/get-odds-today"
 	"mytipster/internal/mytips"
@@ -15,7 +16,7 @@ import (
 func main() {
 
 	_ = godotenv.Load()
-
+	service.InitDB()
 	app := fiber.New()
 	app.Get("/ids", fixtures.GetFixtureIds)
 	app.Get("/id", fixtures.GetFixtureById)
@@ -25,11 +26,26 @@ func main() {
 	app.Get("/tips", mytips.Service)
 	app.Get("/prediction", predictions.Service)
 
-	// todo
 	// -------------- * --------------
+	// step 1
 	app.Get("/get-odds-today", oddstoday.Service)
+	// step 2
 	app.Get("/mytips", mytips.Service)
-	// -------------- * --------------
+
+	// upload bin/date/prediontion.json to db
+	app.Get("/upload", mytips.Insert)
+	// -------------- * -------------
+
+	// todo
+
+	/*
+		insert prediction to db
+
+		post pick match
+
+		post check result update goal match finish
+
+	*/
 
 	port := os.Getenv("PORT")
 	if port == "" {

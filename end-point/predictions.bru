@@ -1,0 +1,20 @@
+meta {
+  name: predictions
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:3009/prediction?fixuture=1481668
+  body: none
+  auth: inherit
+}
+
+params:query {
+  fixuture: 1481668
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,10 +1,7 @@
 package predictions
 
 import (
-	"context"
 	"fmt"
-	"mytipster/internal/db"
-	"mytipster/internal/db/analytics"
 	"mytipster/internal/fixtures/service"
 	"mytipster/lib"
 	m "mytipster/models/fixture"
@@ -26,11 +23,11 @@ func Service(c *fiber.Ctx) error {
 
 func Predictions(fixtureId string) (*m.RootFixtureAnalytics, error) {
 
-	ctx := context.Background()
-	db, err := db.NewDB()
-	if err != nil {
-		return nil, err
-	}
+	// ctx := context.Background()
+	// db, err := db.NewDB()
+	// if err != nil {
+	// 	return nil, err
+	// }
 
 	results := &m.RootFixtureAnalytics{
 		Items: m.FixtureAnalytics{},
@@ -58,37 +55,41 @@ func Predictions(fixtureId string) (*m.RootFixtureAnalytics, error) {
 	}
 
 	item := m.FixtureAnalytics{
-		FixtureID:       fx.Fixture.ID,
-		Date:            fx.Fixture.Date,
-		Country:         fx.League.Country,
-		League:          fx.League.Name,
-		Home:            pred.Teams.Home.Name,
-		Away:            pred.Teams.Away.Name,
-		HomeScore:       pred.Teams.Home.Last5.Form,
-		AwayScore:       pred.Teams.Away.Last5.Form,
-		MatchFinish:     fx.Fixture.Status.Long,
-		MatchResult:     fmt.Sprintf("%d-%d", home, away),
-		HomeFormScore14: lib.FormScore(14, pred.Teams.Home.League.Form),
-		AwayFormScore14: lib.FormScore(14, pred.Teams.Away.League.Form),
-		HomeFormScore12: lib.FormScore(12, pred.Teams.Home.League.Form),
-		AwayFormScore12: lib.FormScore(12, pred.Teams.Away.League.Form),
-		HomeFormScore10: lib.FormScore(10, pred.Teams.Home.League.Form),
-		AwayFormScore10: lib.FormScore(10, pred.Teams.Away.League.Form),
-		HomeFormScore7:  lib.FormScore(7, pred.Teams.Home.League.Form),
-		AwayFormScore7:  lib.FormScore(7, pred.Teams.Away.League.Form),
-		HomeFormScore5:  lib.FormScore(5, pred.Teams.Home.League.Form),
-		AwayFormScore5:  lib.FormScore(5, pred.Teams.Away.League.Form),
+				FixtureID: fx.Fixture.ID,
+		Date:      fx.Fixture.Date,
+		Country:   fx.League.Country,
+		League:    fx.League.Name,
+		Home:      pred.Teams.Home.Name,
+		Away:      pred.Teams.Away.Name,
+		HomeScore: pred.Teams.Home.Last5.Form,
+		AwayScore: pred.Teams.Away.Last5.Form,
+		FormLeagueHomeCount: len(pred.Teams.Home.League.Form),
+		FormLeagueAwayCount: len(pred.Teams.Away.League.Form),
+		HomeFormScore14:     lib.FormScore(14, pred.Teams.Home.League.Form),
+		AwayFormScore14:     lib.FormScore(14, pred.Teams.Away.League.Form),
+		HomeFormScore12:     lib.FormScore(12, pred.Teams.Home.League.Form),
+		AwayFormScore12:     lib.FormScore(12, pred.Teams.Away.League.Form),
+		HomeFormScore10:     lib.FormScore(10, pred.Teams.Home.League.Form),
+		AwayFormScore10:     lib.FormScore(10, pred.Teams.Away.League.Form),
+		HomeFormScore7:      lib.FormScore(7, pred.Teams.Home.League.Form),
+		AwayFormScore7:      lib.FormScore(7, pred.Teams.Away.League.Form),
+		HomeFormScore5:      lib.FormScore(5, pred.Teams.Home.League.Form),
+		AwayFormScore5:      lib.FormScore(5, pred.Teams.Away.League.Form),
+		MatchFinish:         fx.Fixture.Status.Long,
+		MatchResult:         fmt.Sprintf("%d-%d", home, away),
 		BetPick: m.BetPick{
 			Odds:   "0.5",
 			Picked: "derby",
 			Stake:  "", // win or lose
 		},
 	}
-	
+
 	// insert db
-	if err = analytics.InsertData(ctx, db, &item); err != nil {
-		return nil, err
-	}
+	// if err = analytics.InsertData(ctx, db, &item); err != nil {
+	// 	return nil, err
+	// }
+
+	// update db
 
 	results = &m.RootFixtureAnalytics{
 		Items: item,

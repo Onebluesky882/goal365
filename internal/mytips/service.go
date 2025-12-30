@@ -65,27 +65,29 @@ func processSingleFixture(fixtureID string, bets []odds_models.Bet) (*m.MyTipsAn
 	}
 
 	item := &m.MyTipsAnalytics{
-		FixtureID:       fx.Fixture.ID,
-		Date:            fx.Fixture.Date,
-		Country:         fx.League.Country,
-		League:          fx.League.Name,
-		Home:            pred.Teams.Home.Name,
-		Away:            pred.Teams.Away.Name,
-		HomeScore:       pred.Teams.Home.Last5.Form,
-		AwayScore:       pred.Teams.Away.Last5.Form,
-		MatchFinish:     fx.Fixture.Status.Long,
-		MatchResult:     fmt.Sprintf("%d-%d", home, away),
-		HomeFormScore14: lib.FormScore(14, pred.Teams.Home.League.Form),
-		AwayFormScore14: lib.FormScore(14, pred.Teams.Away.League.Form),
-		HomeFormScore12: lib.FormScore(12, pred.Teams.Home.League.Form),
-		AwayFormScore12: lib.FormScore(12, pred.Teams.Away.League.Form),
-		HomeFormScore10: lib.FormScore(10, pred.Teams.Home.League.Form),
-		AwayFormScore10: lib.FormScore(10, pred.Teams.Away.League.Form),
-		HomeFormScore7:  lib.FormScore(7, pred.Teams.Home.League.Form),
-		AwayFormScore7:  lib.FormScore(7, pred.Teams.Away.League.Form),
-		HomeFormScore5:  lib.FormScore(5, pred.Teams.Home.League.Form),
-		AwayFormScore5:  lib.FormScore(5, pred.Teams.Away.League.Form),
-		Handicap:        bets[0],
+		FixtureID:           fx.Fixture.ID,
+		Date:                fx.Fixture.Date,
+		Country:             fx.League.Country,
+		League:              fx.League.Name,
+		Home:                pred.Teams.Home.Name,
+		Away:                pred.Teams.Away.Name,
+		HomeScore:           pred.Teams.Home.Last5.Form,
+		AwayScore:           pred.Teams.Away.Last5.Form,
+		FormLeagueHomeCount: len(pred.Teams.Home.League.Form),
+		FormLeagueAwayCount: len(pred.Teams.Away.League.Form),
+		HomeFormScore14:     lib.FormScore(14, pred.Teams.Home.League.Form),
+		AwayFormScore14:     lib.FormScore(14, pred.Teams.Away.League.Form),
+		HomeFormScore12:     lib.FormScore(12, pred.Teams.Home.League.Form),
+		AwayFormScore12:     lib.FormScore(12, pred.Teams.Away.League.Form),
+		HomeFormScore10:     lib.FormScore(10, pred.Teams.Home.League.Form),
+		AwayFormScore10:     lib.FormScore(10, pred.Teams.Away.League.Form),
+		HomeFormScore7:      lib.FormScore(7, pred.Teams.Home.League.Form),
+		AwayFormScore7:      lib.FormScore(7, pred.Teams.Away.League.Form),
+		HomeFormScore5:      lib.FormScore(5, pred.Teams.Home.League.Form),
+		AwayFormScore5:      lib.FormScore(5, pred.Teams.Away.League.Form),
+		MatchFinish:         fx.Fixture.Status.Long,
+		MatchResult:         fmt.Sprintf("%d-%d", home, away),
+		Handicap:            bets[0],
 		BetPick: m.BetPick{
 			Odds:   "",
 			Picked: "",
@@ -117,6 +119,7 @@ func Predictions(ids []string, oddsMap map[string][]odds_models.Bet) (*m.RootMyT
 	log.Printf("🚀 เริ่มประมวลผล %d fixtures...\n", len(ids))
 
 	for i, fixtureID := range ids {
+		time.Sleep(300 * time.Millisecond)
 		// ตรวจสอบว่ามี odds หรือไม่
 		bets, ok := oddsMap[fixtureID]
 		if !ok || len(bets) == 0 {
@@ -170,9 +173,8 @@ func Predictions(ids []string, oddsMap map[string][]odds_models.Bet) (*m.RootMyT
 }
 
 func Service(c *fiber.Ctx) error {
-	log.Println("📂 อ่านไฟล์ output.json...")
-
-	oddsMap, err := lib.ReadOddsMap("bin/output.json")
+	date := time.Now().Format("2006-01-02")
+	oddsMap, err := lib.ReadOddsMap(fmt.Sprintf("bin/%s/filtered_odds.json", date))
 	if err != nil {
 		log.Printf("❌ ไม่สามารถอ่านไฟล์: %v\n", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
@@ -197,6 +199,13 @@ func Service(c *fiber.Ctx) error {
 		})
 	}
 
+	fileName := "predictions.json"
+	if err := lib.WriteJSONWithCustomDate(date, fileName, resp.Items); err != nil {
+		log.Println(err)
+	} else {
+		log.Println("🎉 เขียนไฟล์สำเร็จ:", fileName)
+	}
+
 	log.Printf("🎉 ส่งผลลัพธ์ %d รายการ\n", len(resp.Items))
-	return c.JSON(resp)
+	return c.JSON(resp.Items)
 }

@@ -38,13 +38,18 @@ func WriteJSONWithDate(filename string, v any) error {
 
 func WriteJSONWithCustomDate(date string, filename string, v any) error {
 	// สร้าง path: bin/{date}/{filename}
-	path := filepath.Join("bin", date, filename)
+	dir := fmt.Sprintf("bin/%s", date)
+	if err := os.MkdirAll(dir, os.ModePerm); err != nil {
+		return fmt.Errorf("cannot create dir %s: %w", dir, err)
+	}
 
-	return WriteJSON(path, v)
+	filePath := fmt.Sprintf("%s/%s", dir, filename)
+	return WriteJSON(filePath, v)
 }
 
 // อ่าน JSON ที่เป็น map structure
 func ReadOddsMap(path string) (odds_models.OddsMap, error) {
+
 	data, err := os.ReadFile(path)
 	if err != nil {
 		return nil, err
@@ -56,6 +61,20 @@ func ReadOddsMap(path string) (odds_models.OddsMap, error) {
 	}
 
 	return oddsMap, nil
+}
+func ReadJson[T any](path string) (T, error) {
+	var result T
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return result, err
+	}
+
+ 
+	if err := json.Unmarshal(data, &result); err != nil {
+		return result, err
+	}
+
+	return result, nil
 }
 
 // Process single fixture odds with retry

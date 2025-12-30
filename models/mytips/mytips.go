@@ -18,14 +18,15 @@ type MyTipsAnalytics struct {
 	Date      string `bun:"date" json:"date"`
 	League    string `bun:"league" json:"league"`
 
-	Country     string          `bun:"country" json:"country"`
-	Home        string          `bun:"team_home" json:"home"`
-	Away        string          `bun:"team_away" json:"away"`
-	MatchFinish string          `bun:"match_finish" json:"match_finish"`
-	Handicap    odds_models.Bet `bun:"handicap" json:"handicap"`
-
-	HomeFormScore14 int `bun:"home_form_14" json:"home_form_14"`
-	AwayFormScore14 int `bun:"away_form_14" json:"away_form_14"`
+	Country             string          `bun:"country" json:"country"`
+	Home                string          `bun:"team_home" json:"home"`
+	Away                string          `bun:"team_away" json:"away"`
+	MatchFinish         string          `bun:"match_finish" json:"match_finish"`
+	Handicap            odds_models.Bet `bun:"handicap" json:"handicap"`
+	FormLeagueHomeCount int             `bun:"form_league_home_count" json:"form_league_home_count"`
+	FormLeagueAwayCount int             `bun:"form_league_away_count" json:"form_league_away_count"`
+	HomeFormScore14     int             `bun:"home_form_14" json:"home_form_14"`
+	AwayFormScore14     int             `bun:"away_form_14" json:"away_form_14"`
 
 	HomeFormScore12 int `bun:"home_form_12" json:"home_form_12"`
 	AwayFormScore12 int `bun:"away_form_12" json:"away_form_12"`
