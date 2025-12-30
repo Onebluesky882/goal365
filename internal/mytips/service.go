@@ -5,6 +5,7 @@ import (
 	"log"
 	"mytipster/internal/fixtures/service"
 	"mytipster/lib"
+	"mytipster/lib/common"
 	fixture_module "mytipster/models/fixture"
 	m "mytipster/models/mytips"
 	odds_models "mytipster/models/odds"
@@ -62,10 +63,10 @@ func processSingleFixture(fixtureID string, bets []odds_models.Bet) (*m.MyTipsAn
 	if fx.Goals.Away != nil {
 		away = *fx.Goals.Away
 	}
-
 	item := &m.MyTipsAnalytics{
 		FixtureID:           fx.Fixture.ID,
-		Date:                fx.Fixture.Date,
+		Date:                common.TimestampDate(fx.Fixture.Timestamp),
+		TimeStamp:           common.Timestamp(fx.Fixture.Timestamp),
 		Country:             fx.League.Country,
 		League:              fx.League.Name,
 		Home:                pred.Teams.Home.Name,

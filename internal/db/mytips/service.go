@@ -10,8 +10,7 @@ import (
 	"github.com/uptrace/bun"
 )
 
-func CreateTable(db *bun.DB) error {
-	ctx := context.Background()
+func CreateTable(ctx context.Context, db *bun.DB) error {
 	_, err := db.NewCreateTable().
 		Model((*m.MyTipsAnalytics)(nil)).IfNotExists().
 		Exec(ctx)
@@ -56,4 +55,4 @@ func GetPredictionByDay(date string) ([]m.MyTipsAnalytics, error) {
 	return result, nil
 }
 
-func Update() {}
+// func UpdatePredictionAll(items []m.MyTipsAnalytics) error{}

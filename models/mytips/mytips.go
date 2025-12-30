@@ -13,11 +13,11 @@ type RootMyTipsAnalytics struct {
 type MyTipsAnalytics struct {
 	bun.BaseModel `bun:"table:mytips-analytics,alias:fa"`
 
-	ID        int64  `bun:",pk,autoincrement" json:"-"`
-	FixtureID int    `bun:"fixture_id,notnull" json:"fixture_id"`
-	Date      string `bun:"date" json:"date"`
-	League    string `bun:"league" json:"league"`
-
+	ID                  int64           `bun:",pk,autoincrement" json:"-"`
+	FixtureID           int             `bun:"fixture_id,notnull" json:"fixture_id"`
+	Date                string          `bun:"date" json:"date"`
+	League              string          `bun:"league" json:"league"`
+	TimeStamp           string          `bun:"timestamp" json:"timestamp"`
 	Country             string          `bun:"country" json:"country"`
 	Home                string          `bun:"team_home" json:"home"`
 	Away                string          `bun:"team_away" json:"away"`

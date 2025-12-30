@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"mytipster/internal/fixtures/service"
 	"mytipster/lib"
+	"mytipster/lib/common"
 	m "mytipster/models/fixture"
 
 	"github.com/gofiber/fiber/v2"
@@ -55,14 +56,15 @@ func Predictions(fixtureId string) (*m.RootFixtureAnalytics, error) {
 	}
 
 	item := m.FixtureAnalytics{
-				FixtureID: fx.Fixture.ID,
-		Date:      fx.Fixture.Date,
-		Country:   fx.League.Country,
-		League:    fx.League.Name,
-		Home:      pred.Teams.Home.Name,
-		Away:      pred.Teams.Away.Name,
-		HomeScore: pred.Teams.Home.Last5.Form,
-		AwayScore: pred.Teams.Away.Last5.Form,
+		FixtureID:           fx.Fixture.ID,
+		Date:                common.TimestampDate(fx.Fixture.Timestamp),
+		TimeStamp:           common.Timestamp(fx.Fixture.Timestamp),
+		Country:             fx.League.Country,
+		League:              fx.League.Name,
+		Home:                pred.Teams.Home.Name,
+		Away:                pred.Teams.Away.Name,
+		HomeScore:           pred.Teams.Home.Last5.Form,
+		AwayScore:           pred.Teams.Away.Last5.Form,
 		FormLeagueHomeCount: len(pred.Teams.Home.League.Form),
 		FormLeagueAwayCount: len(pred.Teams.Away.League.Form),
 		HomeFormScore14:     lib.FormScore(14, pred.Teams.Home.League.Form),
@@ -78,9 +80,9 @@ func Predictions(fixtureId string) (*m.RootFixtureAnalytics, error) {
 		MatchFinish:         fx.Fixture.Status.Long,
 		MatchResult:         fmt.Sprintf("%d-%d", home, away),
 		BetPick: m.BetPick{
-			Odds:   "0.5",
-			Picked: "derby",
-			Stake:  "", // win or lose
+			Odds:   "",
+			Picked: "",
+			Stake:  "",
 		},
 	}
 

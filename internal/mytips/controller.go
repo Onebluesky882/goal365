@@ -1,6 +1,7 @@
 package mytips
 
 import (
+	"fmt"
 	mytips_db "mytipster/internal/db/mytips"
 
 	"github.com/gofiber/fiber/v2"
@@ -8,7 +9,6 @@ import (
 
 func GetPredictionByDay(c *fiber.Ctx) error {
 
-	
 	date := c.Query("date")
 
 	predictions, err := mytips_db.GetPredictionByDay(date)
@@ -17,5 +17,7 @@ func GetPredictionByDay(c *fiber.Ctx) error {
 			"error": err.Error(),
 		})
 	}
+
+	fmt.Println("predictions :", predictions)
 	return c.JSON(predictions)
 }

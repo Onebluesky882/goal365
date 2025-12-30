@@ -1,12 +1,145 @@
 [
   {
+    "fixture_id": 1497963,
+    "date": "2025-12-30",
+    "league": "Premier League",
+    "timestamp": "23:00:00",
+    "country": "Mauritania",
+    "home": "Nouakchott King's",
+    "away": "Chemal",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "1.78"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "2.02"
+        }
+      ]
+    },
+    "form_league_home_count": 10,
+    "form_league_away_count": 10,
+    "home_form_14": 7,
+    "away_form_14": 12,
+    "home_form_12": 7,
+    "away_form_12": 12,
+    "home_form_10": 7,
+    "away_form_10": 12,
+    "home_form_7": 2,
+    "away_form_7": 7,
+    "home_form_5": 2,
+    "away_form_5": 7,
+    "home_score": "13%",
+    "away_score": "47%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1399695,
+    "date": "2025-12-31",
+    "league": "National League",
+    "timestamp": "02:45:00",
+    "country": "England",
+    "home": "Tamworth",
+    "away": "FC Halifax Town",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Away +0.25",
+          "odd": "2.15"
+        }
+      ]
+    },
+    "form_league_home_count": 24,
+    "form_league_away_count": 24,
+    "home_form_14": 15,
+    "away_form_14": 23,
+    "home_form_12": 13,
+    "away_form_12": 17,
+    "home_form_10": 9,
+    "away_form_10": 11,
+    "home_form_7": 6,
+    "away_form_7": 10,
+    "home_form_5": 3,
+    "away_form_5": 10,
+    "home_score": "20%",
+    "away_score": "67%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1401770,
+    "date": "2025-12-31",
+    "league": "National League - South",
+    "timestamp": "02:45:00",
+    "country": "England",
+    "home": "Dover",
+    "away": "Ebbsfleet United",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "1.98"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "2.08"
+        }
+      ]
+    },
+    "form_league_home_count": 23,
+    "form_league_away_count": 22,
+    "home_form_14": 17,
+    "away_form_14": 23,
+    "home_form_12": 16,
+    "away_form_12": 22,
+    "home_form_10": 14,
+    "away_form_10": 19,
+    "home_form_7": 13,
+    "away_form_7": 10,
+    "home_form_5": 9,
+    "away_form_5": 7,
+    "home_score": "60%",
+    "away_score": "47%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
     "fixture_id": 1488626,
-    "date": "2025-12-30T15:00:00+00:00",
+    "date": "2025-12-30",
     "league": "League Cup",
+    "timestamp": "22:00:00",
     "country": "Egypt",
     "home": "Al Ahly",
     "away": "El Mokawloon",
-    "match_finish": "Not Started",
+    "match_finish": "First Half",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
@@ -47,1628 +180,7 @@
     "away_form_5": 1,
     "home_score": "33%",
     "away_score": "17%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1379158,
-    "date": "2025-12-30T19:30:00+00:00",
-    "league": "Premier League",
-    "country": "England",
-    "home": "West Ham",
-    "away": "Brighton",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "2.00"
-        },
-        {
-          "value": "Away +0.25",
-          "odd": "1.85"
-        },
-        {
-          "value": "Away +0.5",
-          "odd": "2.08"
-        }
-      ]
-    },
-    "form_league_home_count": 18,
-    "form_league_away_count": 18,
-    "home_form_14": 10,
-    "away_form_14": 20,
-    "home_form_12": 9,
-    "away_form_12": 16,
-    "home_form_10": 9,
-    "away_form_10": 12,
-    "home_form_7": 3,
-    "away_form_7": 8,
-    "home_form_5": 2,
-    "away_form_5": 2,
-    "home_score": "13%",
-    "away_score": "13%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1382782,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "Premiership",
-    "country": "Scotland",
-    "home": "Hibernian",
-    "away": "Aberdeen",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.75",
-          "odd": "2.10"
-        },
-        {
-          "value": "Home -0.5",
-          "odd": "1.98"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.88"
-        }
-      ]
-    },
-    "form_league_home_count": 19,
-    "form_league_away_count": 18,
-    "home_form_14": 21,
-    "away_form_14": 24,
-    "home_form_12": 20,
-    "away_form_12": 24,
-    "home_form_10": 14,
-    "away_form_10": 18,
-    "home_form_7": 10,
-    "away_form_7": 14,
-    "home_form_5": 7,
-    "away_form_5": 8,
-    "home_score": "47%",
-    "away_score": "53%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1385461,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "Championship",
-    "country": "Northern-Ireland",
-    "home": "Armagh City",
-    "away": "Ards",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "2.15"
-        },
-        {
-          "value": "Home +0.5",
-          "odd": "1.90"
-        },
-        {
-          "value": "Away +0.5",
-          "odd": "1.90"
-        },
-        {
-          "value": "Away +0.75",
-          "odd": "2.10"
-        }
-      ]
-    },
-    "form_league_home_count": 22,
-    "form_league_away_count": 21,
-    "home_form_14": 10,
-    "away_form_14": 12,
-    "home_form_12": 6,
-    "away_form_12": 8,
-    "home_form_10": 6,
-    "away_form_10": 5,
-    "home_form_7": 3,
-    "away_form_7": 5,
-    "home_form_5": 3,
-    "away_form_5": 5,
-    "home_score": "20%",
-    "away_score": "33%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1401772,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League - South",
-    "country": "England",
-    "home": "Hemel Hempstead Town",
-    "away": "Enfield Town",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -1",
-          "odd": "2.20"
-        },
-        {
-          "value": "Home -0.75",
-          "odd": "1.90"
-        },
-        {
-          "value": "Away -0.75",
-          "odd": "1.90"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "2.10"
-        }
-      ]
-    },
-    "form_league_home_count": 22,
-    "form_league_away_count": 22,
-    "home_form_14": 23,
-    "away_form_14": 14,
-    "home_form_12": 17,
-    "away_form_12": 11,
-    "home_form_10": 14,
-    "away_form_10": 8,
-    "home_form_7": 8,
-    "away_form_7": 8,
-    "home_form_5": 4,
-    "away_form_5": 8,
-    "home_score": "27%",
-    "away_score": "53%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1401778,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League - South",
-    "country": "England",
-    "home": "Worthing",
-    "away": "Dorking Wanderers",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.75",
-          "odd": "2.20"
-        },
-        {
-          "value": "Home -0.5",
-          "odd": "2.05"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.75"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "2.08"
-        }
-      ]
-    },
-    "form_league_home_count": 22,
-    "form_league_away_count": 23,
-    "home_form_14": 33,
-    "away_form_14": 29,
-    "home_form_12": 33,
-    "away_form_12": 28,
-    "home_form_10": 27,
-    "away_form_10": 24,
-    "home_form_7": 18,
-    "away_form_7": 15,
-    "home_form_5": 12,
-    "away_form_5": 12,
-    "home_score": "80%",
-    "away_score": "80%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1402319,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League - North",
-    "country": "England",
-    "home": "Alfreton Town",
-    "away": "Leamington",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.75",
-          "odd": "2.08"
-        },
-        {
-          "value": "Home -0.5",
-          "odd": "1.82"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.98"
-        }
-      ]
-    },
-    "form_league_home_count": 22,
-    "form_league_away_count": 22,
-    "home_form_14": 13,
-    "away_form_14": 3,
-    "home_form_12": 10,
-    "away_form_12": 2,
-    "home_form_10": 9,
-    "away_form_10": 2,
-    "home_form_7": 5,
-    "away_form_7": 1,
-    "home_form_5": 2,
-    "away_form_5": 1,
-    "home_score": "13%",
-    "away_score": "7%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1402328,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League - North",
-    "country": "England",
-    "home": "Radcliffe",
-    "away": "AFC Fylde",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "1.80"
-        },
-        {
-          "value": "Away +0.25",
-          "odd": "2.00"
-        }
-      ]
-    },
-    "form_league_home_count": 22,
-    "form_league_away_count": 23,
-    "home_form_14": 27,
-    "away_form_14": 28,
-    "home_form_12": 21,
-    "away_form_12": 27,
-    "home_form_10": 17,
-    "away_form_10": 21,
-    "home_form_7": 10,
-    "away_form_7": 15,
-    "home_form_5": 10,
-    "away_form_5": 12,
-    "home_score": "67%",
-    "away_score": "80%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1435604,
-    "date": "2025-12-30T09:00:00+00:00",
-    "league": "National League",
-    "country": "Myanmar",
-    "home": "Yadanarbon",
-    "away": "Dagon",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.25",
-          "odd": "2.00"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "1.80"
-        }
-      ]
-    },
-    "form_league_home_count": 9,
-    "form_league_away_count": 9,
-    "home_form_14": 17,
-    "away_form_14": 15,
-    "home_form_12": 17,
-    "away_form_12": 15,
-    "home_form_10": 17,
-    "away_form_10": 15,
-    "home_form_7": 14,
-    "away_form_7": 9,
-    "home_form_5": 10,
-    "away_form_5": 5,
-    "home_score": "67%",
-    "away_score": "33%",
-    "match_result": "2-1",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1379152,
-    "date": "2025-12-30T19:30:00+00:00",
-    "league": "Premier League",
-    "country": "England",
-    "home": "Chelsea",
-    "away": "Bournemouth",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -1",
-          "odd": "1.85"
-        },
-        {
-          "value": "Away -1",
-          "odd": "2.00"
-        }
-      ]
-    },
-    "form_league_home_count": 18,
-    "form_league_away_count": 18,
-    "home_form_14": 21,
-    "away_form_14": 13,
-    "home_form_12": 21,
-    "away_form_12": 11,
-    "home_form_10": 15,
-    "away_form_10": 7,
-    "home_form_7": 9,
-    "away_form_7": 4,
-    "home_form_5": 5,
-    "away_form_5": 3,
-    "home_score": "33%",
-    "away_score": "20%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1389701,
-    "date": "2025-12-30T17:00:00+00:00",
-    "league": "Ligat Ha'al",
-    "country": "Israel",
-    "home": "Maccabi Bnei Raina",
-    "away": "Ironi Kiryat Shmona",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "1.90"
-        },
-        {
-          "value": "Away +0.25",
-          "odd": "1.90"
-        },
-        {
-          "value": "Away +0.5",
-          "odd": "2.15"
-        }
-      ]
-    },
-    "form_league_home_count": 15,
-    "form_league_away_count": 15,
-    "home_form_14": 4,
-    "away_form_14": 13,
-    "home_form_12": 3,
-    "away_form_12": 9,
-    "home_form_10": 3,
-    "away_form_10": 9,
-    "home_form_7": 3,
-    "away_form_7": 5,
-    "home_form_5": 3,
-    "away_form_5": 2,
-    "home_score": "20%",
-    "away_score": "13%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1401767,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League - South",
-    "country": "England",
-    "home": "AFC Totton",
-    "away": "Chippenham Town",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.75",
-          "odd": "2.00"
-        },
-        {
-          "value": "Away -0.75",
-          "odd": "1.80"
-        },
-        {
-          "value": "Home -0.5",
-          "odd": "1.78"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "2.02"
-        }
-      ]
-    },
-    "form_league_home_count": 23,
-    "form_league_away_count": 23,
-    "home_form_14": 16,
-    "away_form_14": 10,
-    "home_form_12": 10,
-    "away_form_12": 9,
-    "home_form_10": 7,
-    "away_form_10": 9,
-    "home_form_7": 4,
-    "away_form_7": 8,
-    "home_form_5": 3,
-    "away_form_5": 4,
-    "home_score": "20%",
-    "away_score": "27%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1403632,
-    "date": "2025-12-30T08:30:00+00:00",
-    "league": "Liga 1",
-    "country": "Indonesia",
-    "home": "Arema FC",
-    "away": "Persita",
-    "match_finish": "Second Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "2.02"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.78"
-        },
-        {
-          "value": "Home -0.25",
-          "odd": "1.80"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "2.00"
-        }
-      ]
-    },
-    "form_league_home_count": 14,
-    "form_league_away_count": 14,
-    "home_form_14": 18,
-    "away_form_14": 22,
-    "home_form_12": 14,
-    "away_form_12": 22,
-    "home_form_10": 10,
-    "away_form_10": 18,
-    "home_form_7": 9,
-    "away_form_7": 9,
-    "home_form_5": 6,
-    "away_form_5": 5,
-    "home_score": "40%",
-    "away_score": "33%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1482235,
-    "date": "2025-12-30T13:00:00+00:00",
-    "league": "Premier League",
-    "country": "Ethiopia",
-    "home": "Suhul Shire",
-    "away": "Adama Kenema",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "1.82"
-        },
-        {
-          "value": "Away +0.25",
-          "odd": "1.98"
-        }
-      ]
-    },
-    "form_league_home_count": 11,
-    "form_league_away_count": 11,
-    "home_form_14": 14,
-    "away_form_14": 17,
-    "home_form_12": 14,
-    "away_form_12": 17,
-    "home_form_10": 11,
-    "away_form_10": 16,
-    "home_form_7": 9,
-    "away_form_7": 11,
-    "home_form_5": 8,
-    "away_form_5": 8,
-    "home_score": "53%",
-    "away_score": "53%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1482318,
-    "date": "2025-12-30T10:00:00+00:00",
-    "league": "Premier League",
-    "country": "Ethiopia",
-    "home": "Dire Dawa Kenema",
-    "away": "Negelle Arsi",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "1.82"
-        },
-        {
-          "value": "Away +0.25",
-          "odd": "1.98"
-        }
-      ]
-    },
-    "form_league_home_count": 11,
-    "form_league_away_count": 11,
-    "home_form_14": 16,
-    "away_form_14": 16,
-    "home_form_12": 16,
-    "away_form_12": 16,
-    "home_form_10": 16,
-    "away_form_10": 15,
-    "home_form_7": 10,
-    "away_form_7": 14,
-    "home_form_5": 6,
-    "away_form_5": 10,
-    "home_score": "40%",
-    "away_score": "67%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1498953,
-    "date": "2025-12-30T15:30:00+00:00",
-    "league": "Iraqi League",
-    "country": "Iraq",
-    "home": "Al Quwa Al Jawiya",
-    "away": "Duhok",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "1.90"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.90"
-        }
-      ]
-    },
-    "form_league_home_count": 8,
-    "form_league_away_count": 8,
-    "home_form_14": 17,
-    "away_form_14": 8,
-    "home_form_12": 17,
-    "away_form_12": 8,
-    "home_form_10": 17,
-    "away_form_10": 8,
-    "home_form_7": 14,
-    "away_form_7": 8,
-    "home_form_5": 11,
-    "away_form_5": 8,
-    "home_score": "73%",
-    "away_score": "53%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1399697,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League",
-    "country": "England",
-    "home": "Yeovil Town",
-    "away": "Eastleigh",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.25",
-          "odd": "2.10"
-        }
-      ]
-    },
-    "form_league_home_count": 24,
-    "form_league_away_count": 23,
-    "home_form_14": 17,
-    "away_form_14": 17,
-    "home_form_12": 11,
-    "away_form_12": 13,
-    "home_form_10": 8,
-    "away_form_10": 9,
-    "home_form_7": 7,
-    "away_form_7": 5,
-    "home_form_5": 7,
-    "away_form_5": 5,
-    "home_score": "47%",
-    "away_score": "33%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1402322,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League - North",
-    "country": "England",
-    "home": "Chester",
-    "away": "Macclesfield",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "2.20"
-        },
-        {
-          "value": "Home -0.25",
-          "odd": "1.95"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "1.85"
-        }
-      ]
-    },
-    "form_league_home_count": 22,
-    "form_league_away_count": 20,
-    "home_form_14": 21,
-    "away_form_14": 19,
-    "home_form_12": 19,
-    "away_form_12": 18,
-    "home_form_10": 15,
-    "away_form_10": 18,
-    "home_form_7": 11,
-    "away_form_7": 9,
-    "home_form_5": 7,
-    "away_form_5": 5,
-    "home_score": "47%",
-    "away_score": "33%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1402326,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League - North",
-    "country": "England",
-    "home": "Merthyr Town",
-    "away": "Hereford",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "2.00"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.80"
-        },
-        {
-          "value": "Home -0.25",
-          "odd": "1.75"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "2.05"
-        }
-      ]
-    },
-    "form_league_home_count": 23,
-    "form_league_away_count": 20,
-    "home_form_14": 31,
-    "away_form_14": 14,
-    "home_form_12": 30,
-    "away_form_12": 12,
-    "home_form_10": 27,
-    "away_form_10": 6,
-    "home_form_7": 18,
-    "away_form_7": 5,
-    "home_form_5": 12,
-    "away_form_5": 4,
-    "home_score": "80%",
-    "away_score": "27%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1402330,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League - North",
-    "country": "England",
-    "home": "Spennymoor Town",
-    "away": "Scarborough Athletic",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "2.02"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.78"
-        },
-        {
-          "value": "Home -0.25",
-          "odd": "1.78"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "2.02"
-        }
-      ]
-    },
-    "form_league_home_count": 22,
-    "form_league_away_count": 22,
-    "home_form_14": 19,
-    "away_form_14": 18,
-    "home_form_12": 13,
-    "away_form_12": 12,
-    "home_form_10": 10,
-    "away_form_10": 9,
-    "home_form_7": 6,
-    "away_form_7": 9,
-    "home_form_5": 6,
-    "away_form_5": 5,
-    "home_score": "40%",
-    "away_score": "33%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1385268,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "Premiership",
-    "country": "Northern-Ireland",
-    "home": "Larne",
-    "away": "Cliftonville FC",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.75",
-          "odd": "2.15"
-        },
-        {
-          "value": "Home -0.5",
-          "odd": "1.90"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.90"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "2.20"
-        }
-      ]
-    },
-    "form_league_home_count": 20,
-    "form_league_away_count": 19,
-    "home_form_14": 35,
-    "away_form_14": 24,
-    "home_form_12": 29,
-    "away_form_12": 18,
-    "home_form_10": 26,
-    "away_form_10": 18,
-    "home_form_7": 19,
-    "away_form_7": 14,
-    "home_form_5": 13,
-    "away_form_5": 8,
-    "home_score": "87%",
-    "away_score": "53%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1402323,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League - North",
-    "country": "England",
-    "home": "Chorley",
-    "away": "Marine",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "2.00"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.80"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "2.08"
-        }
-      ]
-    },
-    "form_league_home_count": 23,
-    "form_league_away_count": 22,
-    "home_form_14": 11,
-    "away_form_14": 25,
-    "home_form_12": 10,
-    "away_form_12": 21,
-    "home_form_10": 9,
-    "away_form_10": 18,
-    "home_form_7": 9,
-    "away_form_7": 14,
-    "home_form_5": 5,
-    "away_form_5": 8,
-    "home_score": "33%",
-    "away_score": "53%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1347268,
-    "date": "2025-12-30T16:00:00+00:00",
-    "league": "Africa Cup of Nations",
-    "country": "World",
-    "home": "Tanzania",
-    "away": "Tunisia",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +1",
-          "odd": "1.88"
-        },
-        {
-          "value": "Away +1",
-          "odd": "1.92"
-        }
-      ]
-    },
-    "form_league_home_count": 2,
-    "form_league_away_count": 2,
-    "home_form_14": 1,
-    "away_form_14": 3,
-    "home_form_12": 1,
-    "away_form_12": 3,
-    "home_form_10": 1,
-    "away_form_10": 3,
-    "home_form_7": 1,
-    "away_form_7": 3,
-    "home_form_5": 1,
-    "away_form_5": 3,
-    "home_score": "17%",
-    "away_score": "50%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1382784,
-    "date": "2025-12-30T20:00:00+00:00",
-    "league": "Premiership",
-    "country": "Scotland",
-    "home": "Motherwell",
-    "away": "Celtic",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.5",
-          "odd": "2.10"
-        },
-        {
-          "value": "Home +0.75",
-          "odd": "1.92"
-        },
-        {
-          "value": "Away +0.75",
-          "odd": "1.92"
-        },
-        {
-          "value": "Away +1",
-          "odd": "2.20"
-        }
-      ]
-    },
-    "form_league_home_count": 19,
-    "form_league_away_count": 18,
-    "home_form_14": 25,
-    "away_form_14": 28,
-    "home_form_12": 22,
-    "away_form_12": 24,
-    "home_form_10": 19,
-    "away_form_10": 21,
-    "home_form_7": 12,
-    "away_form_7": 15,
-    "home_form_5": 8,
-    "away_form_5": 9,
-    "home_score": "53%",
-    "away_score": "60%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1389699,
-    "date": "2025-12-30T17:30:00+00:00",
-    "league": "Ligat Ha'al",
-    "country": "Israel",
-    "home": "Hapoel Haifa",
-    "away": "Bnei Sakhnin",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "2.05"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.75"
-        },
-        {
-          "value": "Home -0.25",
-          "odd": "1.80"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "2.00"
-        }
-      ]
-    },
-    "form_league_home_count": 15,
-    "form_league_away_count": 15,
-    "home_form_14": 18,
-    "away_form_14": 20,
-    "home_form_12": 12,
-    "away_form_12": 17,
-    "home_form_10": 11,
-    "away_form_10": 16,
-    "home_form_7": 7,
-    "away_form_7": 9,
-    "home_form_5": 6,
-    "away_form_5": 7,
-    "home_score": "40%",
-    "away_score": "47%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1401774,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League - South",
-    "country": "England",
-    "home": "Horsham",
-    "away": "Farnborough",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.75",
-          "odd": "2.08"
-        },
-        {
-          "value": "Home -0.5",
-          "odd": "1.85"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.95"
-        }
-      ]
-    },
-    "form_league_home_count": 24,
-    "form_league_away_count": 24,
-    "home_form_14": 26,
-    "away_form_14": 15,
-    "home_form_12": 22,
-    "away_form_12": 15,
-    "home_form_10": 16,
-    "away_form_10": 11,
-    "home_form_7": 9,
-    "away_form_7": 8,
-    "home_form_5": 7,
-    "away_form_5": 7,
-    "home_score": "47%",
-    "away_score": "47%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1401777,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League - South",
-    "country": "England",
-    "home": "Weston-super-Mare",
-    "away": "Salisbury",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -1",
-          "odd": "2.15"
-        },
-        {
-          "value": "Home -0.75",
-          "odd": "1.85"
-        },
-        {
-          "value": "Away -0.75",
-          "odd": "1.95"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "2.15"
-        }
-      ]
-    },
-    "form_league_home_count": 22,
-    "form_league_away_count": 24,
-    "home_form_14": 23,
-    "away_form_14": 22,
-    "home_form_12": 20,
-    "away_form_12": 16,
-    "home_form_10": 14,
-    "away_form_10": 16,
-    "home_form_7": 10,
-    "away_form_7": 9,
-    "home_form_5": 7,
-    "away_form_5": 6,
-    "home_score": "47%",
-    "away_score": "40%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1347267,
-    "date": "2025-12-30T16:00:00+00:00",
-    "league": "Africa Cup of Nations",
-    "country": "World",
-    "home": "Uganda",
-    "away": "Nigeria",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "2.00"
-        },
-        {
-          "value": "Away +0.25",
-          "odd": "1.80"
-        },
-        {
-          "value": "Away +0.5",
-          "odd": "2.20"
-        }
-      ]
-    },
-    "form_league_home_count": 2,
-    "form_league_away_count": 2,
-    "home_form_14": 1,
-    "away_form_14": 6,
-    "home_form_12": 1,
-    "away_form_12": 6,
-    "home_form_10": 1,
-    "away_form_10": 6,
-    "home_form_7": 1,
-    "away_form_7": 6,
-    "home_form_5": 1,
-    "away_form_5": 6,
-    "home_score": "17%",
-    "away_score": "100%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1382783,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "Premiership",
-    "country": "Scotland",
-    "home": "Livingston",
-    "away": "Dundee Utd",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.25",
-          "odd": "2.20"
-        }
-      ]
-    },
-    "form_league_home_count": 18,
-    "form_league_away_count": 19,
-    "home_form_14": 5,
-    "away_form_14": 14,
-    "home_form_12": 4,
-    "away_form_12": 13,
-    "home_form_10": 3,
-    "away_form_10": 9,
-    "home_form_7": 2,
-    "away_form_7": 8,
-    "home_form_5": 1,
-    "away_form_5": 6,
-    "home_score": "7%",
-    "away_score": "40%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1398112,
-    "date": "2025-12-30T20:15:00+00:00",
-    "league": "Segunda Liga",
-    "country": "Portugal",
-    "home": "Torreense",
-    "away": "Lusitânia Lourosa",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "2.15"
-        },
-        {
-          "value": "Home -0.25",
-          "odd": "1.88"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "1.92"
-        }
-      ]
-    },
-    "form_league_home_count": 15,
-    "form_league_away_count": 15,
-    "home_form_14": 20,
-    "away_form_14": 17,
-    "home_form_12": 14,
-    "away_form_12": 15,
-    "home_form_10": 13,
-    "away_form_10": 14,
-    "home_form_7": 6,
-    "away_form_7": 11,
-    "home_form_5": 0,
-    "away_form_5": 10,
-    "home_score": "0%",
-    "away_score": "67%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1399686,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League",
-    "country": "England",
-    "home": "Aldershot Town",
-    "away": "Wealdstone",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "2.20"
-        },
-        {
-          "value": "Home -0.25",
-          "odd": "1.98"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "1.82"
-        }
-      ]
-    },
-    "form_league_home_count": 24,
-    "form_league_away_count": 23,
-    "home_form_14": 8,
-    "away_form_14": 19,
-    "home_form_12": 8,
-    "away_form_12": 17,
-    "home_form_10": 7,
-    "away_form_10": 13,
-    "home_form_7": 7,
-    "away_form_7": 7,
-    "home_form_5": 7,
-    "away_form_5": 3,
-    "home_score": "47%",
-    "away_score": "20%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1399687,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League",
-    "country": "England",
-    "home": "Altrincham",
-    "away": "York",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +1",
-          "odd": "2.02"
-        },
-        {
-          "value": "Away +1",
-          "odd": "1.78"
-        }
-      ]
-    },
-    "form_league_home_count": 24,
-    "form_league_away_count": 23,
-    "home_form_14": 14,
-    "away_form_14": 31,
-    "home_form_12": 14,
-    "away_form_12": 30,
-    "home_form_10": 13,
-    "away_form_10": 24,
-    "home_form_7": 9,
-    "away_form_7": 19,
-    "home_form_5": 3,
-    "away_form_5": 13,
-    "home_score": "20%",
-    "away_score": "87%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1382780,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "Premiership",
-    "country": "Scotland",
-    "home": "Dundee",
-    "away": "Kilmarnock",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Away +0.25",
-          "odd": "2.20"
-        }
-      ]
-    },
-    "form_league_home_count": 19,
-    "form_league_away_count": 19,
-    "home_form_14": 13,
-    "away_form_14": 9,
-    "home_form_12": 10,
-    "away_form_12": 3,
-    "home_form_10": 7,
-    "away_form_10": 3,
-    "home_form_7": 7,
-    "away_form_7": 3,
-    "home_form_5": 4,
-    "away_form_5": 2,
-    "home_score": "27%",
-    "away_score": "13%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1385264,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "Premiership",
-    "country": "Northern-Ireland",
-    "home": "Coleraine FC",
-    "away": "Linfield",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "2.02"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.78"
-        },
-        {
-          "value": "Home -0.25",
-          "odd": "1.75"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "2.05"
-        }
-      ]
-    },
-    "form_league_home_count": 22,
-    "form_league_away_count": 19,
-    "home_form_14": 23,
-    "away_form_14": 25,
-    "home_form_12": 20,
-    "away_form_12": 19,
-    "home_form_10": 14,
-    "away_form_10": 16,
-    "home_form_7": 9,
-    "away_form_7": 13,
-    "home_form_5": 9,
-    "away_form_5": 7,
-    "home_score": "60%",
-    "away_score": "47%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1385265,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "Premiership",
-    "country": "Northern-Ireland",
-    "home": "Crusaders FC",
-    "away": "Carrick Rangers",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Away +0.25",
-          "odd": "2.08"
-        }
-      ]
-    },
-    "form_league_home_count": 21,
-    "form_league_away_count": 19,
-    "home_form_14": 14,
-    "away_form_14": 8,
-    "home_form_12": 10,
-    "away_form_12": 8,
-    "home_form_10": 10,
-    "away_form_10": 5,
-    "home_form_7": 4,
-    "away_form_7": 2,
-    "home_form_5": 3,
-    "away_form_5": 2,
-    "home_score": "20%",
-    "away_score": "13%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1385267,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "Premiership",
-    "country": "Northern-Ireland",
-    "home": "Glentoran",
-    "away": "Portadown",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Away -1",
-          "odd": "2.10"
-        }
-      ]
-    },
-    "form_league_home_count": 19,
-    "form_league_away_count": 22,
-    "home_form_14": 24,
-    "away_form_14": 22,
-    "home_form_12": 20,
-    "away_form_12": 16,
-    "home_form_10": 17,
-    "away_form_10": 13,
-    "home_form_7": 8,
-    "away_form_7": 13,
-    "home_form_5": 8,
-    "away_form_5": 9,
-    "home_score": "53%",
-    "away_score": "60%",
-    "match_result": "0-0",
+    "match_result": "0-2",
     "bet_pick": {
       "odds": "",
       "picked": "",
@@ -1677,8 +189,9 @@
   },
   {
     "fixture_id": 1402321,
-    "date": "2025-12-30T19:45:00+00:00",
+    "date": "2025-12-31",
     "league": "National League - North",
+    "timestamp": "02:45:00",
     "country": "England",
     "home": "Buxton",
     "away": "Worksop Town",
@@ -1727,397 +240,42 @@
     }
   },
   {
-    "fixture_id": 1481668,
-    "date": "2025-12-30T12:55:00+00:00",
-    "league": "Division 1",
-    "country": "United-Arab-Emirates",
-    "home": "Al Hamriyah",
-    "away": "Al Arabi",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.25",
-          "odd": "1.92"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "1.88"
-        }
-      ]
-    },
-    "form_league_home_count": 9,
-    "form_league_away_count": 10,
-    "home_form_14": 14,
-    "away_form_14": 16,
-    "home_form_12": 14,
-    "away_form_12": 16,
-    "home_form_10": 14,
-    "away_form_10": 16,
-    "home_form_7": 8,
-    "away_form_7": 10,
-    "home_form_5": 6,
-    "away_form_5": 6,
-    "home_score": "40%",
-    "away_score": "40%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1482317,
-    "date": "2025-12-30T15:00:00+00:00",
+    "fixture_id": 1379152,
+    "date": "2025-12-31",
     "league": "Premier League",
-    "country": "Ethiopia",
-    "home": "Sidama Bunna",
-    "away": "Sheger Ketema",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "1.80"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "2.00"
-        }
-      ]
-    },
-    "form_league_home_count": 11,
-    "form_league_away_count": 10,
-    "home_form_14": 22,
-    "away_form_14": 12,
-    "home_form_12": 22,
-    "away_form_12": 12,
-    "home_form_10": 19,
-    "away_form_10": 12,
-    "home_form_7": 13,
-    "away_form_7": 8,
-    "home_form_5": 9,
-    "away_form_5": 4,
-    "home_score": "60%",
-    "away_score": "27%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1488625,
-    "date": "2025-12-30T15:00:00+00:00",
-    "league": "League Cup",
-    "country": "Egypt",
-    "home": "El Geish",
-    "away": "Ghazl El Mehalla",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.25",
-          "odd": "2.05"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "1.75"
-        }
-      ]
-    },
-    "form_league_home_count": 3,
-    "form_league_away_count": 2,
-    "home_form_14": 4,
-    "away_form_14": 3,
-    "home_form_12": 4,
-    "away_form_12": 3,
-    "home_form_10": 4,
-    "away_form_10": 3,
-    "home_form_7": 4,
-    "away_form_7": 3,
-    "home_form_5": 4,
-    "away_form_5": 3,
-    "home_score": "44%",
-    "away_score": "50%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1399694,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League",
+    "timestamp": "02:30:00",
     "country": "England",
-    "home": "Southend",
-    "away": "Sutton Utd",
+    "home": "Chelsea",
+    "away": "Bournemouth",
     "match_finish": "Not Started",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
       "values": [
         {
-          "value": "Away -1",
-          "odd": "2.08"
-        }
-      ]
-    },
-    "form_league_home_count": 22,
-    "form_league_away_count": 23,
-    "home_form_14": 21,
-    "away_form_14": 18,
-    "home_form_12": 20,
-    "away_form_12": 17,
-    "home_form_10": 19,
-    "away_form_10": 16,
-    "home_form_7": 10,
-    "away_form_7": 14,
-    "home_form_5": 9,
-    "away_form_5": 10,
-    "home_score": "60%",
-    "away_score": "67%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1401775,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League - South",
-    "country": "England",
-    "home": "Slough Town",
-    "away": "Chesham United",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Away +0.25",
-          "odd": "2.10"
-        }
-      ]
-    },
-    "form_league_home_count": 22,
-    "form_league_away_count": 23,
-    "home_form_14": 13,
-    "away_form_14": 23,
-    "home_form_12": 10,
-    "away_form_12": 19,
-    "home_form_10": 10,
-    "away_form_10": 16,
-    "home_form_7": 10,
-    "away_form_7": 9,
-    "home_form_5": 7,
-    "away_form_5": 9,
-    "home_score": "47%",
-    "away_score": "60%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1401776,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League - South",
-    "country": "England",
-    "home": "Tonbridge Angels",
-    "away": "Eastbourne Borough",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Away +0.25",
-          "odd": "2.10"
-        }
-      ]
-    },
-    "form_league_home_count": 23,
-    "form_league_away_count": 23,
-    "home_form_14": 16,
-    "away_form_14": 14,
-    "home_form_12": 13,
-    "away_form_12": 10,
-    "home_form_10": 11,
-    "away_form_10": 10,
-    "home_form_7": 8,
-    "away_form_7": 7,
-    "home_form_5": 7,
-    "away_form_5": 6,
-    "home_score": "47%",
-    "away_score": "40%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1402324,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League - North",
-    "country": "England",
-    "home": "Darlington 1883",
-    "away": "South Shields",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "2.00"
-        },
-        {
-          "value": "Away +0.25",
-          "odd": "1.80"
-        },
-        {
-          "value": "Home +0.5",
-          "odd": "1.75"
-        },
-        {
-          "value": "Away +0.5",
-          "odd": "2.05"
-        }
-      ]
-    },
-    "form_league_home_count": 23,
-    "form_league_away_count": 23,
-    "home_form_14": 26,
-    "away_form_14": 29,
-    "home_form_12": 23,
-    "away_form_12": 23,
-    "home_form_10": 20,
-    "away_form_10": 20,
-    "home_form_7": 14,
-    "away_form_7": 16,
-    "home_form_5": 8,
-    "away_form_5": 12,
-    "home_score": "53%",
-    "away_score": "80%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1435605,
-    "date": "2025-12-30T09:30:00+00:00",
-    "league": "National League",
-    "country": "Myanmar",
-    "home": "Dagon Port",
-    "away": "Thitsar Arman",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
+          "value": "Home -1",
           "odd": "1.85"
         },
         {
-          "value": "Away +0.25",
-          "odd": "1.95"
-        },
-        {
-          "value": "Home +0.5",
-          "odd": "1.98"
-        },
-        {
-          "value": "Away +0.5",
-          "odd": "1.82"
-        }
-      ]
-    },
-    "form_league_home_count": 9,
-    "form_league_away_count": 9,
-    "home_form_14": 5,
-    "away_form_14": 8,
-    "home_form_12": 5,
-    "away_form_12": 8,
-    "home_form_10": 5,
-    "away_form_10": 8,
-    "home_form_7": 2,
-    "away_form_7": 7,
-    "home_form_5": 2,
-    "away_form_5": 4,
-    "home_score": "13%",
-    "away_score": "27%",
-    "match_result": "1-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1437405,
-    "date": "2025-12-30T12:25:00+00:00",
-    "league": "Division 1",
-    "country": "Saudi-Arabia",
-    "home": "Al Arabi SC",
-    "away": "Al Wehda Club",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "2.00"
-        },
-        {
-          "value": "Away +0.25",
-          "odd": "1.80"
-        },
-        {
-          "value": "Home +0.5",
-          "odd": "1.80"
-        },
-        {
-          "value": "Away +0.5",
+          "value": "Away -1",
           "odd": "2.00"
         }
       ]
     },
-    "form_league_home_count": 13,
-    "form_league_away_count": 13,
-    "home_form_14": 13,
-    "away_form_14": 15,
-    "home_form_12": 12,
-    "away_form_12": 15,
-    "home_form_10": 11,
-    "away_form_10": 15,
-    "home_form_7": 5,
-    "away_form_7": 14,
-    "home_form_5": 4,
-    "away_form_5": 10,
-    "home_score": "27%",
-    "away_score": "67%",
+    "form_league_home_count": 18,
+    "form_league_away_count": 18,
+    "home_form_14": 21,
+    "away_form_14": 13,
+    "home_form_12": 21,
+    "away_form_12": 11,
+    "home_form_10": 15,
+    "away_form_10": 7,
+    "home_form_7": 9,
+    "away_form_7": 4,
+    "home_form_5": 5,
+    "away_form_5": 3,
+    "home_score": "33%",
+    "away_score": "20%",
     "match_result": "0-0",
     "bet_pick": {
       "odds": "",
@@ -2126,12 +284,13 @@
     }
   },
   {
-    "fixture_id": 1402329,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League - North",
+    "fixture_id": 1379156,
+    "date": "2025-12-31",
+    "league": "Premier League",
+    "timestamp": "02:30:00",
     "country": "England",
-    "home": "Southport",
-    "away": "Curzon Ashton",
+    "home": "Nottingham Forest",
+    "away": "Everton",
     "match_finish": "Not Started",
     "handicap": {
       "id": 4,
@@ -2147,71 +306,24 @@
         },
         {
           "value": "Away -0.25",
-          "odd": "1.98"
+          "odd": "2.02"
         }
       ]
     },
-    "form_league_home_count": 23,
-    "form_league_away_count": 23,
-    "home_form_14": 19,
-    "away_form_14": 21,
-    "home_form_12": 15,
-    "away_form_12": 15,
-    "home_form_10": 15,
-    "away_form_10": 12,
-    "home_form_7": 8,
-    "away_form_7": 7,
+    "form_league_home_count": 18,
+    "form_league_away_count": 18,
+    "home_form_14": 14,
+    "away_form_14": 18,
+    "home_form_12": 13,
+    "away_form_12": 17,
+    "home_form_10": 13,
+    "away_form_10": 14,
+    "home_form_7": 9,
+    "away_form_7": 10,
     "home_form_5": 6,
-    "away_form_5": 4,
+    "away_form_5": 7,
     "home_score": "40%",
-    "away_score": "27%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1399696,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League",
-    "country": "England",
-    "home": "Woking",
-    "away": "Braintree",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.75",
-          "odd": "2.08"
-        },
-        {
-          "value": "Home -0.5",
-          "odd": "1.82"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.98"
-        }
-      ]
-    },
-    "form_league_home_count": 24,
-    "form_league_away_count": 24,
-    "home_form_14": 24,
-    "away_form_14": 11,
-    "home_form_12": 23,
-    "away_form_12": 11,
-    "home_form_10": 19,
-    "away_form_10": 9,
-    "home_form_7": 14,
-    "away_form_7": 8,
-    "home_form_5": 10,
-    "away_form_5": 5,
-    "home_score": "67%",
-    "away_score": "33%",
+    "away_score": "47%",
     "match_result": "0-0",
     "bet_pick": {
       "odds": "",
@@ -2221,8 +333,9 @@
   },
   {
     "fixture_id": 1401768,
-    "date": "2025-12-30T19:45:00+00:00",
+    "date": "2025-12-31",
     "league": "National League - South",
+    "timestamp": "02:45:00",
     "country": "England",
     "home": "Bath City",
     "away": "Torquay",
@@ -2271,44 +384,277 @@
     }
   },
   {
-    "fixture_id": 1401770,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League - South",
+    "fixture_id": 1402329,
+    "date": "2025-12-31",
+    "league": "National League - North",
+    "timestamp": "02:45:00",
     "country": "England",
-    "home": "Dover",
-    "away": "Ebbsfleet United",
+    "home": "Southport",
+    "away": "Curzon Ashton",
     "match_finish": "Not Started",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
       "values": [
         {
-          "value": "Home +0.25",
-          "odd": "1.98"
+          "value": "Home -0.5",
+          "odd": "2.08"
         },
         {
-          "value": "Away +0.25",
+          "value": "Home -0.25",
           "odd": "1.82"
         },
         {
-          "value": "Away +0.5",
-          "odd": "2.08"
+          "value": "Away -0.25",
+          "odd": "1.98"
         }
       ]
     },
     "form_league_home_count": 23,
-    "form_league_away_count": 22,
-    "home_form_14": 17,
-    "away_form_14": 23,
-    "home_form_12": 16,
-    "away_form_12": 22,
-    "home_form_10": 14,
-    "away_form_10": 19,
+    "form_league_away_count": 23,
+    "home_form_14": 19,
+    "away_form_14": 21,
+    "home_form_12": 15,
+    "away_form_12": 15,
+    "home_form_10": 15,
+    "away_form_10": 12,
+    "home_form_7": 8,
+    "away_form_7": 7,
+    "home_form_5": 6,
+    "away_form_5": 4,
+    "home_score": "40%",
+    "away_score": "27%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1482317,
+    "date": "2025-12-30",
+    "league": "Premier League",
+    "timestamp": "22:00:00",
+    "country": "Ethiopia",
+    "home": "Sidama Bunna",
+    "away": "Sheger Ketema",
+    "match_finish": "First Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "2.00"
+        }
+      ]
+    },
+    "form_league_home_count": 11,
+    "form_league_away_count": 10,
+    "home_form_14": 22,
+    "away_form_14": 12,
+    "home_form_12": 22,
+    "away_form_12": 12,
+    "home_form_10": 19,
+    "away_form_10": 12,
     "home_form_7": 13,
-    "away_form_7": 10,
+    "away_form_7": 8,
     "home_form_5": 9,
-    "away_form_5": 7,
+    "away_form_5": 4,
     "home_score": "60%",
+    "away_score": "27%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1385263,
+    "date": "2025-12-31",
+    "league": "Premiership",
+    "timestamp": "02:45:00",
+    "country": "Northern-Ireland",
+    "home": "Bangor",
+    "away": "Ballymena United",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "2.20"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.92"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.88"
+        }
+      ]
+    },
+    "form_league_home_count": 21,
+    "form_league_away_count": 21,
+    "home_form_14": 16,
+    "away_form_14": 12,
+    "home_form_12": 13,
+    "away_form_12": 11,
+    "home_form_10": 7,
+    "away_form_10": 8,
+    "home_form_7": 6,
+    "away_form_7": 8,
+    "home_form_5": 5,
+    "away_form_5": 4,
+    "home_score": "33%",
+    "away_score": "27%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1401767,
+    "date": "2025-12-31",
+    "league": "National League - South",
+    "timestamp": "02:45:00",
+    "country": "England",
+    "home": "AFC Totton",
+    "away": "Chippenham Town",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.75",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.80"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.78"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "2.02"
+        }
+      ]
+    },
+    "form_league_home_count": 23,
+    "form_league_away_count": 23,
+    "home_form_14": 16,
+    "away_form_14": 10,
+    "home_form_12": 10,
+    "away_form_12": 9,
+    "home_form_10": 7,
+    "away_form_10": 9,
+    "home_form_7": 4,
+    "away_form_7": 8,
+    "home_form_5": 3,
+    "away_form_5": 4,
+    "home_score": "20%",
+    "away_score": "27%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1435604,
+    "date": "2025-12-30",
+    "league": "National League",
+    "timestamp": "16:00:00",
+    "country": "Myanmar",
+    "home": "Yadanarbon",
+    "away": "Dagon",
+    "match_finish": "Match Finished",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.80"
+        }
+      ]
+    },
+    "form_league_home_count": 9,
+    "form_league_away_count": 9,
+    "home_form_14": 17,
+    "away_form_14": 15,
+    "home_form_12": 17,
+    "away_form_12": 15,
+    "home_form_10": 17,
+    "away_form_10": 15,
+    "home_form_7": 14,
+    "away_form_7": 9,
+    "home_form_5": 10,
+    "away_form_5": 5,
+    "home_score": "67%",
+    "away_score": "33%",
+    "match_result": "2-2",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1498938,
+    "date": "2025-12-30",
+    "league": "Premier League",
+    "timestamp": "23:00:00",
+    "country": "Mauritania",
+    "home": "Ksar",
+    "away": "Gendrim",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +1",
+          "odd": "1.78"
+        },
+        {
+          "value": "Away +1",
+          "odd": "2.02"
+        }
+      ]
+    },
+    "form_league_home_count": 10,
+    "form_league_away_count": 10,
+    "home_form_14": 1,
+    "away_form_14": 16,
+    "home_form_12": 1,
+    "away_form_12": 16,
+    "home_form_10": 1,
+    "away_form_10": 16,
+    "home_form_7": 1,
+    "away_form_7": 11,
+    "home_form_5": 1,
+    "away_form_5": 7,
+    "home_score": "7%",
     "away_score": "47%",
     "match_result": "0-0",
     "bet_pick": {
@@ -2318,12 +664,13 @@
     }
   },
   {
-    "fixture_id": 1401133,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "Premier League",
-    "country": "Wales",
-    "home": "Cardiff MET",
-    "away": "Haverfordwest County AFC",
+    "fixture_id": 1382783,
+    "date": "2025-12-31",
+    "league": "Premiership",
+    "timestamp": "02:45:00",
+    "country": "Scotland",
+    "home": "Livingston",
+    "away": "Dundee Utd",
     "match_finish": "Not Started",
     "handicap": {
       "id": 4,
@@ -2331,28 +678,24 @@
       "values": [
         {
           "value": "Home -0.25",
-          "odd": "2.05"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "1.75"
+          "odd": "2.20"
         }
       ]
     },
-    "form_league_home_count": 20,
-    "form_league_away_count": 20,
-    "home_form_14": 22,
-    "away_form_14": 18,
-    "home_form_12": 21,
-    "away_form_12": 18,
-    "home_form_10": 18,
-    "away_form_10": 15,
-    "home_form_7": 11,
-    "away_form_7": 11,
-    "home_form_5": 8,
-    "away_form_5": 10,
-    "home_score": "53%",
-    "away_score": "67%",
+    "form_league_home_count": 18,
+    "form_league_away_count": 19,
+    "home_form_14": 5,
+    "away_form_14": 14,
+    "home_form_12": 4,
+    "away_form_12": 13,
+    "home_form_10": 3,
+    "away_form_10": 9,
+    "home_form_7": 2,
+    "away_form_7": 8,
+    "home_form_5": 1,
+    "away_form_5": 6,
+    "home_score": "7%",
+    "away_score": "40%",
     "match_result": "0-0",
     "bet_pick": {
       "odds": "",
@@ -2361,9 +704,62 @@
     }
   },
   {
+    "fixture_id": 1403632,
+    "date": "2025-12-30",
+    "league": "Liga 1",
+    "timestamp": "15:30:00",
+    "country": "Indonesia",
+    "home": "Arema FC",
+    "away": "Persita",
+    "match_finish": "Match Finished",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.78"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.00"
+        }
+      ]
+    },
+    "form_league_home_count": 14,
+    "form_league_away_count": 14,
+    "home_form_14": 18,
+    "away_form_14": 22,
+    "home_form_12": 14,
+    "away_form_12": 22,
+    "home_form_10": 10,
+    "away_form_10": 18,
+    "home_form_7": 9,
+    "away_form_7": 9,
+    "home_form_5": 6,
+    "away_form_5": 5,
+    "home_score": "40%",
+    "away_score": "33%",
+    "match_result": "0-1",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
     "fixture_id": 1498951,
-    "date": "2025-12-30T00:30:00+00:00",
+    "date": "2025-12-30",
     "league": "Premier League",
+    "timestamp": "07:30:00",
     "country": "Jamaica",
     "home": "Arnett Gardens",
     "away": "Racing United",
@@ -2409,8 +805,9 @@
   },
   {
     "fixture_id": 1385266,
-    "date": "2025-12-30T19:45:00+00:00",
+    "date": "2025-12-31",
     "league": "Premiership",
+    "timestamp": "02:45:00",
     "country": "Northern-Ireland",
     "home": "Glenavon FC",
     "away": "Dungannon Swifts",
@@ -2459,12 +856,13 @@
     }
   },
   {
-    "fixture_id": 1399689,
-    "date": "2025-12-30T19:45:00+00:00",
+    "fixture_id": 1399686,
+    "date": "2025-12-31",
     "league": "National League",
+    "timestamp": "02:45:00",
     "country": "England",
-    "home": "Boston United",
-    "away": "Brackley Town",
+    "home": "Aldershot Town",
+    "away": "Wealdstone",
     "match_finish": "Not Started",
     "handicap": {
       "id": 4,
@@ -2472,31 +870,31 @@
       "values": [
         {
           "value": "Home -0.5",
-          "odd": "2.10"
+          "odd": "2.20"
         },
         {
           "value": "Home -0.25",
-          "odd": "1.85"
+          "odd": "1.98"
         },
         {
           "value": "Away -0.25",
-          "odd": "1.95"
+          "odd": "1.82"
         }
       ]
     },
     "form_league_home_count": 24,
     "form_league_away_count": 23,
-    "home_form_14": 14,
-    "away_form_14": 10,
-    "home_form_12": 12,
-    "away_form_12": 7,
-    "home_form_10": 8,
-    "away_form_10": 7,
-    "home_form_7": 5,
-    "away_form_7": 3,
-    "home_form_5": 4,
+    "home_form_14": 8,
+    "away_form_14": 19,
+    "home_form_12": 8,
+    "away_form_12": 17,
+    "home_form_10": 7,
+    "away_form_10": 13,
+    "home_form_7": 7,
+    "away_form_7": 7,
+    "home_form_5": 7,
     "away_form_5": 3,
-    "home_score": "27%",
+    "home_score": "47%",
     "away_score": "20%",
     "match_result": "0-0",
     "bet_pick": {
@@ -2506,36 +904,285 @@
     }
   },
   {
-    "fixture_id": 1399695,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League",
+    "fixture_id": 1402330,
+    "date": "2025-12-31",
+    "league": "National League - North",
+    "timestamp": "02:45:00",
     "country": "England",
-    "home": "Tamworth",
-    "away": "FC Halifax Town",
+    "home": "Spennymoor Town",
+    "away": "Scarborough Athletic",
     "match_finish": "Not Started",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
       "values": [
         {
+          "value": "Home -0.5",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.78"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.78"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.02"
+        }
+      ]
+    },
+    "form_league_home_count": 22,
+    "form_league_away_count": 22,
+    "home_form_14": 19,
+    "away_form_14": 18,
+    "home_form_12": 13,
+    "away_form_12": 12,
+    "home_form_10": 10,
+    "away_form_10": 9,
+    "home_form_7": 6,
+    "away_form_7": 9,
+    "home_form_5": 6,
+    "away_form_5": 5,
+    "home_score": "40%",
+    "away_score": "33%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1482237,
+    "date": "2025-12-30",
+    "league": "Premier League",
+    "timestamp": "19:00:00",
+    "country": "Ethiopia",
+    "home": "Awassa Kenema",
+    "away": "Hadiya Hosaena",
+    "match_finish": "Match Finished",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.80"
+        }
+      ]
+    },
+    "form_league_home_count": 11,
+    "form_league_away_count": 11,
+    "home_form_14": 20,
+    "away_form_14": 13,
+    "home_form_12": 20,
+    "away_form_12": 13,
+    "home_form_10": 17,
+    "away_form_10": 13,
+    "home_form_7": 11,
+    "away_form_7": 11,
+    "home_form_5": 7,
+    "away_form_5": 7,
+    "home_score": "47%",
+    "away_score": "47%",
+    "match_result": "0-1",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1385461,
+    "date": "2025-12-31",
+    "league": "Championship",
+    "timestamp": "02:45:00",
+    "country": "Northern-Ireland",
+    "home": "Armagh City",
+    "away": "Ards",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "2.15"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "2.10"
+        }
+      ]
+    },
+    "form_league_home_count": 22,
+    "form_league_away_count": 21,
+    "home_form_14": 10,
+    "away_form_14": 12,
+    "home_form_12": 6,
+    "away_form_12": 8,
+    "home_form_10": 6,
+    "away_form_10": 5,
+    "home_form_7": 3,
+    "away_form_7": 5,
+    "home_form_5": 3,
+    "away_form_5": 5,
+    "home_score": "20%",
+    "away_score": "33%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1389701,
+    "date": "2025-12-31",
+    "league": "Ligat Ha'al",
+    "timestamp": "00:00:00",
+    "country": "Israel",
+    "home": "Maccabi Bnei Raina",
+    "away": "Ironi Kiryat Shmona",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "1.90"
+        },
+        {
           "value": "Away +0.25",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away +0.5",
           "odd": "2.15"
         }
       ]
     },
-    "form_league_home_count": 24,
-    "form_league_away_count": 24,
-    "home_form_14": 15,
-    "away_form_14": 23,
-    "home_form_12": 13,
-    "away_form_12": 17,
-    "home_form_10": 9,
-    "away_form_10": 11,
-    "home_form_7": 6,
-    "away_form_7": 10,
+    "form_league_home_count": 15,
+    "form_league_away_count": 15,
+    "home_form_14": 4,
+    "away_form_14": 13,
+    "home_form_12": 3,
+    "away_form_12": 9,
+    "home_form_10": 3,
+    "away_form_10": 9,
+    "home_form_7": 3,
+    "away_form_7": 5,
     "home_form_5": 3,
-    "away_form_5": 10,
+    "away_form_5": 2,
     "home_score": "20%",
+    "away_score": "13%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1488625,
+    "date": "2025-12-30",
+    "league": "League Cup",
+    "timestamp": "22:00:00",
+    "country": "Egypt",
+    "home": "El Geish",
+    "away": "Ghazl El Mehalla",
+    "match_finish": "First Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "2.05"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.75"
+        }
+      ]
+    },
+    "form_league_home_count": 3,
+    "form_league_away_count": 2,
+    "home_form_14": 4,
+    "away_form_14": 3,
+    "home_form_12": 4,
+    "away_form_12": 3,
+    "home_form_10": 4,
+    "away_form_10": 3,
+    "home_form_7": 4,
+    "away_form_7": 3,
+    "home_form_5": 4,
+    "away_form_5": 3,
+    "home_score": "44%",
+    "away_score": "50%",
+    "match_result": "1-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1398112,
+    "date": "2025-12-31",
+    "league": "Segunda Liga",
+    "timestamp": "03:15:00",
+    "country": "Portugal",
+    "home": "Torreense",
+    "away": "Lusitânia Lourosa",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "2.15"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.88"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.92"
+        }
+      ]
+    },
+    "form_league_home_count": 15,
+    "form_league_away_count": 15,
+    "home_form_14": 20,
+    "away_form_14": 17,
+    "home_form_12": 14,
+    "away_form_12": 15,
+    "home_form_10": 13,
+    "away_form_10": 14,
+    "home_form_7": 6,
+    "away_form_7": 11,
+    "home_form_5": 0,
+    "away_form_5": 10,
+    "home_score": "0%",
     "away_score": "67%",
     "match_result": "0-0",
     "bet_pick": {
@@ -2545,12 +1192,441 @@
     }
   },
   {
-    "fixture_id": 1379156,
-    "date": "2025-12-30T19:30:00+00:00",
+    "fixture_id": 1379151,
+    "date": "2025-12-31",
     "league": "Premier League",
+    "timestamp": "02:30:00",
     "country": "England",
-    "home": "Nottingham Forest",
-    "away": "Everton",
+    "home": "Burnley",
+    "away": "Newcastle",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.75",
+          "odd": "2.08"
+        },
+        {
+          "value": "Home +1",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away +1",
+          "odd": "2.00"
+        }
+      ]
+    },
+    "form_league_home_count": 18,
+    "form_league_away_count": 18,
+    "home_form_14": 9,
+    "away_form_14": 18,
+    "home_form_12": 8,
+    "away_form_12": 17,
+    "home_form_10": 5,
+    "away_form_10": 14,
+    "home_form_7": 2,
+    "away_form_7": 11,
+    "home_form_5": 2,
+    "away_form_5": 5,
+    "home_score": "13%",
+    "away_score": "33%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1379158,
+    "date": "2025-12-31",
+    "league": "Premier League",
+    "timestamp": "02:30:00",
+    "country": "England",
+    "home": "West Ham",
+    "away": "Brighton",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "2.08"
+        }
+      ]
+    },
+    "form_league_home_count": 18,
+    "form_league_away_count": 18,
+    "home_form_14": 10,
+    "away_form_14": 20,
+    "home_form_12": 9,
+    "away_form_12": 16,
+    "home_form_10": 9,
+    "away_form_10": 12,
+    "home_form_7": 3,
+    "away_form_7": 8,
+    "home_form_5": 2,
+    "away_form_5": 2,
+    "home_score": "13%",
+    "away_score": "13%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1385268,
+    "date": "2025-12-31",
+    "league": "Premiership",
+    "timestamp": "02:45:00",
+    "country": "Northern-Ireland",
+    "home": "Larne",
+    "away": "Cliftonville FC",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.75",
+          "odd": "2.15"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.20"
+        }
+      ]
+    },
+    "form_league_home_count": 20,
+    "form_league_away_count": 19,
+    "home_form_14": 35,
+    "away_form_14": 24,
+    "home_form_12": 29,
+    "away_form_12": 18,
+    "home_form_10": 26,
+    "away_form_10": 18,
+    "home_form_7": 19,
+    "away_form_7": 14,
+    "home_form_5": 13,
+    "away_form_5": 8,
+    "home_score": "87%",
+    "away_score": "53%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1401776,
+    "date": "2025-12-31",
+    "league": "National League - South",
+    "timestamp": "02:45:00",
+    "country": "England",
+    "home": "Tonbridge Angels",
+    "away": "Eastbourne Borough",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Away +0.25",
+          "odd": "2.10"
+        }
+      ]
+    },
+    "form_league_home_count": 23,
+    "form_league_away_count": 23,
+    "home_form_14": 16,
+    "away_form_14": 14,
+    "home_form_12": 13,
+    "away_form_12": 10,
+    "home_form_10": 11,
+    "away_form_10": 10,
+    "home_form_7": 8,
+    "away_form_7": 7,
+    "home_form_5": 7,
+    "away_form_5": 6,
+    "home_score": "47%",
+    "away_score": "40%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1437405,
+    "date": "2025-12-30",
+    "league": "Division 1",
+    "timestamp": "19:25:00",
+    "country": "Saudi-Arabia",
+    "home": "Al Arabi SC",
+    "away": "Al Wehda Club",
+    "match_finish": "Match Finished",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.80"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "2.00"
+        }
+      ]
+    },
+    "form_league_home_count": 13,
+    "form_league_away_count": 13,
+    "home_form_14": 13,
+    "away_form_14": 15,
+    "home_form_12": 12,
+    "away_form_12": 15,
+    "home_form_10": 11,
+    "away_form_10": 15,
+    "home_form_7": 5,
+    "away_form_7": 14,
+    "home_form_5": 4,
+    "away_form_5": 10,
+    "home_score": "27%",
+    "away_score": "67%",
+    "match_result": "0-1",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1347268,
+    "date": "2025-12-30",
+    "league": "Africa Cup of Nations",
+    "timestamp": "23:00:00",
+    "country": "World",
+    "home": "Tanzania",
+    "away": "Tunisia",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +1",
+          "odd": "1.88"
+        },
+        {
+          "value": "Away +1",
+          "odd": "1.92"
+        }
+      ]
+    },
+    "form_league_home_count": 2,
+    "form_league_away_count": 2,
+    "home_form_14": 1,
+    "away_form_14": 3,
+    "home_form_12": 1,
+    "away_form_12": 3,
+    "home_form_10": 1,
+    "away_form_10": 3,
+    "home_form_7": 1,
+    "away_form_7": 3,
+    "home_form_5": 1,
+    "away_form_5": 3,
+    "home_score": "17%",
+    "away_score": "50%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1382784,
+    "date": "2025-12-31",
+    "league": "Premiership",
+    "timestamp": "03:00:00",
+    "country": "Scotland",
+    "home": "Motherwell",
+    "away": "Celtic",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.5",
+          "odd": "2.10"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.92"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "1.92"
+        },
+        {
+          "value": "Away +1",
+          "odd": "2.20"
+        }
+      ]
+    },
+    "form_league_home_count": 19,
+    "form_league_away_count": 18,
+    "home_form_14": 25,
+    "away_form_14": 28,
+    "home_form_12": 22,
+    "away_form_12": 24,
+    "home_form_10": 19,
+    "away_form_10": 21,
+    "home_form_7": 12,
+    "away_form_7": 15,
+    "home_form_5": 8,
+    "away_form_5": 9,
+    "home_score": "53%",
+    "away_score": "60%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1385267,
+    "date": "2025-12-31",
+    "league": "Premiership",
+    "timestamp": "02:45:00",
+    "country": "Northern-Ireland",
+    "home": "Glentoran",
+    "away": "Portadown",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Away -1",
+          "odd": "2.10"
+        }
+      ]
+    },
+    "form_league_home_count": 19,
+    "form_league_away_count": 22,
+    "home_form_14": 24,
+    "away_form_14": 22,
+    "home_form_12": 20,
+    "away_form_12": 16,
+    "home_form_10": 17,
+    "away_form_10": 13,
+    "home_form_7": 8,
+    "away_form_7": 13,
+    "home_form_5": 8,
+    "away_form_5": 9,
+    "home_score": "53%",
+    "away_score": "60%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1402324,
+    "date": "2025-12-31",
+    "league": "National League - North",
+    "timestamp": "02:45:00",
+    "country": "England",
+    "home": "Darlington 1883",
+    "away": "South Shields",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.80"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.75"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "2.05"
+        }
+      ]
+    },
+    "form_league_home_count": 23,
+    "form_league_away_count": 23,
+    "home_form_14": 26,
+    "away_form_14": 29,
+    "home_form_12": 23,
+    "away_form_12": 23,
+    "home_form_10": 20,
+    "away_form_10": 20,
+    "home_form_7": 14,
+    "away_form_7": 16,
+    "home_form_5": 8,
+    "away_form_5": 12,
+    "home_score": "53%",
+    "away_score": "80%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1402326,
+    "date": "2025-12-31",
+    "league": "National League - North",
+    "timestamp": "02:45:00",
+    "country": "England",
+    "home": "Merthyr Town",
+    "away": "Hereford",
     "match_finish": "Not Started",
     "handicap": {
       "id": 4,
@@ -2558,32 +1634,304 @@
       "values": [
         {
           "value": "Home -0.5",
-          "odd": "2.08"
+          "odd": "2.00"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.80"
         },
         {
           "value": "Home -0.25",
-          "odd": "1.82"
+          "odd": "1.75"
         },
         {
           "value": "Away -0.25",
-          "odd": "2.02"
+          "odd": "2.05"
         }
       ]
     },
-    "form_league_home_count": 18,
-    "form_league_away_count": 18,
-    "home_form_14": 14,
+    "form_league_home_count": 23,
+    "form_league_away_count": 20,
+    "home_form_14": 31,
+    "away_form_14": 14,
+    "home_form_12": 30,
+    "away_form_12": 12,
+    "home_form_10": 27,
+    "away_form_10": 6,
+    "home_form_7": 18,
+    "away_form_7": 5,
+    "home_form_5": 12,
+    "away_form_5": 4,
+    "home_score": "80%",
+    "away_score": "27%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1399694,
+    "date": "2025-12-31",
+    "league": "National League",
+    "timestamp": "02:45:00",
+    "country": "England",
+    "home": "Southend",
+    "away": "Sutton Utd",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Away -1",
+          "odd": "2.08"
+        }
+      ]
+    },
+    "form_league_home_count": 22,
+    "form_league_away_count": 23,
+    "home_form_14": 21,
     "away_form_14": 18,
-    "home_form_12": 13,
+    "home_form_12": 20,
     "away_form_12": 17,
-    "home_form_10": 13,
-    "away_form_10": 14,
-    "home_form_7": 9,
+    "home_form_10": 19,
+    "away_form_10": 16,
+    "home_form_7": 10,
+    "away_form_7": 14,
+    "home_form_5": 9,
+    "away_form_5": 10,
+    "home_score": "60%",
+    "away_score": "67%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1401133,
+    "date": "2025-12-31",
+    "league": "Premier League",
+    "timestamp": "02:45:00",
+    "country": "Wales",
+    "home": "Cardiff MET",
+    "away": "Haverfordwest County AFC",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "2.05"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.75"
+        }
+      ]
+    },
+    "form_league_home_count": 20,
+    "form_league_away_count": 20,
+    "home_form_14": 22,
+    "away_form_14": 18,
+    "home_form_12": 21,
+    "away_form_12": 18,
+    "home_form_10": 18,
+    "away_form_10": 15,
+    "home_form_7": 11,
+    "away_form_7": 11,
+    "home_form_5": 8,
+    "away_form_5": 10,
+    "home_score": "53%",
+    "away_score": "67%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1401773,
+    "date": "2025-12-31",
+    "league": "National League - South",
+    "timestamp": "02:45:00",
+    "country": "England",
+    "home": "AFC Hornchurch",
+    "away": "Maidstone Utd",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.78"
+        }
+      ]
+    },
+    "form_league_home_count": 23,
+    "form_league_away_count": 23,
+    "home_form_14": 23,
+    "away_form_14": 26,
+    "home_form_12": 21,
+    "away_form_12": 22,
+    "home_form_10": 15,
+    "away_form_10": 16,
+    "home_form_7": 8,
+    "away_form_7": 13,
+    "home_form_5": 7,
+    "away_form_5": 10,
+    "home_score": "47%",
+    "away_score": "67%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1437407,
+    "date": "2025-12-30",
+    "league": "Division 1",
+    "timestamp": "21:40:00",
+    "country": "Saudi-Arabia",
+    "home": "Al-Adalah",
+    "away": "Al Jabalain",
+    "match_finish": "Halftime",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.5",
+          "odd": "1.95"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "1.85"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "1.98"
+        }
+      ]
+    },
+    "form_league_home_count": 13,
+    "form_league_away_count": 13,
+    "home_form_14": 10,
+    "away_form_14": 21,
+    "home_form_12": 9,
+    "away_form_12": 18,
+    "home_form_10": 6,
+    "away_form_10": 15,
+    "home_form_7": 6,
     "away_form_7": 10,
-    "home_form_5": 6,
-    "away_form_5": 7,
-    "home_score": "40%",
-    "away_score": "47%",
+    "home_form_5": 5,
+    "away_form_5": 9,
+    "home_score": "33%",
+    "away_score": "60%",
+    "match_result": "1-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1488627,
+    "date": "2025-12-31",
+    "league": "League Cup",
+    "timestamp": "01:00:00",
+    "country": "Egypt",
+    "home": "Smouha SC",
+    "away": "Kahraba Ismailia",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.75",
+          "odd": "1.98"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "2.08"
+        }
+      ]
+    },
+    "form_league_home_count": 3,
+    "form_league_away_count": 2,
+    "home_form_14": 4,
+    "away_form_14": 2,
+    "home_form_12": 4,
+    "away_form_12": 2,
+    "home_form_10": 4,
+    "away_form_10": 2,
+    "home_form_7": 4,
+    "away_form_7": 2,
+    "home_form_5": 4,
+    "away_form_5": 2,
+    "home_score": "44%",
+    "away_score": "33%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1382780,
+    "date": "2025-12-31",
+    "league": "Premiership",
+    "timestamp": "02:45:00",
+    "country": "Scotland",
+    "home": "Dundee",
+    "away": "Kilmarnock",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Away +0.25",
+          "odd": "2.20"
+        }
+      ]
+    },
+    "form_league_home_count": 19,
+    "form_league_away_count": 19,
+    "home_form_14": 13,
+    "away_form_14": 9,
+    "home_form_12": 10,
+    "away_form_12": 3,
+    "home_form_10": 7,
+    "away_form_10": 3,
+    "home_form_7": 7,
+    "away_form_7": 3,
+    "home_form_5": 4,
+    "away_form_5": 2,
+    "home_score": "27%",
+    "away_score": "13%",
     "match_result": "0-0",
     "bet_pick": {
       "odds": "",
@@ -2593,8 +1941,9 @@
   },
   {
     "fixture_id": 1385464,
-    "date": "2025-12-30T19:45:00+00:00",
+    "date": "2025-12-31",
     "league": "Championship",
+    "timestamp": "02:45:00",
     "country": "Northern-Ireland",
     "home": "Institute",
     "away": "Newington Youth",
@@ -2639,41 +1988,46 @@
     }
   },
   {
-    "fixture_id": 1399688,
-    "date": "2025-12-30T19:45:00+00:00",
+    "fixture_id": 1399696,
+    "date": "2025-12-31",
     "league": "National League",
+    "timestamp": "02:45:00",
     "country": "England",
-    "home": "Boreham Wood",
-    "away": "Solihull Moors",
+    "home": "Woking",
+    "away": "Braintree",
     "match_finish": "Not Started",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
       "values": [
         {
-          "value": "Home -1",
-          "odd": "1.75"
+          "value": "Home -0.75",
+          "odd": "2.08"
         },
         {
-          "value": "Away -1",
-          "odd": "2.05"
+          "value": "Home -0.5",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.98"
         }
       ]
     },
-    "form_league_home_count": 23,
+    "form_league_home_count": 24,
     "form_league_away_count": 24,
-    "home_form_14": 30,
-    "away_form_14": 24,
-    "home_form_12": 26,
-    "away_form_12": 21,
-    "home_form_10": 22,
-    "away_form_10": 20,
-    "home_form_7": 18,
-    "away_form_7": 14,
-    "home_form_5": 12,
-    "away_form_5": 8,
-    "home_score": "80%",
-    "away_score": "53%",
+    "home_form_14": 24,
+    "away_form_14": 11,
+    "home_form_12": 23,
+    "away_form_12": 11,
+    "home_form_10": 19,
+    "away_form_10": 9,
+    "home_form_7": 14,
+    "away_form_7": 8,
+    "home_form_5": 10,
+    "away_form_5": 5,
+    "home_score": "67%",
+    "away_score": "33%",
     "match_result": "0-0",
     "bet_pick": {
       "odds": "",
@@ -2682,48 +2036,37 @@
     }
   },
   {
-    "fixture_id": 1437407,
-    "date": "2025-12-30T14:40:00+00:00",
-    "league": "Division 1",
-    "country": "Saudi-Arabia",
-    "home": "Al-Adalah",
-    "away": "Al Jabalain",
+    "fixture_id": 1401775,
+    "date": "2025-12-31",
+    "league": "National League - South",
+    "timestamp": "02:45:00",
+    "country": "England",
+    "home": "Slough Town",
+    "away": "Chesham United",
     "match_finish": "Not Started",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
       "values": [
         {
-          "value": "Home +0.5",
-          "odd": "1.95"
-        },
-        {
-          "value": "Away +0.5",
-          "odd": "1.85"
-        },
-        {
-          "value": "Home +0.75",
-          "odd": "1.82"
-        },
-        {
-          "value": "Away +0.75",
-          "odd": "1.98"
+          "value": "Away +0.25",
+          "odd": "2.10"
         }
       ]
     },
-    "form_league_home_count": 13,
-    "form_league_away_count": 13,
-    "home_form_14": 10,
-    "away_form_14": 21,
-    "home_form_12": 9,
-    "away_form_12": 18,
-    "home_form_10": 6,
-    "away_form_10": 15,
-    "home_form_7": 6,
-    "away_form_7": 10,
-    "home_form_5": 5,
+    "form_league_home_count": 22,
+    "form_league_away_count": 23,
+    "home_form_14": 13,
+    "away_form_14": 23,
+    "home_form_12": 10,
+    "away_form_12": 19,
+    "home_form_10": 10,
+    "away_form_10": 16,
+    "home_form_7": 10,
+    "away_form_7": 9,
+    "home_form_5": 7,
     "away_form_5": 9,
-    "home_score": "33%",
+    "home_score": "47%",
     "away_score": "60%",
     "match_result": "0-0",
     "bet_pick": {
@@ -2733,37 +2076,378 @@
     }
   },
   {
-    "fixture_id": 1482237,
-    "date": "2025-12-30T12:00:00+00:00",
-    "league": "Premier League",
-    "country": "Ethiopia",
-    "home": "Awassa Kenema",
-    "away": "Hadiya Hosaena",
+    "fixture_id": 1401778,
+    "date": "2025-12-31",
+    "league": "National League - South",
+    "timestamp": "02:45:00",
+    "country": "England",
+    "home": "Worthing",
+    "away": "Dorking Wanderers",
     "match_finish": "Not Started",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
       "values": [
         {
-          "value": "Home -0.25",
-          "odd": "2.00"
+          "value": "Home -0.75",
+          "odd": "2.20"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "2.05"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.75"
         },
         {
           "value": "Away -0.25",
-          "odd": "1.80"
+          "odd": "2.08"
+        }
+      ]
+    },
+    "form_league_home_count": 22,
+    "form_league_away_count": 23,
+    "home_form_14": 33,
+    "away_form_14": 29,
+    "home_form_12": 33,
+    "away_form_12": 28,
+    "home_form_10": 27,
+    "away_form_10": 24,
+    "home_form_7": 18,
+    "away_form_7": 15,
+    "home_form_5": 12,
+    "away_form_5": 12,
+    "home_score": "80%",
+    "away_score": "80%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1435605,
+    "date": "2025-12-30",
+    "league": "National League",
+    "timestamp": "16:30:00",
+    "country": "Myanmar",
+    "home": "Dagon Port",
+    "away": "Thitsar Arman",
+    "match_finish": "Match Finished",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.95"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.98"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "1.82"
+        }
+      ]
+    },
+    "form_league_home_count": 9,
+    "form_league_away_count": 9,
+    "home_form_14": 5,
+    "away_form_14": 8,
+    "home_form_12": 5,
+    "away_form_12": 8,
+    "home_form_10": 5,
+    "away_form_10": 8,
+    "home_form_7": 2,
+    "away_form_7": 7,
+    "home_form_5": 2,
+    "away_form_5": 4,
+    "home_score": "13%",
+    "away_score": "27%",
+    "match_result": "3-3",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1482318,
+    "date": "2025-12-30",
+    "league": "Premier League",
+    "timestamp": "17:00:00",
+    "country": "Ethiopia",
+    "home": "Dire Dawa Kenema",
+    "away": "Negelle Arsi",
+    "match_finish": "Match Finished",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.98"
         }
       ]
     },
     "form_league_home_count": 11,
     "form_league_away_count": 11,
-    "home_form_14": 20,
-    "away_form_14": 13,
+    "home_form_14": 16,
+    "away_form_14": 16,
+    "home_form_12": 16,
+    "away_form_12": 16,
+    "home_form_10": 16,
+    "away_form_10": 15,
+    "home_form_7": 10,
+    "away_form_7": 14,
+    "home_form_5": 6,
+    "away_form_5": 10,
+    "home_score": "40%",
+    "away_score": "67%",
+    "match_result": "0-3",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1382782,
+    "date": "2025-12-31",
+    "league": "Premiership",
+    "timestamp": "02:45:00",
+    "country": "Scotland",
+    "home": "Hibernian",
+    "away": "Aberdeen",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.75",
+          "odd": "2.10"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.98"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.88"
+        }
+      ]
+    },
+    "form_league_home_count": 19,
+    "form_league_away_count": 18,
+    "home_form_14": 21,
+    "away_form_14": 24,
     "home_form_12": 20,
-    "away_form_12": 13,
-    "home_form_10": 17,
-    "away_form_10": 13,
-    "home_form_7": 11,
-    "away_form_7": 11,
+    "away_form_12": 24,
+    "home_form_10": 14,
+    "away_form_10": 18,
+    "home_form_7": 10,
+    "away_form_7": 14,
+    "home_form_5": 7,
+    "away_form_5": 8,
+    "home_score": "47%",
+    "away_score": "53%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1382785,
+    "date": "2025-12-31",
+    "league": "Premiership",
+    "timestamp": "02:45:00",
+    "country": "Scotland",
+    "home": "Rangers",
+    "away": "ST Mirren",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1",
+          "odd": "2.08"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "2.02"
+        }
+      ]
+    },
+    "form_league_home_count": 18,
+    "form_league_away_count": 17,
+    "home_form_14": 28,
+    "away_form_14": 16,
+    "home_form_12": 25,
+    "away_form_12": 12,
+    "home_form_10": 23,
+    "away_form_10": 9,
+    "home_form_7": 14,
+    "away_form_7": 8,
+    "home_form_5": 10,
+    "away_form_5": 8,
+    "home_score": "67%",
+    "away_score": "53%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1399687,
+    "date": "2025-12-31",
+    "league": "National League",
+    "timestamp": "02:45:00",
+    "country": "England",
+    "home": "Altrincham",
+    "away": "York",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +1",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away +1",
+          "odd": "1.78"
+        }
+      ]
+    },
+    "form_league_home_count": 24,
+    "form_league_away_count": 23,
+    "home_form_14": 14,
+    "away_form_14": 31,
+    "home_form_12": 14,
+    "away_form_12": 30,
+    "home_form_10": 13,
+    "away_form_10": 24,
+    "home_form_7": 9,
+    "away_form_7": 19,
+    "home_form_5": 3,
+    "away_form_5": 13,
+    "home_score": "20%",
+    "away_score": "87%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1399689,
+    "date": "2025-12-31",
+    "league": "National League",
+    "timestamp": "02:45:00",
+    "country": "England",
+    "home": "Boston United",
+    "away": "Brackley Town",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "2.10"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.95"
+        }
+      ]
+    },
+    "form_league_home_count": 24,
+    "form_league_away_count": 23,
+    "home_form_14": 14,
+    "away_form_14": 10,
+    "home_form_12": 12,
+    "away_form_12": 7,
+    "home_form_10": 8,
+    "away_form_10": 7,
+    "home_form_7": 5,
+    "away_form_7": 3,
+    "home_form_5": 4,
+    "away_form_5": 3,
+    "home_score": "27%",
+    "away_score": "20%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "odds": "",
+      "picked": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1401774,
+    "date": "2025-12-31",
+    "league": "National League - South",
+    "timestamp": "02:45:00",
+    "country": "England",
+    "home": "Horsham",
+    "away": "Farnborough",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.75",
+          "odd": "2.08"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.95"
+        }
+      ]
+    },
+    "form_league_home_count": 24,
+    "form_league_away_count": 24,
+    "home_form_14": 26,
+    "away_form_14": 15,
+    "home_form_12": 22,
+    "away_form_12": 15,
+    "home_form_10": 16,
+    "away_form_10": 11,
+    "home_form_7": 9,
+    "away_form_7": 8,
     "home_form_5": 7,
     "away_form_5": 7,
     "home_score": "47%",
@@ -2776,98 +2460,13 @@
     }
   },
   {
-    "fixture_id": 1497963,
-    "date": "2025-12-30T16:00:00+00:00",
-    "league": "Premier League",
-    "country": "Mauritania",
-    "home": "Nouakchott King's",
-    "away": "Chemal",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "1.78"
-        },
-        {
-          "value": "Away +0.25",
-          "odd": "2.02"
-        }
-      ]
-    },
-    "form_league_home_count": 10,
-    "form_league_away_count": 10,
-    "home_form_14": 7,
-    "away_form_14": 12,
-    "home_form_12": 7,
-    "away_form_12": 12,
-    "home_form_10": 7,
-    "away_form_10": 12,
-    "home_form_7": 2,
-    "away_form_7": 7,
-    "home_form_5": 2,
-    "away_form_5": 7,
-    "home_score": "13%",
-    "away_score": "47%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1498938,
-    "date": "2025-12-30T16:00:00+00:00",
-    "league": "Premier League",
-    "country": "Mauritania",
-    "home": "Ksar",
-    "away": "Gendrim",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +1",
-          "odd": "1.78"
-        },
-        {
-          "value": "Away +1",
-          "odd": "2.02"
-        }
-      ]
-    },
-    "form_league_home_count": 10,
-    "form_league_away_count": 10,
-    "home_form_14": 1,
-    "away_form_14": 16,
-    "home_form_12": 1,
-    "away_form_12": 16,
-    "home_form_10": 1,
-    "away_form_10": 16,
-    "home_form_7": 1,
-    "away_form_7": 11,
-    "home_form_5": 1,
-    "away_form_5": 7,
-    "home_score": "7%",
-    "away_score": "47%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "odds": "",
-      "picked": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1385263,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "Premiership",
-    "country": "Northern-Ireland",
-    "home": "Bangor",
-    "away": "Ballymena United",
+    "fixture_id": 1402322,
+    "date": "2025-12-31",
+    "league": "National League - North",
+    "timestamp": "02:45:00",
+    "country": "England",
+    "home": "Chester",
+    "away": "Macclesfield",
     "match_finish": "Not Started",
     "handicap": {
       "id": 4,
@@ -2879,28 +2478,28 @@
         },
         {
           "value": "Home -0.25",
-          "odd": "1.92"
+          "odd": "1.95"
         },
         {
           "value": "Away -0.25",
-          "odd": "1.88"
+          "odd": "1.85"
         }
       ]
     },
-    "form_league_home_count": 21,
-    "form_league_away_count": 21,
-    "home_form_14": 16,
-    "away_form_14": 12,
-    "home_form_12": 13,
-    "away_form_12": 11,
-    "home_form_10": 7,
-    "away_form_10": 8,
-    "home_form_7": 6,
-    "away_form_7": 8,
-    "home_form_5": 5,
-    "away_form_5": 4,
-    "home_score": "33%",
-    "away_score": "27%",
+    "form_league_home_count": 22,
+    "form_league_away_count": 20,
+    "home_form_14": 21,
+    "away_form_14": 19,
+    "home_form_12": 19,
+    "away_form_12": 18,
+    "home_form_10": 15,
+    "away_form_10": 18,
+    "home_form_7": 11,
+    "away_form_7": 9,
+    "home_form_5": 7,
+    "away_form_5": 5,
+    "home_score": "47%",
+    "away_score": "33%",
     "match_result": "0-0",
     "bet_pick": {
       "odds": "",
@@ -2909,42 +2508,43 @@
     }
   },
   {
-    "fixture_id": 1402320,
-    "date": "2025-12-30T19:45:00+00:00",
-    "league": "National League - North",
-    "country": "England",
-    "home": "Bedford Town",
-    "away": "King's Lynn Town",
-    "match_finish": "Not Started",
+    "fixture_id": 1481668,
+    "date": "2025-12-30",
+    "league": "Division 1",
+    "timestamp": "19:55:00",
+    "country": "United-Arab-Emirates",
+    "home": "Al Hamriyah",
+    "away": "Al Arabi",
+    "match_finish": "Match Finished",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
       "values": [
         {
-          "value": "Home +0.25",
-          "odd": "1.80"
+          "value": "Home -0.25",
+          "odd": "1.92"
         },
         {
-          "value": "Away +0.25",
-          "odd": "2.00"
+          "value": "Away -0.25",
+          "odd": "1.88"
         }
       ]
     },
-    "form_league_home_count": 24,
-    "form_league_away_count": 23,
-    "home_form_14": 16,
-    "away_form_14": 15,
-    "home_form_12": 12,
-    "away_form_12": 15,
-    "home_form_10": 6,
-    "away_form_10": 14,
-    "home_form_7": 3,
+    "form_league_home_count": 9,
+    "form_league_away_count": 10,
+    "home_form_14": 14,
+    "away_form_14": 16,
+    "home_form_12": 14,
+    "away_form_12": 16,
+    "home_form_10": 14,
+    "away_form_10": 16,
+    "home_form_7": 8,
     "away_form_7": 10,
-    "home_form_5": 3,
+    "home_form_5": 6,
     "away_form_5": 6,
-    "home_score": "20%",
+    "home_score": "40%",
     "away_score": "40%",
-    "match_result": "0-0",
+    "match_result": "2-3",
     "bet_pick": {
       "odds": "",
       "picked": "",
