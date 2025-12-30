@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "https://goal365.thaimongkon777.workers.dev",
-});
+  baseURL: import.meta.env.API_URL
+})
