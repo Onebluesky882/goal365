@@ -6,9 +6,9 @@ import { useEffect, useState } from "react";
 const Homepage = () => {
   const [data, setData] = useState<Match[] | null>(null);
   useEffect(() => {
-    const date = new Date().toISOString().split("T")[0];
+    // const date = new Date().toISOString().split("T")[0];
     const getPrediction = async () => {
-      const res = await predictions.get(`${date}`);
+      const res = await predictions.get(`2025-12-30`);
       if (Array.isArray(res.data)) {
         setData(res.data);
       }
