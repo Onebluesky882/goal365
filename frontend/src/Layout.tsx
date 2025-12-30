@@ -3,11 +3,11 @@ import Header from "./components/Header";
 
 const MainLayout = ({ children }: React.PropsWithChildren) => {
   return (
-    <>
+    <div className="">
       <Header />
-      <main className="container">{children}</main>
+      <main className="">{children}</main>
       <NavLink to="/">Home</NavLink>
-    </>
+    </div>
   );
 };
 

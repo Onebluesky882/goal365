@@ -3,12 +3,12 @@ import MatchList from "@/components/Prediction/MatchList";
 import type { Match } from "@/types/predictions/types";
 import { useEffect, useState } from "react";
 
-const Homepage = () => {
+const Predictions = () => {
   const [data, setData] = useState<Match[] | null>(null);
   useEffect(() => {
-    const date = new Date().toISOString().split("T")[0];
+    // const date = new Date().toISOString().split("T")[0];
     const getPrediction = async () => {
-      const res = await predictions.get(`${date}`);
+      const res = await predictions.get(`2025-12-30`);
       if (Array.isArray(res.data)) {
         setData(res.data);
       }
@@ -44,4 +44,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default Predictions;
