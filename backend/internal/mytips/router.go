@@ -11,11 +11,13 @@ func RegisterRoutes(app *fiber.App) {
 
 	api.Get("/today", GetPredictionByDay)
 	api.Post("/predictions", InsertPredictions)
-	// api.Put("/mytips/result", UpdateMatchResult)
+
+	// update result match finish
+	api.Put("/match-result", UpdateMatchResult)
 
 	// -------------- * --------------
 	// step 1
-	api.Get("/get-odds-today", oddstoday.Service)
+	api.Get("/get-odds-today", oddstoday.GetOddsToday)
 	// step 2
 	api.Get("/mytips", WritePrediction)
 

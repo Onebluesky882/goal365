@@ -111,7 +111,7 @@ func QueryOdds(date string) (map[int][]odds_models.Bet, error) {
 	return result, nil
 }
 
-func Service(c *fiber.Ctx) error {
+func GetOddsToday(c *fiber.Ctx) error {
 	date := c.Query("date")
 	if date == "" {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{

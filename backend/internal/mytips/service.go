@@ -55,16 +55,25 @@ func PredictionByDay(date string) ([]m.MyTipsAnalytics, error) {
 	return result, nil
 }
 
-func UpdateFixtureResult(req m.UpdateFixtureResultDTO) error {
+func UpdateFixtureResult(req []m.UpdateFixtureResultDTO) error {
 
 	ctx := context.Background()
 	db := db.WithContext(ctx)
+	for _, v := range req {
+		_, err := db.NewUpdate().
+			Model((*m.MyTipsAnalytics)(nil)).
+			Set("match_finish = ?", v.MatchFinish).
+			Set("match_result = ?", v.MatchResult).
+			Where("fixture_id = ?", v.FixtureID).
+			Exec(ctx)
+		if err != nil {
+			return fmt.Errorf(
+				"update failed fixture_id=%d: %w",
+				v.FixtureID,
+				err,
+			)
+		}
+	}
 
-	_, err := db.NewUpdate().
-		Model((*m.MyTipsAnalytics)(nil)).
-		Set("match_finish = ?", req.MatchFinish).
-		Set("match_result = ?", req.MatchResult).
-		Where("fixture_id = ? ", req.FixtureID).Exec(ctx)
-
-	return err
+	return nil
 }

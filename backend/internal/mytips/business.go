@@ -165,6 +165,48 @@ func Predictions(ids []string, oddsMap map[string][]odds_models.Bet) (*m.RootMyT
 	}, nil
 }
 
-func MatchResult() {
 
+
+func MatchResult(date string) ([]m.UpdateFixtureResultDTO, error) {
+
+
+
+	predictions, err := PredictionByDay(date)
+	if err != nil {
+		return nil, err
+	}
+
+	fixtures, err := service.QueryFixtureDate(date)
+	if err != nil {
+		return nil, err
+	}
+
+	fixtureMap := make(map[int]fixture_module.Response)
+	for _, fx := range fixtures {
+		fixtureMap[fx.Fixture.ID] = fx
+	}
+
+	results := make([]m.UpdateFixtureResultDTO, 0, len(predictions))
+
+	for _, p := range predictions {
+		fx, ok := fixtureMap[p.FixtureID]
+		if !ok {
+			continue
+		}
+
+		home := 0
+		away := 0
+		if fx.Goals.Home != nil {
+			home = *fx.Goals.Home
+		}
+		if fx.Goals.Away != nil {
+			away = *fx.Goals.Away
+		}
+		results = append(results, m.UpdateFixtureResultDTO{
+			FixtureID:   fx.Fixture.ID,
+			MatchFinish: fx.Fixture.Status.Long,
+			MatchResult: fmt.Sprintf("%d-%d", home, away),
+		})
+	}
+	return results, nil
 }

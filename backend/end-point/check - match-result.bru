@@ -1,0 +1,20 @@
+meta {
+  name: check : match-result
+  type: http
+  seq: 10
+}
+
+put {
+  url: http://localhost:3009/api/match-result?date=2025-12-30
+  body: none
+  auth: inherit
+}
+
+params:query {
+  date: 2025-12-30
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -82,23 +82,33 @@ func WritePrediction(c *fiber.Ctx) error {
 	return c.JSON(resp.Items)
 }
 
-// update match result bin/date/predictons.json
-// func UpdateMatchResult(c *fiber.Ctx) error {
-	/*
-	   https://mytipster-production.up.railway.app/api/today?date=2025-12-30
+func UpdateMatchResult(c *fiber.Ctx) error {
+	// func MatchResult(date string) ([]m.UpdateFixtureResultDTO, error) {
+	date := c.Query("date")
+	results, err := MatchResult(date)
 
+	if err != nil {
+		log.Println("❌ MatchResult error:", err)
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+	if len(results) == 0 {
+		return c.JSON(fiber.Map{
+			"success": true,
+			"updated": 0,
+			"message": "no fixtures to update",
+		})
+	}
 
-
-
-	   get fixtureid  from GetPredictionByDay
-
-	   loop update (fixtureId )
-
-	   put to db
-	*/
-
-	// fixtureId :=
-	// var req m.UpdateFixtureResultDTO
-
-	// return c.JSON(date)
-// }
+	if err := UpdateFixtureResult(results); err != nil {
+		log.Println("❌ UpdateFixtureResult error:", err)
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+	return c.JSON(fiber.Map{
+		"success": true,
+		"updated": len(results),
+	})
+}
