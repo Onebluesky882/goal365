@@ -7,6 +7,7 @@ import (
 )
 
 type RootMyTipsAnalytics struct {
+	Count int               `json:"count"`
 	Items []MyTipsAnalytics `json:"items"`
 }
 
@@ -52,4 +53,9 @@ type BetPick struct {
 	Odds   string `json:"odds"`
 	Picked string `json:"picked"`
 	Stake  string `json:"stake"`
+}
+type UpdateFixtureResultDTO struct {
+	FixtureID   int    `json:"fixture_id"`
+	MatchFinish string `json:"match_finish"`
+	MatchResult string `json:"match_result"`
 }

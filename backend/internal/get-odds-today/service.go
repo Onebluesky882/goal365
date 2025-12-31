@@ -70,7 +70,7 @@ func QueryOdds(date string) (map[int][]odds_models.Bet, error) {
 			defer func() { <-sem }()
 
 			// เพิ่ม delay ก่อนเริ่มทำงาน
-			time.Sleep(500 * time.Millisecond)
+			time.Sleep(800 * time.Millisecond)
 
 			log.Printf("⏳ [%d/%d] Processing fixture %d...\n", idx+1, len(ids), id)
 
@@ -97,7 +97,7 @@ func QueryOdds(date string) (map[int][]odds_models.Bet, error) {
 		}(fixtureID, i)
 
 		// Rate limiting between goroutine starts
-		time.Sleep(500 * time.Millisecond)
+		time.Sleep(800 * time.Millisecond)
 	}
 
 	// รอให้ทุก goroutine เสร็จ

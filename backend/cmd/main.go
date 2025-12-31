@@ -3,21 +3,16 @@ package main
 import (
 	"context"
 	"log"
-	"mytipster/internal/db/analytics"
-	mytips_db "mytipster/internal/db/mytips"
-	"mytipster/internal/db/service"
+	"mytipster/internal/db"
+	"mytipster/internal/mytips"
 )
 
 func main() {
-	service.InitDB()
+	db.InitDB()
 	ctx := context.Background()
-	db := service.WithContext(ctx)
-	if err := mytips_db.CreateTable(ctx, db); err != nil {
+	db := db.WithContext(ctx)
+	if err := mytips.CreateTable(ctx, db); err != nil {
 
-		log.Fatal(err)
-	}
-
-	if err := analytics.CreateTable(ctx, db); err != nil {
 		log.Fatal(err)
 	}
 

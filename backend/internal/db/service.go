@@ -1,9 +1,8 @@
-package service
+package db
 
 import (
 	"context"
 	"log"
-	"mytipster/internal/db"
 
 	"github.com/uptrace/bun"
 )
@@ -15,7 +14,7 @@ var (
 
 func InitDB() {
 	var err error
-	DBConn, err = db.NewDB()
+	DBConn, err = NewDB()
 	if err != nil {
 		log.Fatal("cannot connect to database:", err)
 	}
