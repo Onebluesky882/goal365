@@ -1,4 +1,4 @@
-package mytips
+package predictions
 
 import (
 	"log"

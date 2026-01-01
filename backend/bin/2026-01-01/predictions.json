@@ -1,859 +1,5 @@
 [
   {
-    "fixture_id": 1386276,
-    "date": "2026-01-01",
-    "league": "League Two",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Crewe",
-    "away": "Cheltenham",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.75",
-          "odd": "2.02"
-        },
-        {
-          "value": "Away -0.75",
-          "odd": "1.82"
-        },
-        {
-          "value": "Home -0.5",
-          "odd": "1.75"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "2.05"
-        }
-      ]
-    },
-    "form_league_home_count": 23,
-    "form_league_away_count": 23,
-    "home_form_14": 19,
-    "away_form_14": 23,
-    "home_form_12": 13,
-    "away_form_12": 20,
-    "home_form_10": 13,
-    "away_form_10": 16,
-    "home_form_7": 6,
-    "away_form_7": 13,
-    "home_form_5": 5,
-    "away_form_5": 10,
-    "home_score": "33%",
-    "away_score": "67%",
-    "match_result": "3-1",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1387383,
-    "date": "2026-01-01",
-    "league": "League One",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Mansfield Town",
-    "away": "Bradford",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "1.92"
-        },
-        {
-          "value": "Away +0.25",
-          "odd": "1.92"
-        },
-        {
-          "value": "Away +0.5",
-          "odd": "2.20"
-        }
-      ]
-    },
-    "form_league_home_count": 22,
-    "form_league_away_count": 22,
-    "home_form_14": 18,
-    "away_form_14": 26,
-    "home_form_12": 15,
-    "away_form_12": 20,
-    "home_form_10": 11,
-    "away_form_10": 18,
-    "home_form_7": 7,
-    "away_form_7": 16,
-    "home_form_5": 7,
-    "away_form_5": 12,
-    "home_score": "47%",
-    "away_score": "80%",
-    "match_result": "2-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1387390,
-    "date": "2026-01-01",
-    "league": "League One",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Wycombe",
-    "away": "Cardiff",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "1.80"
-        },
-        {
-          "value": "Away +0.25",
-          "odd": "2.05"
-        }
-      ]
-    },
-    "form_league_home_count": 23,
-    "form_league_away_count": 22,
-    "home_form_14": 21,
-    "away_form_14": 30,
-    "home_form_12": 20,
-    "away_form_12": 27,
-    "home_form_10": 16,
-    "away_form_10": 21,
-    "home_form_7": 9,
-    "away_form_7": 18,
-    "home_form_5": 5,
-    "away_form_5": 12,
-    "home_score": "33%",
-    "away_score": "80%",
-    "match_result": "1-1",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1387379,
-    "date": "2026-01-01",
-    "league": "League One",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Doncaster",
-    "away": "Bolton",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.5",
-          "odd": "2.02"
-        },
-        {
-          "value": "Away +0.5",
-          "odd": "1.82"
-        },
-        {
-          "value": "Away +0.75",
-          "odd": "2.10"
-        }
-      ]
-    },
-    "form_league_home_count": 23,
-    "form_league_away_count": 22,
-    "home_form_14": 6,
-    "away_form_14": 26,
-    "home_form_12": 5,
-    "away_form_12": 23,
-    "home_form_10": 5,
-    "away_form_10": 20,
-    "home_form_7": 4,
-    "away_form_7": 11,
-    "home_form_5": 0,
-    "away_form_5": 9,
-    "home_score": "0%",
-    "away_score": "60%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1456761,
-    "date": "2026-01-01",
-    "league": "Liga Alef",
-    "timestamp": "2026-01-02 01:00:00",
-    "country": "Israel",
-    "home": "Shimshon Tel Aviv",
-    "away": "Maccabi Kiryat Malachi",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.25",
-          "odd": "1.98"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "1.82"
-        }
-      ]
-    },
-    "form_league_home_count": 12,
-    "form_league_away_count": 12,
-    "home_form_14": 17,
-    "away_form_14": 19,
-    "home_form_12": 17,
-    "away_form_12": 19,
-    "home_form_10": 17,
-    "away_form_10": 13,
-    "home_form_7": 13,
-    "away_form_7": 10,
-    "home_form_5": 12,
-    "away_form_5": 4,
-    "home_score": "80%",
-    "away_score": "27%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1456521,
-    "date": "2026-01-01",
-    "league": "Liga Alef",
-    "timestamp": "2026-01-02 00:45:00",
-    "country": "Israel",
-    "home": "Ironi Nesher",
-    "away": "Tzeirey Tamra",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "1.95"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.85"
-        }
-      ]
-    },
-    "form_league_home_count": 12,
-    "form_league_away_count": 12,
-    "home_form_14": 18,
-    "away_form_14": 14,
-    "home_form_12": 18,
-    "away_form_12": 14,
-    "home_form_10": 14,
-    "away_form_10": 8,
-    "home_form_7": 10,
-    "away_form_7": 5,
-    "home_form_5": 7,
-    "away_form_5": 4,
-    "home_score": "47%",
-    "away_score": "27%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1467596,
-    "date": "2026-01-01",
-    "league": "Premier League",
-    "timestamp": "2026-01-02 03:00:00",
-    "country": "Jamaica",
-    "home": "Treasure Beach",
-    "away": "Chapelton",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.25",
-          "odd": "1.95"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "1.85"
-        }
-      ]
-    },
-    "form_league_home_count": 10,
-    "form_league_away_count": 12,
-    "home_form_14": 12,
-    "away_form_14": 12,
-    "home_form_12": 12,
-    "away_form_12": 12,
-    "home_form_10": 12,
-    "away_form_10": 6,
-    "home_form_7": 8,
-    "away_form_7": 2,
-    "home_form_5": 8,
-    "away_form_5": 2,
-    "home_score": "53%",
-    "away_score": "13%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1488632,
-    "date": "2026-01-01",
-    "league": "League Cup",
-    "timestamp": "2026-01-02 01:00:00",
-    "country": "Egypt",
-    "home": "Ismaily SC",
-    "away": "Future FC",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "1.78"
-        },
-        {
-          "value": "Away +0.25",
-          "odd": "2.02"
-        }
-      ]
-    },
-    "form_league_home_count": 3,
-    "form_league_away_count": 2,
-    "home_form_14": 3,
-    "away_form_14": 1,
-    "home_form_12": 3,
-    "away_form_12": 1,
-    "home_form_10": 3,
-    "away_form_10": 1,
-    "home_form_7": 3,
-    "away_form_7": 1,
-    "home_form_5": 3,
-    "away_form_5": 1,
-    "home_score": "33%",
-    "away_score": "17%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1498959,
-    "date": "2026-01-01",
-    "league": "Iraqi League",
-    "timestamp": "2026-01-01 20:00:00",
-    "country": "Iraq",
-    "home": "Al Minaa Basra",
-    "away": "Newroz",
-    "match_finish": "Match Finished",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "1.82"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.98"
-        },
-        {
-          "value": "Home -0.25",
-          "odd": "1.88"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "1.92"
-        }
-      ]
-    },
-    "form_league_home_count": 8,
-    "form_league_away_count": 8,
-    "home_form_14": 10,
-    "away_form_14": 3,
-    "home_form_12": 10,
-    "away_form_12": 3,
-    "home_form_10": 10,
-    "away_form_10": 3,
-    "home_form_7": 7,
-    "away_form_7": 0,
-    "home_form_5": 7,
-    "away_form_5": 0,
-    "home_score": "47%",
-    "away_score": "0%",
-    "match_result": "1-1",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1498961,
-    "date": "2026-01-01",
-    "league": "Iraqi League",
-    "timestamp": "2026-01-01 22:30:00",
-    "country": "Iraq",
-    "home": "Al Kahrabaa",
-    "away": "Al Zawra'a",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.75",
-          "odd": "1.78"
-        },
-        {
-          "value": "Away +0.75",
-          "odd": "2.02"
-        },
-        {
-          "value": "Home +1",
-          "odd": "1.85"
-        },
-        {
-          "value": "Away +1",
-          "odd": "1.95"
-        }
-      ]
-    },
-    "form_league_home_count": 7,
-    "form_league_away_count": 7,
-    "home_form_14": 2,
-    "away_form_14": 14,
-    "home_form_12": 2,
-    "away_form_12": 14,
-    "home_form_10": 2,
-    "away_form_10": 14,
-    "home_form_7": 2,
-    "away_form_7": 14,
-    "home_form_5": 2,
-    "away_form_5": 12,
-    "home_score": "13%",
-    "away_score": "80%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1456759,
-    "date": "2026-01-01",
-    "league": "Liga Alef",
-    "timestamp": "2026-01-02 02:15:00",
-    "country": "Israel",
-    "home": "Tzeirey Tira",
-    "away": "FC Jerusalem",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "1.82"
-        },
-        {
-          "value": "Away +0.25",
-          "odd": "1.98"
-        }
-      ]
-    },
-    "form_league_home_count": 12,
-    "form_league_away_count": 12,
-    "home_form_14": 17,
-    "away_form_14": 22,
-    "home_form_12": 17,
-    "away_form_12": 22,
-    "home_form_10": 17,
-    "away_form_10": 16,
-    "home_form_7": 12,
-    "away_form_7": 13,
-    "home_form_5": 12,
-    "away_form_5": 9,
-    "home_score": "80%",
-    "away_score": "60%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1386283,
-    "date": "2026-01-01",
-    "league": "League Two",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Bromley",
-    "away": "Newport County",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Away -1",
-          "odd": "2.15"
-        }
-      ]
-    },
-    "form_league_home_count": 23,
-    "form_league_away_count": 23,
-    "home_form_14": 31,
-    "away_form_14": 12,
-    "home_form_12": 30,
-    "away_form_12": 12,
-    "home_form_10": 27,
-    "away_form_10": 9,
-    "home_form_7": 18,
-    "away_form_7": 6,
-    "home_form_5": 15,
-    "away_form_5": 5,
-    "home_score": "100%",
-    "away_score": "33%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1387380,
-    "date": "2026-01-01",
-    "league": "League One",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Exeter City",
-    "away": "Luton",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "2.10"
-        },
-        {
-          "value": "Home +0.5",
-          "odd": "1.82"
-        },
-        {
-          "value": "Away +0.5",
-          "odd": "2.02"
-        }
-      ]
-    },
-    "form_league_home_count": 22,
-    "form_league_away_count": 23,
-    "home_form_14": 17,
-    "away_form_14": 20,
-    "home_form_12": 17,
-    "away_form_12": 19,
-    "home_form_10": 13,
-    "away_form_10": 16,
-    "home_form_7": 9,
-    "away_form_7": 12,
-    "home_form_5": 9,
-    "away_form_5": 8,
-    "home_score": "60%",
-    "away_score": "53%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1387384,
-    "date": "2026-01-01",
-    "league": "League One",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Northampton",
-    "away": "Stockport County",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "2.05"
-        },
-        {
-          "value": "Away +0.25",
-          "odd": "1.80"
-        },
-        {
-          "value": "Home +0.5",
-          "odd": "1.75"
-        },
-        {
-          "value": "Away +0.5",
-          "odd": "2.05"
-        }
-      ]
-    },
-    "form_league_home_count": 22,
-    "form_league_away_count": 22,
-    "home_form_14": 17,
-    "away_form_14": 26,
-    "home_form_12": 13,
-    "away_form_12": 22,
-    "home_form_10": 10,
-    "away_form_10": 16,
-    "home_form_7": 7,
-    "away_form_7": 10,
-    "home_form_5": 4,
-    "away_form_5": 9,
-    "home_score": "27%",
-    "away_score": "60%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1428864,
-    "date": "2026-01-01",
-    "league": "Non League Premier - Northern",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Stocksbridge Park Steels",
-    "away": "Guiseley AFC",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "1.78"
-        },
-        {
-          "value": "Away +0.25",
-          "odd": "2.02"
-        }
-      ]
-    },
-    "form_league_home_count": 23,
-    "form_league_away_count": 23,
-    "home_form_14": 18,
-    "away_form_14": 18,
-    "home_form_12": 12,
-    "away_form_12": 14,
-    "home_form_10": 8,
-    "away_form_10": 14,
-    "home_form_7": 8,
-    "away_form_7": 13,
-    "home_form_5": 5,
-    "away_form_5": 9,
-    "home_score": "33%",
-    "away_score": "60%",
-    "match_result": "1-1",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1438560,
-    "date": "2026-01-01",
-    "league": "Division 1",
-    "timestamp": "2026-01-01 19:35:00",
-    "country": "Saudi-Arabia",
-    "home": "Al Orubah",
-    "away": "Al Jandal",
-    "match_finish": "Match Finished",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -1",
-          "odd": "1.80"
-        },
-        {
-          "value": "Away -1",
-          "odd": "2.00"
-        }
-      ]
-    },
-    "form_league_home_count": 13,
-    "form_league_away_count": 13,
-    "home_form_14": 27,
-    "away_form_14": 15,
-    "home_form_12": 27,
-    "away_form_12": 12,
-    "home_form_10": 21,
-    "away_form_10": 8,
-    "home_form_7": 14,
-    "away_form_7": 7,
-    "home_form_5": 11,
-    "away_form_5": 7,
-    "home_score": "73%",
-    "away_score": "47%",
-    "match_result": "1-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1467043,
-    "date": "2026-01-01",
-    "league": "Premier League",
-    "timestamp": "2026-01-01 23:00:00",
-    "country": "Bahrain",
-    "home": "Al-Hidd",
-    "away": "Al Ahli",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.25",
-          "odd": "2.08"
-        }
-      ]
-    },
-    "form_league_home_count": 9,
-    "form_league_away_count": 9,
-    "home_form_14": 9,
-    "away_form_14": 11,
-    "home_form_12": 9,
-    "away_form_12": 11,
-    "home_form_10": 9,
-    "away_form_10": 11,
-    "home_form_7": 5,
-    "away_form_7": 11,
-    "home_form_5": 3,
-    "away_form_5": 7,
-    "home_score": "20%",
-    "away_score": "47%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1488631,
-    "date": "2026-01-01",
-    "league": "League Cup",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "Egypt",
-    "home": "Al Ittihad",
-    "away": "Zamalek SC",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "2.05"
-        },
-        {
-          "value": "Away +0.25",
-          "odd": "1.75"
-        },
-        {
-          "value": "Home +0.5",
-          "odd": "1.78"
-        },
-        {
-          "value": "Away +0.5",
-          "odd": "2.02"
-        }
-      ]
-    },
-    "form_league_home_count": 3,
-    "form_league_away_count": 3,
-    "home_form_14": 3,
-    "away_form_14": 4,
-    "home_form_12": 3,
-    "away_form_12": 4,
-    "home_form_10": 3,
-    "away_form_10": 4,
-    "home_form_7": 3,
-    "away_form_7": 4,
-    "home_form_5": 3,
-    "away_form_5": 4,
-    "home_score": "33%",
-    "away_score": "44%",
-    "match_result": "2-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
     "fixture_id": 1386848,
     "date": "2026-01-01",
     "league": "Championship",
@@ -861,7 +7,7 @@
     "country": "England",
     "home": "Southampton",
     "away": "Millwall",
-    "match_finish": "First Half",
+    "match_finish": "Second Half",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
@@ -903,47 +49,129 @@
     }
   },
   {
-    "fixture_id": 1401138,
+    "fixture_id": 1386281,
     "date": "2026-01-01",
-    "league": "Premier League",
+    "league": "League Two",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Shrewsbury",
+    "away": "Bristol Rovers",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "2.10"
+        }
+      ]
+    },
+    "form_league_home_count": 23,
+    "form_league_away_count": 23,
+    "home_form_14": 14,
+    "away_form_14": 4,
+    "home_form_12": 13,
+    "away_form_12": 1,
+    "home_form_10": 7,
+    "away_form_10": 1,
+    "home_form_7": 3,
+    "away_form_7": 1,
+    "home_form_5": 2,
+    "away_form_5": 1,
+    "home_score": "13%",
+    "away_score": "7%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1386840,
+    "date": "2026-01-01",
+    "league": "Championship",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Swansea",
+    "away": "West Brom",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Away +0.25",
+          "odd": "2.20"
+        }
+      ]
+    },
+    "form_league_home_count": 24,
+    "form_league_away_count": 24,
+    "home_form_14": 16,
+    "away_form_14": 14,
+    "home_form_12": 13,
+    "away_form_12": 14,
+    "home_form_10": 12,
+    "away_form_10": 13,
+    "home_form_7": 12,
+    "away_form_7": 9,
+    "home_form_5": 9,
+    "away_form_5": 6,
+    "home_score": "60%",
+    "away_score": "40%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1386845,
+    "date": "2026-01-01",
+    "league": "Championship",
     "timestamp": "2026-01-01 19:30:00",
-    "country": "Wales",
-    "home": "Colwyn Bay",
-    "away": "Flint Town United",
+    "country": "England",
+    "home": "Blackburn",
+    "away": "Wrexham",
     "match_finish": "Match Finished",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
       "values": [
         {
-          "value": "Home -0.75",
-          "odd": "1.95"
+          "value": "Home -0.5",
+          "odd": "2.10"
         },
         {
-          "value": "Away -0.75",
-          "odd": "1.85"
+          "value": "Home -0.25",
+          "odd": "1.88"
         },
         {
-          "value": "Away -0.5",
-          "odd": "2.08"
+          "value": "Away -0.25",
+          "odd": "1.98"
         }
       ]
     },
-    "form_league_home_count": 20,
-    "form_league_away_count": 20,
-    "home_form_14": 23,
-    "away_form_14": 11,
-    "home_form_12": 19,
-    "away_form_12": 10,
-    "home_form_10": 19,
-    "away_form_10": 7,
-    "home_form_7": 12,
-    "away_form_7": 4,
-    "home_form_5": 9,
-    "away_form_5": 3,
-    "home_score": "60%",
-    "away_score": "20%",
-    "match_result": "1-2",
+    "form_league_home_count": 23,
+    "form_league_away_count": 24,
+    "home_form_14": 20,
+    "away_form_14": 24,
+    "home_form_12": 17,
+    "away_form_12": 20,
+    "home_form_10": 11,
+    "away_form_10": 16,
+    "home_form_7": 8,
+    "away_form_7": 9,
+    "home_form_5": 6,
+    "away_form_5": 7,
+    "home_score": "40%",
+    "away_score": "47%",
+    "match_result": "0-2",
     "bet_pick": {
       "picked": "",
       "team": "",
@@ -1005,51 +233,43 @@
     }
   },
   {
-    "fixture_id": 1469616,
+    "fixture_id": 1456521,
     "date": "2026-01-01",
-    "league": "A-League",
-    "timestamp": "2026-01-01 11:00:00",
-    "country": "Australia",
-    "home": "Auckland",
-    "away": "Newcastle Jets",
-    "match_finish": "Match Finished",
+    "league": "Liga Alef",
+    "timestamp": "2026-01-02 00:45:00",
+    "country": "Israel",
+    "home": "Ironi Nesher",
+    "away": "Tzeirey Tamra",
+    "match_finish": "Not Started",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
       "values": [
         {
-          "value": "Home -1",
+          "value": "Home -0.5",
           "odd": "1.95"
         },
         {
-          "value": "Away -1",
-          "odd": "1.88"
-        },
-        {
-          "value": "Home -0.75",
-          "odd": "1.75"
-        },
-        {
-          "value": "Away -0.75",
-          "odd": "2.05"
+          "value": "Away -0.5",
+          "odd": "1.85"
         }
       ]
     },
-    "form_league_home_count": 9,
-    "form_league_away_count": 10,
-    "home_form_14": 20,
-    "away_form_14": 12,
-    "home_form_12": 20,
-    "away_form_12": 12,
-    "home_form_10": 20,
-    "away_form_10": 12,
-    "home_form_7": 16,
-    "away_form_7": 9,
-    "home_form_5": 10,
-    "away_form_5": 9,
-    "home_score": "67%",
-    "away_score": "60%",
-    "match_result": "1-3",
+    "form_league_home_count": 12,
+    "form_league_away_count": 12,
+    "home_form_14": 18,
+    "away_form_14": 14,
+    "home_form_12": 18,
+    "away_form_12": 14,
+    "home_form_10": 14,
+    "away_form_10": 8,
+    "home_form_7": 10,
+    "away_form_7": 5,
+    "home_form_5": 7,
+    "away_form_5": 4,
+    "home_score": "47%",
+    "away_score": "27%",
+    "match_result": "0-0",
     "bet_pick": {
       "picked": "",
       "team": "",
@@ -1058,14 +278,639 @@
     }
   },
   {
-    "fixture_id": 1386275,
+    "fixture_id": 1456761,
+    "date": "2026-01-01",
+    "league": "Liga Alef",
+    "timestamp": "2026-01-02 01:00:00",
+    "country": "Israel",
+    "home": "Shimshon Tel Aviv",
+    "away": "Maccabi Kiryat Malachi",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "1.98"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.82"
+        }
+      ]
+    },
+    "form_league_home_count": 12,
+    "form_league_away_count": 12,
+    "home_form_14": 17,
+    "away_form_14": 19,
+    "home_form_12": 17,
+    "away_form_12": 19,
+    "home_form_10": 17,
+    "away_form_10": 13,
+    "home_form_7": 13,
+    "away_form_7": 10,
+    "home_form_5": 12,
+    "away_form_5": 4,
+    "home_score": "80%",
+    "away_score": "27%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1379153,
+    "date": "2026-01-01",
+    "league": "Premier League",
+    "timestamp": "2026-01-02 00:30:00",
+    "country": "England",
+    "home": "Crystal Palace",
+    "away": "Fulham",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "2.15"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.88"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.98"
+        }
+      ]
+    },
+    "form_league_home_count": 18,
+    "form_league_away_count": 18,
+    "home_form_14": 20,
+    "away_form_14": 21,
+    "home_form_12": 14,
+    "away_form_12": 18,
+    "home_form_10": 13,
+    "away_form_10": 18,
+    "home_form_7": 9,
+    "away_form_7": 15,
+    "home_form_5": 6,
+    "away_form_5": 9,
+    "home_score": "40%",
+    "away_score": "60%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1386839,
+    "date": "2026-01-01",
+    "league": "Championship",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Bristol City",
+    "away": "Portsmouth",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.75",
+          "odd": "1.92"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.92"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "2.10"
+        }
+      ]
+    },
+    "form_league_home_count": 24,
+    "form_league_away_count": 23,
+    "home_form_14": 20,
+    "away_form_14": 13,
+    "home_form_12": 14,
+    "away_form_12": 12,
+    "home_form_10": 14,
+    "away_form_10": 12,
+    "home_form_7": 10,
+    "away_form_7": 8,
+    "home_form_5": 7,
+    "away_form_5": 8,
+    "home_score": "47%",
+    "away_score": "53%",
+    "match_result": "3-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1387380,
+    "date": "2026-01-01",
+    "league": "League One",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Exeter City",
+    "away": "Luton",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "2.10"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "2.02"
+        }
+      ]
+    },
+    "form_league_home_count": 22,
+    "form_league_away_count": 23,
+    "home_form_14": 17,
+    "away_form_14": 20,
+    "home_form_12": 17,
+    "away_form_12": 19,
+    "home_form_10": 13,
+    "away_form_10": 16,
+    "home_form_7": 9,
+    "away_form_7": 12,
+    "home_form_5": 9,
+    "away_form_5": 8,
+    "home_score": "60%",
+    "away_score": "53%",
+    "match_result": "1-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1386844,
+    "date": "2026-01-01",
+    "league": "Championship",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Hull City",
+    "away": "Stoke City",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.82"
+        }
+      ]
+    },
+    "form_league_home_count": 24,
+    "form_league_away_count": 24,
+    "home_form_14": 26,
+    "away_form_14": 16,
+    "home_form_12": 22,
+    "away_form_12": 13,
+    "home_form_10": 19,
+    "away_form_10": 7,
+    "home_form_7": 16,
+    "away_form_7": 4,
+    "home_form_5": 13,
+    "away_form_5": 4,
+    "home_score": "87%",
+    "away_score": "27%",
+    "match_result": "0-1",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1387386,
+    "date": "2026-01-01",
+    "league": "League One",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Reading",
+    "away": "Burton Albion",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "1.98"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.88"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.10"
+        }
+      ]
+    },
+    "form_league_home_count": 22,
+    "form_league_away_count": 22,
+    "home_form_14": 21,
+    "away_form_14": 22,
+    "home_form_12": 19,
+    "away_form_12": 18,
+    "home_form_10": 18,
+    "away_form_10": 15,
+    "home_form_7": 11,
+    "away_form_7": 8,
+    "home_form_5": 7,
+    "away_form_5": 5,
+    "home_score": "47%",
+    "away_score": "33%",
+    "match_result": "2-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1428859,
+    "date": "2026-01-01",
+    "league": "Non League Premier - Northern",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "United of Manchester",
+    "away": "Ashton United",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.90"
+        }
+      ]
+    },
+    "form_league_home_count": 21,
+    "form_league_away_count": 22,
+    "home_form_14": 24,
+    "away_form_14": 17,
+    "home_form_12": 23,
+    "away_form_12": 17,
+    "home_form_10": 17,
+    "away_form_10": 11,
+    "home_form_7": 11,
+    "away_form_7": 8,
+    "home_form_5": 10,
+    "away_form_5": 5,
+    "home_score": "67%",
+    "away_score": "33%",
+    "match_result": "0-1",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1438560,
+    "date": "2026-01-01",
+    "league": "Division 1",
+    "timestamp": "2026-01-01 19:35:00",
+    "country": "Saudi-Arabia",
+    "home": "Al Orubah",
+    "away": "Al Jandal",
+    "match_finish": "Match Finished",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away -1",
+          "odd": "2.00"
+        }
+      ]
+    },
+    "form_league_home_count": 13,
+    "form_league_away_count": 13,
+    "home_form_14": 27,
+    "away_form_14": 15,
+    "home_form_12": 27,
+    "away_form_12": 12,
+    "home_form_10": 21,
+    "away_form_10": 8,
+    "home_form_7": 14,
+    "away_form_7": 7,
+    "home_form_5": 11,
+    "away_form_5": 7,
+    "home_score": "73%",
+    "away_score": "47%",
+    "match_result": "1-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1386843,
+    "date": "2026-01-01",
+    "league": "Championship",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Watford",
+    "away": "Birmingham",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.85"
+        }
+      ]
+    },
+    "form_league_home_count": 24,
+    "form_league_away_count": 24,
+    "home_form_14": 26,
+    "away_form_14": 19,
+    "home_form_12": 23,
+    "away_form_12": 16,
+    "home_form_10": 19,
+    "away_form_10": 10,
+    "home_form_7": 14,
+    "away_form_7": 6,
+    "home_form_5": 11,
+    "away_form_5": 3,
+    "home_score": "73%",
+    "away_score": "20%",
+    "match_result": "2-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1379150,
+    "date": "2026-01-01",
+    "league": "Premier League",
+    "timestamp": "2026-01-02 03:00:00",
+    "country": "England",
+    "home": "Brentford",
+    "away": "Tottenham",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "2.20"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.98"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.88"
+        }
+      ]
+    },
+    "form_league_home_count": 18,
+    "form_league_away_count": 18,
+    "home_form_14": 22,
+    "away_form_14": 16,
+    "home_form_12": 19,
+    "away_form_12": 14,
+    "home_form_10": 16,
+    "away_form_10": 11,
+    "home_form_7": 10,
+    "away_form_7": 7,
+    "home_form_5": 7,
+    "away_form_5": 7,
+    "home_score": "47%",
+    "away_score": "47%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1401138,
+    "date": "2026-01-01",
+    "league": "Premier League",
+    "timestamp": "2026-01-01 19:30:00",
+    "country": "Wales",
+    "home": "Colwyn Bay",
+    "away": "Flint Town United",
+    "match_finish": "Match Finished",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.75",
+          "odd": "1.95"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "2.08"
+        }
+      ]
+    },
+    "form_league_home_count": 20,
+    "form_league_away_count": 20,
+    "home_form_14": 23,
+    "away_form_14": 11,
+    "home_form_12": 19,
+    "away_form_12": 10,
+    "home_form_10": 19,
+    "away_form_10": 7,
+    "home_form_7": 12,
+    "away_form_7": 4,
+    "home_form_5": 9,
+    "away_form_5": 3,
+    "home_score": "60%",
+    "away_score": "20%",
+    "match_result": "1-2",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1497473,
+    "date": "2026-01-01",
+    "league": "Premier League",
+    "timestamp": "2026-01-01 21:30:00",
+    "country": "Kuwait",
+    "home": "Al Fahaheel",
+    "away": "Al Jahra",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.75",
+          "odd": "2.05"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.75"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.98"
+        }
+      ]
+    },
+    "form_league_home_count": 9,
+    "form_league_away_count": 9,
+    "home_form_14": 13,
+    "away_form_14": 7,
+    "home_form_12": 13,
+    "away_form_12": 7,
+    "home_form_10": 13,
+    "away_form_10": 7,
+    "home_form_7": 10,
+    "away_form_7": 7,
+    "home_form_5": 10,
+    "away_form_5": 6,
+    "home_score": "67%",
+    "away_score": "40%",
+    "match_result": "3-1",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1386273,
     "date": "2026-01-01",
     "league": "League Two",
     "timestamp": "2026-01-01 22:00:00",
     "country": "England",
-    "home": "Colchester",
-    "away": "Milton Keynes Dons",
-    "match_finish": "First Half",
+    "home": "Barrow",
+    "away": "Salford City",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "2.05"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.80"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.75"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "2.05"
+        }
+      ]
+    },
+    "form_league_home_count": 23,
+    "form_league_away_count": 23,
+    "home_form_14": 15,
+    "away_form_14": 21,
+    "home_form_12": 11,
+    "away_form_12": 21,
+    "home_form_10": 7,
+    "away_form_10": 18,
+    "home_form_7": 5,
+    "away_form_7": 14,
+    "home_form_5": 4,
+    "away_form_5": 11,
+    "home_score": "27%",
+    "away_score": "73%",
+    "match_result": "1-1",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1386277,
+    "date": "2026-01-01",
+    "league": "League Two",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Fleetwood Town",
+    "away": "Grimsby",
+    "match_finish": "Second Half",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
@@ -1078,18 +923,18 @@
     },
     "form_league_home_count": 23,
     "form_league_away_count": 23,
-    "home_form_14": 25,
-    "away_form_14": 28,
-    "home_form_12": 22,
-    "away_form_12": 22,
-    "home_form_10": 16,
-    "away_form_10": 16,
-    "home_form_7": 12,
-    "away_form_7": 12,
-    "home_form_5": 6,
-    "away_form_5": 8,
-    "home_score": "40%",
-    "away_score": "53%",
+    "home_form_14": 22,
+    "away_form_14": 16,
+    "home_form_12": 19,
+    "away_form_12": 10,
+    "home_form_10": 15,
+    "away_form_10": 7,
+    "home_form_7": 11,
+    "away_form_7": 6,
+    "home_form_5": 8,
+    "away_form_5": 5,
+    "home_score": "53%",
+    "away_score": "33%",
     "match_result": "0-0",
     "bet_pick": {
       "picked": "",
@@ -1099,13 +944,156 @@
     }
   },
   {
-    "fixture_id": 1386845,
+    "fixture_id": 1387382,
     "date": "2026-01-01",
-    "league": "Championship",
-    "timestamp": "2026-01-01 19:30:00",
+    "league": "League One",
+    "timestamp": "2026-01-01 22:00:00",
     "country": "England",
-    "home": "Blackburn",
-    "away": "Wrexham",
+    "home": "Lincoln",
+    "away": "Huddersfield",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "2.10"
+        }
+      ]
+    },
+    "form_league_home_count": 23,
+    "form_league_away_count": 23,
+    "home_form_14": 26,
+    "away_form_14": 21,
+    "home_form_12": 23,
+    "away_form_12": 18,
+    "home_form_10": 20,
+    "away_form_10": 18,
+    "home_form_7": 16,
+    "away_form_7": 12,
+    "home_form_5": 13,
+    "away_form_5": 11,
+    "home_score": "87%",
+    "away_score": "73%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1387388,
+    "date": "2026-01-01",
+    "league": "League One",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Stevenage",
+    "away": "Plymouth",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.10"
+        }
+      ]
+    },
+    "form_league_home_count": 21,
+    "form_league_away_count": 23,
+    "home_form_14": 20,
+    "away_form_14": 17,
+    "home_form_12": 14,
+    "away_form_12": 13,
+    "home_form_10": 11,
+    "away_form_10": 13,
+    "home_form_7": 9,
+    "away_form_7": 10,
+    "home_form_5": 5,
+    "away_form_5": 10,
+    "home_score": "33%",
+    "away_score": "67%",
+    "match_result": "1-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1395605,
+    "date": "2026-01-01",
+    "league": "FAW Championship",
+    "timestamp": "2026-01-01 21:00:00",
+    "country": "Wales",
+    "home": "Caersws",
+    "away": "Newtown AFC",
+    "match_finish": "Match Finished",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.5",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "1.80"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "1.95"
+        }
+      ]
+    },
+    "form_league_home_count": 16,
+    "form_league_away_count": 17,
+    "home_form_14": 12,
+    "away_form_14": 24,
+    "home_form_12": 12,
+    "away_form_12": 20,
+    "home_form_10": 12,
+    "away_form_10": 17,
+    "home_form_7": 10,
+    "away_form_7": 11,
+    "home_form_5": 9,
+    "away_form_5": 5,
+    "home_score": "60%",
+    "away_score": "33%",
+    "match_result": "1-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1498959,
+    "date": "2026-01-01",
+    "league": "Iraqi League",
+    "timestamp": "2026-01-01 20:00:00",
+    "country": "Iraq",
+    "home": "Al Minaa Basra",
+    "away": "Newroz",
     "match_finish": "Match Finished",
     "handicap": {
       "id": 4,
@@ -1113,7 +1101,11 @@
       "values": [
         {
           "value": "Home -0.5",
-          "odd": "2.10"
+          "odd": "1.82"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.98"
         },
         {
           "value": "Home -0.25",
@@ -1121,25 +1113,209 @@
         },
         {
           "value": "Away -0.25",
-          "odd": "1.98"
+          "odd": "1.92"
+        }
+      ]
+    },
+    "form_league_home_count": 8,
+    "form_league_away_count": 8,
+    "home_form_14": 10,
+    "away_form_14": 3,
+    "home_form_12": 10,
+    "away_form_12": 3,
+    "home_form_10": 10,
+    "away_form_10": 3,
+    "home_form_7": 7,
+    "away_form_7": 0,
+    "home_form_5": 7,
+    "away_form_5": 0,
+    "home_score": "47%",
+    "away_score": "0%",
+    "match_result": "1-1",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1467043,
+    "date": "2026-01-01",
+    "league": "Premier League",
+    "timestamp": "2026-01-01 23:00:00",
+    "country": "Bahrain",
+    "home": "Al-Hidd",
+    "away": "Al Ahli",
+    "match_finish": "First Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "2.08"
+        }
+      ]
+    },
+    "form_league_home_count": 9,
+    "form_league_away_count": 9,
+    "home_form_14": 9,
+    "away_form_14": 11,
+    "home_form_12": 9,
+    "away_form_12": 11,
+    "home_form_10": 9,
+    "away_form_10": 11,
+    "home_form_7": 5,
+    "away_form_7": 11,
+    "home_form_5": 3,
+    "away_form_5": 7,
+    "home_score": "20%",
+    "away_score": "47%",
+    "match_result": "0-1",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1379154,
+    "date": "2026-01-01",
+    "league": "Premier League",
+    "timestamp": "2026-01-02 00:30:00",
+    "country": "England",
+    "home": "Liverpool",
+    "away": "Leeds",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away -1",
+          "odd": "2.02"
+        }
+      ]
+    },
+    "form_league_home_count": 18,
+    "form_league_away_count": 18,
+    "home_form_14": 20,
+    "away_form_14": 16,
+    "home_form_12": 17,
+    "away_form_12": 12,
+    "home_form_10": 17,
+    "away_form_10": 12,
+    "home_form_7": 14,
+    "away_form_7": 9,
+    "home_form_5": 11,
+    "away_form_5": 9,
+    "home_score": "73%",
+    "away_score": "60%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1386272,
+    "date": "2026-01-01",
+    "league": "League Two",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Barnet",
+    "away": "Crawley Town",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "2.08"
+        }
+      ]
+    },
+    "form_league_home_count": 23,
+    "form_league_away_count": 23,
+    "home_form_14": 19,
+    "away_form_14": 11,
+    "home_form_12": 15,
+    "away_form_12": 11,
+    "home_form_10": 12,
+    "away_form_10": 10,
+    "home_form_7": 9,
+    "away_form_7": 3,
+    "home_form_5": 7,
+    "away_form_5": 2,
+    "home_score": "47%",
+    "away_score": "13%",
+    "match_result": "1-1",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1386850,
+    "date": "2026-01-01",
+    "league": "Championship",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Charlton",
+    "away": "Coventry",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.5",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "2.08"
         }
       ]
     },
     "form_league_home_count": 23,
     "form_league_away_count": 24,
-    "home_form_14": 20,
-    "away_form_14": 24,
-    "home_form_12": 17,
-    "away_form_12": 20,
-    "home_form_10": 11,
-    "away_form_10": 16,
-    "home_form_7": 8,
-    "away_form_7": 9,
-    "home_form_5": 6,
-    "away_form_5": 7,
-    "home_score": "40%",
-    "away_score": "47%",
-    "match_result": "0-2",
+    "home_form_14": 15,
+    "away_form_14": 29,
+    "home_form_12": 9,
+    "away_form_12": 23,
+    "home_form_10": 7,
+    "away_form_10": 20,
+    "home_form_7": 4,
+    "away_form_7": 11,
+    "home_form_5": 4,
+    "away_form_5": 8,
+    "home_score": "27%",
+    "away_score": "53%",
+    "match_result": "0-1",
     "bet_pick": {
       "picked": "",
       "team": "",
@@ -1201,386 +1377,96 @@
     }
   },
   {
-    "fixture_id": 1428865,
+    "fixture_id": 1428862,
     "date": "2026-01-01",
     "league": "Non League Premier - Northern",
     "timestamp": "2026-01-01 22:00:00",
     "country": "England",
-    "home": "Gainsborough Trinity",
-    "away": "Cleethorpes Town",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.25",
-          "odd": "2.00"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "1.80"
-        }
-      ]
-    },
-    "form_league_home_count": 20,
-    "form_league_away_count": 21,
-    "home_form_14": 20,
-    "away_form_14": 22,
-    "home_form_12": 14,
-    "away_form_12": 16,
-    "home_form_10": 11,
-    "away_form_10": 15,
-    "home_form_7": 7,
-    "away_form_7": 12,
-    "home_form_5": 6,
-    "away_form_5": 8,
-    "home_score": "40%",
-    "away_score": "53%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1386274,
-    "date": "2026-01-01",
-    "league": "League Two",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Cambridge United",
-    "away": "Walsall",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "2.15"
-        },
-        {
-          "value": "Home -0.25",
-          "odd": "1.82"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "2.02"
-        }
-      ]
-    },
-    "form_league_home_count": 23,
-    "form_league_away_count": 23,
-    "home_form_14": 24,
-    "away_form_14": 24,
-    "home_form_12": 20,
-    "away_form_12": 18,
-    "home_form_10": 17,
-    "away_form_10": 17,
-    "home_form_7": 15,
-    "away_form_7": 14,
-    "home_form_5": 9,
-    "away_form_5": 8,
-    "home_score": "60%",
-    "away_score": "53%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1386278,
-    "date": "2026-01-01",
-    "league": "League Two",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Harrogate Town",
-    "away": "Tranmere",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "2.05"
-        },
-        {
-          "value": "Away +0.25",
-          "odd": "1.80"
-        },
-        {
-          "value": "Home +0.5",
-          "odd": "1.75"
-        },
-        {
-          "value": "Away +0.5",
-          "odd": "2.05"
-        }
-      ]
-    },
-    "form_league_home_count": 23,
-    "form_league_away_count": 23,
-    "home_form_14": 6,
-    "away_form_14": 19,
-    "home_form_12": 3,
-    "away_form_12": 18,
-    "home_form_10": 3,
-    "away_form_10": 14,
-    "home_form_7": 2,
-    "away_form_7": 10,
-    "home_form_5": 1,
-    "away_form_5": 6,
-    "home_score": "7%",
-    "away_score": "40%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1386280,
-    "date": "2026-01-01",
-    "league": "League Two",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Oldham",
-    "away": "Chesterfield",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.25",
-          "odd": "2.02"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "1.82"
-        }
-      ]
-    },
-    "form_league_home_count": 23,
-    "form_league_away_count": 23,
-    "home_form_14": 18,
-    "away_form_14": 23,
-    "home_form_12": 17,
-    "away_form_12": 20,
-    "home_form_10": 16,
-    "away_form_10": 16,
-    "home_form_7": 11,
-    "away_form_7": 11,
-    "home_form_5": 8,
-    "away_form_5": 10,
-    "home_score": "53%",
-    "away_score": "67%",
-    "match_result": "0-1",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1386846,
-    "date": "2026-01-01",
-    "league": "Championship",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "QPR",
-    "away": "Norwich",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "2.08"
-        },
-        {
-          "value": "Home -0.25",
-          "odd": "1.82"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "2.02"
-        }
-      ]
-    },
-    "form_league_home_count": 24,
-    "form_league_away_count": 24,
-    "home_form_14": 20,
-    "away_form_14": 13,
-    "home_form_12": 17,
-    "away_form_12": 13,
-    "home_form_10": 17,
-    "away_form_10": 12,
-    "home_form_7": 10,
-    "away_form_7": 11,
-    "home_form_5": 7,
-    "away_form_5": 8,
-    "home_score": "47%",
-    "away_score": "53%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1387388,
-    "date": "2026-01-01",
-    "league": "League One",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Stevenage",
-    "away": "Plymouth",
-    "match_finish": "Halftime",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "2.02"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.82"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "2.10"
-        }
-      ]
-    },
-    "form_league_home_count": 21,
-    "form_league_away_count": 23,
-    "home_form_14": 20,
-    "away_form_14": 17,
-    "home_form_12": 14,
-    "away_form_12": 13,
-    "home_form_10": 11,
-    "away_form_10": 13,
-    "home_form_7": 9,
-    "away_form_7": 10,
-    "home_form_5": 5,
-    "away_form_5": 10,
-    "home_score": "33%",
-    "away_score": "67%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1387389,
-    "date": "2026-01-01",
-    "league": "League One",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Wigan",
-    "away": "Barnsley",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "2.05"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.75"
-        },
-        {
-          "value": "Home -0.25",
-          "odd": "1.92"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "1.92"
-        }
-      ]
-    },
-    "form_league_home_count": 22,
-    "form_league_away_count": 20,
-    "home_form_14": 17,
-    "away_form_14": 15,
-    "home_form_12": 17,
-    "away_form_12": 12,
-    "home_form_10": 16,
-    "away_form_10": 11,
-    "home_form_7": 11,
-    "away_form_7": 7,
-    "home_form_5": 7,
-    "away_form_5": 3,
-    "home_score": "47%",
-    "away_score": "20%",
-    "match_result": "1-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1395613,
-    "date": "2026-01-01",
-    "league": "FAW Championship",
-    "timestamp": "2026-01-01 21:30:00",
-    "country": "Wales",
-    "home": "Aberystwyth Town",
-    "away": "Carmarthen Town",
+    "home": "Rushall Olympic",
+    "away": "Hednesford Town",
     "match_finish": "Second Half",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
       "values": [
         {
-          "value": "Home -0.25",
-          "odd": "2.00"
+          "value": "Home +0.5",
+          "odd": "1.92"
         },
         {
-          "value": "Away -0.25",
-          "odd": "1.80"
+          "value": "Away +0.5",
+          "odd": "1.88"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "1.95"
         }
       ]
     },
-    "form_league_home_count": 16,
-    "form_league_away_count": 17,
-    "home_form_14": 20,
+    "form_league_home_count": 22,
+    "form_league_away_count": 23,
+    "home_form_14": 11,
+    "away_form_14": 28,
+    "home_form_12": 11,
+    "away_form_12": 25,
+    "home_form_10": 8,
+    "away_form_10": 24,
+    "home_form_7": 5,
+    "away_form_7": 15,
+    "home_form_5": 3,
+    "away_form_5": 9,
+    "home_score": "20%",
+    "away_score": "60%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1428864,
+    "date": "2026-01-01",
+    "league": "Non League Premier - Northern",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Stocksbridge Park Steels",
+    "away": "Guiseley AFC",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "1.78"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "2.02"
+        }
+      ]
+    },
+    "form_league_home_count": 23,
+    "form_league_away_count": 23,
+    "home_form_14": 18,
     "away_form_14": 18,
-    "home_form_12": 19,
+    "home_form_12": 12,
     "away_form_12": 14,
-    "home_form_10": 18,
-    "away_form_10": 13,
-    "home_form_7": 9,
-    "away_form_7": 8,
-    "home_form_5": 6,
-    "away_form_5": 2,
-    "home_score": "40%",
-    "away_score": "13%",
-    "match_result": "1-1",
+    "home_form_10": 8,
+    "away_form_10": 14,
+    "home_form_7": 8,
+    "away_form_7": 13,
+    "home_form_5": 5,
+    "away_form_5": 9,
+    "home_score": "33%",
+    "away_score": "60%",
+    "match_result": "1-2",
     "bet_pick": {
       "picked": "",
       "team": "",
@@ -1642,467 +1528,13 @@
     }
   },
   {
-    "fixture_id": 1456519,
-    "date": "2026-01-01",
-    "league": "Liga Alef",
-    "timestamp": "2026-01-02 02:15:00",
-    "country": "Israel",
-    "home": "Maccabi Neve Sha'anan",
-    "away": "Hapoel Bnei Musmus",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.75",
-          "odd": "1.85"
-        },
-        {
-          "value": "Away -0.75",
-          "odd": "1.95"
-        }
-      ]
-    },
-    "form_league_home_count": 12,
-    "form_league_away_count": 12,
-    "home_form_14": 25,
-    "away_form_14": 16,
-    "home_form_12": 25,
-    "away_form_12": 16,
-    "home_form_10": 21,
-    "away_form_10": 15,
-    "home_form_7": 14,
-    "away_form_7": 13,
-    "home_form_5": 11,
-    "away_form_5": 7,
-    "home_score": "73%",
-    "away_score": "47%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1386272,
-    "date": "2026-01-01",
-    "league": "League Two",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Barnet",
-    "away": "Crawley Town",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -1",
-          "odd": "2.00"
-        },
-        {
-          "value": "Away -1",
-          "odd": "1.85"
-        },
-        {
-          "value": "Away -0.75",
-          "odd": "2.08"
-        }
-      ]
-    },
-    "form_league_home_count": 23,
-    "form_league_away_count": 23,
-    "home_form_14": 19,
-    "away_form_14": 11,
-    "home_form_12": 15,
-    "away_form_12": 11,
-    "home_form_10": 12,
-    "away_form_10": 10,
-    "home_form_7": 9,
-    "away_form_7": 3,
-    "home_form_5": 7,
-    "away_form_5": 2,
-    "home_score": "47%",
-    "away_score": "13%",
-    "match_result": "1-1",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1386840,
-    "date": "2026-01-01",
-    "league": "Championship",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Swansea",
-    "away": "West Brom",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Away +0.25",
-          "odd": "2.20"
-        }
-      ]
-    },
-    "form_league_home_count": 24,
-    "form_league_away_count": 24,
-    "home_form_14": 16,
-    "away_form_14": 14,
-    "home_form_12": 13,
-    "away_form_12": 14,
-    "home_form_10": 12,
-    "away_form_10": 13,
-    "home_form_7": 12,
-    "away_form_7": 9,
-    "home_form_5": 9,
-    "away_form_5": 6,
-    "home_score": "60%",
-    "away_score": "40%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1386843,
-    "date": "2026-01-01",
-    "league": "Championship",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Watford",
-    "away": "Birmingham",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.25",
-          "odd": "2.00"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "1.85"
-        }
-      ]
-    },
-    "form_league_home_count": 24,
-    "form_league_away_count": 24,
-    "home_form_14": 26,
-    "away_form_14": 19,
-    "home_form_12": 23,
-    "away_form_12": 16,
-    "home_form_10": 19,
-    "away_form_10": 10,
-    "home_form_7": 14,
-    "away_form_7": 6,
-    "home_form_5": 11,
-    "away_form_5": 3,
-    "home_score": "73%",
-    "away_score": "20%",
-    "match_result": "2-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1386847,
-    "date": "2026-01-01",
-    "league": "Championship",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Derby",
-    "away": "Middlesbrough",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home +0.25",
-          "odd": "1.85"
-        },
-        {
-          "value": "Away +0.25",
-          "odd": "2.00"
-        }
-      ]
-    },
-    "form_league_home_count": 24,
-    "form_league_away_count": 24,
-    "home_form_14": 24,
-    "away_form_14": 22,
-    "home_form_12": 18,
-    "away_form_12": 18,
-    "home_form_10": 12,
-    "away_form_10": 17,
-    "home_form_7": 6,
-    "away_form_7": 13,
-    "home_form_5": 6,
-    "away_form_5": 7,
-    "home_score": "40%",
-    "away_score": "47%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1386842,
-    "date": "2026-01-01",
-    "league": "Championship",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Preston",
-    "away": "Sheffield Wednesday",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -1",
-          "odd": "1.88"
-        },
-        {
-          "value": "Away -1",
-          "odd": "1.98"
-        }
-      ]
-    },
-    "form_league_home_count": 24,
-    "form_league_away_count": 23,
-    "home_form_14": 21,
-    "away_form_14": 5,
-    "home_form_12": 18,
-    "away_form_12": 5,
-    "home_form_10": 12,
-    "away_form_10": 4,
-    "home_form_7": 10,
-    "away_form_7": 3,
-    "home_form_5": 6,
-    "away_form_5": 3,
-    "home_score": "40%",
-    "away_score": "20%",
-    "match_result": "1-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1386844,
-    "date": "2026-01-01",
-    "league": "Championship",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Hull City",
-    "away": "Stoke City",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.25",
-          "odd": "2.02"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "1.82"
-        }
-      ]
-    },
-    "form_league_home_count": 24,
-    "form_league_away_count": 24,
-    "home_form_14": 26,
-    "away_form_14": 16,
-    "home_form_12": 22,
-    "away_form_12": 13,
-    "home_form_10": 19,
-    "away_form_10": 7,
-    "home_form_7": 16,
-    "away_form_7": 4,
-    "home_form_5": 13,
-    "away_form_5": 4,
-    "home_score": "87%",
-    "away_score": "27%",
-    "match_result": "0-1",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1387381,
+    "fixture_id": 1387379,
     "date": "2026-01-01",
     "league": "League One",
     "timestamp": "2026-01-01 22:00:00",
     "country": "England",
-    "home": "Leyton Orient",
-    "away": "AFC Wimbledon",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "2.00"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.85"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "2.15"
-        }
-      ]
-    },
-    "form_league_home_count": 23,
-    "form_league_away_count": 22,
-    "home_form_14": 17,
-    "away_form_14": 16,
-    "home_form_12": 17,
-    "away_form_12": 10,
-    "home_form_10": 14,
-    "away_form_10": 6,
-    "home_form_7": 8,
-    "away_form_7": 3,
-    "home_form_5": 4,
-    "away_form_5": 2,
-    "home_score": "27%",
-    "away_score": "13%",
-    "match_result": "1-1",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1386277,
-    "date": "2026-01-01",
-    "league": "League Two",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Fleetwood Town",
-    "away": "Grimsby",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.25",
-          "odd": "2.15"
-        }
-      ]
-    },
-    "form_league_home_count": 23,
-    "form_league_away_count": 23,
-    "home_form_14": 22,
-    "away_form_14": 16,
-    "home_form_12": 19,
-    "away_form_12": 10,
-    "home_form_10": 15,
-    "away_form_10": 7,
-    "home_form_7": 11,
-    "away_form_7": 6,
-    "home_form_5": 8,
-    "away_form_5": 5,
-    "home_score": "53%",
-    "away_score": "33%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1387386,
-    "date": "2026-01-01",
-    "league": "League One",
-    "timestamp": "2026-01-01 22:00:00",
-    "country": "England",
-    "home": "Reading",
-    "away": "Burton Albion",
-    "match_finish": "First Half",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -0.5",
-          "odd": "1.98"
-        },
-        {
-          "value": "Away -0.5",
-          "odd": "1.88"
-        },
-        {
-          "value": "Away -0.25",
-          "odd": "2.10"
-        }
-      ]
-    },
-    "form_league_home_count": 22,
-    "form_league_away_count": 22,
-    "home_form_14": 21,
-    "away_form_14": 22,
-    "home_form_12": 19,
-    "away_form_12": 18,
-    "home_form_10": 18,
-    "away_form_10": 15,
-    "home_form_7": 11,
-    "away_form_7": 8,
-    "home_form_5": 7,
-    "away_form_5": 5,
-    "home_score": "47%",
-    "away_score": "33%",
-    "match_result": "2-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1395605,
-    "date": "2026-01-01",
-    "league": "FAW Championship",
-    "timestamp": "2026-01-01 21:00:00",
-    "country": "Wales",
-    "home": "Caersws",
-    "away": "Newtown AFC",
+    "home": "Doncaster",
+    "away": "Bolton",
     "match_finish": "Second Half",
     "handicap": {
       "id": 4,
@@ -2110,36 +1542,32 @@
       "values": [
         {
           "value": "Home +0.5",
-          "odd": "2.00"
+          "odd": "2.02"
         },
         {
           "value": "Away +0.5",
-          "odd": "1.80"
-        },
-        {
-          "value": "Home +0.75",
-          "odd": "1.85"
+          "odd": "1.82"
         },
         {
           "value": "Away +0.75",
-          "odd": "1.95"
+          "odd": "2.10"
         }
       ]
     },
-    "form_league_home_count": 16,
-    "form_league_away_count": 17,
-    "home_form_14": 12,
-    "away_form_14": 24,
-    "home_form_12": 12,
-    "away_form_12": 20,
-    "home_form_10": 12,
-    "away_form_10": 17,
-    "home_form_7": 10,
+    "form_league_home_count": 23,
+    "form_league_away_count": 22,
+    "home_form_14": 6,
+    "away_form_14": 26,
+    "home_form_12": 5,
+    "away_form_12": 23,
+    "home_form_10": 5,
+    "away_form_10": 20,
+    "home_form_7": 4,
     "away_form_7": 11,
-    "home_form_5": 9,
-    "away_form_5": 5,
-    "home_score": "60%",
-    "away_score": "33%",
+    "home_form_5": 0,
+    "away_form_5": 9,
+    "home_score": "0%",
+    "away_score": "60%",
     "match_result": "1-0",
     "bet_pick": {
       "picked": "",
@@ -2149,14 +1577,14 @@
     }
   },
   {
-    "fixture_id": 1386273,
+    "fixture_id": 1387384,
     "date": "2026-01-01",
-    "league": "League Two",
+    "league": "League One",
     "timestamp": "2026-01-01 22:00:00",
     "country": "England",
-    "home": "Barrow",
-    "away": "Salford City",
-    "match_finish": "Halftime",
+    "home": "Northampton",
+    "away": "Stockport County",
+    "match_finish": "Second Half",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
@@ -2179,21 +1607,266 @@
         }
       ]
     },
+    "form_league_home_count": 22,
+    "form_league_away_count": 22,
+    "home_form_14": 17,
+    "away_form_14": 26,
+    "home_form_12": 13,
+    "away_form_12": 22,
+    "home_form_10": 10,
+    "away_form_10": 16,
+    "home_form_7": 7,
+    "away_form_7": 10,
+    "home_form_5": 4,
+    "away_form_5": 9,
+    "home_score": "27%",
+    "away_score": "60%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1395613,
+    "date": "2026-01-01",
+    "league": "FAW Championship",
+    "timestamp": "2026-01-01 21:30:00",
+    "country": "Wales",
+    "home": "Aberystwyth Town",
+    "away": "Carmarthen Town",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.80"
+        }
+      ]
+    },
+    "form_league_home_count": 16,
+    "form_league_away_count": 17,
+    "home_form_14": 20,
+    "away_form_14": 18,
+    "home_form_12": 19,
+    "away_form_12": 14,
+    "home_form_10": 18,
+    "away_form_10": 13,
+    "home_form_7": 9,
+    "away_form_7": 8,
+    "home_form_5": 6,
+    "away_form_5": 2,
+    "home_score": "40%",
+    "away_score": "13%",
+    "match_result": "1-1",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1437411,
+    "date": "2026-01-01",
+    "league": "Division 1",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "Saudi-Arabia",
+    "home": "Al-Faisaly FC",
+    "away": "Al-Raed",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "1.95"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.85"
+        }
+      ]
+    },
+    "form_league_home_count": 12,
+    "form_league_away_count": 13,
+    "home_form_14": 20,
+    "away_form_14": 20,
+    "home_form_12": 20,
+    "away_form_12": 19,
+    "home_form_10": 18,
+    "away_form_10": 13,
+    "home_form_7": 13,
+    "away_form_7": 9,
+    "home_form_5": 9,
+    "away_form_5": 5,
+    "home_score": "60%",
+    "away_score": "33%",
+    "match_result": "3-2",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1498961,
+    "date": "2026-01-01",
+    "league": "Iraqi League",
+    "timestamp": "2026-01-01 22:30:00",
+    "country": "Iraq",
+    "home": "Al Kahrabaa",
+    "away": "Al Zawra'a",
+    "match_finish": "First Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.75",
+          "odd": "1.78"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "2.02"
+        },
+        {
+          "value": "Home +1",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away +1",
+          "odd": "1.95"
+        }
+      ]
+    },
+    "form_league_home_count": 7,
+    "form_league_away_count": 7,
+    "home_form_14": 2,
+    "away_form_14": 14,
+    "home_form_12": 2,
+    "away_form_12": 14,
+    "home_form_10": 2,
+    "away_form_10": 14,
+    "home_form_7": 2,
+    "away_form_7": 14,
+    "home_form_5": 2,
+    "away_form_5": 12,
+    "home_score": "13%",
+    "away_score": "80%",
+    "match_result": "0-1",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1386276,
+    "date": "2026-01-01",
+    "league": "League Two",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Crewe",
+    "away": "Cheltenham",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.75",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.82"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.75"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "2.05"
+        }
+      ]
+    },
     "form_league_home_count": 23,
     "form_league_away_count": 23,
-    "home_form_14": 15,
+    "home_form_14": 19,
+    "away_form_14": 23,
+    "home_form_12": 13,
+    "away_form_12": 20,
+    "home_form_10": 13,
+    "away_form_10": 16,
+    "home_form_7": 6,
+    "away_form_7": 13,
+    "home_form_5": 5,
+    "away_form_5": 10,
+    "home_score": "33%",
+    "away_score": "67%",
+    "match_result": "3-1",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1386279,
+    "date": "2026-01-01",
+    "league": "League Two",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Notts County",
+    "away": "Accrington ST",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.75",
+          "odd": "2.08"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "2.00"
+        }
+      ]
+    },
+    "form_league_home_count": 23,
+    "form_league_away_count": 23,
+    "home_form_14": 25,
     "away_form_14": 21,
-    "home_form_12": 11,
+    "home_form_12": 22,
     "away_form_12": 21,
-    "home_form_10": 7,
+    "home_form_10": 18,
     "away_form_10": 18,
-    "home_form_7": 5,
-    "away_form_7": 14,
-    "home_form_5": 4,
-    "away_form_5": 11,
-    "home_score": "27%",
-    "away_score": "73%",
-    "match_result": "1-1",
+    "home_form_7": 11,
+    "away_form_7": 13,
+    "home_form_5": 8,
+    "away_form_5": 9,
+    "home_score": "53%",
+    "away_score": "60%",
+    "match_result": "0-0",
     "bet_pick": {
       "picked": "",
       "team": "",
@@ -2255,91 +1928,46 @@
     }
   },
   {
-    "fixture_id": 1379154,
+    "fixture_id": 1387383,
     "date": "2026-01-01",
-    "league": "Premier League",
-    "timestamp": "2026-01-02 00:30:00",
-    "country": "England",
-    "home": "Liverpool",
-    "away": "Leeds",
-    "match_finish": "Not Started",
-    "handicap": {
-      "id": 4,
-      "name": "Asian Handicap",
-      "values": [
-        {
-          "value": "Home -1",
-          "odd": "1.82"
-        },
-        {
-          "value": "Away -1",
-          "odd": "2.02"
-        }
-      ]
-    },
-    "form_league_home_count": 18,
-    "form_league_away_count": 18,
-    "home_form_14": 20,
-    "away_form_14": 16,
-    "home_form_12": 17,
-    "away_form_12": 12,
-    "home_form_10": 17,
-    "away_form_10": 12,
-    "home_form_7": 14,
-    "away_form_7": 9,
-    "home_form_5": 11,
-    "away_form_5": 9,
-    "home_score": "73%",
-    "away_score": "60%",
-    "match_result": "0-0",
-    "bet_pick": {
-      "picked": "",
-      "team": "",
-      "odds": "",
-      "stake": ""
-    }
-  },
-  {
-    "fixture_id": 1386839,
-    "date": "2026-01-01",
-    "league": "Championship",
+    "league": "League One",
     "timestamp": "2026-01-01 22:00:00",
     "country": "England",
-    "home": "Bristol City",
-    "away": "Portsmouth",
-    "match_finish": "Halftime",
+    "home": "Mansfield Town",
+    "away": "Bradford",
+    "match_finish": "Second Half",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
       "values": [
         {
-          "value": "Home -0.75",
+          "value": "Home +0.25",
           "odd": "1.92"
         },
         {
-          "value": "Away -0.75",
+          "value": "Away +0.25",
           "odd": "1.92"
         },
         {
-          "value": "Away -0.5",
-          "odd": "2.10"
+          "value": "Away +0.5",
+          "odd": "2.20"
         }
       ]
     },
-    "form_league_home_count": 24,
-    "form_league_away_count": 23,
-    "home_form_14": 20,
-    "away_form_14": 13,
-    "home_form_12": 14,
-    "away_form_12": 12,
-    "home_form_10": 14,
-    "away_form_10": 12,
-    "home_form_7": 10,
-    "away_form_7": 8,
+    "form_league_home_count": 22,
+    "form_league_away_count": 22,
+    "home_form_14": 18,
+    "away_form_14": 26,
+    "home_form_12": 15,
+    "away_form_12": 20,
+    "home_form_10": 11,
+    "away_form_10": 18,
+    "home_form_7": 7,
+    "away_form_7": 16,
     "home_form_5": 7,
-    "away_form_5": 8,
+    "away_form_5": 12,
     "home_score": "47%",
-    "away_score": "53%",
+    "away_score": "80%",
     "match_result": "2-0",
     "bet_pick": {
       "picked": "",
@@ -2349,39 +1977,51 @@
     }
   },
   {
-    "fixture_id": 1387382,
+    "fixture_id": 1387389,
     "date": "2026-01-01",
     "league": "League One",
     "timestamp": "2026-01-01 22:00:00",
     "country": "England",
-    "home": "Lincoln",
-    "away": "Huddersfield",
-    "match_finish": "Halftime",
+    "home": "Wigan",
+    "away": "Barnsley",
+    "match_finish": "Second Half",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
       "values": [
         {
+          "value": "Home -0.5",
+          "odd": "2.05"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.75"
+        },
+        {
           "value": "Home -0.25",
-          "odd": "2.10"
+          "odd": "1.92"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.92"
         }
       ]
     },
-    "form_league_home_count": 23,
-    "form_league_away_count": 23,
-    "home_form_14": 26,
-    "away_form_14": 21,
-    "home_form_12": 23,
-    "away_form_12": 18,
-    "home_form_10": 20,
-    "away_form_10": 18,
-    "home_form_7": 16,
-    "away_form_7": 12,
-    "home_form_5": 13,
-    "away_form_5": 11,
-    "home_score": "87%",
-    "away_score": "73%",
-    "match_result": "0-0",
+    "form_league_home_count": 22,
+    "form_league_away_count": 20,
+    "home_form_14": 17,
+    "away_form_14": 15,
+    "home_form_12": 17,
+    "away_form_12": 12,
+    "home_form_10": 16,
+    "away_form_10": 11,
+    "home_form_7": 11,
+    "away_form_7": 7,
+    "home_form_5": 7,
+    "away_form_5": 3,
+    "home_score": "47%",
+    "away_score": "20%",
+    "match_result": "1-0",
     "bet_pick": {
       "picked": "",
       "team": "",
@@ -2390,43 +2030,43 @@
     }
   },
   {
-    "fixture_id": 1428859,
+    "fixture_id": 1387390,
     "date": "2026-01-01",
-    "league": "Non League Premier - Northern",
+    "league": "League One",
     "timestamp": "2026-01-01 22:00:00",
     "country": "England",
-    "home": "United of Manchester",
-    "away": "Ashton United",
-    "match_finish": "First Half",
+    "home": "Wycombe",
+    "away": "Cardiff",
+    "match_finish": "Second Half",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
       "values": [
         {
-          "value": "Home -0.5",
-          "odd": "1.90"
+          "value": "Home +0.25",
+          "odd": "1.80"
         },
         {
-          "value": "Away -0.5",
-          "odd": "1.90"
+          "value": "Away +0.25",
+          "odd": "2.05"
         }
       ]
     },
-    "form_league_home_count": 21,
+    "form_league_home_count": 23,
     "form_league_away_count": 22,
-    "home_form_14": 24,
-    "away_form_14": 17,
-    "home_form_12": 23,
-    "away_form_12": 17,
-    "home_form_10": 17,
-    "away_form_10": 11,
-    "home_form_7": 11,
-    "away_form_7": 8,
-    "home_form_5": 10,
-    "away_form_5": 5,
-    "home_score": "67%",
-    "away_score": "33%",
-    "match_result": "0-1",
+    "home_form_14": 21,
+    "away_form_14": 30,
+    "home_form_12": 20,
+    "away_form_12": 27,
+    "home_form_10": 16,
+    "away_form_10": 21,
+    "home_form_7": 9,
+    "away_form_7": 18,
+    "home_form_5": 5,
+    "away_form_5": 12,
+    "home_score": "33%",
+    "away_score": "80%",
+    "match_result": "1-1",
     "bet_pick": {
       "picked": "",
       "team": "",
@@ -2442,7 +2082,7 @@
     "country": "England",
     "home": "Workington",
     "away": "Lancaster City",
-    "match_finish": "First Half",
+    "match_finish": "Second Half",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
@@ -2471,6 +2111,55 @@
     "away_form_5": 6,
     "home_score": "13%",
     "away_score": "40%",
+    "match_result": "1-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1386282,
+    "date": "2026-01-01",
+    "league": "League Two",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Swindon Town",
+    "away": "Gillingham",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.08"
+        }
+      ]
+    },
+    "form_league_home_count": 23,
+    "form_league_away_count": 23,
+    "home_form_14": 25,
+    "away_form_14": 11,
+    "home_form_12": 19,
+    "away_form_12": 11,
+    "home_form_10": 18,
+    "away_form_10": 10,
+    "home_form_7": 13,
+    "away_form_7": 6,
+    "home_form_5": 9,
+    "away_form_5": 4,
+    "home_score": "60%",
+    "away_score": "27%",
     "match_result": "0-0",
     "bet_pick": {
       "picked": "",
@@ -2480,45 +2169,90 @@
     }
   },
   {
-    "fixture_id": 1379150,
+    "fixture_id": 1386846,
     "date": "2026-01-01",
-    "league": "Premier League",
-    "timestamp": "2026-01-02 03:00:00",
+    "league": "Championship",
+    "timestamp": "2026-01-01 22:00:00",
     "country": "England",
-    "home": "Brentford",
-    "away": "Tottenham",
-    "match_finish": "Not Started",
+    "home": "QPR",
+    "away": "Norwich",
+    "match_finish": "Second Half",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
       "values": [
         {
           "value": "Home -0.5",
-          "odd": "2.20"
+          "odd": "2.08"
         },
         {
           "value": "Home -0.25",
-          "odd": "1.98"
+          "odd": "1.82"
         },
         {
           "value": "Away -0.25",
-          "odd": "1.88"
+          "odd": "2.02"
         }
       ]
     },
-    "form_league_home_count": 18,
-    "form_league_away_count": 18,
-    "home_form_14": 22,
-    "away_form_14": 16,
-    "home_form_12": 19,
-    "away_form_12": 14,
-    "home_form_10": 16,
-    "away_form_10": 11,
+    "form_league_home_count": 24,
+    "form_league_away_count": 24,
+    "home_form_14": 20,
+    "away_form_14": 13,
+    "home_form_12": 17,
+    "away_form_12": 13,
+    "home_form_10": 17,
+    "away_form_10": 12,
     "home_form_7": 10,
-    "away_form_7": 7,
+    "away_form_7": 11,
     "home_form_5": 7,
-    "away_form_5": 7,
+    "away_form_5": 8,
     "home_score": "47%",
+    "away_score": "53%",
+    "match_result": "0-1",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1386847,
+    "date": "2026-01-01",
+    "league": "Championship",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Derby",
+    "away": "Middlesbrough",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "2.00"
+        }
+      ]
+    },
+    "form_league_home_count": 24,
+    "form_league_away_count": 24,
+    "home_form_14": 24,
+    "away_form_14": 22,
+    "home_form_12": 18,
+    "away_form_12": 18,
+    "home_form_10": 12,
+    "away_form_10": 17,
+    "home_form_7": 6,
+    "away_form_7": 13,
+    "home_form_5": 6,
+    "away_form_5": 7,
+    "home_score": "40%",
     "away_score": "47%",
     "match_result": "0-0",
     "bet_pick": {
@@ -2529,46 +2263,463 @@
     }
   },
   {
-    "fixture_id": 1379153,
+    "fixture_id": 1387387,
     "date": "2026-01-01",
-    "league": "Premier League",
-    "timestamp": "2026-01-02 00:30:00",
+    "league": "League One",
+    "timestamp": "2026-01-01 22:00:00",
     "country": "England",
-    "home": "Crystal Palace",
-    "away": "Fulham",
-    "match_finish": "Not Started",
+    "home": "Rotherham",
+    "away": "Peterborough",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.95"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "2.15"
+        }
+      ]
+    },
+    "form_league_home_count": 23,
+    "form_league_away_count": 22,
+    "home_form_14": 17,
+    "away_form_14": 25,
+    "home_form_12": 13,
+    "away_form_12": 22,
+    "home_form_10": 7,
+    "away_form_10": 19,
+    "home_form_7": 2,
+    "away_form_7": 13,
+    "home_form_5": 0,
+    "away_form_5": 13,
+    "home_score": "0%",
+    "away_score": "87%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1428860,
+    "date": "2026-01-01",
+    "league": "Non League Premier - Northern",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Warrington Town",
+    "away": "Leek Town",
+    "match_finish": "Second Half",
     "handicap": {
       "id": 4,
       "name": "Asian Handicap",
       "values": [
         {
           "value": "Home -0.5",
-          "odd": "2.15"
+          "odd": "1.98"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.82"
         },
         {
           "value": "Home -0.25",
-          "odd": "1.88"
+          "odd": "1.85"
         },
         {
           "value": "Away -0.25",
+          "odd": "1.95"
+        }
+      ]
+    },
+    "form_league_home_count": 22,
+    "form_league_away_count": 21,
+    "home_form_14": 25,
+    "away_form_14": 14,
+    "home_form_12": 22,
+    "away_form_12": 11,
+    "home_form_10": 16,
+    "away_form_10": 11,
+    "home_form_7": 10,
+    "away_form_7": 10,
+    "home_form_5": 6,
+    "away_form_5": 4,
+    "home_score": "40%",
+    "away_score": "27%",
+    "match_result": "1-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1467596,
+    "date": "2026-01-01",
+    "league": "Premier League",
+    "timestamp": "2026-01-02 03:00:00",
+    "country": "Jamaica",
+    "home": "Treasure Beach",
+    "away": "Chapelton",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "1.95"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.85"
+        }
+      ]
+    },
+    "form_league_home_count": 10,
+    "form_league_away_count": 12,
+    "home_form_14": 12,
+    "away_form_14": 12,
+    "home_form_12": 12,
+    "away_form_12": 12,
+    "home_form_10": 12,
+    "away_form_10": 6,
+    "home_form_7": 8,
+    "away_form_7": 2,
+    "home_form_5": 8,
+    "away_form_5": 2,
+    "home_score": "53%",
+    "away_score": "13%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1386283,
+    "date": "2026-01-01",
+    "league": "League Two",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Bromley",
+    "away": "Newport County",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Away -1",
+          "odd": "2.15"
+        }
+      ]
+    },
+    "form_league_home_count": 23,
+    "form_league_away_count": 23,
+    "home_form_14": 31,
+    "away_form_14": 12,
+    "home_form_12": 30,
+    "away_form_12": 12,
+    "home_form_10": 27,
+    "away_form_10": 9,
+    "home_form_7": 18,
+    "away_form_7": 6,
+    "home_form_5": 15,
+    "away_form_5": 5,
+    "home_score": "100%",
+    "away_score": "33%",
+    "match_result": "1-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1386842,
+    "date": "2026-01-01",
+    "league": "Championship",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Preston",
+    "away": "Sheffield Wednesday",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1",
+          "odd": "1.88"
+        },
+        {
+          "value": "Away -1",
           "odd": "1.98"
         }
       ]
     },
-    "form_league_home_count": 18,
-    "form_league_away_count": 18,
-    "home_form_14": 20,
-    "away_form_14": 21,
-    "home_form_12": 14,
-    "away_form_12": 18,
-    "home_form_10": 13,
-    "away_form_10": 18,
-    "home_form_7": 9,
-    "away_form_7": 15,
+    "form_league_home_count": 24,
+    "form_league_away_count": 23,
+    "home_form_14": 21,
+    "away_form_14": 5,
+    "home_form_12": 18,
+    "away_form_12": 5,
+    "home_form_10": 12,
+    "away_form_10": 4,
+    "home_form_7": 10,
+    "away_form_7": 3,
     "home_form_5": 6,
-    "away_form_5": 9,
+    "away_form_5": 3,
     "home_score": "40%",
-    "away_score": "60%",
+    "away_score": "20%",
+    "match_result": "1-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1428865,
+    "date": "2026-01-01",
+    "league": "Non League Premier - Northern",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Gainsborough Trinity",
+    "away": "Cleethorpes Town",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.80"
+        }
+      ]
+    },
+    "form_league_home_count": 20,
+    "form_league_away_count": 21,
+    "home_form_14": 20,
+    "away_form_14": 22,
+    "home_form_12": 14,
+    "away_form_12": 16,
+    "home_form_10": 11,
+    "away_form_10": 15,
+    "home_form_7": 7,
+    "away_form_7": 12,
+    "home_form_5": 6,
+    "away_form_5": 8,
+    "home_score": "40%",
+    "away_score": "53%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1488631,
+    "date": "2026-01-01",
+    "league": "League Cup",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "Egypt",
+    "home": "Al Ittihad",
+    "away": "Zamalek SC",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "2.05"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.75"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.78"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "2.02"
+        }
+      ]
+    },
+    "form_league_home_count": 3,
+    "form_league_away_count": 3,
+    "home_form_14": 3,
+    "away_form_14": 4,
+    "home_form_12": 3,
+    "away_form_12": 4,
+    "home_form_10": 3,
+    "away_form_10": 4,
+    "home_form_7": 3,
+    "away_form_7": 4,
+    "home_form_5": 3,
+    "away_form_5": 4,
+    "home_score": "33%",
+    "away_score": "44%",
+    "match_result": "2-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1386280,
+    "date": "2026-01-01",
+    "league": "League Two",
+    "timestamp": "2026-01-01 22:00:00",
+    "country": "England",
+    "home": "Oldham",
+    "away": "Chesterfield",
+    "match_finish": "Second Half",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.82"
+        }
+      ]
+    },
+    "form_league_home_count": 23,
+    "form_league_away_count": 23,
+    "home_form_14": 18,
+    "away_form_14": 23,
+    "home_form_12": 17,
+    "away_form_12": 20,
+    "home_form_10": 16,
+    "away_form_10": 16,
+    "home_form_7": 11,
+    "away_form_7": 11,
+    "home_form_5": 8,
+    "away_form_5": 10,
+    "home_score": "53%",
+    "away_score": "67%",
+    "match_result": "0-1",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1395604,
+    "date": "2026-01-01",
+    "league": "FAW Championship",
+    "timestamp": "2026-01-01 21:00:00",
+    "country": "Wales",
+    "home": "Buckley Town",
+    "away": "Mold Alexandra",
+    "match_finish": "Match Finished",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.90"
+        }
+      ]
+    },
+    "form_league_home_count": 17,
+    "form_league_away_count": 16,
+    "home_form_14": 23,
+    "away_form_14": 12,
+    "home_form_12": 20,
+    "away_form_12": 11,
+    "home_form_10": 18,
+    "away_form_10": 10,
+    "home_form_7": 9,
+    "away_form_7": 4,
+    "home_form_5": 6,
+    "away_form_5": 1,
+    "home_score": "40%",
+    "away_score": "7%",
+    "match_result": "2-2",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1488632,
+    "date": "2026-01-01",
+    "league": "League Cup",
+    "timestamp": "2026-01-02 01:00:00",
+    "country": "Egypt",
+    "home": "Ismaily SC",
+    "away": "Future FC",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "1.78"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "2.02"
+        }
+      ]
+    },
+    "form_league_home_count": 3,
+    "form_league_away_count": 2,
+    "home_form_14": 3,
+    "away_form_14": 1,
+    "home_form_12": 3,
+    "away_form_12": 1,
+    "home_form_10": 3,
+    "away_form_10": 1,
+    "home_form_7": 3,
+    "away_form_7": 1,
+    "home_form_5": 3,
+    "away_form_5": 1,
+    "home_score": "33%",
+    "away_score": "17%",
     "match_result": "0-0",
     "bet_pick": {
       "picked": "",
