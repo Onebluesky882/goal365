@@ -19,7 +19,7 @@ func RegisterRoutes(app *fiber.App) {
 	// step 1
 	api.Get("/get-odds-today", oddstoday.GetOddsToday)
 	// step 2
-	api.Get("/mytips", WritePrediction)
+	api.Get("/write-predictions", writePredictions)
 
 	// upload bin/date/prediontion.json to db
 	api.Get("/insert", InsertPredictions)

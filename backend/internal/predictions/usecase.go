@@ -15,8 +15,6 @@ import (
 	"strconv"
 	"sync"
 	"time"
-
-	"github.com/gofiber/fiber/v2"
 )
 
 func PredictionByOne(fixtureId string) (*m.MyTipsAnalytics, error) {
@@ -79,105 +77,6 @@ func PredictionByOne(fixtureId string) (*m.MyTipsAnalytics, error) {
 
 	return item, nil
 
-}
-
-func GetPredictionByDay(c *fiber.Ctx) error {
-
-	date := c.Query("date")
-
-	predictions, err := PredictionByDay(date)
-	if err != nil {
-		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-			"error": err.Error(),
-		})
-	}
-
-	fmt.Println("predictions :", predictions)
-	return c.JSON(predictions)
-}
-
-func insertManualPrediction(c *fiber.Ctx) error {
-	fmt.Println("into insertManualPrediction")
-	var data *m.MyTipsAnalytics
-
-	id := c.Query("fixture")
-
-	data, err := PredictionByOne(id)
-	fmt.Println("data :", data)
-	if err != nil {
-		return err
-	}
-
-	if err := InsertManual(data); err != nil {
-		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-			"error": err.Error(),
-		})
-	}
-
-	return c.JSON(fiber.Map{
-		"status": "success",
-		"data":   data,
-	})
-}
-
-func InsertPredictions(c *fiber.Ctx) error {
-	date := time.Now().Format("2006-01-02")
-
-	// insert db
-	data, err := lib.ReadJson[[]m.MyTipsAnalytics](fmt.Sprintf("bin/%s/predictions.json", date))
-
-	if err != nil {
-		log.Fatalf("❌ Cannot read predictions.json: %v", err)
-	}
-
-	// insert many
-	if err := InsertMany(data); err != nil {
-		return c.Status(500).JSON(fiber.Map{
-			"error": fmt.Sprintf("Insert failed: %v", err),
-		})
-	}
-	return c.JSON(fiber.Map{"status": "success"})
-}
-
-func WritePrediction(c *fiber.Ctx) error {
-	date := time.Now().Format("2006-01-02")
-	oddsMap, err := lib.ReadOddsMap(fmt.Sprintf("bin/%s/filtered_odds.json", date))
-	if err != nil {
-		log.Printf("❌ ไม่สามารถอ่านไฟล์: %v\n", err)
-		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-			"error": "cannot read output.json",
-		})
-	}
-
-	log.Printf("✅ พบ %d fixtures ใน bin\n", len(oddsMap))
-
-	// สร้าง slice ของ IDs
-	ids := make([]string, 0, len(oddsMap))
-	for id := range oddsMap {
-		ids = append(ids, id)
-	}
-
-	// ประมวลผล
-	resp, err := PredictionsMany(ids, oddsMap)
-	if err != nil {
-		log.Printf("❌ Error in Predictions: %v\n", err)
-		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-			"error": err.Error(),
-		})
-	}
-
-	fileName := "predictions.json"
-	if err := lib.WriteJSONWithCustomDate(date, fileName, resp.Items); err != nil {
-		log.Println(err)
-	} else {
-		log.Println("🎉 เขียนไฟล์สำเร็จ:", fileName)
-	}
-
-	log.Printf("🎉 ส่งผลลัพธ์ %d รายการ\n", len(resp.Items))
-	return c.JSON(fiber.Map{
-		"success": true,
-		"updated": len(resp.Items),
-	})
 }
 
 // Process single fixture with retry
@@ -262,7 +161,7 @@ func ProcessBuildPredictionsJson(fixtureID string, bet []odds_models.Bet) (*m.My
 	return item, nil
 }
 
-func PredictionsMany(ids []string, oddsMap map[string][]odds_models.Bet) (*m.RootMyTipsAnalytics, error) {
+func PredictionsMany(date string, ids []string, oddsMap map[string][]odds_models.Bet) (*m.RootMyTipsAnalytics, error) {
 
 	// ใช้ concurrent processing
 	const maxConcurrent = 1 // จำกัด concurrent requests
@@ -327,7 +226,8 @@ func PredictionsMany(ids []string, oddsMap map[string][]odds_models.Bet) (*m.Roo
 	wg.Wait()
 	// บันทึก fixtures ที่ล้มเหลวลงไฟล์ (manual)
 	if len(failedFixtures) > 0 {
-		if err := WriteFailedPredictions(failedFixtures); err != nil {
+
+		if err := WriteFailedPredictions(failedFixtures, date); err != nil {
 			log.Println("❌ Failed to write failed fixtures:", err)
 		} else {
 			log.Printf("📝 Wrote %d failed fixtures to file for manual retry\n", len(failedFixtures))
@@ -344,15 +244,18 @@ func PredictionsMany(ids []string, oddsMap map[string][]odds_models.Bet) (*m.Roo
 	}, nil
 }
 
-func WriteFailedPredictions(failed []int) error {
-	date := time.Now().Format("2025-12-12")
+func WriteFailedPredictions(failed []int, date string) error {
 	outputDir := filepath.Join("bin", date)
 	if err := os.MkdirAll(outputDir, 0755); err != nil {
-		return fmt.Errorf("cannot create directory: %w", err)
+		log.Printf("❌ cannot create directory %s: %v\n", outputDir, err)
+		return err
 	}
-	outputFile := filepath.Join("error_query_prediction.json")
+
+	outputFile := filepath.Join(outputDir, "error_query_prediction.json")
 	if err := lib.WriteJSON(outputFile, failed); err != nil {
 		return fmt.Errorf("cannot write failed fixtures file: %w", err)
 	}
+
+	log.Printf("📝 Wrote %d failed fixtures to %s\n", len(failed), outputFile)
 	return nil
 }

@@ -1,0 +1,1195 @@
+[
+  {
+    "fixture_id": 1467042,
+    "date": "2026-01-02",
+    "league": "Premier League",
+    "timestamp": "2026-01-02 23:00:00",
+    "country": "Bahrain",
+    "home": "Muharraq",
+    "away": "Khalidiya",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "2.08"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.00"
+        }
+      ]
+    },
+    "form_league_home_count": 8,
+    "form_league_away_count": 9,
+    "home_form_14": 20,
+    "away_form_14": 21,
+    "home_form_12": 20,
+    "away_form_12": 21,
+    "home_form_10": 20,
+    "away_form_10": 21,
+    "home_form_7": 17,
+    "away_form_7": 15,
+    "home_form_5": 13,
+    "away_form_5": 15,
+    "home_score": "87%",
+    "away_score": "100%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1391982,
+    "date": "2026-01-02",
+    "league": "Segunda División",
+    "timestamp": "2026-01-03 02:30:00",
+    "country": "Spain",
+    "home": "Eibar",
+    "away": "Mirandes",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1",
+          "odd": "2.15"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.98"
+        }
+      ]
+    },
+    "form_league_home_count": 19,
+    "form_league_away_count": 19,
+    "home_form_14": 14,
+    "away_form_14": 10,
+    "home_form_12": 10,
+    "away_form_12": 9,
+    "home_form_10": 9,
+    "away_form_10": 7,
+    "home_form_7": 8,
+    "away_form_7": 7,
+    "home_form_5": 4,
+    "away_form_5": 4,
+    "home_score": "27%",
+    "away_score": "27%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1440867,
+    "date": "2026-01-02",
+    "league": "Second League",
+    "timestamp": "2026-01-02 19:30:00",
+    "country": "Egypt",
+    "home": "La Viena FC",
+    "away": "El Seka El Hadid",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.75",
+          "odd": "1.78"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "2.02"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.80"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.00"
+        }
+      ]
+    },
+    "form_league_home_count": 16,
+    "form_league_away_count": 16,
+    "home_form_14": 22,
+    "away_form_14": 12,
+    "home_form_12": 16,
+    "away_form_12": 12,
+    "home_form_10": 15,
+    "away_form_10": 10,
+    "home_form_7": 10,
+    "away_form_7": 3,
+    "home_form_5": 8,
+    "away_form_5": 2,
+    "home_score": "53%",
+    "away_score": "13%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1440870,
+    "date": "2026-01-02",
+    "league": "Second League",
+    "timestamp": "2026-01-02 19:30:00",
+    "country": "Egypt",
+    "home": "Proxy",
+    "away": "El Dakhleya",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "1.98"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.82"
+        }
+      ]
+    },
+    "form_league_home_count": 16,
+    "form_league_away_count": 16,
+    "home_form_14": 18,
+    "away_form_14": 19,
+    "home_form_12": 14,
+    "away_form_12": 19,
+    "home_form_10": 10,
+    "away_form_10": 15,
+    "home_form_7": 8,
+    "away_form_7": 11,
+    "home_form_5": 4,
+    "away_form_5": 7,
+    "home_score": "27%",
+    "away_score": "47%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1501176,
+    "date": "2026-01-02",
+    "league": "Ligue 2",
+    "timestamp": "2026-01-02 21:00:00",
+    "country": "Algeria",
+    "home": "USM Annaba",
+    "away": "CA Batna",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.95"
+        }
+      ]
+    },
+    "form_league_home_count": 14,
+    "form_league_away_count": 14,
+    "home_form_14": 22,
+    "away_form_14": 28,
+    "home_form_12": 18,
+    "away_form_12": 24,
+    "home_form_10": 14,
+    "away_form_10": 18,
+    "home_form_7": 10,
+    "away_form_7": 12,
+    "home_form_5": 6,
+    "away_form_5": 9,
+    "home_score": "40%",
+    "away_score": "60%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1501183,
+    "date": "2026-01-02",
+    "league": "Ligue 2",
+    "timestamp": "2026-01-02 21:00:00",
+    "country": "Algeria",
+    "home": "US Chaouia",
+    "away": "US Biskra",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.90"
+        }
+      ]
+    },
+    "form_league_home_count": 14,
+    "form_league_away_count": 14,
+    "home_form_14": 25,
+    "away_form_14": 33,
+    "home_form_12": 23,
+    "away_form_12": 27,
+    "home_form_10": 17,
+    "away_form_10": 23,
+    "home_form_7": 13,
+    "away_form_7": 16,
+    "home_form_5": 7,
+    "away_form_5": 12,
+    "home_score": "47%",
+    "away_score": "80%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1390995,
+    "date": "2026-01-02",
+    "league": "La Liga",
+    "timestamp": "2026-01-03 03:00:00",
+    "country": "Spain",
+    "home": "Rayo Vallecano",
+    "away": "Getafe",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "2.08"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.78"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.10"
+        }
+      ]
+    },
+    "form_league_home_count": 17,
+    "form_league_away_count": 17,
+    "home_form_14": 14,
+    "away_form_14": 14,
+    "home_form_12": 13,
+    "away_form_12": 11,
+    "home_form_10": 13,
+    "away_form_10": 9,
+    "home_form_7": 4,
+    "away_form_7": 6,
+    "home_form_5": 3,
+    "away_form_5": 3,
+    "home_score": "20%",
+    "away_score": "20%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1436029,
+    "date": "2026-01-02",
+    "league": "Pro League",
+    "timestamp": "2026-01-02 20:30:00",
+    "country": "Saudi-Arabia",
+    "home": "Al Najma",
+    "away": "Al Khaleej Saihat",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.5",
+          "odd": "1.95"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "2.08"
+        }
+      ]
+    },
+    "form_league_home_count": 11,
+    "form_league_away_count": 11,
+    "home_form_14": 1,
+    "away_form_14": 14,
+    "home_form_12": 1,
+    "away_form_12": 14,
+    "home_form_10": 1,
+    "away_form_10": 11,
+    "home_form_7": 1,
+    "away_form_7": 8,
+    "home_form_5": 1,
+    "away_form_5": 4,
+    "home_score": "7%",
+    "away_score": "27%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1485350,
+    "date": "2026-01-02",
+    "league": "Pro League",
+    "timestamp": "2026-01-02 22:45:00",
+    "country": "United-Arab-Emirates",
+    "home": "Al Ain",
+    "away": "Sharjah FC",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1",
+          "odd": "2.08"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "2.00"
+        }
+      ]
+    },
+    "form_league_home_count": 10,
+    "form_league_away_count": 8,
+    "home_form_14": 24,
+    "away_form_14": 7,
+    "home_form_12": 24,
+    "away_form_12": 7,
+    "home_form_10": 24,
+    "away_form_10": 7,
+    "home_form_7": 17,
+    "away_form_7": 4,
+    "home_form_5": 11,
+    "away_form_5": 3,
+    "home_score": "73%",
+    "away_score": "20%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1456523,
+    "date": "2026-01-02",
+    "league": "Liga Alef",
+    "timestamp": "2026-01-02 17:40:00",
+    "country": "Israel",
+    "home": "Maccabi Ahi Nazareth",
+    "away": "Hapoel Ironi Karmiel",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.75",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.80"
+        }
+      ]
+    },
+    "form_league_home_count": 12,
+    "form_league_away_count": 12,
+    "home_form_14": 28,
+    "away_form_14": 23,
+    "home_form_12": 28,
+    "away_form_12": 23,
+    "home_form_10": 22,
+    "away_form_10": 21,
+    "home_form_7": 16,
+    "away_form_7": 15,
+    "home_form_5": 10,
+    "away_form_5": 12,
+    "home_score": "67%",
+    "away_score": "80%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1467041,
+    "date": "2026-01-02",
+    "league": "Premier League",
+    "timestamp": "2026-01-02 23:00:00",
+    "country": "Bahrain",
+    "home": "Budaiya",
+    "away": "A'Ali",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "2.20"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.95"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.85"
+        }
+      ]
+    },
+    "form_league_home_count": 9,
+    "form_league_away_count": 9,
+    "home_form_14": 9,
+    "away_form_14": 9,
+    "home_form_12": 9,
+    "away_form_12": 9,
+    "home_form_10": 9,
+    "away_form_10": 9,
+    "home_form_7": 8,
+    "away_form_7": 6,
+    "home_form_5": 5,
+    "away_form_5": 4,
+    "home_score": "33%",
+    "away_score": "27%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1485349,
+    "date": "2026-01-02",
+    "league": "Pro League",
+    "timestamp": "2026-01-02 19:55:00",
+    "country": "United-Arab-Emirates",
+    "home": "Khorfakkan",
+    "away": "Al-Dhafra",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.75",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.78"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "2.00"
+        }
+      ]
+    },
+    "form_league_home_count": 10,
+    "form_league_away_count": 10,
+    "home_form_14": 11,
+    "away_form_14": 12,
+    "home_form_12": 11,
+    "away_form_12": 12,
+    "home_form_10": 11,
+    "away_form_10": 12,
+    "home_form_7": 7,
+    "away_form_7": 6,
+    "home_form_5": 7,
+    "away_form_5": 3,
+    "home_score": "47%",
+    "away_score": "20%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1501179,
+    "date": "2026-01-02",
+    "league": "Ligue 2",
+    "timestamp": "2026-01-02 21:00:00",
+    "country": "Algeria",
+    "home": "HB Chelghoum Laïd",
+    "away": "MO Constantine",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "1.98"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.82"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.92"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "1.88"
+        }
+      ]
+    },
+    "form_league_home_count": 13,
+    "form_league_away_count": 14,
+    "home_form_14": 5,
+    "away_form_14": 18,
+    "home_form_12": 5,
+    "away_form_12": 15,
+    "home_form_10": 2,
+    "away_form_10": 12,
+    "home_form_7": 2,
+    "away_form_7": 10,
+    "home_form_5": 1,
+    "away_form_5": 7,
+    "home_score": "7%",
+    "away_score": "47%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1385272,
+    "date": "2026-01-02",
+    "league": "Premiership",
+    "timestamp": "2026-01-03 02:45:00",
+    "country": "Northern-Ireland",
+    "home": "Larne",
+    "away": "Coleraine FC",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "2.05"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.75"
+        }
+      ]
+    },
+    "form_league_home_count": 21,
+    "form_league_away_count": 23,
+    "home_form_14": 33,
+    "away_form_14": 26,
+    "home_form_12": 30,
+    "away_form_12": 20,
+    "home_form_10": 26,
+    "away_form_10": 16,
+    "home_form_7": 17,
+    "away_form_7": 12,
+    "home_form_5": 11,
+    "away_form_5": 9,
+    "home_score": "73%",
+    "away_score": "60%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1396385,
+    "date": "2026-01-02",
+    "league": "Primeira Liga",
+    "timestamp": "2026-01-03 01:45:00",
+    "country": "Portugal",
+    "home": "GIL Vicente",
+    "away": "Sporting CP",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +1",
+          "odd": "2.05"
+        },
+        {
+          "value": "Away +1",
+          "odd": "1.80"
+        }
+      ]
+    },
+    "form_league_home_count": 16,
+    "form_league_away_count": 16,
+    "home_form_14": 24,
+    "away_form_14": 35,
+    "home_form_12": 20,
+    "away_form_12": 32,
+    "home_form_10": 14,
+    "away_form_10": 26,
+    "home_form_7": 8,
+    "away_form_7": 19,
+    "home_form_5": 4,
+    "away_form_5": 13,
+    "home_score": "27%",
+    "away_score": "87%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1389904,
+    "date": "2026-01-02",
+    "league": "Liga Leumit",
+    "timestamp": "2026-01-02 20:00:00",
+    "country": "Israel",
+    "home": "Hapoel Kfar Saba",
+    "away": "Maccabi Petah Tikva",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.5",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "1.78"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.78"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "2.02"
+        }
+      ]
+    },
+    "form_league_home_count": 16,
+    "form_league_away_count": 16,
+    "home_form_14": 25,
+    "away_form_14": 31,
+    "home_form_12": 21,
+    "away_form_12": 28,
+    "home_form_10": 17,
+    "away_form_10": 24,
+    "home_form_7": 16,
+    "away_form_7": 15,
+    "home_form_5": 10,
+    "away_form_5": 9,
+    "home_score": "67%",
+    "away_score": "60%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1396389,
+    "date": "2026-01-02",
+    "league": "Primeira Liga",
+    "timestamp": "2026-01-03 03:45:00",
+    "country": "Portugal",
+    "home": "Guimaraes",
+    "away": "Nacional",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.75",
+          "odd": "2.08"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.78"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "2.02"
+        }
+      ]
+    },
+    "form_league_home_count": 16,
+    "form_league_away_count": 15,
+    "home_form_14": 19,
+    "away_form_14": 16,
+    "home_form_12": 18,
+    "away_form_12": 15,
+    "home_form_10": 14,
+    "away_form_10": 12,
+    "home_form_7": 11,
+    "away_form_7": 6,
+    "home_form_5": 8,
+    "away_form_5": 5,
+    "home_score": "53%",
+    "away_score": "33%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1445363,
+    "date": "2026-01-02",
+    "league": "Second League",
+    "timestamp": "2026-01-02 19:30:00",
+    "country": "Egypt",
+    "home": "Tersana",
+    "away": "El Entag EL Harby",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "1.98"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.82"
+        }
+      ]
+    },
+    "form_league_home_count": 16,
+    "form_league_away_count": 16,
+    "home_form_14": 18,
+    "away_form_14": 11,
+    "home_form_12": 14,
+    "away_form_12": 8,
+    "home_form_10": 11,
+    "away_form_10": 7,
+    "home_form_7": 10,
+    "away_form_7": 7,
+    "home_form_5": 6,
+    "away_form_5": 7,
+    "home_score": "40%",
+    "away_score": "47%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1485348,
+    "date": "2026-01-02",
+    "league": "Pro League",
+    "timestamp": "2026-01-02 19:55:00",
+    "country": "United-Arab-Emirates",
+    "home": "Al-Wasl FC",
+    "away": "Al Wahda FC",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.78"
+        }
+      ]
+    },
+    "form_league_home_count": 9,
+    "form_league_away_count": 9,
+    "home_form_14": 18,
+    "away_form_14": 21,
+    "home_form_12": 18,
+    "away_form_12": 21,
+    "home_form_10": 18,
+    "away_form_10": 21,
+    "home_form_7": 15,
+    "away_form_7": 17,
+    "home_form_5": 11,
+    "away_form_5": 13,
+    "home_score": "73%",
+    "away_score": "87%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1501180,
+    "date": "2026-01-02",
+    "league": "Ligue 2",
+    "timestamp": "2026-01-02 21:00:00",
+    "country": "Algeria",
+    "home": "CR Béni Thour",
+    "away": "IB Khémis El Khechna",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1",
+          "odd": "1.98"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.82"
+        }
+      ]
+    },
+    "form_league_home_count": 14,
+    "form_league_away_count": 14,
+    "home_form_14": 20,
+    "away_form_14": 12,
+    "home_form_12": 19,
+    "away_form_12": 12,
+    "home_form_10": 16,
+    "away_form_10": 12,
+    "home_form_7": 13,
+    "away_form_7": 9,
+    "home_form_5": 10,
+    "away_form_5": 6,
+    "home_score": "67%",
+    "away_score": "40%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1378035,
+    "date": "2026-01-02",
+    "league": "Serie A",
+    "timestamp": "2026-01-03 02:45:00",
+    "country": "Italy",
+    "home": "Cagliari",
+    "away": "AC Milan",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.75",
+          "odd": "2.15"
+        },
+        {
+          "value": "Home +1",
+          "odd": "1.88"
+        },
+        {
+          "value": "Away +1",
+          "odd": "1.98"
+        }
+      ]
+    },
+    "form_league_home_count": 17,
+    "form_league_away_count": 16,
+    "home_form_14": 14,
+    "away_form_14": 32,
+    "home_form_12": 11,
+    "away_form_12": 26,
+    "home_form_10": 10,
+    "away_form_10": 22,
+    "home_form_7": 9,
+    "away_form_7": 17,
+    "home_form_5": 7,
+    "away_form_5": 13,
+    "home_score": "47%",
+    "away_score": "87%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1456763,
+    "date": "2026-01-02",
+    "league": "Liga Alef",
+    "timestamp": "2026-01-02 17:00:00",
+    "country": "Israel",
+    "home": "Hapoel Ramat HaSharon",
+    "away": "Hapoel Azor",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.5",
+          "odd": "1.98"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "1.82"
+        }
+      ]
+    },
+    "form_league_home_count": 12,
+    "form_league_away_count": 12,
+    "home_form_14": 7,
+    "away_form_14": 14,
+    "home_form_12": 7,
+    "away_form_12": 14,
+    "home_form_10": 7,
+    "away_form_10": 10,
+    "home_form_7": 3,
+    "away_form_7": 6,
+    "home_form_5": 0,
+    "away_form_5": 3,
+    "home_score": "0%",
+    "away_score": "20%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1497475,
+    "date": "2026-01-02",
+    "league": "Premier League",
+    "timestamp": "2026-01-02 22:40:00",
+    "country": "Kuwait",
+    "home": "Al Shabab",
+    "away": "Al Arabi",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +1",
+          "odd": "2.15"
+        }
+      ]
+    },
+    "form_league_home_count": 9,
+    "form_league_away_count": 9,
+    "home_form_14": 13,
+    "away_form_14": 20,
+    "home_form_12": 13,
+    "away_form_12": 20,
+    "home_form_10": 13,
+    "away_form_10": 20,
+    "home_form_7": 12,
+    "away_form_7": 14,
+    "home_form_5": 6,
+    "away_form_5": 12,
+    "home_score": "40%",
+    "away_score": "80%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1501178,
+    "date": "2026-01-02",
+    "league": "Ligue 2",
+    "timestamp": "2026-01-02 21:00:00",
+    "country": "Algeria",
+    "home": "JS Bordj Ménaïel",
+    "away": "NC Magra",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.95"
+        }
+      ]
+    },
+    "form_league_home_count": 14,
+    "form_league_away_count": 14,
+    "home_form_14": 13,
+    "away_form_14": 18,
+    "home_form_12": 12,
+    "away_form_12": 17,
+    "home_form_10": 11,
+    "away_form_10": 17,
+    "home_form_7": 7,
+    "away_form_7": 10,
+    "home_form_5": 3,
+    "away_form_5": 4,
+    "home_score": "20%",
+    "away_score": "27%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  },
+  {
+    "fixture_id": 1501181,
+    "date": "2026-01-02",
+    "league": "Ligue 2",
+    "timestamp": "2026-01-02 21:00:00",
+    "country": "Algeria",
+    "home": "Khroub",
+    "away": "Teleghma",
+    "match_finish": "Not Started",
+    "handicap": {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "2.05"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.75"
+        }
+      ]
+    },
+    "form_league_home_count": 14,
+    "form_league_away_count": 14,
+    "home_form_14": 12,
+    "away_form_14": 24,
+    "home_form_12": 8,
+    "away_form_12": 20,
+    "home_form_10": 8,
+    "away_form_10": 17,
+    "home_form_7": 6,
+    "away_form_7": 10,
+    "home_form_5": 6,
+    "away_form_5": 7,
+    "home_score": "40%",
+    "away_score": "47%",
+    "match_result": "0-0",
+    "bet_pick": {
+      "picked": "",
+      "team": "",
+      "odds": "",
+      "stake": ""
+    }
+  }
+]

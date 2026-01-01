@@ -4,7 +4,6 @@ import (
 	"log"
 	"mytipster/internal/db"
 	"mytipster/internal/fixtures"
-	"mytipster/internal/mytips"
 	"mytipster/internal/predictions"
 	"os"
 
@@ -30,10 +29,8 @@ func main() {
 	app.Get("/odds", fixtures.Odds)
 	app.Get("/date", fixtures.GetFixtureDate)
 
-	app.Get("/prediction-id", predictions.Service)
-
 	// register routes
-	mytips.RegisterRoutes(app)
+	predictions.RegisterRoutes(app)
 
 	// todo
 	/*
