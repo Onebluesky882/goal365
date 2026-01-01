@@ -14,18 +14,16 @@ func TestWriteFailedFixtures(t *testing.T) {
 	failed := []int{1, 2, 3}
 
 	path := filepath.Join(tmp, "bin", date)
-	err := os.MkdirAll(path, 0755)
-	err = os.Chdir("/Users/onebluesky882/local_files/myjob/mytipster/backend")
-	if err != nil {
+	if err := os.MkdirAll(path, 0755); err != nil {
 		t.Fatal(err)
 	}
 
-	err = lib.WriteJSON(filepath.Join(path, "error_query_odds.json"), failed)
-	if err != nil {
+	file := filepath.Join(path, "error_query_odds.json")
+	if err := lib.WriteJSON(file, failed); err != nil {
 		t.Fatal(err)
 	}
 
-	if _, err := os.Stat(filepath.Join(path, "error_query_odds.json")); err != nil {
+	if _, err := os.Stat(file); err != nil {
 		t.Fatal("file not created")
 	}
 }

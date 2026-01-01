@@ -6,6 +6,7 @@ import (
 	"mytipster/internal/fixtures/service"
 	"mytipster/lib"
 	odds_models "mytipster/models/odds"
+	"os"
 	"path/filepath"
 	"strconv"
 	"sync"
@@ -22,7 +23,6 @@ func processSingleFixtureOdds(fixtureID int) (map[int][]odds_models.Bet, error) 
 
 	// Query odds พร้อม retry
 	err = lib.RetryWithBackoff(func() error {
-		time.Sleep(800 * time.Millisecond) // delay ก่อนเรียก API
 		oddsMap, err = service.QueryFixtureOdds(idStr)
 		if err != nil {
 			return err
@@ -31,7 +31,7 @@ func processSingleFixtureOdds(fixtureID int) (map[int][]odds_models.Bet, error) 
 			return fmt.Errorf("odds map is empty")
 		}
 		return nil
-	}, 3, 800*time.Millisecond)
+	}, 3, 1*time.Second)
 
 	if err != nil {
 		return nil, fmt.Errorf("odds error for fixture %d: %w", fixtureID, err)
@@ -72,7 +72,7 @@ func QueryOdds(date string) (map[int][]odds_models.Bet, error) {
 			defer func() { <-sem }()
 
 			// เพิ่ม delay ก่อนเริ่มทำงาน
-			time.Sleep(800 * time.Millisecond)
+			time.Sleep(500 * time.Millisecond)
 
 			log.Printf("⏳ [%d/%d] Processing id : fixture %d \n", idx+1, len(ids), id)
 
@@ -112,7 +112,7 @@ func QueryOdds(date string) (map[int][]odds_models.Bet, error) {
 	wg.Wait()
 
 	if len(failedFixtures) > 0 {
-		errFile := fmt.Sprintf("bin/%s/error_query_odds.json", date)
+		errFile := "error_query_odds.json"
 		if err := lib.WriteJSONWithCustomDate(date, errFile, failedFixtures); err != nil {
 			log.Println("❌ write error_query_odds.json failed:", err)
 		} else {
@@ -138,6 +138,7 @@ func GetOddsToday(c *fiber.Ctx) error {
 
 	log.Printf("📅 Query odds for date: %s\n", date)
 
+	// ดึง odds หลัก
 	result, err := QueryOdds(date)
 	if err != nil {
 		log.Printf("❌ Error in QueryOdds: %v\n", err)
@@ -146,19 +147,47 @@ func GetOddsToday(c *fiber.Ctx) error {
 		})
 	}
 
-	log.Printf("🎉 ส่งผลลัพธ์ %d fixtures\n", len(result))
-	outputPath := filepath.Join("bin", date, "odds_data.json")
-	if err := lib.WriteJSONWithCustomDate(date, "odds_data.json", result); err != nil {
-		log.Printf("⚠️  Warning: Failed to save JSON file: %v\n", err)
-	} else {
-		log.Printf("💾 บันทึกไฟล์: %s\n", outputPath)
+	outputDir := filepath.Join("bin", date)
+	outputFile := filepath.Join(outputDir, "odds_data.json")
+	errFile := filepath.Join(outputDir, "error_query_odds.json")
 
-		// ประมวลผลและกรองข้อมูล
-		log.Println("\n🔄 เริ่มกรองข้อมูล...")
-		if err := lib.ProcessOddsFile(outputPath); err != nil {
-			log.Printf("⚠️  Warning: Failed to filter odds: %v\n", err)
+	// สร้างโฟลเดอร์ถ้ายังไม่มี
+	if err := os.MkdirAll(outputDir, 0755); err != nil {
+		log.Printf("❌ cannot create directory: %v\n", err)
+	}
+
+	// เขียน odds data
+	if err := lib.WriteJSON(outputFile, result); err != nil {
+		log.Printf("⚠️  Failed to save odds_data.json: %v\n", err)
+	} else {
+		log.Printf("💾 Saved odds data: %s\n", outputFile)
+	}
+
+	// --- บันทึก failed fixtures ---
+	var failedFixtures []int
+	for id, bets := range result {
+		if len(bets) == 0 {
+			failedFixtures = append(failedFixtures, id)
 		}
 	}
+
+	if len(failedFixtures) > 0 {
+		if err := lib.WriteJSON(errFile, failedFixtures); err != nil {
+			log.Printf("❌ Failed to write error_query_odds.json: %v\n", err)
+		} else {
+			log.Printf("📝 Wrote failed fixtures file: %s (%d failed)\n", errFile, len(failedFixtures))
+		}
+	} else {
+		log.Printf("✅ No failed fixtures for date %s\n", date)
+	}
+
+	// กรอง odds
+	if err := lib.ProcessOddsFile(outputFile); err != nil {
+		log.Printf("❌ Error processing filtered odds: %v\n", err)
+	} else {
+		log.Printf("✅ Filtered odds saved successfully\n")
+	}
+
 	return c.Status(200).JSON(fiber.Map{
 		"success": true,
 		"updated": len(result),

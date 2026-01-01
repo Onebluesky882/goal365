@@ -10,6 +10,8 @@ import (
 	m "mytipster/models/mytips"
 	odds_models "mytipster/models/odds"
 	prediction_models "mytipster/models/prediction"
+	"os"
+	"path/filepath"
 	"strconv"
 	"sync"
 	"time"
@@ -160,17 +162,14 @@ func Predictions(ids []string, oddsMap map[string][]odds_models.Bet) (*m.RootMyT
 
 	// รอให้ทุก goroutine เสร็จ
 	wg.Wait()
-
+	// บันทึก fixtures ที่ล้มเหลวลงไฟล์ (manual)
 	if len(failedFixtures) > 0 {
-		//errFile := fmt.Sprintf("bin/%s/error_query_prediction.json")
-		// if err := lib.WriteJSONWithCustomDate(date, errFile, failedFixtures); err != nil {
-		// 	log.Println("❌ write error_query_odds.json failed:", err)
-		// } else {
-		// 	log.Printf("🧾 wrote %d failed fixtures to %s\n",
-		// 		len(failedFixtures), errFile)
-		// }
+		if err := WriteFailedPredictions(failedFixtures); err != nil {
+			log.Println("❌ Failed to write failed fixtures:", err)
+		} else {
+			log.Printf("📝 Wrote %d failed fixtures to file for manual retry\n", len(failedFixtures))
+		}
 	}
-
 	log.Printf("\n📊 สรุปผลลัพธ์:\n")
 	log.Printf("   ✅ สำเร็จ: %d\n", successCount)
 	log.Printf("   ❌ ล้มเหลว: %d\n", errorCount)
@@ -180,6 +179,19 @@ func Predictions(ids []string, oddsMap map[string][]odds_models.Bet) (*m.RootMyT
 		Count: len(results),
 		Items: results,
 	}, nil
+}
+
+func WriteFailedPredictions(failed []int) error {
+	date := time.Now().Format("2025-12-12")
+	outputDir := filepath.Join("bin", date)
+	if err := os.MkdirAll(outputDir, 0755); err != nil {
+		return fmt.Errorf("cannot create directory: %w", err)
+	}
+	outputFile := filepath.Join(outputDir, "error_query_prediction.json")
+	if err := lib.WriteJSON(outputFile, failed); err != nil {
+		return fmt.Errorf("cannot write failed fixtures file: %w", err)
+	}
+	return nil
 }
 
 func MatchResult(date string) ([]m.UpdateFixtureResultDTO, error) {
