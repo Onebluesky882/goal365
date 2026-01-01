@@ -10,6 +10,7 @@ import (
 	m "mytipster/models/mytips"
 	odds_models "mytipster/models/odds"
 	prediction_models "mytipster/models/prediction"
+	"strconv"
 	"sync"
 	"time"
 )
@@ -86,8 +87,9 @@ func ProcessBuildPredictionsJson(fixtureID string, bet []odds_models.Bet) (*m.My
 		MatchResult:         fmt.Sprintf("%d-%d", home, away),
 		Handicap:            bet[0],
 		BetPick: m.BetPick{
-			Odds:   "",
 			Picked: "",
+			Team:   "",
+			Odds:   "",
 			Stake:  "",
 		},
 	}
@@ -109,9 +111,10 @@ func Predictions(ids []string, oddsMap map[string][]odds_models.Bet) (*m.RootMyT
 	errorCount := 0
 
 	log.Printf("🚀 เริ่มประมวลผล %d fixtures...\n", len(ids))
-
+	var failedFixturesMu sync.Mutex
+	failedFixtures := make([]int, 0)
 	for i, fixtureID := range ids {
-		time.Sleep(800 * time.Millisecond)
+		time.Sleep(1000 * time.Millisecond)
 		// ตรวจสอบว่ามี odds หรือไม่
 		bets, ok := oddsMap[fixtureID]
 		if !ok || len(bets) == 0 {
@@ -136,8 +139,12 @@ func Predictions(ids []string, oddsMap map[string][]odds_models.Bet) (*m.RootMyT
 			defer mu.Unlock()
 
 			if err != nil {
+				fixture, err := strconv.Atoi(id)
 				errorCount++
 				log.Printf("❌ [%d/%d] Failed %s: %v\n", idx+1, len(ids), id, err)
+				failedFixturesMu.Lock()
+				failedFixtures = append(failedFixtures, fixture)
+				failedFixturesMu.Unlock()
 				return
 			}
 
@@ -148,11 +155,21 @@ func Predictions(ids []string, oddsMap map[string][]odds_models.Bet) (*m.RootMyT
 		}(fixtureID, i, bets)
 
 		// Rate limiting between goroutine starts
-		time.Sleep(800 * time.Millisecond)
+		time.Sleep(1000 * time.Millisecond)
 	}
 
 	// รอให้ทุก goroutine เสร็จ
 	wg.Wait()
+
+	if len(failedFixtures) > 0 {
+		//errFile := fmt.Sprintf("bin/%s/error_query_prediction.json")
+		// if err := lib.WriteJSONWithCustomDate(date, errFile, failedFixtures); err != nil {
+		// 	log.Println("❌ write error_query_odds.json failed:", err)
+		// } else {
+		// 	log.Printf("🧾 wrote %d failed fixtures to %s\n",
+		// 		len(failedFixtures), errFile)
+		// }
+	}
 
 	log.Printf("\n📊 สรุปผลลัพธ์:\n")
 	log.Printf("   ✅ สำเร็จ: %d\n", successCount)
@@ -165,11 +182,7 @@ func Predictions(ids []string, oddsMap map[string][]odds_models.Bet) (*m.RootMyT
 	}, nil
 }
 
-
-
 func MatchResult(date string) ([]m.UpdateFixtureResultDTO, error) {
-
-
 
 	predictions, err := PredictionByDay(date)
 	if err != nil {
@@ -180,8 +193,10 @@ func MatchResult(date string) ([]m.UpdateFixtureResultDTO, error) {
 	if err != nil {
 		return nil, err
 	}
-
+	// เก็บ fixtureId
 	fixtureMap := make(map[int]fixture_module.Response)
+
+	// merge
 	for _, fx := range fixtures {
 		fixtureMap[fx.Fixture.ID] = fx
 	}
@@ -209,4 +224,9 @@ func MatchResult(date string) ([]m.UpdateFixtureResultDTO, error) {
 		})
 	}
 	return results, nil
+}
+
+func updateBet(fixtureId string) (*m.BetPick, error) {
+	// todo
+	return nil, nil
 }

@@ -5,7 +5,7 @@ import (
 	"mytipster/internal/fixtures/service"
 	"mytipster/lib"
 	"mytipster/lib/common"
-	m "mytipster/models/fixture"
+	m "mytipster/models/mytips"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -22,22 +22,15 @@ func Service(c *fiber.Ctx) error {
 
 }
 
-func Predictions(fixtureId string) (*m.RootFixtureAnalytics, error) {
-
-	// ctx := context.Background()
-	// db, err := db.NewDB()
-	// if err != nil {
-	// 	return nil, err
-	// }
-
-	results := &m.RootFixtureAnalytics{
-		Items: m.FixtureAnalytics{},
-	}
+func Predictions(fixtureId string) (*m.MyTipsAnalytics, error) {
 
 	// ดึง prediction
 	pred, err := service.QueryPrediction(fixtureId)
-	if err != nil || pred == nil {
-		return nil, fmt.Errorf("prediction not found")
+	if err != nil {
+		return nil, fmt.Errorf("QueryPrediction error: %w", err)
+	}
+	if pred == nil {
+		return nil, fmt.Errorf("prediction is nil fixtureId=%s", fixtureId)
 	}
 
 	// ดึง fixture
@@ -55,9 +48,9 @@ func Predictions(fixtureId string) (*m.RootFixtureAnalytics, error) {
 		away = *fx.Goals.Away
 	}
 
-	item := m.FixtureAnalytics{
+	item := &m.MyTipsAnalytics{
 		FixtureID:           fx.Fixture.ID,
-		Date:                common.TimestampDate(fx.Fixture.Timestamp),
+		Date:                common.TimestampUTCDate(fx.Fixture.Timestamp),
 		TimeStamp:           common.Timestamp(fx.Fixture.Timestamp),
 		Country:             fx.League.Country,
 		League:              fx.League.Name,
@@ -80,23 +73,13 @@ func Predictions(fixtureId string) (*m.RootFixtureAnalytics, error) {
 		MatchFinish:         fx.Fixture.Status.Long,
 		MatchResult:         fmt.Sprintf("%d-%d", home, away),
 		BetPick: m.BetPick{
-			Odds:   "",
 			Picked: "",
+			Team:   "",
+			Odds:   "",
 			Stake:  "",
 		},
 	}
 
-	// insert db
-	// if err = analytics.InsertData(ctx, db, &item); err != nil {
-	// 	return nil, err
-	// }
-
-	// update db
-
-	results = &m.RootFixtureAnalytics{
-		Items: item,
-	}
-
-	return results, nil
+	return item, nil
 
 }

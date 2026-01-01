@@ -1,7 +1,7 @@
 package mytips
 
 import (
-	oddstoday "mytipster/internal/get-odds-today"
+	oddstoday "mytipster/internal/odds-today"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -13,7 +13,11 @@ func RegisterRoutes(app *fiber.App) {
 	api.Post("/predictions", InsertPredictions)
 
 	// update result match finish
-	api.Put("/match-result", UpdateMatchResult)
+	api.Patch("/match-result", UpdateMatchResult)
+
+	// manual insert prediction by id
+
+	api.Post("/insert-manual-id", insertManualPrediction)
 
 	// -------------- * --------------
 	// step 1

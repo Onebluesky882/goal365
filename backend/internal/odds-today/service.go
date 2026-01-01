@@ -22,7 +22,7 @@ func processSingleFixtureOdds(fixtureID int) (map[int][]odds_models.Bet, error) 
 
 	// Query odds พร้อม retry
 	err = lib.RetryWithBackoff(func() error {
-		time.Sleep(500 * time.Millisecond) // delay ก่อนเรียก API
+		time.Sleep(800 * time.Millisecond) // delay ก่อนเรียก API
 		oddsMap, err = service.QueryFixtureOdds(idStr)
 		if err != nil {
 			return err
@@ -31,7 +31,7 @@ func processSingleFixtureOdds(fixtureID int) (map[int][]odds_models.Bet, error) 
 			return fmt.Errorf("odds map is empty")
 		}
 		return nil
-	}, 3, 500*time.Millisecond)
+	}, 3, 800*time.Millisecond)
 
 	if err != nil {
 		return nil, fmt.Errorf("odds error for fixture %d: %w", fixtureID, err)
@@ -60,6 +60,8 @@ func QueryOdds(date string) (map[int][]odds_models.Bet, error) {
 	successCount := 0
 	errorCount := 0
 
+	var failedFixturesMu sync.Mutex
+	failedFixtures := make([]int, 0)
 	for i, fixtureID := range ids {
 		wg.Add(1)
 		go func(id int, idx int) {
@@ -72,7 +74,7 @@ func QueryOdds(date string) (map[int][]odds_models.Bet, error) {
 			// เพิ่ม delay ก่อนเริ่มทำงาน
 			time.Sleep(800 * time.Millisecond)
 
-			log.Printf("⏳ [%d/%d] Processing fixture %d...\n", idx+1, len(ids), id)
+			log.Printf("⏳ [%d/%d] Processing id : fixture %d \n", idx+1, len(ids), id)
 
 			// Process with retry
 			oddsMap, err := processSingleFixtureOdds(id)
@@ -82,7 +84,13 @@ func QueryOdds(date string) (map[int][]odds_models.Bet, error) {
 
 			if err != nil {
 				errorCount++
-				log.Printf("❌ [%d/%d] Failed fixture %d: %v\n", idx+1, len(ids), id, err)
+				log.Printf("❌ [%d/%d] Failed fixture %d: %v\n",
+					idx+1, len(ids), id, err,
+				)
+				failedFixturesMu.Lock()
+				failedFixtures = append(failedFixtures, id)
+				failedFixturesMu.Unlock()
+
 				return
 			}
 
@@ -103,6 +111,15 @@ func QueryOdds(date string) (map[int][]odds_models.Bet, error) {
 	// รอให้ทุก goroutine เสร็จ
 	wg.Wait()
 
+	if len(failedFixtures) > 0 {
+		errFile := fmt.Sprintf("bin/%s/error_query_odds.json", date)
+		if err := lib.WriteJSONWithCustomDate(date, errFile, failedFixtures); err != nil {
+			log.Println("❌ write error_query_odds.json failed:", err)
+		} else {
+			log.Printf("🧾 wrote %d failed fixtures to %s\n",
+				len(failedFixtures), errFile)
+		}
+	}
 	log.Printf("\n📊 สรุปผลลัพธ์:\n")
 	log.Printf("   ✅ สำเร็จ: %d\n", successCount)
 	log.Printf("   ❌ ล้มเหลว: %d\n", errorCount)
@@ -142,5 +159,8 @@ func GetOddsToday(c *fiber.Ctx) error {
 			log.Printf("⚠️  Warning: Failed to filter odds: %v\n", err)
 		}
 	}
-	return c.JSON(result)
+	return c.Status(200).JSON(fiber.Map{
+		"success": true,
+		"updated": len(result),
+	})
 }

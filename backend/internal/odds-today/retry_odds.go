@@ -14,14 +14,14 @@ func RetryFixtureOdds(fixtureID int) error {
 
 	err := lib.RetryWithBackoff(func() error {
 		log.Printf("⚠️  [Retry] fixture %d attempting...", fixtureID)
-		
+
 		time.Sleep(500 * time.Millisecond)
-		
+
 		_, err := service.QueryFixtureOdds(idStr)
 		if err != nil {
 			return err
 		}
-		
+
 		log.Printf("✅ [Retry] fixture %d success", fixtureID)
 		return nil
 	}, 3, 1*time.Second)

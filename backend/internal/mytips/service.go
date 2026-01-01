@@ -18,6 +18,17 @@ func CreateTable(ctx context.Context, db *bun.DB) error {
 
 }
 
+func InsertManual(item *m.MyTipsAnalytics) error {
+	ctx := context.Background()
+	db := db.WithContext(ctx)
+
+	_, err := db.NewInsert().Model(item).Exec(ctx)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
 func InsertMany(items []m.MyTipsAnalytics) error {
 	ctx := context.Background()
 	db := db.WithContext(ctx)

@@ -50,8 +50,9 @@ type MyTipsAnalytics struct {
 }
 
 type BetPick struct {
-	Odds   string `json:"odds"`
 	Picked string `json:"picked"`
+	Team   string `json:"team"`
+	Odds   string `json:"odds"`
 	Stake  string `json:"stake"`
 }
 type UpdateFixtureResultDTO struct {

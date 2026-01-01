@@ -3,7 +3,9 @@ package mytips
 import (
 	"fmt"
 	"log"
+	"mytipster/internal/predictions"
 	"mytipster/lib"
+	m "mytipster/models/mytips"
 	mytips_module "mytipster/models/mytips"
 	"time"
 
@@ -23,6 +25,30 @@ func GetPredictionByDay(c *fiber.Ctx) error {
 
 	fmt.Println("predictions :", predictions)
 	return c.JSON(predictions)
+}
+
+func insertManualPrediction(c *fiber.Ctx) error {
+	fmt.Println("into insertManualPrediction")
+	var data *m.MyTipsAnalytics
+
+	id := c.Query("fixture")
+
+	data, err := predictions.Predictions(id)
+	fmt.Println("data :", data)
+	if err != nil {
+		return err
+	}
+
+	if err := InsertManual(data); err != nil {
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+
+	return c.JSON(fiber.Map{
+		"status": "success",
+		"data":   data,
+	})
 }
 
 func InsertPredictions(c *fiber.Ctx) error {
@@ -79,7 +105,10 @@ func WritePrediction(c *fiber.Ctx) error {
 	}
 
 	log.Printf("🎉 ส่งผลลัพธ์ %d รายการ\n", len(resp.Items))
-	return c.JSON(resp.Items)
+	return c.JSON(fiber.Map{
+		"success": true,
+		"updated": len(resp.Items),
+	})
 }
 
 func UpdateMatchResult(c *fiber.Ctx) error {

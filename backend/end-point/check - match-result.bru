@@ -1,17 +1,17 @@
 meta {
   name: check : match-result
   type: http
-  seq: 10
+  seq: 7
 }
 
-put {
-  url: http://localhost:3009/api/match-result?date=2025-12-30
+patch {
+  url: http://localhost:3009/api/match-result?date=2025-12-31
   body: none
   auth: inherit
 }
 
 params:query {
-  date: 2025-12-30
+  date: 2025-12-31
 }
 
 settings {

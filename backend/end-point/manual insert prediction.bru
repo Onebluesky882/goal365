@@ -1,11 +1,11 @@
 meta {
-  name: predictions
+  name: manual insert prediction
   type: http
-  seq: 3
+  seq: 8
 }
 
-get {
-  url: http://localhost:3009/prediction-id?fixture=1467043
+post {
+  url: http://localhost:3009/api/insert-manual-id?fixture=1467043
   body: none
   auth: inherit
 }
