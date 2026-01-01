@@ -187,7 +187,7 @@ func WriteFailedPredictions(failed []int) error {
 	if err := os.MkdirAll(outputDir, 0755); err != nil {
 		return fmt.Errorf("cannot create directory: %w", err)
 	}
-	outputFile := filepath.Join(outputDir, "error_query_prediction.json")
+	outputFile := filepath.Join("error_query_prediction.json")
 	if err := lib.WriteJSON(outputFile, failed); err != nil {
 		return fmt.Errorf("cannot write failed fixtures file: %w", err)
 	}

@@ -23,7 +23,7 @@ type MyTipsAnalytics struct {
 	Home                string          `bun:"team_home" json:"home"`
 	Away                string          `bun:"team_away" json:"away"`
 	MatchFinish         string          `bun:"match_finish" json:"match_finish"`
-	Handicap            odds_models.Bet `bun:"handicap" json:"handicap"`
+	Handicap            odds_models.Bet `bun:"handicap,type:jsonb" json:"handicap"`
 	FormLeagueHomeCount int             `bun:"form_league_home_count" json:"form_league_home_count"`
 	FormLeagueAwayCount int             `bun:"form_league_away_count" json:"form_league_away_count"`
 	HomeFormScore14     int             `bun:"home_form_14" json:"home_form_14"`
