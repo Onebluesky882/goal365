@@ -5,7 +5,6 @@ import (
 	"log"
 	"mytipster/lib"
 	m "mytipster/models/mytips"
-	"time"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -71,32 +70,40 @@ func GetPredictionByDay(c *fiber.Ctx) error {
 	return c.JSON(predictions)
 }
 
-func insertManualPrediction(c *fiber.Ctx) error {
-	fmt.Println("into insertManualPrediction")
-	var data *m.MyTipsAnalytics
+// todo
+func insertManual(c *fiber.Ctx) error {
+	return c.SendString("200")
+	//	if err := InsertManual(data); err != nil {
+	//		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+	//			"error": err.Error(),
+	//		})
+	//	}
+}
 
-	id := c.Query("fixture")
+func insertRetryPrediction(c *fiber.Ctx) error {
+	date := c.Query("date")
 
-	data, err := PredictionByOne(id)
-	fmt.Println("data :", data)
+	success, remainFailed, err := PredictionRetryFailed(date)
 	if err != nil {
 		return err
 	}
 
-	if err := InsertManual(data); err != nil {
-		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-			"error": err.Error(),
-		})
+	if err := insertMany(success); err != nil {
+		log.Printf("❌ Insert failed: %v\n", err)
 	}
 
+	// 🔥 overwrite file
+	if err := overwriteFailedFile(date, remainFailed); err != nil {
+		log.Printf("❌ overwrite failed file error: %v\n", err)
+	}
 	return c.JSON(fiber.Map{
 		"status": "success",
-		"data":   data,
+		"data":   len(success),
 	})
 }
 
 func InsertPredictions(c *fiber.Ctx) error {
-	date := time.Now().Format("2006-01-02")
+	date := c.Query("date")
 
 	// insert db
 	data, err := lib.ReadJson[[]m.MyTipsAnalytics](fmt.Sprintf("bin/%s/predictions.json", date))
@@ -106,7 +113,7 @@ func InsertPredictions(c *fiber.Ctx) error {
 	}
 
 	// insert many
-	if err := InsertMany(data); err != nil {
+	if err := insertMany(data); err != nil {
 		return c.Status(500).JSON(fiber.Map{
 			"error": fmt.Sprintf("Insert failed: %v", err),
 		})

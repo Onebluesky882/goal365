@@ -13,13 +13,16 @@ func RegisterRoutes(app *fiber.App) {
 	api.Post("/predictions", InsertPredictions)
 
 	// manual insert prediction by id
-	api.Post("/insert-manual-id", insertManualPrediction)
+	api.Post("/insert-manual-id", insertManual)
 
 	// -------------- * --------------
 	// step 1
 	api.Get("/get-odds-today", oddstoday.GetOddsToday)
 	// step 2
 	api.Get("/write-predictions", writePredictions)
+
+	// 2.1 retry
+	api.Get("/retry-predictions", insertRetryPrediction)
 
 	// upload bin/date/prediontion.json to db
 	api.Get("/insert", InsertPredictions)

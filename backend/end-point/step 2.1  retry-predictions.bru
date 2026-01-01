@@ -1,11 +1,11 @@
 meta {
-  name: step 3 insert predictions
+  name: step 2.1  retry-predictions
   type: http
-  seq: 6
+  seq: 9
 }
 
 get {
-  url: http://localhost:3009/api/insert?date=2026-01-02
+  url: http://localhost:3009/api/retry-predictions?date=2026-01-02
   body: none
   auth: inherit
 }

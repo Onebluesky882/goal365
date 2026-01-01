@@ -19,7 +19,7 @@ func InsertManual(item *m.MyTipsAnalytics) error {
 	return nil
 }
 
-func InsertMany(items []m.MyTipsAnalytics) error {
+func insertMany(items []m.MyTipsAnalytics) error {
 	ctx := context.Background()
 	db := db.WithContext(ctx)
 	var filtered []m.MyTipsAnalytics
@@ -55,4 +55,3 @@ func PredictionByDay(date string) ([]m.MyTipsAnalytics, error) {
 	}
 	return result, nil
 }
-

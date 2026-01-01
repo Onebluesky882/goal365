@@ -6,6 +6,7 @@ import (
 	"mytipster/internal/fixtures/service"
 	"mytipster/lib"
 	"mytipster/lib/common"
+	oddsmap "mytipster/lib/odds_map"
 	fixture_module "mytipster/models/fixture"
 	m "mytipster/models/mytips"
 	odds_models "mytipster/models/odds"
@@ -17,66 +18,120 @@ import (
 	"time"
 )
 
-func PredictionByOne(fixtureId string) (*m.MyTipsAnalytics, error) {
+func overwriteFailedFile(date string, failed []int) error {
+	path := fmt.Sprintf("bin/%s/error_query_prediction.json", date)
 
-	// ดึง prediction
-	pred, err := service.QueryPrediction(fixtureId)
+	log.Printf("📝 Overwrite failed file (%d items)\n", len(failed))
+	return lib.WriteJSON(path, failed) // overwrite
+}
+
+func PredictionRetryFailed(date string) ([]m.MyTipsAnalytics, []int, error) {
+
+	path := fmt.Sprintf("bin/%s/error_query_prediction.json", date)
+	ids, err := lib.ReadJson[[]int](path)
 	if err != nil {
-		return nil, fmt.Errorf("QueryPrediction error: %w", err)
-	}
-	if pred == nil {
-		return nil, fmt.Errorf("prediction is nil fixtureId=%s", fixtureId)
+		return nil, nil, err
 	}
 
-	// ดึง fixture
-	fx, err := service.QueryFixtureId(fixtureId)
-	if err != nil {
-		return nil, err
-	}
-	home := 0
-	away := 0
+	log.Printf("🔁 Retry %d failed fixtures from %s\n", len(ids), path)
+	//received data
+	results := make([]m.MyTipsAnalytics, 0, len(ids))
+	remainFailed := make([]int, 0)
+	for _, fid := range ids {
 
-	if fx.Goals.Home != nil {
-		home = *fx.Goals.Home
-	}
-	if fx.Goals.Away != nil {
-		away = *fx.Goals.Away
-	}
+		fid := strconv.Itoa(fid)
+		pred, err := service.QueryPrediction(fid)
+		if err != nil {
+			log.Printf("❌ QueryPrediction failed %s: %v\n", fid, err)
+			continue
+		}
+		if pred == nil {
+			log.Printf("⚠️ Prediction nil for %s\n", fid)
+			continue
+		}
 
-	item := &m.MyTipsAnalytics{
-		FixtureID:           fx.Fixture.ID,
-		Date:                common.TimestampUTCDate(fx.Fixture.Timestamp),
-		TimeStamp:           common.Timestamp(fx.Fixture.Timestamp),
-		Country:             fx.League.Country,
-		League:              fx.League.Name,
-		Home:                pred.Teams.Home.Name,
-		Away:                pred.Teams.Away.Name,
-		HomeScore:           pred.Teams.Home.Last5.Form,
-		AwayScore:           pred.Teams.Away.Last5.Form,
-		FormLeagueHomeCount: len(pred.Teams.Home.League.Form),
-		FormLeagueAwayCount: len(pred.Teams.Away.League.Form),
-		HomeFormScore14:     lib.FormScore(14, pred.Teams.Home.League.Form),
-		AwayFormScore14:     lib.FormScore(14, pred.Teams.Away.League.Form),
-		HomeFormScore12:     lib.FormScore(12, pred.Teams.Home.League.Form),
-		AwayFormScore12:     lib.FormScore(12, pred.Teams.Away.League.Form),
-		HomeFormScore10:     lib.FormScore(10, pred.Teams.Home.League.Form),
-		AwayFormScore10:     lib.FormScore(10, pred.Teams.Away.League.Form),
-		HomeFormScore7:      lib.FormScore(7, pred.Teams.Home.League.Form),
-		AwayFormScore7:      lib.FormScore(7, pred.Teams.Away.League.Form),
-		HomeFormScore5:      lib.FormScore(5, pred.Teams.Home.League.Form),
-		AwayFormScore5:      lib.FormScore(5, pred.Teams.Away.League.Form),
-		MatchFinish:         fx.Fixture.Status.Long,
-		MatchResult:         fmt.Sprintf("%d-%d", home, away),
-		BetPick: m.BetPick{
-			Picked: "",
-			Team:   "",
-			Odds:   "",
-			Stake:  "",
-		},
+		fx, err := service.QueryFixtureId(fid)
+		if err != nil {
+			log.Printf("❌ QueryFixtureId failed %s: %v\n", fid, err)
+			continue
+		}
+
+		odds, err := service.QueryFixtureOdds(fid)
+
+		if err != nil {
+			log.Printf("❌ QueryFixtureOdds failed %s: %v\n", fid, err)
+			continue
+		}
+		stringOdds := make(odds_models.OddsMap, len(odds))
+		for k, v := range odds {
+			stringOdds[strconv.Itoa(k)] = v
+		}
+
+		betMap := oddsmap.FilterOddsMap(stringOdds)
+		if len(betMap) == 0 {
+			log.Printf("⚠️ No bets after filter %s\n", fid)
+			continue
+		}
+
+		var handicap odds_models.Bet
+		found := false
+		for _, bets := range betMap {
+			if len(bets) > 0 {
+				handicap = bets[0]
+				found = true
+				break
+			}
+		}
+		if !found {
+			log.Printf("⚠️ Empty bet slice %s\n", fid)
+			continue
+		}
+
+		home := 0
+		away := 0
+		if fx.Goals.Home != nil {
+			home = *fx.Goals.Home
+		}
+		if fx.Goals.Away != nil {
+			away = *fx.Goals.Away
+		}
+
+		item := m.MyTipsAnalytics{
+			FixtureID:           fx.Fixture.ID,
+			Date:                common.TimestampUTCDate(fx.Fixture.Timestamp),
+			TimeStamp:           common.Timestamp(fx.Fixture.Timestamp),
+			Country:             fx.League.Country,
+			League:              fx.League.Name,
+			Home:                pred.Teams.Home.Name,
+			Away:                pred.Teams.Away.Name,
+			HomeScore:           pred.Teams.Home.Last5.Form,
+			AwayScore:           pred.Teams.Away.Last5.Form,
+			FormLeagueHomeCount: len(pred.Teams.Home.League.Form),
+			FormLeagueAwayCount: len(pred.Teams.Away.League.Form),
+			HomeFormScore14:     lib.FormScore(14, pred.Teams.Home.League.Form),
+			AwayFormScore14:     lib.FormScore(14, pred.Teams.Away.League.Form),
+			HomeFormScore12:     lib.FormScore(12, pred.Teams.Home.League.Form),
+			AwayFormScore12:     lib.FormScore(12, pred.Teams.Away.League.Form),
+			HomeFormScore10:     lib.FormScore(10, pred.Teams.Home.League.Form),
+			AwayFormScore10:     lib.FormScore(10, pred.Teams.Away.League.Form),
+			HomeFormScore7:      lib.FormScore(7, pred.Teams.Home.League.Form),
+			AwayFormScore7:      lib.FormScore(7, pred.Teams.Away.League.Form),
+			HomeFormScore5:      lib.FormScore(5, pred.Teams.Home.League.Form),
+			AwayFormScore5:      lib.FormScore(5, pred.Teams.Away.League.Form),
+			MatchFinish:         fx.Fixture.Status.Long,
+			MatchResult:         fmt.Sprintf("%d-%d", home, away),
+			Handicap:            handicap,
+			BetPick: m.BetPick{
+				Picked: "",
+				Team:   "",
+				Odds:   "",
+				Stake:  "",
+			},
+		}
+		results = append(results, item)
 	}
-
-	return item, nil
-
+	log.Printf("✅ Retry success %d/%d fixtures\n", len(results), len(ids))
+	return results, remainFailed, nil
 }
 
 // Process single fixture with retry
