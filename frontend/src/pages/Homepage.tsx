@@ -8,7 +8,15 @@ const Homepage = () => {
   useEffect(() => {
     // const date = new Date().toISOString().split("T")[0];
     const getPrediction = async () => {
-      const res = await predictions.get(`2025-12-30`);
+      const d = new Date();
+
+      const today = [
+        d.getFullYear(),
+        String(d.getMonth() + 1).padStart(2, "0"),
+        String(d.getDate()).padStart(2, "0"),
+      ].join("-");
+
+      const res = await predictions.get(today);
       if (Array.isArray(res.data)) {
         setData(res.data);
       }
