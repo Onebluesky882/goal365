@@ -253,8 +253,6 @@ func ProcessBuildPredictionsJson(fixtureID string, bet []odds_models.Bet) (*m.My
 	return item, nil
 }
 
-var oneSecond = 100 * time.Millisecond
-
 func PredictionsMany(date string, ids []string, oddsMap map[string][]odds_models.Bet) (*m.RootMyTipsAnalytics, error) {
 
 	// ใช้ concurrent processing
@@ -272,7 +270,6 @@ func PredictionsMany(date string, ids []string, oddsMap map[string][]odds_models
 	var failedFixturesMu sync.Mutex
 	failedFixtures := make([]int, 0)
 	for i, fixtureID := range ids {
-		time.Sleep(1000 * time.Millisecond)
 		// ตรวจสอบว่ามี odds หรือไม่
 		bets, ok := oddsMap[fixtureID]
 		if !ok || len(bets) == 0 {
@@ -312,8 +309,6 @@ func PredictionsMany(date string, ids []string, oddsMap map[string][]odds_models
 				idx+1, len(ids), id, item.Home, item.Away)
 		}(fixtureID, i, bets)
 
-		// Rate limiting between goroutine starts
-		time.Sleep(1000 * time.Millisecond)
 	}
 
 	// รอให้ทุก goroutine เสร็จ
