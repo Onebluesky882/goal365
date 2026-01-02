@@ -3,7 +3,7 @@ package predictions
 import (
 	"fmt"
 	"log"
-	"mytipster/internal/fixtures/service"
+	"mytipster/internal/fixtures"
 	"mytipster/lib"
 	"mytipster/lib/common"
 	oddsmap "mytipster/lib/odds_map"
@@ -18,11 +18,48 @@ import (
 	"time"
 )
 
+func RetryAndCollectItems(date string) ([]m.MyTipsAnalytics, error) {
+	// path ของไฟล์ failed fixture IDs
+	path := fmt.Sprintf("bin/%s/error_query_prediction.json", date)
+	ids, err := lib.ReadJson[[]int](path)
+	if err != nil {
+		return nil, fmt.Errorf("failed to read failed IDs: %w", err)
+	}
+
+	log.Printf("🔁 Retry %d failed fixtures from %s\n", len(ids), path)
+
+	var successItems []m.MyTipsAnalytics
+	var stillFailed []int
+
+	for _, fidInt := range ids {
+		fid := strconv.Itoa(fidInt)
+
+		// retry prediction
+		item, err := ProcessBuildPredictionsJson(fid, nil) // ใส่ odds ตามจริงถ้ามี
+		if err != nil {
+			log.Printf("❌ Retry failed for %s: %v\n", fid, err)
+			stillFailed = append(stillFailed, fidInt)
+			continue
+		}
+
+		successItems = append(successItems, *item)
+	}
+
+	// เขียนไฟล์ใหม่เฉพาะรายการที่ยังล้มเหลว
+	if err := overwriteFailedFile(date, stillFailed); err != nil {
+		log.Printf("❌ Failed to overwrite error file: %v\n", err)
+	} else {
+		log.Printf("📝 Updated error file, remaining failed: %d\n", len(stillFailed))
+	}
+
+	return successItems, nil
+}
+
+// helper สำหรับ overwrite error file
 func overwriteFailedFile(date string, failed []int) error {
 	path := fmt.Sprintf("bin/%s/error_query_prediction.json", date)
-
 	log.Printf("📝 Overwrite failed file (%d items)\n", len(failed))
-	return lib.WriteJSON(path, failed) // overwrite
+	return lib.WriteJSON(path, failed)
 }
 
 func PredictionRetryFailed(date string) ([]m.MyTipsAnalytics, []int, error) {
@@ -40,7 +77,7 @@ func PredictionRetryFailed(date string) ([]m.MyTipsAnalytics, []int, error) {
 	for _, fid := range ids {
 
 		fid := strconv.Itoa(fid)
-		pred, err := service.QueryPrediction(fid)
+		pred, err := fixtures.QueryPrediction(fid)
 		if err != nil {
 			log.Printf("❌ QueryPrediction failed %s: %v\n", fid, err)
 			continue
@@ -50,13 +87,13 @@ func PredictionRetryFailed(date string) ([]m.MyTipsAnalytics, []int, error) {
 			continue
 		}
 
-		fx, err := service.QueryFixtureId(fid)
+		fx, err := fixtures.QueryFixtureId(fid)
 		if err != nil {
 			log.Printf("❌ QueryFixtureId failed %s: %v\n", fid, err)
 			continue
 		}
 
-		odds, err := service.QueryFixtureOdds(fid)
+		odds, err := fixtures.QueryFixtureOdds(fid)
 
 		if err != nil {
 			log.Printf("❌ QueryFixtureOdds failed %s: %v\n", fid, err)
@@ -142,7 +179,7 @@ func ProcessBuildPredictionsJson(fixtureID string, bet []odds_models.Bet) (*m.My
 
 	// ดึง prediction พร้อม retry
 	err = lib.RetryWithBackoff(func() error {
-		pred, err = service.QueryPrediction(fixtureID)
+		pred, err = fixtures.QueryPrediction(fixtureID)
 		if err != nil {
 			return err
 		}
@@ -158,7 +195,7 @@ func ProcessBuildPredictionsJson(fixtureID string, bet []odds_models.Bet) (*m.My
 	// ดึง fixture พร้อม retry
 	err = lib.RetryWithBackoff(func() error {
 		time.Sleep(500 * time.Millisecond)
-		fx, err = service.QueryFixtureId(fixtureID)
+		fx, err = fixtures.QueryFixtureId(fixtureID)
 		if err != nil {
 			return err
 		}

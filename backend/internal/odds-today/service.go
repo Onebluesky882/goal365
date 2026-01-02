@@ -3,7 +3,7 @@ package oddstoday
 import (
 	"fmt"
 	"log"
-	"mytipster/internal/fixtures/service"
+	"mytipster/internal/fixtures"
 	"mytipster/lib"
 	odds_models "mytipster/models/odds"
 	"os"
@@ -23,7 +23,7 @@ func processSingleFixtureOdds(fixtureID int) (map[int][]odds_models.Bet, error) 
 
 	// Query odds พร้อม retry
 	err = lib.RetryWithBackoff(func() error {
-		oddsMap, err = service.QueryFixtureOdds(idStr)
+		oddsMap, err = fixtures.QueryFixtureOdds(idStr)
 		if err != nil {
 			return err
 		}
@@ -42,7 +42,7 @@ func processSingleFixtureOdds(fixtureID int) (map[int][]odds_models.Bet, error) 
 
 func QueryOdds(date string) (map[int][]odds_models.Bet, error) {
 	// ดึง fixture IDs
-	ids, err := service.GetIds(date)
+	ids, err := fixtures.GetIds(date)
 	if err != nil {
 		return nil, fmt.Errorf("failed to get fixture IDs: %w", err)
 	}

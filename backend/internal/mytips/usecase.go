@@ -2,7 +2,7 @@ package mytips
 
 import (
 	"fmt"
-	"mytipster/internal/fixtures/service"
+	"mytipster/internal/fixtures"
 	"mytipster/internal/predictions"
 	fixture_module "mytipster/models/fixture"
 	m "mytipster/models/mytips"
@@ -15,7 +15,7 @@ func MatchResult(date string) ([]m.UpdateFixtureResultDTO, error) {
 		return nil, err
 	}
 
-	fixtures, err := service.QueryFixtureDate(date)
+	fixtures, err := fixtures.QueryFixtureDate(date)
 	if err != nil {
 		return nil, err
 	}

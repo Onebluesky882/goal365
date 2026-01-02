@@ -70,35 +70,23 @@ func GetPredictionByDay(c *fiber.Ctx) error {
 	return c.JSON(predictions)
 }
 
-// todo
-func insertManual(c *fiber.Ctx) error {
-	return c.SendString("200")
-	//	if err := InsertManual(data); err != nil {
-	//		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-	//			"error": err.Error(),
-	//		})
-	//	}
-}
-
 func insertRetryPrediction(c *fiber.Ctx) error {
 	date := c.Query("date")
 
-	success, remainFailed, err := PredictionRetryFailed(date)
+	items, err := RetryAndCollectItems(date)
 	if err != nil {
 		return err
 	}
 
-	if err := insertMany(success); err != nil {
-		log.Printf("❌ Insert failed: %v\n", err)
+	if len(items) > 0 {
+		if err := insertMany(items); err != nil {
+			log.Printf("❌ Insert to DB failed: %v\n", err)
+		}
 	}
 
-	// 🔥 overwrite file
-	if err := overwriteFailedFile(date, remainFailed); err != nil {
-		log.Printf("❌ overwrite failed file error: %v\n", err)
-	}
 	return c.JSON(fiber.Map{
-		"status": "success",
-		"data":   len(success),
+		"status":   "success",
+		"inserted": len(items),
 	})
 }
 

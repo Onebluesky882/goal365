@@ -2,7 +2,7 @@ package oddstoday
 
 import (
 	"log"
-	"mytipster/internal/fixtures/service"
+	"mytipster/internal/fixtures"
 	"mytipster/lib"
 	"strconv"
 	"time"
@@ -17,7 +17,7 @@ func RetryFixtureOdds(fixtureID int) error {
 
 		time.Sleep(500 * time.Millisecond)
 
-		_, err := service.QueryFixtureOdds(idStr)
+		_, err := fixtures.QueryFixtureOdds(idStr)
 		if err != nil {
 			return err
 		}
@@ -53,7 +53,7 @@ func retryFixtureOdds(fixtureID int) {
 
 		log.Printf("[Retry] fixture %d attempt %d/3", fixtureID, attempt)
 
-		_, err := service.QueryMyTipsOdds(idStr)
+		_, err := fixtures.QueryMyTipsOdds(idStr)
 		if err == nil {
 			log.Printf("[Retry] fixture %d success", fixtureID)
 			return
@@ -64,5 +64,3 @@ func retryFixtureOdds(fixtureID int) {
 
 	log.Printf("[Retry] fixture %d failed after 3 attempts", fixtureID)
 }
-
-

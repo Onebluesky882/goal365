@@ -1,17 +1,17 @@
 meta {
-  name: get : predictions id 
+  name: get prediction by id
   type: http
-  seq: 3
+  seq: 11
 }
 
 get {
-  url: http://localhost:3009/prediction-id?fixture=1467043
+  url: http://localhost:3009/prediction?id=1422729
   body: none
   auth: inherit
 }
 
 params:query {
-  fixture: 1467043
+  id: 1422729
 }
 
 settings {

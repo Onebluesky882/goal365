@@ -25,8 +25,9 @@ func main() {
 		AllowHeaders: "Origin, Content-Type, Accept, Authorization",
 	}))
 	app.Get("/ids", fixtures.GetFixtureIds)
-	app.Get("/id", fixtures.GetFixtureById)
+	app.Get("/fixture", fixtures.GetFixtureById)
 	app.Get("/odds", fixtures.Odds)
+	app.Get("/prediction", fixtures.Predictions)
 	app.Get("/date", fixtures.GetFixtureDate)
 
 	// register routes

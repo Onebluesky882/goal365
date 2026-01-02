@@ -1,17 +1,17 @@
 meta {
-  name: step 3 insert predictions
+  name: get odds by id
   type: http
-  seq: 5
+  seq: 10
 }
 
 get {
-  url: http://localhost:3009/api/insert?date=2026-01-02
+  url: http://localhost:3009/fixture?id=1422729
   body: none
   auth: inherit
 }
 
 params:query {
-  date: 2026-01-02
+  id: 1422729
 }
 
 settings {

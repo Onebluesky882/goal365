@@ -1,4 +1,4 @@
-package service
+package fixtures
 
 import (
 	"fmt"
@@ -29,7 +29,7 @@ func GetIds(date string) ([]int, error) {
 func QueryFixtureId(id string) (*m.Response, error) {
 
 	url := fmt.Sprintf(
-		"https://api-football-v1.p.rapidapi.com/v3/fixtures?id=%s",
+		"https://v3.football.api-sports.io/fixtures?id=%s",
 		id,
 	)
 
@@ -50,7 +50,7 @@ func QueryFixtureId(id string) (*m.Response, error) {
 func QueryFixtureOdds(id string) (map[int][]odds_models.Bet, error) {
 
 	url := fmt.Sprintf(
-		"https://api-football-v1.p.rapidapi.com/v3/odds?fixture=%s",
+		"https://v3.football.api-sports.io/odds?fixture=%s",
 		id,
 	)
 
@@ -71,7 +71,7 @@ func QueryFixtureOdds(id string) (map[int][]odds_models.Bet, error) {
 func QueryFixtureDate(date string) ([]m.Response, error) {
 
 	url := fmt.Sprintf(
-		"https://api-football-v1.p.rapidapi.com/v3/fixtures?date=%s",
+		"https://v3.football.api-sports.io/fixtures?id=%s",
 		date,
 	)
 
@@ -92,7 +92,7 @@ func QueryFixtureDate(date string) ([]m.Response, error) {
 func QueryPrediction(id string) (*prediction_models.PredictionResponse, error) {
 
 	url := fmt.Sprintf(
-		"https://api-football-v1.p.rapidapi.com/v3/predictions?fixture=%s",
+		"https://v3.football.api-sports.io/predictions?fixture=%s",
 		id,
 	)
 
@@ -111,7 +111,7 @@ func QueryPrediction(id string) (*prediction_models.PredictionResponse, error) {
 func QueryMyTipsOdds(id string) (map[int][]odds_models.Bet, error) {
 
 	url := fmt.Sprintf(
-		"https://api-football-v1.p.rapidapi.com/v3/odds?fixture=%s",
+		"https://v3.football.api-sports.io/odds?fixture=%s",
 		id,
 	)
 

@@ -12,19 +12,17 @@ import (
 func ApiFootball[T any](method string, url string) (*T, error) {
 	_ = godotenv.Load()
 
-	apiKey := os.Getenv("RAPIDAPI_KEY")
-	apiHost := os.Getenv("RAPIDAPI_HOST")
+	apiKey := os.Getenv("API_KEY")
 
-	if apiKey == "" || apiHost == "" {
-		return nil, errors.New("missing RAPIDAPI_KEY")
+	if apiKey == "" {
+		return nil, errors.New("missing API_KEY")
 	}
 
 	req, err := http.NewRequest(method, url, nil)
 	if err != nil {
 		return nil, err
 	}
-	req.Header.Add("x-rapidapi-key", apiKey)
-	req.Header.Add("x-rapidapi-host", apiHost)
+	req.Header.Add("x-apisports-key", apiKey)
 
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {
