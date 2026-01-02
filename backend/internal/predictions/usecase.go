@@ -253,6 +253,8 @@ func ProcessBuildPredictionsJson(fixtureID string, bet []odds_models.Bet) (*m.My
 	return item, nil
 }
 
+var oneSecond = 100 * time.Millisecond
+
 func PredictionsMany(date string, ids []string, oddsMap map[string][]odds_models.Bet) (*m.RootMyTipsAnalytics, error) {
 
 	// ใช้ concurrent processing

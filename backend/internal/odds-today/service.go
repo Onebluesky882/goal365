@@ -15,6 +15,16 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
+var oneMillisecond = 100 * time.Millisecond
+
+/*
+  ✅ สำเร็จ: 207
+    ❌ ล้มเหลว: 223
+*/
+
+/* 2026/01/02 17:58:15    ✅ สำเร็จ: 207
+2026/01/02 17:58:15    ❌ ล้มเหลว: 223 */
+
 // Process single fixture odds with retry
 func processSingleFixtureOdds(fixtureID int) (map[int][]odds_models.Bet, error) {
 	var oddsMap map[int][]odds_models.Bet
@@ -31,7 +41,7 @@ func processSingleFixtureOdds(fixtureID int) (map[int][]odds_models.Bet, error) 
 			return fmt.Errorf("odds map is empty")
 		}
 		return nil
-	}, 3, 1*time.Second)
+	}, 3, oneMillisecond)
 
 	if err != nil {
 		return nil, fmt.Errorf("odds error for fixture %d: %w", fixtureID, err)
@@ -71,9 +81,6 @@ func QueryOdds(date string) (map[int][]odds_models.Bet, error) {
 			sem <- struct{}{}
 			defer func() { <-sem }()
 
-			// เพิ่ม delay ก่อนเริ่มทำงาน
-			time.Sleep(500 * time.Millisecond)
-
 			log.Printf("⏳ [%d/%d] Processing id : fixture %d \n", idx+1, len(ids), id)
 
 			// Process with retry
@@ -105,7 +112,7 @@ func QueryOdds(date string) (map[int][]odds_models.Bet, error) {
 		}(fixtureID, i)
 
 		// Rate limiting between goroutine starts
-		time.Sleep(800 * time.Millisecond)
+		time.Sleep(oneMillisecond)
 	}
 
 	// รอให้ทุก goroutine เสร็จ

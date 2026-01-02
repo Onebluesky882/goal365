@@ -71,7 +71,7 @@ func QueryFixtureOdds(id string) (map[int][]odds_models.Bet, error) {
 func QueryFixtureDate(date string) ([]m.Response, error) {
 
 	url := fmt.Sprintf(
-		"https://v3.football.api-sports.io/fixtures?id=%s",
+		"https://v3.football.api-sports.io/fixtures?date=%s",
 		date,
 	)
 
