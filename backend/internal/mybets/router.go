@@ -1,8 +1,12 @@
 package mybets
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"github.com/gofiber/fiber/v2"
+	"github.com/uptrace/bun"
+)
 
-func RegisterRoutes(c *fiber.App) {
-	api := c.Group("/api")
-	api.Post("/create", CreateMyBets)
+func RegisterRoutes(app *fiber.App, db *bun.DB) {
+
+	api := app.Group("/api")
+	api.Post("/mybets/insert", InsertPickedHandler(db))
 }

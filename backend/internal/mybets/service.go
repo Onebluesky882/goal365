@@ -2,12 +2,11 @@ package mybets
 
 import (
 	"context"
-	"fmt"
-	"mytipster/internal/db"
-	"mytipster/lib"
+	analytic_module "mytipster/models/analytic"
 	m "mytipster/models/analytic"
-	odds_models "mytipster/models/odds"
+	mybets_models "mytipster/models/mybets"
 
+	"github.com/google/uuid"
 	"github.com/uptrace/bun"
 )
 
@@ -19,10 +18,7 @@ func CreateTable(ctx context.Context, db *bun.DB) error {
 
 }
 
-func getPickedByDate(date string, items []m.MyAnalytics) error {
-
-	ctx := context.Background()
-	db := db.WithContext(ctx)
+func GetPickedByDate(date string, items []m.MyAnalytics, ctx context.Context, db *bun.DB) error {
 
 	result, err := FilterPredictionByDate(date, items)
 
@@ -33,33 +29,24 @@ func getPickedByDate(date string, items []m.MyAnalytics) error {
 	return nil
 }
 
-func InsertPicked(date string, handicap odds_models.Bet, bet m.BetPick, items []m.MyAnalytics, db *bun.DB) error {
-	ctx := context.Background()
-
-	path := fmt.Sprintf("bin/%s/predictions.json", date)
-
-	var results []m.MyBets
-
-	temp, err := lib.ReadJson[[]m.MyBets](path)
-	if err != nil {
-		return err
+func InsertPicked(items []mybets_models.BetPickIn, analyticsID uuid.UUID, db *bun.DB, ctx context.Context) error {
+	results := make([]analytic_module.MyBets, 0, len(items))
+	for _, fx := range items {
+		results = append(results, m.MyBets{
+			TipsAnalyticsID: analyticsID,
+			BetPick: m.BetPick{
+				Picked: fx.Picked,
+				Team:   fx.Team,
+				Odds:   fx.Odds,
+				Stake:  fx.Stake,
+			},
+		})
+	}
+	if len(results) == 0 {
+		return nil
 	}
 
-	for _, fx := range temp {
-
-		for _, item := range items {
-
-			if fx.ID == item.ID {
-				prediction := m.MyBets{
-					Handicap: handicap,
-					BetPick:  bet,
-				}
-				results = append(results, prediction)
-			}
-		}
-	}
-
-	_, err = db.NewInsert().Model(&results).Exec(ctx)
+	_, err := db.NewInsert().Model(&results).Returning("id").Exec(ctx)
 
 	if err != nil {
 		return err

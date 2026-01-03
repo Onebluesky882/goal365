@@ -1,10 +1,12 @@
 package main
 
 import (
+	"context"
 	"log"
 	"mytipster/internal/analytics"
 	"mytipster/internal/db"
 	"mytipster/internal/fixtures"
+	"mytipster/internal/mybets"
 	"mytipster/internal/tipsdaily"
 	"os"
 
@@ -17,6 +19,8 @@ func main() {
 
 	_ = godotenv.Load()
 	db.InitDB()
+	ctx := context.Background()
+	dbbun := db.WithContext(ctx)
 
 	app := fiber.New()
 
@@ -34,23 +38,8 @@ func main() {
 	// register routes
 	analytics.RegisterRoutes(app)
 	tipsdaily.RegisterRoutes(app)
+	mybets.RegisterRoutes(app, dbbun)
 
-	// todo
-	/*
-		  1. post new file  match result   bin/2025-12-30    today is 31 - 1  for guest
-		  		- make json match_result (2025-12-30)
-				- update app on db where id = id
-
-	*/
-
-	/*
-
-		own file
-
-
-	*/
-	// post new file  bet pick handicap with new file /bin20-12-30.  for only me ที่จะบันทึกผลการเล่นส่วนตัว
-	// frontend
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "3009"

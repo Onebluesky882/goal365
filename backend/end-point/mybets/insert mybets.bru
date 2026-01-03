@@ -1,0 +1,30 @@
+meta {
+  name: insert mybets
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3009/api/mybets/insert
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "analytics_id": "c76b9d89-daa6-46c7-9ddd-9fba6cd2fed6",
+    "items": [
+      {
+        "picked": "HOME",
+        "team": "Arsenal",
+        "odds": "1.85",
+        "stake": "100"
+      }
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

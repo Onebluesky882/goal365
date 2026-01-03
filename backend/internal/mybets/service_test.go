@@ -1,8 +1,10 @@
 package mybets_test
 
 import (
+	"context"
 	"mytipster/internal/mybets"
 	m "mytipster/models/analytic"
+	mybets_models "mytipster/models/mybets"
 	"testing"
 
 	"github.com/DATA-DOG/go-sqlmock"
@@ -104,5 +106,73 @@ func TestDeletePicked(t *testing.T) {
 	err = mybets.DeletePicked(id.String(), items, bunDB)
 
 	require.NoError(t, err)
+	require.NoError(t, mock.ExpectationsWereMet())
+}
+
+func TestGetPickedByDate_Success(t *testing.T) {
+	// --- arrange ---
+	ctx := context.Background()
+
+	sqlDB, mock, err := sqlmock.New()
+	require.NoError(t, err)
+	defer sqlDB.Close()
+
+	bunDB := bun.NewDB(sqlDB, pgdialect.New())
+
+	date := "2026-01-02"
+
+	items := []m.MyAnalytics{
+		{
+			ID:   uuid.New(),
+			Date: "1767369600", // 2026-01-02 UTC
+		},
+		{
+			ID:   uuid.New(),
+			Date: "1767283200", // 2026-01-01 UTC
+		},
+	}
+
+	// bun.NewSelect().Exec() จะยิง SELECT
+	mock.ExpectExec(`SELECT`).
+		WillReturnResult(sqlmock.NewResult(0, 1))
+
+	// --- act ---
+	err = mybets.GetPickedByDate(date, items, ctx, bunDB)
+
+	// --- assert ---
+	require.NoError(t, err)
+	require.NoError(t, mock.ExpectationsWereMet())
+}
+
+func TestInsertPicked_WithAnalyticsID_Success(t *testing.T) {
+	// --- mock db ---
+	sqlDB, mock, err := sqlmock.New()
+	require.NoError(t, err)
+	defer sqlDB.Close()
+	bunDB := bun.NewDB(sqlDB, pgdialect.New())
+	ctx := context.Background()
+
+	// --- analyticsID สำหรับ FK ---
+	analyticsID := uuid.New()
+
+	// --- input ---
+	items := []mybets_models.BetPickIn{
+		{Picked: "HOME", Team: "Arsenal", Odds: "1.85", Stake: "100"},
+		{Picked: "AWAY", Team: "Chelsea", Odds: "2.10", Stake: "50"},
+	}
+
+	// --- sqlmock expectation ---
+	mock.ExpectQuery(`INSERT INTO "my-bets"`).
+		WillReturnRows(
+			sqlmock.NewRows([]string{"id"}).
+				AddRow(uuid.New()).
+				AddRow(uuid.New()),
+		)
+
+	// --- execute service ---
+	err = mybets.InsertPicked(items, analyticsID, bunDB, ctx)
+	require.NoError(t, err)
+
+	// --- verify db expectations ---
 	require.NoError(t, mock.ExpectationsWereMet())
 }

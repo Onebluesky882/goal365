@@ -18,7 +18,6 @@ func InitDB() {
 	if err != nil {
 		log.Fatal("cannot connect to database:", err)
 	}
-
 }
 
 func WithContext(ctx context.Context) *bun.DB {
