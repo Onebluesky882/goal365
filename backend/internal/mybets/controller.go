@@ -1,6 +1,8 @@
 package mybets
 
 import (
+	"fmt"
+	analytic_module "mytipster/models/analytic"
 	mybets_models "mytipster/models/mybets"
 
 	"github.com/gofiber/fiber/v2"
@@ -30,4 +32,35 @@ func InsertPickedHandler(db *bun.DB) fiber.Handler {
 			"inserted": len(req.Items),
 		})
 	}
+}
+
+func GetBetListsByDateHandler(db *bun.DB) fiber.Handler {
+	return func(c *fiber.Ctx) error {
+		date := c.Query("date")
+		ctx := c.Context()
+		// fetch analytics from DB
+		var analyticsItems []analytic_module.MyAnalytics
+		if err := db.NewSelect().Model(&analyticsItems).Scan(ctx); err != nil {
+			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+				"error": err.Error(),
+			})
+		}
+
+		// 1. Fetch bets for the given date
+		bets, err := GetBetListsByDate(date, analyticsItems, db, ctx)
+		if err != nil {
+			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+				"error": err.Error(),
+			})
+
+		}
+
+		fmt.Println("analyticsItems:", analyticsItems)
+		return c.JSON(fiber.Map{
+			"success": true,
+			"bets":    bets,
+			"count":   len(bets),
+		})
+	}
+
 }

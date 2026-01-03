@@ -18,15 +18,37 @@ func CreateTable(ctx context.Context, db *bun.DB) error {
 
 }
 
-func GetPickedByDate(date string, items []m.MyAnalytics, ctx context.Context, db *bun.DB) error {
+func GetBetListsByDate(date string, items []m.MyAnalytics, db *bun.DB, ctx context.Context) ([]analytic_module.MyBets, error) {
 
-	result, err := FilterPredictionByDate(date, items)
-
-	_, err = db.NewSelect().Model(&result).Exec(ctx)
-	if err != nil {
-		return err
+	// --- 1️⃣ query analytics ของวันนั้นโดยตรง ---
+	var analyticsItems []analytic_module.MyAnalytics
+	if err := db.NewSelect().
+		Model(&analyticsItems).
+		Where("date = ?", date).
+		Scan(ctx); err != nil {
+		return nil, err
 	}
-	return nil
+	if len(analyticsItems) == 0 {
+		return []analytic_module.MyBets{}, nil
+	}
+
+	// --- 2️⃣ เก็บ IDs ของ analytics ที่ match ---
+	analyticsIDs := make([]uuid.UUID, len(analyticsItems))
+	for i, a := range analyticsItems {
+		analyticsIDs[i] = a.ID
+	}
+
+	// --- 3️⃣ query my-bets ที่ relation กับ analytics ---
+	var bets []analytic_module.MyBets
+	if err := db.NewSelect().
+		Model(&bets).
+		Relation("TipsAnalytics").
+		Where("tips_analytics_id IN (?)", bun.In(analyticsIDs)).
+		Scan(ctx); err != nil {
+		return nil, err
+	}
+
+	return bets, nil
 }
 
 func InsertPicked(items []mybets_models.BetPickIn, analyticsID uuid.UUID, db *bun.DB, ctx context.Context) error {

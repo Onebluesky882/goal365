@@ -3,6 +3,7 @@ package mybets_test
 import (
 	"context"
 	"mytipster/internal/mybets"
+	analytic_module "mytipster/models/analytic"
 	m "mytipster/models/analytic"
 	mybets_models "mytipster/models/mybets"
 	"testing"
@@ -109,41 +110,6 @@ func TestDeletePicked(t *testing.T) {
 	require.NoError(t, mock.ExpectationsWereMet())
 }
 
-func TestGetPickedByDate_Success(t *testing.T) {
-	// --- arrange ---
-	ctx := context.Background()
-
-	sqlDB, mock, err := sqlmock.New()
-	require.NoError(t, err)
-	defer sqlDB.Close()
-
-	bunDB := bun.NewDB(sqlDB, pgdialect.New())
-
-	date := "2026-01-02"
-
-	items := []m.MyAnalytics{
-		{
-			ID:   uuid.New(),
-			Date: "1767369600", // 2026-01-02 UTC
-		},
-		{
-			ID:   uuid.New(),
-			Date: "1767283200", // 2026-01-01 UTC
-		},
-	}
-
-	// bun.NewSelect().Exec() จะยิง SELECT
-	mock.ExpectExec(`SELECT`).
-		WillReturnResult(sqlmock.NewResult(0, 1))
-
-	// --- act ---
-	err = mybets.GetPickedByDate(date, items, ctx, bunDB)
-
-	// --- assert ---
-	require.NoError(t, err)
-	require.NoError(t, mock.ExpectationsWereMet())
-}
-
 func TestInsertPicked_WithAnalyticsID_Success(t *testing.T) {
 	// --- mock db ---
 	sqlDB, mock, err := sqlmock.New()
@@ -174,5 +140,42 @@ func TestInsertPicked_WithAnalyticsID_Success(t *testing.T) {
 	require.NoError(t, err)
 
 	// --- verify db expectations ---
+	require.NoError(t, mock.ExpectationsWereMet())
+}
+
+func TestGetBetsListsByDate_Success(t *testing.T) {
+	sqlDB, mock, err := sqlmock.New()
+	require.NoError(t, err)
+	defer sqlDB.Close()
+
+	bunDB := bun.NewDB(sqlDB, pgdialect.New())
+	ctx := context.Background()
+
+	analyticsID := uuid.New()
+	analyticsItems := []analytic_module.MyAnalytics{
+		{ID: analyticsID, FixtureID: 1, Date: "2026-01-02"},
+		{ID: uuid.New(), FixtureID: 2, Date: "2026-01-03"},
+	}
+
+	// --- mock my-analytics query ---
+	mock.ExpectQuery(`SELECT .* FROM "my-analytics"`).
+		WillReturnRows(
+			sqlmock.NewRows([]string{"id", "fixture_id", "date"}).
+				AddRow(analyticsItems[0].ID, analyticsItems[0].FixtureID, analyticsItems[0].Date).
+				AddRow(analyticsItems[1].ID, analyticsItems[1].FixtureID, analyticsItems[1].Date),
+		)
+
+	// --- mock my-bets query ---
+	mock.ExpectQuery(`SELECT .* FROM "my-bets"`).
+		WillReturnRows(
+			sqlmock.NewRows([]string{"id", "tips_analytics_id"}).
+				AddRow(uuid.New(), analyticsID),
+		)
+
+	bets, err := mybets.GetBetListsByDate("2026-01-02", analyticsItems, bunDB, ctx)
+	require.NoError(t, err)
+	require.Len(t, bets, 1)
+	require.Equal(t, analyticsID, bets[0].TipsAnalyticsID)
+
 	require.NoError(t, mock.ExpectationsWereMet())
 }

@@ -2,8 +2,10 @@ package mybets_test
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"mytipster/internal/mybets"
+	analytic_module "mytipster/models/analytic"
 	mybets_models "mytipster/models/mybets"
 	"net/http"
 	"net/http/httptest"
@@ -68,5 +70,48 @@ func TestInsertPickedHandler_Success(t *testing.T) {
 	require.Equal(t, float64(len(reqBody.Items)), res["inserted"])
 
 	// --- verify all sqlmock expectations ---
+	require.NoError(t, mock.ExpectationsWereMet())
+}
+
+func TestBetsListsByDate_Success(t *testing.T) {
+	sqlDB, mock, err := sqlmock.New()
+	require.NoError(t, err)
+	defer sqlDB.Close()
+
+	bunDB := bun.NewDB(sqlDB, pgdialect.New())
+	ctx := context.Background()
+
+	// --- sample analytics ---
+	analyticsID := uuid.New()
+	otherID := uuid.New()
+	analyticsItems := []analytic_module.MyAnalytics{
+		{ID: analyticsID, FixtureID: 1, Date: "2026-01-03"},
+		{ID: otherID, FixtureID: 2, Date: "2026-01-02"},
+	}
+
+	// --- mock my-analytics query ---
+	mock.ExpectQuery(`SELECT .* FROM "my-analytics"`).
+		WillReturnRows(
+			sqlmock.NewRows([]string{"id", "fixture_id", "date"}).
+				AddRow(analyticsItems[0].ID, analyticsItems[0].FixtureID, analyticsItems[0].Date).
+				AddRow(analyticsItems[1].ID, analyticsItems[1].FixtureID, analyticsItems[1].Date),
+		)
+
+	// --- mock my-bets query ---
+	mock.ExpectQuery(`SELECT .* FROM "my-bets"`).
+		WillReturnRows(
+			sqlmock.NewRows([]string{"id", "tips_analytics_id"}).
+				AddRow(uuid.New(), analyticsID),
+		)
+
+	// --- call function ---
+	bets, err := mybets.GetBetListsByDate("2026-01-03", analyticsItems, bunDB, ctx)
+	require.NoError(t, err)
+
+	// --- assert ---
+	require.Len(t, bets, 1)
+	require.Equal(t, analyticsID, bets[0].TipsAnalyticsID)
+
+	// --- verify expectations ---
 	require.NoError(t, mock.ExpectationsWereMet())
 }

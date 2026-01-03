@@ -2,9 +2,8 @@ package mybets
 
 import (
 	"fmt"
-	"mytipster/lib/common"
 	m "mytipster/models/analytic"
-	"strconv"
+	"time"
 
 	"github.com/google/uuid"
 )
@@ -25,19 +24,19 @@ func FindId(id string, items []m.MyAnalytics) (*m.MyAnalytics, error) {
 }
 
 func FilterPredictionByDate(date string, items []m.MyAnalytics) ([]m.MyAnalytics, error) {
-
+	filterDate, err := time.Parse("2006-01-02", date)
+	if err != nil {
+		return nil, err
+	}
 	var result []m.MyAnalytics
 	for _, item := range items {
-		ts, err := strconv.ParseInt(item.Date, 10, 64)
-
+		itemDate, err := time.Parse("2006-01-02", item.Date)
 		if err != nil {
-			return nil, err
+			continue // skip invalid date
 		}
-		format := common.TimestampUTCDate(ts)
-		if format != date {
-			continue
+		if itemDate.Equal(filterDate) {
+			result = append(result, item)
 		}
-		result = append(result, item)
 	}
 	return result, nil
 
