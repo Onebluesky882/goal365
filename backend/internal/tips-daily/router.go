@@ -1,4 +1,4 @@
-package mytips
+package tipsdaily
 
 import (
 	"github.com/gofiber/fiber/v2"

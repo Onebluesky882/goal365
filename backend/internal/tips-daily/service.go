@@ -1,4 +1,4 @@
-package mytips
+package tipsdaily
 
 import (
 	"context"
@@ -11,7 +11,7 @@ import (
 
 func CreateTable(ctx context.Context, db *bun.DB) error {
 	_, err := db.NewCreateTable().
-		Model((*m.MyTipsAnalytics)(nil)).IfNotExists().
+		Model((*m.TipsDaily)(nil)).IfNotExists().
 		Exec(ctx)
 	return err
 

@@ -1,10 +1,12 @@
-package mytips
+package tipsdaily
 
 import (
 	"log"
 
 	"github.com/gofiber/fiber/v2"
 )
+
+ 
 
 func UpdateMatchResult(c *fiber.Ctx) error {
 	// func MatchResult(date string) ([]m.UpdateFixtureResultDTO, error) {
@@ -36,3 +38,5 @@ func UpdateMatchResult(c *fiber.Ctx) error {
 		"updated": len(results),
 	})
 }
+
+

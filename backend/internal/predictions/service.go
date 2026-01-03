@@ -6,7 +6,17 @@ import (
 	"log"
 	"mytipster/internal/db"
 	m "mytipster/models/mytips"
+
+	"github.com/uptrace/bun"
 )
+
+func CreateTable(ctx context.Context, db *bun.DB) error {
+	_, err := db.NewCreateTable().
+		Model((*m.MyTipsAnalytics)(nil)).IfNotExists().
+		Exec(ctx)
+	return err
+
+}
 
 func InsertManual(item *m.MyTipsAnalytics) error {
 	ctx := context.Background()

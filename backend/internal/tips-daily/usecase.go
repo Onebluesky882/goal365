@@ -1,4 +1,4 @@
-package mytips
+package tipsdaily
 
 import (
 	"fmt"
@@ -56,5 +56,3 @@ func updateBet(fixtureId string) (*m.BetPick, error) {
 	// todo
 	return nil, nil
 }
-
-

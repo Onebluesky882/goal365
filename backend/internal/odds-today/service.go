@@ -17,15 +17,6 @@ import (
 
 var oneMillisecond = 100 * time.Millisecond
 
-/*
-  ✅ สำเร็จ: 207
-    ❌ ล้มเหลว: 223
-*/
-
-/* 2026/01/02 17:58:15    ✅ สำเร็จ: 207
-2026/01/02 17:58:15    ❌ ล้มเหลว: 223 */
-
-// Process single fixture odds with retry
 func processSingleFixtureOdds(fixtureID int) (map[int][]odds_models.Bet, error) {
 	var oddsMap map[int][]odds_models.Bet
 	var err error

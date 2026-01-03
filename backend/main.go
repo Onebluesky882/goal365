@@ -4,8 +4,8 @@ import (
 	"log"
 	"mytipster/internal/db"
 	"mytipster/internal/fixtures"
-	"mytipster/internal/mytips"
 	"mytipster/internal/predictions"
+	tipsdaily "mytipster/internal/tips-daily"
 	"os"
 
 	"github.com/gofiber/fiber/v2"
@@ -33,7 +33,7 @@ func main() {
 
 	// register routes
 	predictions.RegisterRoutes(app)
-	mytips.RegisterRoutes(app)
+	tipsdaily.RegisterRoutes(app)
 
 	// todo
 	/*
