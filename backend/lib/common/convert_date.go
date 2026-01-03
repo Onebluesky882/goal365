@@ -2,22 +2,13 @@ package common
 
 import "time"
 
-func ToBangkokDate(dateStr string) (string, error) {
-	// parse ISO8601
-	t, err := time.Parse(time.RFC3339, dateStr)
-	if err != nil {
-		return "", err
-	}
+func Timestamp(ts int64) string {
+	loc, _ := time.LoadLocation("Asia/Bangkok")
+	return time.Unix(ts, 0).
+		In(loc).
+		Format("2006-01-02 15:04:05")
+}
 
-	// load Bangkok location
-	loc, err := time.LoadLocation("Asia/Bangkok")
-	if err != nil {
-		return "", err
-	}
-
-	// convert timezone
-	tBKK := t.In(loc)
-
-	// format yyyy-mm-dd
-	return tBKK.Format("2006-01-02"), nil
+func TimestampUTCDate(ts int64) string {
+	return time.Unix(ts, 0).UTC().Format("2006-01-02")
 }
