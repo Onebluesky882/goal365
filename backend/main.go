@@ -2,10 +2,10 @@ package main
 
 import (
 	"log"
+	"mytipster/internal/analytics"
 	"mytipster/internal/db"
 	"mytipster/internal/fixtures"
-	"mytipster/internal/predictions"
-	tipsdaily "mytipster/internal/tips-daily"
+	"mytipster/internal/tipsdaily"
 	"os"
 
 	"github.com/gofiber/fiber/v2"
@@ -32,7 +32,7 @@ func main() {
 	app.Get("/date", fixtures.GetFixtureDate)
 
 	// register routes
-	predictions.RegisterRoutes(app)
+	analytics.RegisterRoutes(app)
 	tipsdaily.RegisterRoutes(app)
 
 	// todo

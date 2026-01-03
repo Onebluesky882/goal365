@@ -1,17 +1,19 @@
 package tipsdaily
 
 import (
+	"context"
 	"log"
+	"mytipster/internal/db"
 
 	"github.com/gofiber/fiber/v2"
 )
 
- 
-
 func UpdateMatchResult(c *fiber.Ctx) error {
 	// func MatchResult(date string) ([]m.UpdateFixtureResultDTO, error) {
+	ctx := context.Background()
+	db := db.WithContext(ctx)
 	date := c.Query("date")
-	results, err := MatchResult(date)
+	results, err := MatchResult(date, db, ctx)
 
 	if err != nil {
 		log.Println("❌ MatchResult error:", err)
@@ -38,5 +40,3 @@ func UpdateMatchResult(c *fiber.Ctx) error {
 		"updated": len(results),
 	})
 }
-
-

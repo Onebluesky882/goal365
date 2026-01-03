@@ -3,9 +3,10 @@ package main
 import (
 	"context"
 	"log"
+	"mytipster/internal/analytics"
 	"mytipster/internal/db"
 	"mytipster/internal/mybets"
-	tipsdaily "mytipster/internal/tips-daily"
+	"mytipster/internal/tipsdaily"
 )
 
 func main() {
@@ -17,6 +18,10 @@ func main() {
 	}
 
 	if err := mybets.CreateTable(ctx, db); err != nil {
+		log.Fatal(err)
+	}
+
+	if err := analytics.CreateTable(ctx, db); err != nil {
 		log.Fatal(err)
 	}
 

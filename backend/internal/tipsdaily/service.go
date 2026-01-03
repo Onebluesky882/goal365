@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"mytipster/internal/db"
-	m "mytipster/models/mytips"
+	m "mytipster/models/analytic"
 
 	"github.com/uptrace/bun"
 )
@@ -23,7 +23,7 @@ func UpdateFixtureResult(req []m.UpdateFixtureResultDTO) error {
 	db := db.WithContext(ctx)
 	for _, v := range req {
 		_, err := db.NewUpdate().
-			Model((*m.MyTipsAnalytics)(nil)).
+			Model((*m.MyAnalytics)(nil)).
 			Set("match_finish = ?", v.MatchFinish).
 			Set("match_result = ?", v.MatchResult).
 			Where("fixture_id = ?", v.FixtureID).

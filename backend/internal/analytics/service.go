@@ -1,26 +1,24 @@
-package predictions
+package analytics
+
 
 import (
 	"context"
 	"fmt"
 	"log"
-	"mytipster/internal/db"
-	m "mytipster/models/mytips"
+	m "mytipster/models/analytic"
 
 	"github.com/uptrace/bun"
 )
 
-func CreateTable(ctx context.Context, db *bun.DB) error {
+func CreateTable(ctx context.Context, db *bun.DB ) error {
 	_, err := db.NewCreateTable().
-		Model((*m.MyTipsAnalytics)(nil)).IfNotExists().
+		Model((*m.MyAnalytics)(nil)).IfNotExists().
 		Exec(ctx)
 	return err
 
 }
 
-func InsertManual(item *m.MyTipsAnalytics) error {
-	ctx := context.Background()
-	db := db.WithContext(ctx)
+func InsertManual(item *m.MyAnalytics, db *bun.DB , ctx context.Context) error {
 
 	_, err := db.NewInsert().Model(item).Exec(ctx)
 	if err != nil {
@@ -29,10 +27,8 @@ func InsertManual(item *m.MyTipsAnalytics) error {
 	return nil
 }
 
-func insertMany(items []m.MyTipsAnalytics) error {
-	ctx := context.Background()
-	db := db.WithContext(ctx)
-	var filtered []m.MyTipsAnalytics
+func insertMany(items []m.MyAnalytics, db *bun.DB , ctx context.Context) error {
+	var filtered []m.MyAnalytics
 
 	for _, item := range items {
 		if item.FormLeagueHomeCount < 5 {
@@ -55,10 +51,8 @@ func insertMany(items []m.MyTipsAnalytics) error {
 	return nil
 }
 
-func PredictionByDay(date string) ([]m.MyTipsAnalytics, error) {
-	ctx := context.Background()
-	db := db.WithContext(ctx)
-	var result []m.MyTipsAnalytics
+func PredictionByDay(date string, db *bun.DB, ctx context.Context) ([]m.MyAnalytics, error) {
+	var result []m.MyAnalytics
 	err := db.NewSelect().Model(&result).Where("date = ?", date).Scan(ctx)
 	if err != nil {
 		log.Fatalf("query error: %v", err)

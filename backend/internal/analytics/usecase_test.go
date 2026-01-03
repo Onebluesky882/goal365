@@ -1,4 +1,4 @@
-package predictions
+package analytics
 
 import (
 	"os"

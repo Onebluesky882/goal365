@@ -1,4 +1,4 @@
-package predictions
+package analytics
 
 import (
 	"fmt"
@@ -7,8 +7,8 @@ import (
 	"mytipster/lib"
 	"mytipster/lib/common"
 	oddsmap "mytipster/lib/odds_map"
+	m "mytipster/models/analytic"
 	fixture_module "mytipster/models/fixture"
-	m "mytipster/models/mytips"
 	odds_models "mytipster/models/odds"
 	prediction_models "mytipster/models/prediction"
 	"os"
@@ -18,7 +18,7 @@ import (
 	"time"
 )
 
-func RetryAndCollectItems(date string) ([]m.MyTipsAnalytics, error) {
+func RetryAndCollectItems(date string) ([]m.MyAnalytics, error) {
 	// path ของไฟล์ failed fixture IDs
 	path := fmt.Sprintf("bin/%s/error_query_prediction.json", date)
 	ids, err := lib.ReadJson[[]int](path)
@@ -28,7 +28,7 @@ func RetryAndCollectItems(date string) ([]m.MyTipsAnalytics, error) {
 
 	log.Printf("🔁 Retry %d failed fixtures from %s\n", len(ids), path)
 
-	var successItems []m.MyTipsAnalytics
+	var successItems []m.MyAnalytics
 	var stillFailed []int
 
 	for _, fidInt := range ids {
@@ -62,7 +62,7 @@ func overwriteFailedFile(date string, failed []int) error {
 	return lib.WriteJSON(path, failed)
 }
 
-func PredictionRetryFailed(date string) ([]m.MyTipsAnalytics, []int, error) {
+func PredictionRetryFailed(date string) ([]m.MyAnalytics, []int, error) {
 
 	path := fmt.Sprintf("bin/%s/error_query_prediction.json", date)
 	ids, err := lib.ReadJson[[]int](path)
@@ -72,7 +72,7 @@ func PredictionRetryFailed(date string) ([]m.MyTipsAnalytics, []int, error) {
 
 	log.Printf("🔁 Retry %d failed fixtures from %s\n", len(ids), path)
 	//received data
-	results := make([]m.MyTipsAnalytics, 0, len(ids))
+	results := make([]m.MyAnalytics, 0, len(ids))
 	remainFailed := make([]int, 0)
 	for _, fid := range ids {
 
@@ -133,7 +133,7 @@ func PredictionRetryFailed(date string) ([]m.MyTipsAnalytics, []int, error) {
 			away = *fx.Goals.Away
 		}
 
-		item := m.MyTipsAnalytics{
+		item := m.MyAnalytics{
 			FixtureID:           fx.Fixture.ID,
 			Date:                common.TimestampUTCDate(fx.Fixture.Timestamp),
 			TimeStamp:           common.Timestamp(fx.Fixture.Timestamp),
@@ -158,12 +158,6 @@ func PredictionRetryFailed(date string) ([]m.MyTipsAnalytics, []int, error) {
 			MatchFinish:         fx.Fixture.Status.Long,
 			MatchResult:         fmt.Sprintf("%d-%d", home, away),
 			Handicap:            handicap,
-			BetPick: m.BetPick{
-				Picked: "",
-				Team:   "",
-				Odds:   "",
-				Stake:  "",
-			},
 		}
 		results = append(results, item)
 	}
@@ -172,7 +166,7 @@ func PredictionRetryFailed(date string) ([]m.MyTipsAnalytics, []int, error) {
 }
 
 // Process single fixture with retry
-func ProcessBuildPredictionsJson(fixtureID string, bet []odds_models.Bet) (*m.MyTipsAnalytics, error) {
+func ProcessBuildPredictionsJson(fixtureID string, bet []odds_models.Bet) (*m.MyAnalytics, error) {
 	var pred *prediction_models.PredictionResponse
 	var fx *fixture_module.Response
 	var err error
@@ -217,7 +211,7 @@ func ProcessBuildPredictionsJson(fixtureID string, bet []odds_models.Bet) (*m.My
 	if fx.Goals.Away != nil {
 		away = *fx.Goals.Away
 	}
-	item := &m.MyTipsAnalytics{
+	item := &m.MyAnalytics{
 		FixtureID:           fx.Fixture.ID,
 		Date:                common.TimestampUTCDate(fx.Fixture.Timestamp),
 		TimeStamp:           common.Timestamp(fx.Fixture.Timestamp),
@@ -242,12 +236,6 @@ func ProcessBuildPredictionsJson(fixtureID string, bet []odds_models.Bet) (*m.My
 		MatchFinish:         fx.Fixture.Status.Long,
 		MatchResult:         fmt.Sprintf("%d-%d", home, away),
 		Handicap:            bet[0],
-		BetPick: m.BetPick{
-			Picked: "",
-			Team:   "",
-			Odds:   "",
-			Stake:  "",
-		},
 	}
 
 	return item, nil
@@ -260,7 +248,7 @@ func PredictionsMany(date string, ids []string, oddsMap map[string][]odds_models
 	sem := make(chan struct{}, maxConcurrent)
 
 	var mu sync.Mutex
-	results := make([]m.MyTipsAnalytics, 0, len(ids))
+	results := make([]m.MyAnalytics, 0, len(ids))
 	var wg sync.WaitGroup
 
 	successCount := 0

@@ -2,8 +2,11 @@ package mybets
 
 import (
 	"context"
+	"fmt"
 	"mytipster/internal/db"
-	m "mytipster/models/mytips"
+	"mytipster/lib"
+	m "mytipster/models/analytic"
+	odds_models "mytipster/models/odds"
 
 	"github.com/uptrace/bun"
 )
@@ -16,7 +19,7 @@ func CreateTable(ctx context.Context, db *bun.DB) error {
 
 }
 
-func getPickedByDate(date string, items []m.TipsDaily) error {
+func getPickedByDate(date string, items []m.MyAnalytics) error {
 
 	ctx := context.Background()
 	db := db.WithContext(ctx)
@@ -30,11 +33,33 @@ func getPickedByDate(date string, items []m.TipsDaily) error {
 	return nil
 }
 
-func InsertPicked(items []m.TipsDaily) error {
+func InsertPicked(date string, handicap odds_models.Bet, bet m.BetPick, items []m.MyAnalytics, db *bun.DB) error {
 	ctx := context.Background()
-	db := db.WithContext(ctx)
 
-	_, err := db.NewInsert().Model(&items).Exec(ctx)
+	path := fmt.Sprintf("bin/%s/predictions.json", date)
+
+	var results []m.MyBets
+
+	temp, err := lib.ReadJson[[]m.MyBets](path)
+	if err != nil {
+		return err
+	}
+
+	for _, fx := range temp {
+
+		for _, item := range items {
+
+			if fx.ID == item.ID {
+				prediction := m.MyBets{
+					Handicap: handicap,
+					BetPick:  bet,
+				}
+				results = append(results, prediction)
+			}
+		}
+	}
+
+	_, err = db.NewInsert().Model(&results).Exec(ctx)
 
 	if err != nil {
 		return err
@@ -42,7 +67,7 @@ func InsertPicked(items []m.TipsDaily) error {
 	return nil
 }
 
-func UpdatePicked(id string, items []m.TipsDaily, db *bun.DB) error {
+func UpdatePicked(id string, items []m.MyAnalytics, db *bun.DB) error {
 	ctx := context.Background()
 
 	item, err := FindId(id, items)
@@ -53,7 +78,7 @@ func UpdatePicked(id string, items []m.TipsDaily, db *bun.DB) error {
 	return err
 }
 
-func DeletePicked(id string, items []m.TipsDaily, db *bun.DB) error {
+func DeletePicked(id string, items []m.MyAnalytics, db *bun.DB) error {
 	ctx := context.Background()
 	item, err := FindId(id, items)
 

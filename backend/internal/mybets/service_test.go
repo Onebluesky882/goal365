@@ -2,7 +2,7 @@ package mybets_test
 
 import (
 	"mytipster/internal/mybets"
-	m "mytipster/models/mytips"
+	m "mytipster/models/analytic"
 	"testing"
 
 	"github.com/DATA-DOG/go-sqlmock"
@@ -16,7 +16,7 @@ import (
 func TestFilterTipsDailyByDate(t *testing.T) {
 	date := "2026-01-02"
 
-	items := []m.TipsDaily{
+	items := []m.MyAnalytics{
 		{
 			FixtureID: 1,
 			Date:      "1767369600", // 2026-01-02 UTC
@@ -43,7 +43,7 @@ func TestFilterTipsDailyByDate(t *testing.T) {
 
 func TestFindId_Success(t *testing.T) {
 	id := uuid.New()
-	items := []m.TipsDaily{
+	items := []m.MyAnalytics{
 		{ID: id},
 	}
 
@@ -55,7 +55,7 @@ func TestFindId_Success(t *testing.T) {
 }
 
 func TestFindId_NotFound(t *testing.T) {
-	items := []m.TipsDaily{
+	items := []m.MyAnalytics{
 		{ID: uuid.New()},
 	}
 
@@ -73,7 +73,7 @@ func TestUpdatePicked(t *testing.T) {
 	bunDB := bun.NewDB(db, pgdialect.New())
 
 	id := uuid.New()
-	items := []m.TipsDaily{
+	items := []m.MyAnalytics{
 		{ID: id},
 	}
 
@@ -94,7 +94,7 @@ func TestDeletePicked(t *testing.T) {
 	bunDB := bun.NewDB(db, pgdialect.New())
 
 	id := uuid.New()
-	items := []m.TipsDaily{
+	items := []m.MyAnalytics{
 		{ID: id},
 	}
 

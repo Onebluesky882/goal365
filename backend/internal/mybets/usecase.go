@@ -3,13 +3,13 @@ package mybets
 import (
 	"fmt"
 	"mytipster/lib/common"
-	m "mytipster/models/mytips"
+	m "mytipster/models/analytic"
 	"strconv"
 
 	"github.com/google/uuid"
 )
 
-func FindId(id string, items []m.TipsDaily) (*m.TipsDaily, error) {
+func FindId(id string, items []m.MyAnalytics) (*m.MyAnalytics, error) {
 
 	uid, err := uuid.Parse(id)
 	if err != nil {
@@ -24,9 +24,9 @@ func FindId(id string, items []m.TipsDaily) (*m.TipsDaily, error) {
 	return nil, fmt.Errorf("id %s not found", id)
 }
 
-func FilterPredictionByDate(date string, items []m.TipsDaily) ([]m.TipsDaily, error) {
+func FilterPredictionByDate(date string, items []m.MyAnalytics) ([]m.MyAnalytics, error) {
 
-	var result []m.TipsDaily
+	var result []m.MyAnalytics
 	for _, item := range items {
 		ts, err := strconv.ParseInt(item.Date, 10, 64)
 

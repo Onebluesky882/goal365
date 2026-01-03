@@ -1,16 +1,19 @@
 package tipsdaily
 
 import (
+	"context"
 	"fmt"
+	predictions "mytipster/internal/analytics"
 	"mytipster/internal/fixtures"
-	"mytipster/internal/predictions"
+	m "mytipster/models/analytic"
 	fixture_module "mytipster/models/fixture"
-	m "mytipster/models/mytips"
+
+	"github.com/uptrace/bun"
 )
 
-func MatchResult(date string) ([]m.UpdateFixtureResultDTO, error) {
+func MatchResult(date string, db *bun.DB, ctx context.Context) ([]m.UpdateFixtureResultDTO, error) {
 
-	predictions, err := predictions.PredictionByDay(date)
+	predictions, err := predictions.PredictionByDay(date, db, ctx)
 	if err != nil {
 		return nil, err
 	}
