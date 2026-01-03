@@ -9,10 +9,8 @@ import (
 func RegisterRoutes(app *fiber.App) {
 	api := app.Group("/api")
 
-	api.Get("/today", GetPredictionByDay)
+	api.Get("/analytics", GetPredictionByDay)
 	api.Post("/predictions", InsertPredictions)
-
-	
 
 	// --------------  get daliy prodiction* --------------
 	// step 1
