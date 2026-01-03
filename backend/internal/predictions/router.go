@@ -12,6 +12,8 @@ func RegisterRoutes(app *fiber.App) {
 	api.Get("/today", GetPredictionByDay)
 	api.Post("/predictions", InsertPredictions)
 
+	
+
 	// --------------  get daliy prodiction* --------------
 	// step 1
 	api.Get("/get-odds-today", oddstoday.GetOddsToday)

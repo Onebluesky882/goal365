@@ -4,6 +4,7 @@ import (
 	"log"
 	"mytipster/internal/db"
 	"mytipster/internal/fixtures"
+	"mytipster/internal/mytips"
 	"mytipster/internal/predictions"
 	"os"
 
@@ -32,6 +33,7 @@ func main() {
 
 	// register routes
 	predictions.RegisterRoutes(app)
+	mytips.RegisterRoutes(app)
 
 	// todo
 	/*
