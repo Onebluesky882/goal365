@@ -3,6 +3,7 @@ package mytips_module
 import (
 	odds_models "mytipster/models/odds"
 
+	"github.com/google/uuid"
 	"github.com/uptrace/bun"
 )
 
@@ -14,7 +15,7 @@ type RootMyTipsAnalytics struct {
 type MyBets struct {
 	bun.BaseModel `bun:"table:my-bets,alias:fa"`
 
-	ID                  int64           `bun:",pk,autoincrement" json:"-"`
+	ID                  uuid.UUID       `bun:",pk,type:uuid,default:gen_random_uuid()" json:"id"`
 	FixtureID           int             `bun:"fixture_id,notnull" json:"fixture_id"`
 	Date                string          `bun:"date" json:"date"`
 	League              string          `bun:"league" json:"league"`
@@ -52,7 +53,7 @@ type MyBets struct {
 type TipsDaily struct {
 	bun.BaseModel `bun:"table:tips-daily,alias:fa"`
 
-	ID                  int64           `bun:",pk,autoincrement" json:"-"`
+	ID                  uuid.UUID       `bun:",pk,type:uuid,default:gen_random_uuid()" json:"id"`
 	FixtureID           int             `bun:"fixture_id,notnull" json:"fixture_id"`
 	Date                string          `bun:"date" json:"date"`
 	League              string          `bun:"league" json:"league"`
