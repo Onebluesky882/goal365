@@ -7,11 +7,28 @@ import (
 	"mytipster/internal/fixtures"
 	fixture_module "mytipster/models/fixture"
 	m "mytipster/models/match_results"
+
+	"github.com/uptrace/bun"
 )
 
-func MatchResult(service analytics.AnalyticService, date string) ([]m.UpdateFixtureResultDTO, error) {
-	ctx := context.Background()
-	predictions, err := service.PredictionByDay(ctx, date)
+type MatchResultService interface {
+	MatchResult(ctx context.Context, date string) ([]m.UpdateFixtureResultDTO, error)
+}
+
+func NewMatchResultService(db *bun.DB) MatchResultService {
+	return &matchResultService{
+		db:               db,
+		analyticsService: analytics.NewAnalyticService(db),
+	}
+}
+
+type matchResultService struct {
+	db               *bun.DB
+	analyticsService analytics.AnalyticService
+}
+
+func (s *matchResultService) MatchResult(ctx context.Context, date string) ([]m.UpdateFixtureResultDTO, error) {
+	predictions, err := s.analyticsService.PredictionByDay(ctx, date)
 	if err != nil {
 		return nil, err
 	}
