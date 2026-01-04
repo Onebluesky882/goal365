@@ -24,6 +24,9 @@ const Homepage = () => {
 
     getPrediction();
   }, [data, setData]);
+
+  console.log("data :", data);
+  
   return (
     <div className="min-h-screen  ">
       {/* Hero Section */}

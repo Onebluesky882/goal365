@@ -64,3 +64,28 @@ func GetBetListsByDateHandler(db *bun.DB) fiber.Handler {
 	}
 
 }
+
+func UpdateMyBetsHandler(db *bun.DB) fiber.Handler {
+	return func(c *fiber.Ctx) error {
+		var body mybets_models.BetPickIn
+		id := c.Query("id")
+
+		ctx := c.Context()
+		if err := c.BodyParser(&body); err != nil {
+			return c.Status(400).JSON(fiber.Map{
+				"error": "invalid body",
+			})
+		}
+
+		err := UpdateMyBets(id, body, db, ctx)
+		if err != nil {
+			return c.Status(500).JSON(fiber.Map{
+				"error": err.Error(),
+			})
+		}
+		return c.JSON(fiber.Map{
+			"success": true,
+		})
+	}
+
+}

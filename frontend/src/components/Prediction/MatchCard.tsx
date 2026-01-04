@@ -1,13 +1,14 @@
 import type { Match } from "@/types/predictions/types";
 import FormChart from "./FormChart";
 import { Calendar, Trophy, Target, MapPin } from "lucide-react";
+import { formatDate } from "@/lib/convert-time-thai";
 
 export const matchesData: Match[] = [
   {
     fixture_id: 1437405,
     date: "2025-12-30",
     league: "Division 1",
-    timestamp: "19:25:00",
+    timestamp: "2025-12-30 19:25:00",
     country: "Saudi-Arabia",
     home: "Al Arabi SC",
     away: "Al Wehda Club",
@@ -51,23 +52,11 @@ type MatchCardProps = {
 };
 
 const MatchCard = ({ match, index = 0 }: MatchCardProps) => {
-  const formatDate = (dateString: string, timestamp?: string) => {
-    const date = new Date(dateString);
-    if (timestamp) {
-      const [hours, minutes] = timestamp.split(":");
-      date.setHours(parseInt(hours), parseInt(minutes));
-    }
-    return date.toLocaleDateString("th-TH", {
-      day: "numeric",
-      month: "short",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  };
+  // สมมติ matchesData: Match[]
 
   const hasBetPick = match.bet_pick.picked && match.bet_pick.picked.length > 0;
 
+  const formattedDate = formatDate(match.timestamp);
   return (
     <div
       className="gradient-card rounded-xl border border-border overflow-hidden shadow-card animate-slide-up"
@@ -77,11 +66,13 @@ const MatchCard = ({ match, index = 0 }: MatchCardProps) => {
       <div className="bg-muted/50 px-4 py-3 flex items-center justify-between flex-wrap gap-2">
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <Calendar className="h-4 w-4" />
-          <span>{formatDate(match.date, match.timestamp)}</span>
+          <span>{match.fixture_id}</span>
+          <span>{formattedDate}</span>
         </div>
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-1 text-xs text-muted-foreground">
             <MapPin className="h-3 w-3" />
+            <span>{match.league} | </span>
             <span>{match.country}</span>
           </div>
           <span className="text-xs px-2 py-1 rounded-full bg-secondary/20 text-secondary">

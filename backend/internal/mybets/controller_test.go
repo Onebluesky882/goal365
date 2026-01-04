@@ -30,8 +30,8 @@ func TestInsertPickedHandler_Success(t *testing.T) {
 	// --- prepare request payload ---
 	reqBody := mybets_models.InsertPickedRequest{
 		Items: []mybets_models.BetPickIn{
-			{Picked: "HOME", Team: "Arsenal", Odds: "1.85", Stake: "100"},
-			{Picked: "AWAY", Team: "Chelsea", Odds: "2.10", Stake: "50"},
+			{Handicap: "HOME", Team: "Arsenal", Odds: "1.85", Stake: "100"},
+			{Handicap: "AWAY", Team: "Chelsea", Odds: "2.10", Stake: "50"},
 		},
 	}
 
@@ -113,5 +113,74 @@ func TestBetsListsByDate_Success(t *testing.T) {
 	require.Equal(t, analyticsID, bets[0].TipsAnalyticsID)
 
 	// --- verify expectations ---
+	require.NoError(t, mock.ExpectationsWereMet())
+}
+
+func TestUpdateMyBetsHandler_Success(t *testing.T) {
+	// --- setup sqlmock ---
+	sqlDB, mock, err := sqlmock.New()
+	require.NoError(t, err)
+	defer sqlDB.Close()
+
+	bunDB := bun.NewDB(sqlDB, pgdialect.New())
+
+	// --- fiber app ---
+	app := fiber.New()
+	app.Put("/my-bets", mybets.UpdateMyBetsHandler(bunDB))
+
+	// --- test data ---
+	betID := uuid.New()
+
+	body := mybets_models.BetPickIn{
+		Handicap: "0.5",
+		Team:     "Arsenal",
+		Odds:     "1.95",
+		Stake:    "1000",
+		Result:   "win",
+	}
+
+	bodyBytes, _ := json.Marshal(body)
+
+	// --- mock SELECT ---
+	mock.ExpectQuery(`SELECT .* FROM "my-bets"`).
+		WillReturnRows(
+			sqlmock.NewRows([]string{
+				"id",
+				"tips_analytics_id",
+				"handicap",
+				"bet_pick",
+			}).AddRow(
+				betID,
+				uuid.New(),
+				`{}`,
+				`{}`,
+			),
+		)
+
+	// --- mock UPDATE ---
+	mock.ExpectExec(`UPDATE "my-bets"`).
+		WillReturnResult(sqlmock.NewResult(1, 1))
+
+	// --- http request ---
+	req := httptest.NewRequest(
+		http.MethodPut,
+		"/my-bets?id="+betID.String(),
+		bytes.NewReader(bodyBytes),
+	)
+	req.Header.Set("Content-Type", "application/json")
+
+	// --- perform request ---
+	resp, err := app.Test(req)
+	require.NoError(t, err)
+	require.Equal(t, http.StatusOK, resp.StatusCode)
+
+	// --- assert response ---
+	var res map[string]interface{}
+	err = json.NewDecoder(resp.Body).Decode(&res)
+	require.NoError(t, err)
+
+	require.Equal(t, true, res["success"])
+
+	// --- verify db expectations ---
 	require.NoError(t, mock.ExpectationsWereMet())
 }

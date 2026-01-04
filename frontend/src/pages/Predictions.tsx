@@ -8,7 +8,8 @@ const Predictions = () => {
   useEffect(() => {
     // const date = new Date().toISOString().split("T")[0];
     const getPrediction = async () => {
-      const res = await predictions.get(`2025-12-31`);
+      const res = await predictions.get(`2026-01-03
+        `);
       if (Array.isArray(res.data)) {
         setData(res.data);
       }

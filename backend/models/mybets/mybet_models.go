@@ -8,8 +8,12 @@ type InsertPickedRequest struct {
 }
 
 type BetPickIn struct {
-	Picked string `json:"picked"`
-	Team   string `json:"team"`
-	Odds   string `json:"odds"`
-	Stake  string `json:"stake"`
+	Handicap string `json:"handicap,omitempty"`
+	Team     string `json:"team,omitempty"`
+	Odds     string `json:"odds,omitempty"`
+	Stake    string `json:"stake,omitempty"`
+	Result   string `json:"result,omitempty"`
+	Amount   int    `json:"amount,omitempty"`
+	Profit   int    `json:"profit,omitempty"`
+	Note     string `json:"note,omitempty"`
 }

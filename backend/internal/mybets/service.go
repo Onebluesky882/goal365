@@ -2,6 +2,7 @@ package mybets
 
 import (
 	"context"
+	"encoding/json"
 	analytic_module "mytipster/models/analytic"
 	m "mytipster/models/analytic"
 	mybets_models "mytipster/models/mybets"
@@ -57,10 +58,14 @@ func InsertPicked(items []mybets_models.BetPickIn, analyticsID uuid.UUID, db *bu
 		results = append(results, m.MyBets{
 			TipsAnalyticsID: analyticsID,
 			BetPick: m.BetPick{
-				Picked: fx.Picked,
-				Team:   fx.Team,
-				Odds:   fx.Odds,
-				Stake:  fx.Stake,
+				Handicap: fx.Handicap,
+				Team:     fx.Team,
+				Odds:     fx.Odds,
+				Stake:    fx.Stake,
+				Result:   fx.Result,
+				Amount:   fx.Amount,
+				Profit:   fx.Profit,
+				Note:     fx.Note,
 			},
 		})
 	}
@@ -76,25 +81,65 @@ func InsertPicked(items []mybets_models.BetPickIn, analyticsID uuid.UUID, db *bu
 	return nil
 }
 
-func UpdatePicked(id string, items []m.MyAnalytics, db *bun.DB) error {
-	ctx := context.Background()
+func UpdateMyBets(
+	id string,
+	body mybets_models.BetPickIn,
+	db *bun.DB,
+	ctx context.Context,
+) error {
 
-	item, err := FindId(id, items)
+	uid, err := uuid.Parse(id)
 	if err != nil {
 		return err
 	}
-	_, err = db.NewUpdate().Model(item).Set("picked = ?", true).Exec(ctx)
+
+	// แปลง body → map (เฉพาะ field ที่ส่งมา)
+	payload := map[string]any{}
+
+	if body.Handicap != "" {
+		payload["handicap"] = body.Handicap
+	}
+	if body.Team != "" {
+		payload["team"] = body.Team
+	}
+	if body.Odds != "" {
+		payload["odds"] = body.Odds
+	}
+	if body.Stake != "" {
+		payload["stake"] = body.Stake
+	}
+	if body.Result != "" {
+		payload["result"] = body.Result
+	}
+	if body.Amount != 0 {
+		payload["amount"] = body.Amount
+	}
+	if body.Profit != 0 {
+		payload["profit"] = body.Profit
+	}
+	if body.Note != "" {
+		payload["note"] = body.Note
+	}
+
+	// ❗ ต้องมีอย่างน้อย 1 field
+	if len(payload) == 0 {
+		return nil
+	}
+
+	// ✅ merge jsonb (ไม่ overwrite field ที่ไม่ส่งมา)
+	payloadBytes, err := json.Marshal(payload)
+	if err != nil {
+		return err
+	}
+
+	_, err = db.NewUpdate().
+		Table("my-bets").
+		Set("bet_pick = bet_pick || ?::jsonb", string(payloadBytes)).
+		Where("id = ?", uid).
+		Exec(ctx)
 	return err
 }
 
-func DeletePicked(id string, items []m.MyAnalytics, db *bun.DB) error {
-	ctx := context.Background()
-	item, err := FindId(id, items)
-
-	if err != nil {
-		return err
-	}
-
-	_, err = db.NewDelete().Model(item).Where("id = ?", item.ID).Exec(ctx)
-	return err
+func DeletePicked(id string, items []analytic_module.MyBets, db *bun.DB, ctx context.Context) error {
+	return nil
 }

@@ -23,8 +23,7 @@ type MyBets struct {
 	// belongs-to
 	TipsAnalytics *MyAnalytics `bun:"rel:belongs-to,join:tips_analytics_id=id"`
 
-	Handicap odds_models.Bet `bun:"handicap,type:jsonb"`
-	BetPick  BetPick         `bun:"bet_pick,type:jsonb"`
+	BetPick BetPick `bun:"bet_pick,type:jsonb"`
 }
 
 type TipsDaily struct {
@@ -38,8 +37,7 @@ type TipsDaily struct {
 	// belongs-to
 	TipsAnalytics *MyAnalytics `bun:"rel:belongs-to,join:tips_analytics_id=id"`
 
-	Handicap odds_models.Bet `bun:"handicap,type:jsonb"`
-	BetPick  BetPick         `bun:"bet_pick,type:jsonb"`
+	BetPick BetPick `bun:"bet_pick,type:jsonb"`
 }
 
 type MyAnalytics struct {
@@ -83,10 +81,14 @@ type MyAnalytics struct {
 }
 
 type BetPick struct {
-	Picked string `json:"picked"`
-	Team   string `json:"team"`
-	Odds   string `json:"odds"`
-	Stake  string `json:"stake"`
+	Handicap string `json:"handicap"`
+	Team     string `json:"team"`
+	Odds     string `json:"odds"`
+	Stake    string `json:"stake"`
+	Result   string `json:"result"`
+	Amount   int    `json:"amount"`
+	Profit   int    `json:"profit"`
+	Note     string `json:"note"`
 }
 type UpdateFixtureResultDTO struct {
 	FixtureID   int    `json:"fixture_id"`
