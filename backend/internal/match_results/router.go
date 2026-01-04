@@ -1,5 +1,4 @@
-package tipsdaily
-
+package matchresults
 import (
 	"github.com/gofiber/fiber/v2"
 )

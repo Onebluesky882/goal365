@@ -12,33 +12,7 @@ type RootMyTipsAnalytics struct {
 	Items []MyAnalytics `json:"items"`
 }
 
-type MyBets struct {
-	bun.BaseModel `bun:"table:my-bets,alias:mb"`
 
-	ID uuid.UUID `bun:",pk,type:uuid,default:gen_random_uuid()" json:"id"`
-
-	// ✅ FK ที่จำเป็น
-	TipsAnalyticsID uuid.UUID `bun:"tips_analytics_id,type:uuid,notnull"`
-
-	// belongs-to
-	TipsAnalytics *MyAnalytics `bun:"rel:belongs-to,join:tips_analytics_id=id"`
-
-	BetPick BetPick `bun:"bet_pick,type:jsonb"`
-}
-
-type TipsDaily struct {
-	bun.BaseModel `bun:"table:tips-daily,alias:td"`
-
-	// ✅ FK ที่จำเป็น
-	ID uuid.UUID `bun:",pk,type:uuid,default:gen_random_uuid()" json:"id"`
-
-	// ✅ FK (จำเป็นมาก)
-	TipsAnalyticsID uuid.UUID `bun:"tips_analytics_id,type:uuid,notnull"`
-	// belongs-to
-	TipsAnalytics *MyAnalytics `bun:"rel:belongs-to,join:tips_analytics_id=id"`
-
-	BetPick BetPick `bun:"bet_pick,type:jsonb"`
-}
 
 type MyAnalytics struct {
 	bun.BaseModel `bun:"table:my-analytics,alias:ma"`
@@ -73,25 +47,4 @@ type MyAnalytics struct {
 	HomeScore   string `bun:"home_score" json:"home_score"`
 	AwayScore   string `bun:"away_score" json:"away_score"`
 	MatchResult string `bun:"match_result" json:"match_result"`
-
-	// ⭐ JSONB column
-	BetPick   BetPick      `bun:"bet_pick,type:jsonb" json:"bet_pick"`
-	MyBets    []*MyBets    `bun:"rel:has-many,join:id=tips_analytics_id"`
-	TipsDaily []*TipsDaily `bun:"rel:has-many,join:id=tips_analytics_id"`
-}
-
-type BetPick struct {
-	Handicap string `json:"handicap"`
-	Team     string `json:"team"`
-	Odds     string `json:"odds"`
-	Stake    string `json:"stake"`
-	Result   string `json:"result"`
-	Amount   int    `json:"amount"`
-	Profit   int    `json:"profit"`
-	Note     string `json:"note"`
-}
-type UpdateFixtureResultDTO struct {
-	FixtureID   int    `json:"fixture_id"`
-	MatchFinish string `json:"match_finish"`
-	MatchResult string `json:"match_result"`
 }

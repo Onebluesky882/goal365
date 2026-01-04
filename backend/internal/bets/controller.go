@@ -1,9 +1,9 @@
-package mybets
+package bets
 
 import (
 	"fmt"
 	analytic_module "mytipster/models/analytic"
-	mybets_models "mytipster/models/mybets"
+	bets_models "mytipster/models/bets"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/uptrace/bun"
@@ -11,7 +11,7 @@ import (
 
 func InsertPickedHandler(db *bun.DB) fiber.Handler {
 	return func(c *fiber.Ctx) error {
-		var req mybets_models.InsertPickedRequest
+		var req bets_models.InsertPickedRequest
 		if err := c.BodyParser(&req); err != nil {
 			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 				"error": "invalid request body",
@@ -67,7 +67,7 @@ func GetBetListsByDateHandler(db *bun.DB) fiber.Handler {
 
 func UpdateMyBetsHandler(db *bun.DB) fiber.Handler {
 	return func(c *fiber.Ctx) error {
-		var body mybets_models.BetPickIn
+		var body bets_models.Bets
 		id := c.Query("id")
 
 		ctx := c.Context()

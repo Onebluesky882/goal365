@@ -1,12 +1,12 @@
-package tipsdaily
+package matchresults
 
 import (
 	"context"
 	"fmt"
 	predictions "mytipster/internal/analytics"
 	"mytipster/internal/fixtures"
-	m "mytipster/models/analytic"
 	fixture_module "mytipster/models/fixture"
+	m "mytipster/models/match_results"
 
 	"github.com/uptrace/bun"
 )
@@ -53,9 +53,4 @@ func MatchResult(date string, db *bun.DB, ctx context.Context) ([]m.UpdateFixtur
 		})
 	}
 	return results, nil
-}
-
-func updateBet(fixtureId string) (*m.BetPick, error) {
-	// todo
-	return nil, nil
 }

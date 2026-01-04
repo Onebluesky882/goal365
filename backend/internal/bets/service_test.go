@@ -1,8 +1,7 @@
-package mybets_test
+package bets
 
 import (
 	"context"
-	"mytipster/internal/mybets"
 	analytic_module "mytipster/models/analytic"
 	mybets_models "mytipster/models/mybets"
 	"testing"
@@ -40,7 +39,7 @@ func TestInsertPicked_WithAnalyticsID_Success(t *testing.T) {
 		)
 
 	// --- execute service ---
-	err = mybets.InsertPicked(items, analyticsID, bunDB, ctx)
+	err = bets.InsertPicked(items, analyticsID, bunDB, ctx)
 	require.NoError(t, err)
 
 	// --- verify db expectations ---
@@ -76,7 +75,7 @@ func TestGetBetsListsByDate_Success(t *testing.T) {
 				AddRow(uuid.New(), analyticsID),
 		)
 
-	bets, err := mybets.GetBetListsByDate("2026-01-02", analyticsItems, bunDB, ctx)
+	bets, err := bets.GetBetListsByDate("2026-01-02", analyticsItems, bunDB, ctx)
 	require.NoError(t, err)
 	require.Len(t, bets, 1)
 	require.Equal(t, analyticsID, bets[0].TipsAnalyticsID)

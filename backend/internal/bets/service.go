@@ -1,11 +1,11 @@
-package mybets
+package bets
 
 import (
 	"context"
 	"encoding/json"
 	analytic_module "mytipster/models/analytic"
 	m "mytipster/models/analytic"
-	mybets_models "mytipster/models/mybets"
+	bets_models "mytipster/models/bets"
 
 	"github.com/google/uuid"
 	"github.com/uptrace/bun"
@@ -13,7 +13,7 @@ import (
 
 func CreateTable(ctx context.Context, db *bun.DB) error {
 	_, err := db.NewCreateTable().
-		Model((*m.MyBets)(nil)).IfNotExists().
+		Model((*bets_models.Bets)(nil)).IfNotExists().
 		Exec(ctx)
 	return err
 
@@ -30,7 +30,7 @@ func GetBetListsByDate(date string, items []m.MyAnalytics, db *bun.DB, ctx conte
 		return nil, err
 	}
 	if len(analyticsItems) == 0 {
-		return []analytic_module.MyBets{}, nil
+		return []bets_models.Bets{}, nil
 	}
 
 	// --- 2️⃣ เก็บ IDs ของ analytics ที่ match ---
@@ -40,7 +40,7 @@ func GetBetListsByDate(date string, items []m.MyAnalytics, db *bun.DB, ctx conte
 	}
 
 	// --- 3️⃣ query my-bets ที่ relation กับ analytics ---
-	var bets []analytic_module.MyBets
+	var bets []bets_models.Bets
 	if err := db.NewSelect().
 		Model(&bets).
 		Relation("TipsAnalytics").
@@ -52,12 +52,12 @@ func GetBetListsByDate(date string, items []m.MyAnalytics, db *bun.DB, ctx conte
 	return bets, nil
 }
 
-func InsertPicked(items []mybets_models.BetPickIn, analyticsID uuid.UUID, db *bun.DB, ctx context.Context) error {
-	results := make([]analytic_module.MyBets, 0, len(items))
+func InsertPicked(items []bets_models.Bets, analyticsID uuid.UUID, db *bun.DB, ctx context.Context) error {
+	results := make([]bets_models.Bets, 0, len(items))
 	for _, fx := range items {
-		results = append(results, m.MyBets{
+		results = append(results, bets_models.Bets{
 			TipsAnalyticsID: analyticsID,
-			BetPick: m.BetPick{
+			BetPick: bets_models.Bets{
 				Handicap: fx.Handicap,
 				Team:     fx.Team,
 				Odds:     fx.Odds,
@@ -65,7 +65,7 @@ func InsertPicked(items []mybets_models.BetPickIn, analyticsID uuid.UUID, db *bu
 				Result:   fx.Result,
 				Amount:   fx.Amount,
 				Profit:   fx.Profit,
-				Note:     fx.Note,
+				Comments: fx.Comments,
 			},
 		})
 	}

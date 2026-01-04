@@ -1,12 +1,11 @@
-package mybets_test
+package bets_test
 
 import (
 	"bytes"
 	"context"
 	"encoding/json"
-	"mytipster/internal/mybets"
 	analytic_module "mytipster/models/analytic"
-	mybets_models "mytipster/models/mybets"
+	bets_models "mytipster/models/bets"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -28,8 +27,8 @@ func TestInsertPickedHandler_Success(t *testing.T) {
 	bunDB := bun.NewDB(sqlDB, pgdialect.New())
 
 	// --- prepare request payload ---
-	reqBody := mybets_models.InsertPickedRequest{
-		Items: []mybets_models.BetPickIn{
+	reqBody := bets_models.InsertPickedRequest{
+		Items: []bets_models.Bets{
 			{Handicap: "HOME", Team: "Arsenal", Odds: "1.85", Stake: "100"},
 			{Handicap: "AWAY", Team: "Chelsea", Odds: "2.10", Stake: "50"},
 		},
@@ -48,7 +47,7 @@ func TestInsertPickedHandler_Success(t *testing.T) {
 
 	// --- create Fiber app ---
 	app := fiber.New()
-	app.Post("/insert", mybets.InsertPickedHandler(bunDB))
+	app.Post("/insert", bets.InsertPickedHandler(bunDB))
 
 	// --- create HTTP request ---
 	req := httptest.NewRequest(http.MethodPost, "/insert", bytes.NewReader(bodyBytes))

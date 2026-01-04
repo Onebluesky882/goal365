@@ -1,4 +1,4 @@
-package tipsdaily
+package matchresults
 
 import (
 	"context"
