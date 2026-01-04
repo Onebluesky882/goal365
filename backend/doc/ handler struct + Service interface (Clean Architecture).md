@@ -45,3 +45,43 @@ NewHandler(&BetsService{db})
 NewHandler(&MockService{})
 ✅ 3. อ่านแล้วรู้ทันทีว่า handler ต้องการอะไร
 NewHandler(service)
+
+Handler
+↓
+AnalyticService (interface)
+↓
+analyticsService (struct)
+↓
+bun.DB
+
+หน้าที่
+• บอกว่า Service นี้ทำอะไรได้บ้าง
+• ไม่สนใจ implementation
+• ไม่รู้จัก bun.DB
+• ใช้สำหรับ:
+• handler
+• mock ใน unit test
+
+```go
+// ! ตัวอย่าง
+// AnalyticService คือ interface (สัญญา / abstraction) abstract class
+type AnalyticService interface {
+	InsertManual(ctx context.Context, item *m.MyAnalytics) error
+	InsertMany(ctx context.Context, items []m.MyAnalytics) error
+	PredictionByDay(ctx context.Context, date string) ([]m.MyAnalytics, error)
+}
+
+// constructor / factory
+// (เชื่อม interface ↔ struct) คือค่า interface
+func NewAnalyticService(db *bun.DB) AnalyticService {
+	return &analyticsService{
+		db: db,
+	}
+}
+
+// inform receiver type
+// คือ concrete implementation
+type analyticsService struct {
+	db *bun.DB
+}
+```

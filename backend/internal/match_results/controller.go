@@ -3,16 +3,14 @@ package matchresults
 import (
 	"context"
 	"log"
-	db "mytipster/internal/database"
 
 	"github.com/gofiber/fiber/v2"
 )
 
-func UpdateMatchResult(c *fiber.Ctx) error {
+func MatchResultHandler(c *fiber.Ctx) error {
 	ctx := context.Background()
-	db := db.WithContext(ctx)
 	date := c.Query("date")
-	results, err := MatchResult(date, db, ctx)
+	results, err := MatchResult(ctx, date)
 
 	if err != nil {
 		log.Println("❌ MatchResult error:", err)

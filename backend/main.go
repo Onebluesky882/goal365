@@ -36,7 +36,7 @@ func main() {
 	app.Get("/date", fixtures.GetFixtureDate)
 
 	// register routes
-	analytics.RegisterRoutes(app)
+	analytics.RegisterRoutes(app , db)
 	tipsdaily.RegisterRoutes(app)
 	bets.RegisterRoutes(app, db)
 

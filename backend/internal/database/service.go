@@ -4,8 +4,6 @@ import (
 	"context"
 	"log"
 	analytic_module "mytipster/models/analytic"
-	bets_models "mytipster/models/bets"
-	tipsdaliy_models "mytipster/models/tipsdaliy"
 
 	"github.com/uptrace/bun"
 )
@@ -32,9 +30,9 @@ func WithContext(ctx context.Context) *bun.DB {
 
 func CreateTables(ctx context.Context, db *bun.DB) error {
 	models := []interface{}{
-		(*bets_models.Bets)(nil),
-		(*tipsdaliy_models.TipsDaily)(nil),
 		(*analytic_module.MyAnalytics)(nil),
+		// (*bets_models.Bets)(nil),
+		// (*tipsdaliy_models.TipsDaily)(nil),
 	}
 
 	for _, m := range models {

@@ -3,18 +3,15 @@ package matchresults
 import (
 	"context"
 	"fmt"
+	"mytipster/internal/analytics"
 	"mytipster/internal/fixtures"
 	fixture_module "mytipster/models/fixture"
 	m "mytipster/models/match_results"
-
-	predictions "mytipster/internal/analytics"
-
-	"github.com/uptrace/bun"
 )
 
-func MatchResult(date string, db *bun.DB, ctx context.Context) ([]m.UpdateFixtureResultDTO, error) {
-
-	predictions, err := predictions.PredictionByDay(date, db, ctx)
+func MatchResult(service analytics.AnalyticService, date string) ([]m.UpdateFixtureResultDTO, error) {
+	ctx := context.Background()
+	predictions, err := service.PredictionByDay(ctx, date)
 	if err != nil {
 		return nil, err
 	}

@@ -1,14 +1,13 @@
 package analytics
 
 import (
-	"context"
 	"fmt"
 	"log"
-	db "mytipster/internal/database"
 	"mytipster/lib"
 	m "mytipster/models/analytic"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/uptrace/bun"
 )
 
 func writePredictions(c *fiber.Ctx) error {
@@ -57,61 +56,76 @@ func writePredictions(c *fiber.Ctx) error {
 	})
 }
 
-func GetPredictionByDay(c *fiber.Ctx) error {
-	ctx := context.Background()
-	db := db.WithContext(ctx)
-	date := c.Query("date")
+func GetPredictionByDayHandler(service AnalyticService) fiber.Handler {
 
-	predictions, err := PredictionByDay(date, db, ctx)
-	if err != nil {
-		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-			"error": err.Error(),
-		})
-	}
+	return func(c *fiber.Ctx) error {
 
-	fmt.Println("predictions :", predictions)
-	return c.JSON(predictions)
-}
+		ctx := c.Context()
+		date := c.Query("date")
 
-func insertRetryPrediction(c *fiber.Ctx) error {
-	ctx := context.Background()
-	db := db.WithContext(ctx)
-	date := c.Query("date")
-
-	items, err := RetryAndCollectItems(date)
-	if err != nil {
-		return err
-	}
-
-	if len(items) > 0 {
-		if err := insertMany(items, db, ctx); err != nil {
-			log.Printf("❌ Insert to DB failed: %v\n", err)
+		predictions, err := service.PredictionByDay(ctx, date)
+		if err != nil {
+			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+				"error": err.Error(),
+			})
 		}
-	}
 
-	return c.JSON(fiber.Map{
-		"status":   "success",
-		"inserted": len(items),
-	})
-}
-
-func InsertPredictions(c *fiber.Ctx) error {
-	ctx := context.Background()
-	db := db.WithContext(ctx)
-	date := c.Query("date")
-
-	// insert db
-	data, err := lib.ReadJson[[]m.MyAnalytics](fmt.Sprintf("bin/%s/predictions.json", date))
-
-	if err != nil {
-		log.Fatalf("❌ Cannot read predictions.json: %v", err)
-	}
-
-	// insert many
-	if err := insertMany(data, db, ctx); err != nil {
-		return c.Status(500).JSON(fiber.Map{
-			"error": fmt.Sprintf("Insert failed: %v", err),
+		return c.JSON(fiber.Map{
+			"success":     true,
+			"predictions": predictions,
 		})
 	}
-	return c.JSON(fiber.Map{"status": "success"})
+}
+
+func InsertRetryPrediction(db *bun.DB, service AnalyticService) fiber.Handler {
+
+	return func(c *fiber.Ctx) error {
+		ctx := c.Context()
+		date := c.Query("date")
+
+		items, err := RetryAndCollectItems(date)
+		if err != nil {
+			log.Printf("❌ RetryAndCollectItems error: %v", err)
+			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+				"error": err.Error(),
+			})
+		}
+		if len(items) > 0 {
+			if err := service.InsertMany(ctx, items); err != nil {
+				log.Printf("❌ Insert to DB failed: %v\n", err)
+				return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+					"error": "insert to DB failed",
+				})
+			}
+		}
+
+		return c.JSON(fiber.Map{
+			"status":   "success",
+			"inserted": len(items),
+		})
+	}
+}
+
+func InsertPredictions(service AnalyticService) fiber.Handler {
+
+	return func(c *fiber.Ctx) error {
+
+		ctx := c.Context()
+		date := c.Query("date")
+
+		// insert db
+		data, err := lib.ReadJson[[]m.MyAnalytics](fmt.Sprintf("bin/%s/predictions.json", date))
+
+		if err != nil {
+			log.Fatalf("❌ Cannot read predictions.json: %v", err)
+		}
+
+		// insert many
+		if err := service.InsertMany(ctx, data); err != nil {
+			return c.Status(500).JSON(fiber.Map{
+				"error": fmt.Sprintf("Insert failed: %v", err),
+			})
+		}
+		return c.JSON(fiber.Map{"status": "success"})
+	}
 }

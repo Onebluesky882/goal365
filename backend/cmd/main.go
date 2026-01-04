@@ -25,7 +25,7 @@ func main() {
 	   		Model((*MyBets)(nil)).
 	   		IfNotExists()
 
-	   	sql, _ := query.AppendQuery(nil, nil)
+	   	sql, _ := query.AppendQuery(nil, nil)q
 	   	fmt.Println(string(sql))
 	   }
 

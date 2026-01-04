@@ -1,6 +1,5 @@
 package analytics
 
-
 import (
 	"context"
 	"fmt"
@@ -10,18 +9,36 @@ import (
 	"github.com/uptrace/bun"
 )
 
- 
+// AnalyticService คือ interface (สัญญา / abstraction) abstract class
+type AnalyticService interface {
+	InsertManual(ctx context.Context, item *m.MyAnalytics) error
+	InsertMany(ctx context.Context, items []m.MyAnalytics) error
+	PredictionByDay(ctx context.Context, date string) ([]m.MyAnalytics, error)
+}
 
-func InsertManual(item *m.MyAnalytics, db *bun.DB , ctx context.Context) error {
+// constructor / factory
+// (เชื่อม interface ↔ struct) คือค่า interface
+func NewAnalyticService(db *bun.DB) AnalyticService {
+	return &analyticsService{
+		db: db,
+	}
+}
 
-	_, err := db.NewInsert().Model(item).Exec(ctx)
+// inform receiver type
+// คือ concrete implementation
+type analyticsService struct {
+	db *bun.DB
+}
+
+func (s *analyticsService) InsertManual(ctx context.Context, item *m.MyAnalytics) error {
+	_, err := s.db.NewInsert().Model(item).Exec(ctx)
 	if err != nil {
 		return err
 	}
 	return nil
 }
 
-func insertMany(items []m.MyAnalytics, db *bun.DB , ctx context.Context) error {
+func (s *analyticsService) InsertMany(ctx context.Context, items []m.MyAnalytics) error {
 	var filtered []m.MyAnalytics
 
 	for _, item := range items {
@@ -36,7 +53,7 @@ func insertMany(items []m.MyAnalytics, db *bun.DB , ctx context.Context) error {
 		return nil
 	}
 
-	_, err := db.NewInsert().Model(&filtered).Exec(ctx)
+	_, err := s.db.NewInsert().Model(&filtered).Exec(ctx)
 	if err != nil {
 		log.Fatalf("insert many error %v", err)
 	}
@@ -45,9 +62,9 @@ func insertMany(items []m.MyAnalytics, db *bun.DB , ctx context.Context) error {
 	return nil
 }
 
-func PredictionByDay(date string, db *bun.DB, ctx context.Context) ([]m.MyAnalytics, error) {
+func (s *analyticsService) PredictionByDay(ctx context.Context, date string) ([]m.MyAnalytics, error) {
 	var result []m.MyAnalytics
-	err := db.NewSelect().Model(&result).Where("date = ?", date).Scan(ctx)
+	err := s.db.NewSelect().Model(&result).Where("date = ?", date).Scan(ctx)
 	if err != nil {
 		log.Fatalf("query error: %v", err)
 	}
