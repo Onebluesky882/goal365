@@ -3,26 +3,31 @@ package main
 import (
 	"context"
 	"log"
-	"mytipster/internal/analytics"
-	"mytipster/internal/db"
-	"mytipster/internal/mybets"
-	"mytipster/internal/tipsdaily"
+	"mytipster/internal/database"
 )
 
 func main() {
-	db.InitDB()
+	database.InitDB()
 	ctx := context.Background()
-	db := db.WithContext(ctx)
-	if err := tipsdaily.CreateTable(ctx, db); err != nil {
-		log.Fatal(err)
+	db := database.WithContext(ctx)
+
+	if err := database.CreateTables(ctx, db); err != nil {
+		log.Fatal("fail create tables", err)
 	}
 
-	if err := mybets.CreateTable(ctx, db); err != nil {
-		log.Fatal(err)
-	}
+	// Generate SQL DDL จาก struct
+	/*
 
-	if err := analytics.CreateTable(ctx, db); err != nil {
-		log.Fatal(err)
-	}
+	   func main() {
+	   	db := bun.NewDB(nil, pgdialect.New())
 
+	   	query := db.NewCreateTable().
+	   		Model((*MyBets)(nil)).
+	   		IfNotExists()
+
+	   	sql, _ := query.AppendQuery(nil, nil)
+	   	fmt.Println(string(sql))
+	   }
+
+	*/
 }

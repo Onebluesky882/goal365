@@ -10,13 +10,7 @@ import (
 	"github.com/uptrace/bun"
 )
 
-func CreateTable(ctx context.Context, db *bun.DB ) error {
-	_, err := db.NewCreateTable().
-		Model((*m.MyAnalytics)(nil)).IfNotExists().
-		Exec(ctx)
-	return err
-
-}
+ 
 
 func InsertManual(item *m.MyAnalytics, db *bun.DB , ctx context.Context) error {
 

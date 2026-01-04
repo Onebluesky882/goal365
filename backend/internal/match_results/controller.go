@@ -3,13 +3,12 @@ package matchresults
 import (
 	"context"
 	"log"
-	"mytipster/internal/db"
+	db "mytipster/internal/database"
 
 	"github.com/gofiber/fiber/v2"
 )
 
 func UpdateMatchResult(c *fiber.Ctx) error {
-	// func MatchResult(date string) ([]m.UpdateFixtureResultDTO, error) {
 	ctx := context.Background()
 	db := db.WithContext(ctx)
 	date := c.Query("date")
@@ -29,12 +28,6 @@ func UpdateMatchResult(c *fiber.Ctx) error {
 		})
 	}
 
-	if err := UpdateFixtureResult(results); err != nil {
-		log.Println("❌ UpdateFixtureResult error:", err)
-		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-			"error": err.Error(),
-		})
-	}
 	return c.JSON(fiber.Map{
 		"success": true,
 		"updated": len(results),

@@ -4,9 +4,9 @@ import (
 	"context"
 	"log"
 	"mytipster/internal/analytics"
-	"mytipster/internal/db"
+	"mytipster/internal/bets"
+	"mytipster/internal/database"
 	"mytipster/internal/fixtures"
-	"mytipster/internal/mybets"
 	"mytipster/internal/tipsdaily"
 	"os"
 
@@ -18,9 +18,9 @@ import (
 func main() {
 
 	_ = godotenv.Load()
-	db.InitDB()
+	database.InitDB()
 	ctx := context.Background()
-	dbbun := db.WithContext(ctx)
+	db := database.WithContext(ctx)
 
 	app := fiber.New()
 
@@ -38,7 +38,7 @@ func main() {
 	// register routes
 	analytics.RegisterRoutes(app)
 	tipsdaily.RegisterRoutes(app)
-	mybets.RegisterRoutes(app, dbbun)
+	bets.RegisterRoutes(app, db)
 
 	port := os.Getenv("PORT")
 	if port == "" {

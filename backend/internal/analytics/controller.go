@@ -1,11 +1,10 @@
 package analytics
 
-
 import (
 	"context"
 	"fmt"
 	"log"
-	"mytipster/internal/db"
+	db "mytipster/internal/database"
 	"mytipster/lib"
 	m "mytipster/models/analytic"
 

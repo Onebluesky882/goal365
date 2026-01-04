@@ -2,7 +2,6 @@ package bets
 
 import (
 	"context"
-	"encoding/json"
 	analytic_module "mytipster/models/analytic"
 	m "mytipster/models/analytic"
 	bets_models "mytipster/models/bets"
@@ -11,15 +10,7 @@ import (
 	"github.com/uptrace/bun"
 )
 
-func CreateTable(ctx context.Context, db *bun.DB) error {
-	_, err := db.NewCreateTable().
-		Model((*bets_models.Bets)(nil)).IfNotExists().
-		Exec(ctx)
-	return err
-
-}
-
-func GetBetListsByDate(date string, items []m.MyAnalytics, db *bun.DB, ctx context.Context) ([]analytic_module.MyBets, error) {
+func GetBetListsByDate(date string, items []m.MyAnalytics, db *bun.DB, ctx context.Context) ([]bets_models.Bets, error) {
 
 	// --- 1️⃣ query analytics ของวันนั้นโดยตรง ---
 	var analyticsItems []analytic_module.MyAnalytics
@@ -56,18 +47,20 @@ func InsertPicked(items []bets_models.Bets, analyticsID uuid.UUID, db *bun.DB, c
 	results := make([]bets_models.Bets, 0, len(items))
 	for _, fx := range items {
 		results = append(results, bets_models.Bets{
+			ID:              fx.ID,
 			TipsAnalyticsID: analyticsID,
-			BetPick: bets_models.Bets{
-				Handicap: fx.Handicap,
-				Team:     fx.Team,
-				Odds:     fx.Odds,
-				Stake:    fx.Stake,
-				Result:   fx.Result,
-				Amount:   fx.Amount,
-				Profit:   fx.Profit,
-				Comments: fx.Comments,
-			},
-		})
+			BaseModel:       fx.BaseModel,
+			Handicap:        fx.Handicap,
+			Team:            fx.Team,
+			Odds:            fx.Odds,
+			Stake:           fx.Stake,
+			Result:          fx.Result,
+			Amount:          fx.Amount,
+			Profit:          fx.Profit,
+			Comments:        fx.Comments,
+		},
+		)
+
 	}
 	if len(results) == 0 {
 		return nil
@@ -83,7 +76,7 @@ func InsertPicked(items []bets_models.Bets, analyticsID uuid.UUID, db *bun.DB, c
 
 func UpdateMyBets(
 	id string,
-	body mybets_models.BetPickIn,
+	body bets_models.Bets,
 	db *bun.DB,
 	ctx context.Context,
 ) error {
@@ -93,53 +86,9 @@ func UpdateMyBets(
 		return err
 	}
 
-	// แปลง body → map (เฉพาะ field ที่ส่งมา)
-	payload := map[string]any{}
-
-	if body.Handicap != "" {
-		payload["handicap"] = body.Handicap
-	}
-	if body.Team != "" {
-		payload["team"] = body.Team
-	}
-	if body.Odds != "" {
-		payload["odds"] = body.Odds
-	}
-	if body.Stake != "" {
-		payload["stake"] = body.Stake
-	}
-	if body.Result != "" {
-		payload["result"] = body.Result
-	}
-	if body.Amount != 0 {
-		payload["amount"] = body.Amount
-	}
-	if body.Profit != 0 {
-		payload["profit"] = body.Profit
-	}
-	if body.Note != "" {
-		payload["note"] = body.Note
-	}
-
-	// ❗ ต้องมีอย่างน้อย 1 field
-	if len(payload) == 0 {
-		return nil
-	}
-
-	// ✅ merge jsonb (ไม่ overwrite field ที่ไม่ส่งมา)
-	payloadBytes, err := json.Marshal(payload)
-	if err != nil {
-		return err
-	}
-
 	_, err = db.NewUpdate().
 		Table("my-bets").
-		Set("bet_pick = bet_pick || ?::jsonb", string(payloadBytes)).
 		Where("id = ?", uid).
 		Exec(ctx)
 	return err
-}
-
-func DeletePicked(id string, items []analytic_module.MyBets, db *bun.DB, ctx context.Context) error {
-	return nil
 }

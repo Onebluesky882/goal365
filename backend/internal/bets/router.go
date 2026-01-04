@@ -8,7 +8,7 @@ import (
 func RegisterRoutes(app *fiber.App, db *bun.DB) {
 
 	api := app.Group("/api")
-	api.Post("/mybets/insert", InsertPickedHandler(db))
-	api.Get("/mybets", GetBetListsByDateHandler(db))
-	api.Patch("/mybets/update", UpdateMyBetsHandler(db))
+	api.Post("/bets", InsertPickedHandler(db))
+	api.Get("/bets", GetBetListsByDateHandler(db))
+	api.Patch("/bets", UpdateMyBetsHandler(db))
 }
