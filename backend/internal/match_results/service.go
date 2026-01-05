@@ -17,8 +17,7 @@ type MatchResultService interface {
 
 func NewMatchResultService(db *bun.DB) MatchResultService {
 	return &matchResultService{
-		db:               db,
-		analyticsService: analytics.NewAnalyticService(db),
+		db: db,
 	}
 }
 
@@ -28,10 +27,6 @@ type matchResultService struct {
 }
 
 func (s *matchResultService) MatchResult(ctx context.Context, date string) ([]m.UpdateFixtureResultDTO, error) {
-	predictions, err := s.analyticsService.PredictionByDay(ctx, date)
-	if err != nil {
-		return nil, err
-	}
 
 	fixtures, err := fixtures.QueryFixtureDate(date)
 	if err != nil {
@@ -45,7 +40,11 @@ func (s *matchResultService) MatchResult(ctx context.Context, date string) ([]m.
 		fixtureMap[fx.Fixture.ID] = fx
 	}
 
-	results := make([]m.UpdateFixtureResultDTO, 0, len(predictions))
+	predictions, err := s.analyticsService.PredictionByDay(ctx, date)
+	if err != nil {
+		return nil, err
+	}
+	results := make([]m.UpdateFixtureResultDTO, 0, len(fixtures))
 
 	for _, p := range predictions {
 		fx, ok := fixtureMap[p.FixtureID]

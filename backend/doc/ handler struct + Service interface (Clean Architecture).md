@@ -79,8 +79,8 @@ func NewAnalyticService(db *bun.DB) AnalyticService {
 	}
 }
 
-// inform receiver type
-// คือ concrete implementation
+//
+// concrete implementation
 type analyticsService struct {
 	db *bun.DB
 }

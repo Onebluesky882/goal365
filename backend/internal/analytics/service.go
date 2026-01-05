@@ -65,8 +65,10 @@ func (s *analyticsService) InsertMany(ctx context.Context, items []m.MyAnalytics
 func (s *analyticsService) PredictionByDay(ctx context.Context, date string) ([]m.MyAnalytics, error) {
 	var result []m.MyAnalytics
 	err := s.db.NewSelect().Model(&result).Where("date = ?", date).Scan(ctx)
+
 	if err != nil {
-		log.Fatalf("query error: %v", err)
+		return nil, err
 	}
+
 	return result, nil
 }

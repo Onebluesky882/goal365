@@ -7,9 +7,9 @@ import (
 
 func RegisterRoutes(app *fiber.App, db *bun.DB) {
 	api := app.Group("/api")
-	sav := NewMatchResultService(db)
+	svc := NewMatchResultService(db)
 
 	// update result match finish
-	api.Patch("/match-result", MatchResultHandler(sav))
+	api.Patch("/match-result", MatchResultHandler(svc))
 
 }

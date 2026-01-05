@@ -16,16 +16,18 @@ func RegisterRoutes(app *fiber.App, db *bun.DB) {
 	// step 1
 	api.Get("/get-odds-today", oddstoday.GetOddsToday)
 	// step 2
-	api.Get("/write-predictions", writePredictions)
+	api.Get("/write-predictions.json", WritePredictionsHandler(svc))
 
 	// 2.1 retry
-	api.Get("/retry-predictions", InsertRetryPrediction(db, svc))
+	api.Get("/retry-predictions", InsertRetryPrediction(svc))
 
-	// upload bin/date/prediontion.json to db
+	// 3.0 upload http://localhost:3009/api/insert?date=2026-01-05
+	// bin/date/prediontion.json to db
 	api.Get("/insert", InsertPredictions(svc))
 	// -------------- * -------------
 
-	// api crud get
+	// for Frontedn get api
 
-	// api.Get("/today", mytips.GetPredictionByDay)
+	api.Get("/analytics", GetPredictionByDayHandler(svc))
+
 }
