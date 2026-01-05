@@ -32,9 +32,20 @@ export const useLogin = () => {
   useEffect(() => {
     if (!idToken || !accessToken || hasRun.current) return;
     hasRun.current = true;
+    console.log("process.env.API_URL ", process.env.API_URL);
 
     const auth = async () => {
       try {
+        // ส่ง idToken ไป backend
+        const resp = await fetch(
+          `${process.env.API_URL}/api/auth/verify-liff`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ idToken }),
+          }
+        );
+
         await authClient.signIn.social({
           provider: "line",
           idToken: { token: idToken, accessToken: accessToken },
@@ -50,7 +61,7 @@ export const useLogin = () => {
       }
     };
     auth();
-  }, [idToken, accessToken]);
+  }, [idToken]);
 
   const lineLogin = () => {
     if (!liff.isLoggedIn()) {
