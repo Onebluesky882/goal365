@@ -4,6 +4,7 @@ import (
 	"context"
 	"log"
 	"mytipster/internal/analytics"
+	"mytipster/internal/auth"
 	"mytipster/internal/bets"
 	"mytipster/internal/database"
 	"mytipster/internal/fixtures"
@@ -11,6 +12,7 @@ import (
 	"os"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/adaptor"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/joho/godotenv"
 )
@@ -18,10 +20,16 @@ import (
 func main() {
 
 	_ = godotenv.Load()
+
 	database.InitDB()
 	ctx := context.Background()
 	db := database.WithContext(ctx)
 
+	// Configure GoBetterAuth
+	authModule := auth.New()
+	// Initialize auth
+
+	// Run migrations (creates necessary auth tables)
 	app := fiber.New()
 
 	app.Use(cors.New(cors.Config{
@@ -29,6 +37,12 @@ func main() {
 		AllowMethods: "GET,POST,PUT,DELETE,OPTIONS",
 		AllowHeaders: "Origin, Content-Type, Accept, Authorization",
 	}))
+
+	// Mount GoBetterAuth handler using Fiber's adaptor
+	// This handles all /auth/* routes
+	app.All("/auth/*", adaptor.HTTPHandler(authModule.Auth.Handler()))
+
+	// Public routes
 	app.Get("/ids", fixtures.GetFixtureIds)
 	app.Get("/fixture", fixtures.GetFixtureById)
 	app.Get("/odds", fixtures.Odds)
@@ -36,7 +50,7 @@ func main() {
 	app.Get("/date", fixtures.GetFixtureDate)
 
 	// register routes
-	analytics.RegisterRoutes(app , db)
+	analytics.RegisterRoutes(app, db)
 	tipsdaily.RegisterRoutes(app)
 	bets.RegisterRoutes(app, db)
 
