@@ -53,8 +53,14 @@ func main() {
 	analytics.RegisterRoutes(app, db)
 	tipsdaily.RegisterRoutes(app)
 	bets.RegisterRoutes(app, db)
-	auth.RegisterRoute(app)
+	auth.RegisterRoute(app, db)
 
+	log.Println("📡 LINE Auth endpoints:")
+	log.Println("   - GET  /api/auth/signin/line")
+	log.Println("   - GET  /api/auth/callback/line")
+	log.Println("   - POST /api/auth/verify-line")
+	log.Println("   - GET  /api/auth/session")
+	log.Println("   - POST /api/auth/signout")
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "3000"
