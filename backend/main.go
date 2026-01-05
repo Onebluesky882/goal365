@@ -56,7 +56,7 @@ func main() {
 
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "3009"
+		port = "3000"
 	}
 
 	log.Println("🚀 Server running on port", port)

@@ -10,7 +10,7 @@ import (
 func NewButterAuthConfig() *gobetterauthmodels.Config {
 
 	return gobetterauthconfig.NewConfig(
-		gobetterauthconfig.WithAppName("Goal65"),
+		gobetterauthconfig.WithMode(gobetterauthmodels.ModeStandalone),
 		gobetterauthconfig.WithDatabase(gobetterauthmodels.DatabaseConfig{
 			Provider: "postgres",
 			URL:      os.Getenv("DATABASE_URL"),
@@ -18,9 +18,7 @@ func NewButterAuthConfig() *gobetterauthmodels.Config {
 		gobetterauthconfig.WithEmailPassword(gobetterauthmodels.EmailPasswordConfig{
 			Enabled: true,
 		}),
-		gobetterauthconfig.WithSocialProviders(
-			lineProvider(),
-		),
+		lineProvider(),
 	)
 
 }
