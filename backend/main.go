@@ -53,6 +53,7 @@ func main() {
 	analytics.RegisterRoutes(app, db)
 	tipsdaily.RegisterRoutes(app)
 	bets.RegisterRoutes(app, db)
+	auth.RegisterRoute(app)
 
 	port := os.Getenv("PORT")
 	if port == "" {
