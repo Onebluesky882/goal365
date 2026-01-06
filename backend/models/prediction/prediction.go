@@ -1,5 +1,12 @@
 package prediction_models
 
+import (
+	"encoding/json"
+
+	"github.com/google/uuid"
+	"github.com/uptrace/bun"
+)
+
 type PredictionsRoot struct {
 	Get        string               `json:"get"`
 	Parameters PredParameters       `json:"parameters"`
@@ -311,4 +318,15 @@ type H2HScore struct {
 type H2HScoreDetail struct {
 	Home interface{} `json:"home"`
 	Away interface{} `json:"away"`
+}
+
+type NaWinTatips struct {
+	bun.BaseModel `bun:"table:nawinta,alias:nw"`
+
+	// ✅ FK ที่จำเป็น
+	ID uuid.UUID `bun:",pk,type:uuid,default:gen_random_uuid()" json:"id"`
+	// ✅ FK (จำเป็นมาก)
+	FixtureID       int             `bun:"fixture_id,notnull" json:"fixture_id"`
+	TipsAnalyticsID uuid.UUID       `bun:"tips_analytics_id,type:uuid,nullzero"`
+	Payload         json.RawMessage `bun:"payload,type:jsonb,notnull"`
 }

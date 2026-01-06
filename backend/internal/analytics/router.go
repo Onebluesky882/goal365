@@ -11,6 +11,8 @@ func RegisterRoutes(app *fiber.App, db *bun.DB) {
 	api := app.Group("/api") // inject db into service
 	svc := NewAnalyticService(db)
 
+	api.Post("/nawinta" , naWinTaTipsHandler(svc))
+
 	api.Post("/predictions", InsertPredictions(svc))
 	// --------------  get daliy prodiction* --------------
 	// step 1

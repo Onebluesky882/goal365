@@ -133,3 +133,27 @@ func InsertPredictions(service AnalyticService) fiber.Handler {
 		return c.JSON(fiber.Map{"status": "success"})
 	}
 }
+
+func naWinTaTipsHandler(service AnalyticService) fiber.Handler {
+	return func(c *fiber.Ctx) error {
+		ctx := c.UserContext()
+		fixtureID := c.Query("id")
+		if fixtureID == "" {
+			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+				"error": "missing query parameter: id",
+			})
+		}
+
+		tip, err := service.naWinTaTips(ctx, fixtureID)
+		if err != nil {
+			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+				"error": fmt.Sprintf("insert failed: %v", err),
+			})
+		}
+		return c.JSON(fiber.Map{
+			"status":   "success",
+			"inserted": tip,
+		})
+	}
+
+}

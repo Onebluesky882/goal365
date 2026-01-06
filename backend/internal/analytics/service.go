@@ -2,9 +2,14 @@ package analytics
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"log"
+	"mytipster/internal/fixtures"
+	analytic_module "mytipster/models/analytic"
 	m "mytipster/models/analytic"
+	pred "mytipster/models/prediction"
+	"strconv"
 
 	"github.com/uptrace/bun"
 )
@@ -14,6 +19,7 @@ type AnalyticService interface {
 	InsertManual(ctx context.Context, item *m.MyAnalytics) error
 	InsertMany(ctx context.Context, items []m.MyAnalytics) error
 	PredictionByDay(ctx context.Context, date string) ([]m.MyAnalytics, error)
+	naWinTaTips(ctx context.Context, id string) (*pred.NaWinTatips, error)
 }
 
 // constructor / factory
@@ -71,4 +77,37 @@ func (s *analyticsService) PredictionByDay(ctx context.Context, date string) ([]
 	}
 
 	return result, nil
+}
+
+func (s *analyticsService) naWinTaTips(ctx context.Context, fixtureId string) (*pred.NaWinTatips, error) {
+
+	var analytic analytic_module.MyAnalytics
+
+	data, err := fixtures.QueryPrediction(fixtureId)
+	if err != nil {
+		return nil, err
+	}
+	// 2️⃣ marshal prediction → jsonb
+	raw, err := json.Marshal(data)
+	if err != nil {
+		return nil, err
+	}
+
+	transform ,err := strconv.Atoi(fixtureId)
+
+	// 3 create model
+	tip := &pred.NaWinTatips{
+		TipsAnalyticsID: analytic.ID,
+		FixtureID:       transform,
+		Payload:         raw,
+	}
+
+	// 4.
+	_, err = s.db.NewInsert().Model(tip).Exec(ctx)
+	if err != nil {
+		return nil, err
+	}
+
+	return tip, err
+
 }
