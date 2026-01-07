@@ -15,6 +15,7 @@ func NewButterAuthConfig() *gobetterauthmodels.Config {
 			Provider: "postgres",
 			URL:      os.Getenv("DATABASE_URL"),
 		}),
+		gobetterauthconfig.WithBaseURL("https://your-domain.com"),
 		gobetterauthconfig.WithEmailPassword(gobetterauthmodels.EmailPasswordConfig{
 			Enabled: true,
 		}),
