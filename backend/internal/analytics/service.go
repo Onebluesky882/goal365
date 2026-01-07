@@ -8,6 +8,7 @@ import (
 	"mytipster/internal/fixtures"
 	analytic_module "mytipster/models/analytic"
 	m "mytipster/models/analytic"
+	fixture_module "mytipster/models/fixture"
 	pred "mytipster/models/prediction"
 	"strconv"
 
@@ -20,6 +21,7 @@ type AnalyticService interface {
 	InsertMany(ctx context.Context, items []m.MyAnalytics) error
 	PredictionByDay(ctx context.Context, date string) ([]m.MyAnalytics, error)
 	naWinTaTips(ctx context.Context, id string) (*pred.NaWinTatips, error)
+	MatchResult(ctx context.Context, date string) ([]m.UpdateFixtureResultDTO, error)
 }
 
 // constructor / factory
@@ -93,7 +95,7 @@ func (s *analyticsService) naWinTaTips(ctx context.Context, fixtureId string) (*
 		return nil, err
 	}
 
-	transform ,err := strconv.Atoi(fixtureId)
+	transform, err := strconv.Atoi(fixtureId)
 
 	// 3 create model
 	tip := &pred.NaWinTatips{
@@ -110,4 +112,47 @@ func (s *analyticsService) naWinTaTips(ctx context.Context, fixtureId string) (*
 
 	return tip, err
 
+}
+
+func (s *analyticsService) MatchResult(ctx context.Context, date string) ([]m.UpdateFixtureResultDTO, error) {
+
+	fixtures, err := fixtures.QueryFixtureDate(date)
+	if err != nil {
+		return nil, err
+	}
+	// เก็บ fixtureId
+	fixtureMap := make(map[int]fixture_module.Response)
+
+	// merge
+	for _, fx := range fixtures {
+		fixtureMap[fx.Fixture.ID] = fx
+	}
+
+	predictions, err := s.PredictionByDay(ctx, date)
+	if err != nil {
+		return nil, err
+	}
+	results := make([]m.UpdateFixtureResultDTO, 0, len(fixtures))
+
+	for _, p := range predictions {
+		fx, ok := fixtureMap[p.FixtureID]
+		if !ok {
+			continue
+		}
+
+		home := 0
+		away := 0
+		if fx.Goals.Home != nil {
+			home = *fx.Goals.Home
+		}
+		if fx.Goals.Away != nil {
+			away = *fx.Goals.Away
+		}
+		results = append(results, m.UpdateFixtureResultDTO{
+			FixtureID:   fx.Fixture.ID,
+			MatchFinish: fx.Fixture.Status.Long,
+			MatchResult: fmt.Sprintf("%d-%d", home, away),
+		})
+	}
+	return results, nil
 }

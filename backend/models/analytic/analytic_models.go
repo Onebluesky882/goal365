@@ -12,8 +12,6 @@ type RootMyTipsAnalytics struct {
 	Items []MyAnalytics `json:"items"`
 }
 
-
-
 type MyAnalytics struct {
 	bun.BaseModel `bun:"table:my-analytics,alias:ma"`
 
@@ -47,4 +45,10 @@ type MyAnalytics struct {
 	HomeScore   string `bun:"home_score" json:"home_score"`
 	AwayScore   string `bun:"away_score" json:"away_score"`
 	MatchResult string `bun:"match_result" json:"match_result"`
+}
+
+type UpdateFixtureResultDTO struct {
+	FixtureID   int    `json:"fixture_id"`
+	MatchFinish string `json:"match_finish"`
+	MatchResult string `json:"match_result"`
 }

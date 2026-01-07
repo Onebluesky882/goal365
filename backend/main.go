@@ -63,7 +63,7 @@ func main() {
 	log.Println("   - POST /api/auth/signout")
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "3000"
+		port = "3009"
 	}
 
 	log.Println("🚀 Server running on port", port)

@@ -11,7 +11,7 @@ func RegisterRoutes(app *fiber.App, db *bun.DB) {
 	api := app.Group("/api") // inject db into service
 	svc := NewAnalyticService(db)
 
-	api.Post("/nawinta" , naWinTaTipsHandler(svc))
+	api.Post("/nawinta", naWinTaTipsHandler(svc))
 
 	api.Post("/predictions", InsertPredictions(svc))
 	// --------------  get daliy prodiction* --------------
@@ -31,5 +31,8 @@ func RegisterRoutes(app *fiber.App, db *bun.DB) {
 	// for Frontedn get api
 
 	api.Get("/analytics", GetPredictionByDayHandler(svc))
+
+	// match result
+	api.Patch("/match-result", MatchResultHandler(svc))
 
 }

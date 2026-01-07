@@ -53,3 +53,4 @@ type BetPick struct {
 	Picked string `json:"picked"`
 	Stake  string `json:"stake"`
 }
+

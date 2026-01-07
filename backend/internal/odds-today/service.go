@@ -51,7 +51,7 @@ func QueryOdds(date string) (map[int][]odds_models.Bet, error) {
 	log.Printf("🚀 เริ่มดึง odds สำหรับ %d fixtures (date: %s)\n", len(ids), date)
 
 	// ใช้ concurrent processing แบบเดียวกับ Predictions
-	const maxConcurrent = 1 // ทำทีละตัวเพื่อหลีกเลี่ยง rate limit
+	const maxConcurrent = 4 // ทำทีละตัวเพื่อหลีกเลี่ยง rate limit
 	sem := make(chan struct{}, maxConcurrent)
 
 	var mu sync.Mutex

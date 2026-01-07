@@ -244,7 +244,7 @@ func ProcessBuildPredictionsJson(fixtureID string, bet []odds_models.Bet) (*m.My
 func PredictionsMany(date string, ids []string, oddsMap map[string][]odds_models.Bet) (*m.RootMyTipsAnalytics, error) {
 
 	// ใช้ concurrent processing
-	const maxConcurrent = 1 // จำกัด concurrent requests
+	const maxConcurrent = 4 // จำกัด concurrent requests
 	sem := make(chan struct{}, maxConcurrent)
 
 	var mu sync.Mutex

@@ -89,3 +89,4 @@ func UpdateMyBetsHandler(db *bun.DB) fiber.Handler {
 	}
 
 }
+
