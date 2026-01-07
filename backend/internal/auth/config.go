@@ -8,18 +8,15 @@ import (
 )
 
 func NewButterAuthConfig() *gobetterauthmodels.Config {
-
 	return gobetterauthconfig.NewConfig(
-		gobetterauthconfig.WithMode(gobetterauthmodels.ModeStandalone),
+		gobetterauthconfig.WithBaseURL("http://localhost:3000"),
+		gobetterauthconfig.WithBasePath("/api/auth"),
 		gobetterauthconfig.WithDatabase(gobetterauthmodels.DatabaseConfig{
 			Provider: "postgres",
 			URL:      os.Getenv("DATABASE_URL"),
 		}),
-		gobetterauthconfig.WithBaseURL("https://your-domain.com"),
 		gobetterauthconfig.WithEmailPassword(gobetterauthmodels.EmailPasswordConfig{
 			Enabled: true,
 		}),
-		lineProvider(),
 	)
-
 }

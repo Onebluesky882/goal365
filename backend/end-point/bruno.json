@@ -1,9 +1,6 @@
 {
   "version": "1",
-  "name": "mytipster",
+  "name": "Goal365",
   "type": "collection",
-  "ignore": [
-    "node_modules",
-    ".git"
-  ]
+  "ignore": ["node_modules", ".git"]
 }
