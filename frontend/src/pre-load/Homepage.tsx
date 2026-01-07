@@ -55,8 +55,8 @@ export default function Homepage() {
     },
     {
       id: 4,
-      name: "อาเซียนเอ็กซ์เปิร์ต",
-      avatar: "อ",
+      name: "อาเซียนเอ็กซ์เปิร์ต ",
+      avatar: "อาเซียนเอ็กซ์เปิร์ต",
       specialty: "ฟุตบอลเอเชีย",
       since: "ตั้งแต่ 2019",
       winRate: "79.5%",
