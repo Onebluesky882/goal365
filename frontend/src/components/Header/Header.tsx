@@ -3,20 +3,16 @@
 import { useAuth } from "@/GlobalContext/auth-provider";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 import ProfileMenu from "./profileMenu";
-import { FaUser } from "react-icons/fa";
 const Headers = () => {
   const router = useRouter();
   const { session, isLoading } = useAuth();
-  const [menuProfile, setMenuProfile] = useState(false);
   if (isLoading) {
     return <div>Loading...</div>;
   }
-  console.log("menuProfile", menuProfile);
   const user = session?.user;
   console.log(user?.name);
-  const credit = 1000;
+  const credit = `100,000`;
   return (
     <>
       <div className="bg-web-bg-dark border-b border-web-primary-dark shadow-md">
@@ -65,8 +61,10 @@ const Headers = () => {
 
             {/* User Info or Join Button */}
             <div className="flex flex-col items-start">
-              {user ? (  <ProfileMenu name={user.name} /> 
-               
+              {user ? (
+                <>
+                  <ProfileMenu name={user.name} />
+                </>
               ) : (
                 <button
                   onClick={() => router.push("sign-in")}

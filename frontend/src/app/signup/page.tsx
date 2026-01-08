@@ -36,9 +36,14 @@ export default function SignUpPage() {
       setName("");
       setEmail("");
       setPassword("");
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
-      setError(err?.message ?? "Sign up failed");
+
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("Login failed");
+      }
     } finally {
       setLoading(false);
     }
