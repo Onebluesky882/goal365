@@ -10,7 +10,7 @@ const app = new Hono();
 app.use(
   "/api/*",
   cors({
-    origin: "http://localhost:3001",
+    origin: `${process.env.FRONT_END}`,
     allowMethods: ["GET", "POST", "OPTIONS"],
     allowHeaders: ["Content-Type", "Authorization"],
     credentials: true,
@@ -22,7 +22,7 @@ export const auth = betterAuth({
     provider: "pg",
     schema,
   }),
-  trustedOrigins: ["http://localhost:3001"],
+  trustedOrigins: [`${process.env.FRONT_END}`],
   emailAndPassword: {
     enabled: true,
   },

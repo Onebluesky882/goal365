@@ -21,12 +21,12 @@ function LoginForm() {
     setError("");
 
     try {
-      const result = await authClient.signIn.email({
+      const res = await authClient.signIn.email({
         email,
         password,
       });
-
-      console.log("Login success:", result);
+      await authClient.getSession();
+      console.log("res data user :", res.data?.user);
 
       setEmail("");
       setPassword("");
