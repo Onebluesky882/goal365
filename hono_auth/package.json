@@ -1,7 +1,6 @@
 {
   "name": "hono_auth",
   "scripts": {
-    "start": "node index.js",
     "dev": "bun run  --hot src/index.ts"
   },
   "dependencies": {
