@@ -5,7 +5,7 @@ meta {
 }
 
 post {
-  url: https://goal365-production.up.railway.app/api/auth/sign-in/email
+  url: https://goal365-production.up.railway.app/api/auth/sign-up/email
   body: json
   auth: inherit
 }
@@ -13,7 +13,8 @@ post {
 body:json {
   {
     "email": "test@example.com",
-    "password": "password123"
+    "password": "password123",
+    "name": "john"
   }
 }
 

@@ -67,7 +67,7 @@ const Headers = () => {
                 </p>
               ) : (
                 <button
-                  onClick={() => router.push("/sign-in")}
+                  onClick={() => router.push("sign-in")}
                   className="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold px-5 py-2 rounded-full shadow transition-all"
                 >
                   Join Now

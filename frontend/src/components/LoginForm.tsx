@@ -27,8 +27,6 @@ function LoginForm() {
       });
       console.log("res data user :", res.data?.user);
 
-      const session = await authClient.getSession();
-      console.log("session :", session);
       setEmail("");
       setPassword("");
     } catch (err: any) {
