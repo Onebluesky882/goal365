@@ -2,6 +2,14 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: "/api/:path*", // frontend calls /api/...
+  //       destination: "http://localhost:3000/api/:path*", // proxy to backend
+  //     },
+  //   ];
+  // },
 };
 
 export default nextConfig;
