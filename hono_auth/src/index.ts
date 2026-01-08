@@ -39,7 +39,7 @@ app.all("/api/auth/*", async (c) => {
 });
 
 app.get("/", (c) => c.text("API OK"));
-const port = 3010;
+const port = Number(process.env.PORT ?? 3000);
 
 console.log(`🚀 Server running on http://localhost:${port}`);
 
