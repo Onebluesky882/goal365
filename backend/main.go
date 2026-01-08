@@ -1,13 +1,10 @@
 package main
 
 import (
-	"context"
 	"log"
-	"mytipster/internal/analytics"
-	"mytipster/internal/bets"
 	"mytipster/internal/database"
 	"mytipster/internal/fixtures"
-	"mytipster/internal/tipsdaily"
+	"mytipster/internal/sportbook"
 	"os"
 
 	"github.com/gofiber/fiber/v2"
@@ -20,8 +17,8 @@ func main() {
 	_ = godotenv.Load()
 
 	database.InitDB()
-	ctx := context.Background()
-	db := database.WithContext(ctx)
+	// ctx := context.Background()
+	// db := database.WithContext(ctx)
 
 	// Run migrations (creates necessary auth tables)
 	app := fiber.New()
@@ -41,9 +38,12 @@ func main() {
 
 	// register routes
 	fixtures.RegisterRoutes(app)
-	analytics.RegisterRoutes(app, db)
-	tipsdaily.RegisterRoutes(app)
-	bets.RegisterRoutes(app, db)
+	// analytics.RegisterRoutes(app, db)
+	// tipsdaily.RegisterRoutes(app)
+	// mybets.RegisterRoutes(app, db)
+
+	// market auth
+	sportbook.RegisterRoutes(app)
 
 	port := os.Getenv("PORT")
 

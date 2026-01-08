@@ -1,4 +1,4 @@
-package bets
+package mybets
 
 import (
 	"github.com/gofiber/fiber/v2"

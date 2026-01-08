@@ -6,7 +6,6 @@ import (
 	"mytipster/internal/fixtures"
 	"mytipster/lib"
 	"mytipster/lib/common"
-	oddsmap "mytipster/lib/odds_map"
 	"mytipster/models"
 	m "mytipster/models"
 	"os"
@@ -91,32 +90,32 @@ func PredictionRetryFailed(date string) ([]m.MyAnalytics, []int, error) {
 			continue
 		}
 
-		odds, err := fixtures.QueryFixtureOdds(fid)
+		// odds, err := fixtures.QueryFixtureOdds(fid)
 
 		if err != nil {
 			log.Printf("❌ QueryFixtureOdds failed %s: %v\n", fid, err)
 			continue
 		}
-		stringOdds := make(m.OddsMap, len(odds))
-		for k, v := range odds {
-			stringOdds[strconv.Itoa(k)] = v
-		}
+		// stringOdds := make(m.OddsMap, len(odds))
+		// for k, v := range odds {
+		// 	stringOdds[strconv.Itoa(k)] = v
+		// }
 
-		betMap := oddsmap.FilterOddsMap(stringOdds)
-		if len(betMap) == 0 {
-			log.Printf("⚠️ No bets after filter %s\n", fid)
-			continue
-		}
+		// betMap := oddsmap.FilterOddsMap(stringOdds)
+		// if len(betMap) == 0 {
+		// 	log.Printf("⚠️ No bets after filter %s\n", fid)
+		// 	continue
+		// }
 
 		var handicap m.Bet
 		found := false
-		for _, bets := range betMap {
-			if len(bets) > 0 {
-				handicap = bets[0]
-				found = true
-				break
-			}
-		}
+		// for _, bets := range betMap {
+		// 	if len(bets) > 0 {
+		// 		handicap = bets[0]
+		// 		found = true
+		// 		break
+		// 	}
+		// }
 		if !found {
 			log.Printf("⚠️ Empty bet slice %s\n", fid)
 			continue

@@ -8,7 +8,6 @@ import (
 	m "mytipster/models"
 	"os"
 	"path/filepath"
-	"strconv"
 	"sync"
 	"time"
 
@@ -20,11 +19,11 @@ var oneMillisecond = 100 * time.Millisecond
 func processSingleFixtureOdds(fixtureID int) (map[int][]m.Bet, error) {
 	var oddsMap map[int][]m.Bet
 	var err error
-	idStr := strconv.Itoa(fixtureID)
+	// idStr := strconv.Itoa(fixtureID)
 
 	// Query odds พร้อม retry
 	err = lib.RetryWithBackoff(func() error {
-		oddsMap, err = fixtures.QueryFixtureOdds(idStr)
+		// oddsMap, err = fixtures.QueryFixtureOdds(idStr)
 		if err != nil {
 			return err
 		}

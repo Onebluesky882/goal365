@@ -1,13 +1,13 @@
 package models
 
 type RootOdds struct {
-	Get        string     `json:"get"`
-	Parameters Parameters `json:"parameters"`
-	Errors     any        `json:"errors"`
-	Results    int        `json:"results"`
-	Paging     Paging     `json:"paging"`
-	Response   []Response `json:"response"`
-	Info       string     `json:"info"`
+	Get        string         `json:"get"`
+	Parameters Parameters     `json:"parameters"`
+	Errors     any            `json:"errors"`
+	Results    int            `json:"results"`
+	Paging     Paging         `json:"paging"`
+	Response   []OddsResponse `json:"response"`
+	Info       string         `json:"info"`
 }
 
 type Parameters struct {
@@ -19,7 +19,7 @@ type Paging struct {
 	Total   int `json:"total"`
 }
 
-type Response struct {
+type OddsResponse struct {
 	League     League      `json:"league"`
 	Fixture    Fixture     `json:"fixture"`
 	Update     string      `json:"update"`

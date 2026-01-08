@@ -45,8 +45,7 @@ func QueryFixtureId(id string) (*m.FixtureResponse, error) {
 
 // odds FilterAsianHandicap
 
-func QueryFixtureOdds(id string) (map[int][]m.Bet, error) {
-
+func QueryFixtureOdds(id string) ([]m.Bookmaker, error) {
 	url := fmt.Sprintf(
 		"https://v3.football.api-sports.io/odds?fixture=%s",
 		id,
@@ -58,11 +57,16 @@ func QueryFixtureOdds(id string) (map[int][]m.Bet, error) {
 	}
 
 	if len(resp.Response) == 0 {
-		return nil, fmt.Errorf("no prediction found for fixture %s", id)
+		return nil, fmt.Errorf("no odds found for fixture %s", id)
 	}
-	result := lib.FilterAsianHandicap(resp, "Bet365")
 
-	return result, err
+	firstResponse := resp.Response[0]
+
+	if len(firstResponse.Bookmakers) == 0 {
+		return nil, fmt.Errorf("no bookmakers found for fixture %s", id)
+	}
+
+	return firstResponse.Bookmakers, nil
 }
 
 // fixture date

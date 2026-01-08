@@ -1,11 +1,11 @@
 meta {
-  name: get fixture by date
+  name: get market odds by date
   type: http
-  seq: 6
+  seq: 1
 }
 
 get {
-  url: https://v3.football.api-sports.io/fixtures?date=2026-01-08
+  url: http://localhost:3009/api/sports-book?date=2026-01-08
   body: none
   auth: inherit
 }
