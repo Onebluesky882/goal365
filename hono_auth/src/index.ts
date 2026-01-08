@@ -22,7 +22,7 @@ export const auth = betterAuth({
     provider: "pg",
     schema,
   }),
-  trustedOrigins: ["http://localhost:3001", "https://goal365-production.up.railway.app"],
+  trustedOrigins: ["http://localhost:3001", "https://goal365-production.up.railway.app" ,"https://goal365.club"],
   emailAndPassword: {
     enabled: true,
   },
