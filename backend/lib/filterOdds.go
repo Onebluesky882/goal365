@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	m "mytipster/models/odds"
+	m "mytipster/models"
 )
 
 func isAllHandicap(h float64) bool {

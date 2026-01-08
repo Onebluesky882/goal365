@@ -3,7 +3,7 @@ package database
 import (
 	"context"
 	"log"
-	prediction_models "mytipster/models/prediction"
+	"mytipster/models"
 
 	"github.com/uptrace/bun"
 )
@@ -31,7 +31,7 @@ func WithContext(ctx context.Context) *bun.DB {
 func CreateTables(ctx context.Context, db *bun.DB) error {
 	models := []interface{}{
 		// (*analytic_module.MyAnalytics)(nil),
-		(*prediction_models.NaWinTatips)(nil),
+		(*models.NaWinTatips)(nil),
 		// (*bets_models.Bets)(nil),
 		// (*tipsdaliy_models.TipsDaily)(nil),
 	}

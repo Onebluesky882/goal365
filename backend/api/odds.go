@@ -1,10 +1,8 @@
 package api
 
-import (
-	odds_models "mytipster/models/odds"
-)
+import "mytipster/models"
 
-func Odds(method string, url string) (*odds_models.RootOdds, error) {
+func Odds(method string, url string) (*models.RootOdds, error) {
 
-	return ApiFootball[odds_models.RootOdds](method, url)
+	return ApiFootball[models.RootOdds](method, url)
 }

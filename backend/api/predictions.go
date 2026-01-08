@@ -1,7 +1,7 @@
 package api
 
-import prediction_models "mytipster/models/prediction"
+import "mytipster/models"
 
-func Predictions(method, url string) (*prediction_models.PredictionsRoot, error) {
-	return ApiFootball[prediction_models.PredictionsRoot](method, url)
+func Predictions(method, url string) (*models.PredictionsRoot, error) {
+	return ApiFootball[models.PredictionsRoot](method, url)
 }

@@ -3,11 +3,10 @@ package lib
 import (
 	"fmt"
 	"math"
+	m "mytipster/models"
 	"sort"
 	"strconv"
 	"strings"
-
-	m "mytipster/models/odds"
 )
 
 // PairScore - คะแนนความใกล้เคียง 2.0 ของคู่ Home/Away

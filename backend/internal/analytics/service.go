@@ -6,10 +6,7 @@ import (
 	"fmt"
 	"log"
 	"mytipster/internal/fixtures"
-	analytic_module "mytipster/models/analytic"
-	m "mytipster/models/analytic"
-	fixture_module "mytipster/models/fixture"
-	pred "mytipster/models/prediction"
+	m "mytipster/models"
 	"strconv"
 
 	"github.com/uptrace/bun"
@@ -20,7 +17,7 @@ type AnalyticService interface {
 	InsertManual(ctx context.Context, item *m.MyAnalytics) error
 	InsertMany(ctx context.Context, items []m.MyAnalytics) error
 	PredictionByDay(ctx context.Context, date string) ([]m.MyAnalytics, error)
-	naWinTaTips(ctx context.Context, id string) (*pred.NaWinTatips, error)
+	naWinTaTips(ctx context.Context, id string) (*m.NaWinTatips, error)
 	MatchResult(ctx context.Context, date string) ([]m.UpdateFixtureResultDTO, error)
 }
 
@@ -81,9 +78,9 @@ func (s *analyticsService) PredictionByDay(ctx context.Context, date string) ([]
 	return result, nil
 }
 
-func (s *analyticsService) naWinTaTips(ctx context.Context, fixtureId string) (*pred.NaWinTatips, error) {
+func (s *analyticsService) naWinTaTips(ctx context.Context, fixtureId string) (*m.NaWinTatips, error) {
 
-	var analytic analytic_module.MyAnalytics
+	var analytic m.MyAnalytics
 
 	data, err := fixtures.QueryPrediction(fixtureId)
 	if err != nil {
@@ -98,7 +95,7 @@ func (s *analyticsService) naWinTaTips(ctx context.Context, fixtureId string) (*
 	transform, err := strconv.Atoi(fixtureId)
 
 	// 3 create model
-	tip := &pred.NaWinTatips{
+	tip := &m.NaWinTatips{
 		TipsAnalyticsID: analytic.ID,
 		FixtureID:       transform,
 		Payload:         raw,
@@ -121,11 +118,11 @@ func (s *analyticsService) MatchResult(ctx context.Context, date string) ([]m.Up
 		return nil, err
 	}
 	// เก็บ fixtureId
-	fixtureMap := make(map[int]fixture_module.Response)
+	fixtureMap := make(map[int]m.FixtureResponse)
 
 	// merge
 	for _, fx := range fixtures {
-		fixtureMap[fx.Fixture.ID] = fx
+		fixtureMap[fx.FixtureInfo.ID] = fx
 	}
 
 	predictions, err := s.PredictionByDay(ctx, date)
@@ -149,8 +146,8 @@ func (s *analyticsService) MatchResult(ctx context.Context, date string) ([]m.Up
 			away = *fx.Goals.Away
 		}
 		results = append(results, m.UpdateFixtureResultDTO{
-			FixtureID:   fx.Fixture.ID,
-			MatchFinish: fx.Fixture.Status.Long,
+			FixtureID:   fx.FixtureInfo.ID,
+			MatchFinish: fx.FixtureInfo.Status.Long,
 			MatchResult: fmt.Sprintf("%d-%d", home, away),
 		})
 	}

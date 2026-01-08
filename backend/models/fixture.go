@@ -1,37 +1,37 @@
-package fixture_module
+package models
 
 import (
 	"time"
 )
 
 type RootFixtureResponse struct {
-	Get        string     `json:"get"`
-	Parameters Parameters `json:"parameters"`
-	Errors     any        `json:"errors"`
-	Results    int        `json:"results"`
-	Paging     Paging     `json:"paging"`
-	Response   []Response `json:"response"`
-	Info       string     `json:"info"`
+	Get        string            `json:"get"`
+	Parameters FixtureParameters `json:"parameters"`
+	Errors     any               `json:"errors"`
+	Results    int               `json:"results"`
+	Paging     FixturePaging     `json:"paging"`
+	Response   []FixtureResponse `json:"response"`
+	Info       string            `json:"info"`
 }
 
-type Parameters struct {
+type FixtureParameters struct {
 	Date string `json:"date"`
 }
 
-type Paging struct {
+type FixturePaging struct {
 	Current int `json:"current"`
 	Total   int `json:"total"`
 }
 
-type Response struct {
-	PartitionTime time.Time `bigquery:"_PARTITIONTIME"`
-	Fixture       Fixture   `json:"fixture" bigquery:"fixture"`
-	League        League    `json:"league" bigquery:"league"`
-	Teams         Teams     `json:"teams" bigquery:"teams"`
-	Goals         Goals     `json:"goals" bigquery:"goals"`
-	Score         Score     `json:"score" bigquery:"score"`
+type FixtureResponse struct {
+	PartitionTime time.Time   `bigquery:"_PARTITIONTIME"`
+	FixtureInfo   FixtureInfo `json:"fixture_info" bigquery:"fixture_info"`
+	League        League      `json:"league" bigquery:"league"`
+	Teams         Teams       `json:"teams" bigquery:"teams"`
+	Goals         Goals       `json:"goals" bigquery:"goals"`
+	Score         Score       `json:"score" bigquery:"score"`
 }
-type Fixture struct {
+type FixtureInfo struct {
 	ID        int     `json:"id"`
 	Referee   *string `json:"referee,omitempty"`
 	Timezone  string  `json:"timezone"`
@@ -60,7 +60,7 @@ type Status struct {
 	Extra   *int   `json:"extra,omitempty"`
 }
 
-type League struct {
+type FixtureLeague struct {
 	ID        int     `json:"id"`
 	Name      string  `json:"name"`
 	Country   string  `json:"country"`

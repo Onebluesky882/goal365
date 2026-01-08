@@ -5,7 +5,7 @@ import (
 	"log"
 	"mytipster/internal/fixtures"
 	"mytipster/lib"
-	odds_models "mytipster/models/odds"
+	m "mytipster/models"
 	"os"
 	"path/filepath"
 	"strconv"
@@ -17,8 +17,8 @@ import (
 
 var oneMillisecond = 100 * time.Millisecond
 
-func processSingleFixtureOdds(fixtureID int) (map[int][]odds_models.Bet, error) {
-	var oddsMap map[int][]odds_models.Bet
+func processSingleFixtureOdds(fixtureID int) (map[int][]m.Bet, error) {
+	var oddsMap map[int][]m.Bet
 	var err error
 	idStr := strconv.Itoa(fixtureID)
 
@@ -41,7 +41,7 @@ func processSingleFixtureOdds(fixtureID int) (map[int][]odds_models.Bet, error) 
 	return oddsMap, nil
 }
 
-func QueryOdds(date string) (map[int][]odds_models.Bet, error) {
+func QueryOdds(date string) (map[int][]m.Bet, error) {
 	// ดึง fixture IDs
 	ids, err := fixtures.GetIds(date)
 	if err != nil {
@@ -55,7 +55,7 @@ func QueryOdds(date string) (map[int][]odds_models.Bet, error) {
 	sem := make(chan struct{}, maxConcurrent)
 
 	var mu sync.Mutex
-	result := make(map[int][]odds_models.Bet)
+	result := make(map[int][]m.Bet)
 	var wg sync.WaitGroup
 
 	successCount := 0

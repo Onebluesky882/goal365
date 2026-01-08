@@ -1,4 +1,4 @@
-package prediction_models
+package  models
 
 import (
 	"encoding/json"
@@ -21,10 +21,10 @@ type PredParameters struct {
 	Fixture string `json:"fixture"`
 }
 
-type Paging struct {
-	Current int `json:"current"`
-	Total   int `json:"total"`
-}
+// type Paging struct {
+// 	Current int `json:"current"`
+// 	Total   int `json:"total"`
+// }
 
 // Main Response
 type PredictionResponse struct {

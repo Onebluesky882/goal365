@@ -7,10 +7,7 @@ import (
 	"mytipster/lib"
 	"mytipster/lib/common"
 	oddsmap "mytipster/lib/odds_map"
-	m "mytipster/models/analytic"
-	fixture_module "mytipster/models/fixture"
-	odds_models "mytipster/models/odds"
-	prediction_models "mytipster/models/prediction"
+	m "mytipster/models"
 	"os"
 	"path/filepath"
 	"strconv"
@@ -99,7 +96,7 @@ func PredictionRetryFailed(date string) ([]m.MyAnalytics, []int, error) {
 			log.Printf("❌ QueryFixtureOdds failed %s: %v\n", fid, err)
 			continue
 		}
-		stringOdds := make(odds_models.OddsMap, len(odds))
+		stringOdds := make(m.OddsMap, len(odds))
 		for k, v := range odds {
 			stringOdds[strconv.Itoa(k)] = v
 		}
@@ -110,7 +107,7 @@ func PredictionRetryFailed(date string) ([]m.MyAnalytics, []int, error) {
 			continue
 		}
 
-		var handicap odds_models.Bet
+		var handicap m.Bet
 		found := false
 		for _, bets := range betMap {
 			if len(bets) > 0 {
@@ -134,9 +131,9 @@ func PredictionRetryFailed(date string) ([]m.MyAnalytics, []int, error) {
 		}
 
 		item := m.MyAnalytics{
-			FixtureID:           fx.Fixture.ID,
-			Date:                common.TimestampUTCDate(fx.Fixture.Timestamp),
-			TimeStamp:           common.Timestamp(fx.Fixture.Timestamp),
+			FixtureID:           fx.FixtureInfo.ID,
+			Date:                common.TimestampUTCDate(fx.FixtureInfo.Timestamp),
+			TimeStamp:           common.Timestamp(fx.FixtureInfo.Timestamp),
 			Country:             fx.League.Country,
 			League:              fx.League.Name,
 			Home:                pred.Teams.Home.Name,
@@ -155,7 +152,7 @@ func PredictionRetryFailed(date string) ([]m.MyAnalytics, []int, error) {
 			AwayFormScore7:      lib.FormScore(7, pred.Teams.Away.League.Form),
 			HomeFormScore5:      lib.FormScore(5, pred.Teams.Home.League.Form),
 			AwayFormScore5:      lib.FormScore(5, pred.Teams.Away.League.Form),
-			MatchFinish:         fx.Fixture.Status.Long,
+			MatchFinish:         fx.FixtureInfo.Status.Long,
 			MatchResult:         fmt.Sprintf("%d-%d", home, away),
 			Handicap:            handicap,
 		}
@@ -166,9 +163,9 @@ func PredictionRetryFailed(date string) ([]m.MyAnalytics, []int, error) {
 }
 
 // Process single fixture with retry
-func ProcessBuildPredictionsJson(fixtureID string, bet []odds_models.Bet) (*m.MyAnalytics, error) {
-	var pred *prediction_models.PredictionResponse
-	var fx *fixture_module.Response
+func ProcessBuildPredictionsJson(fixtureID string, bet []m.Bet) (*m.MyAnalytics, error) {
+	var pred *m.PredictionResponse
+	var fx *m.FixtureResponse
 	var err error
 
 	// ดึง prediction พร้อม retry
@@ -189,7 +186,7 @@ func ProcessBuildPredictionsJson(fixtureID string, bet []odds_models.Bet) (*m.My
 	// ดึง fixture พร้อม retry
 	err = lib.RetryWithBackoff(func() error {
 		time.Sleep(500 * time.Millisecond)
-		fx, err = fixtures.QueryFixtureId(fixtureID)
+		fx, err := fixtures.QueryFixtureId(fixtureID)
 		if err != nil {
 			return err
 		}
@@ -212,9 +209,9 @@ func ProcessBuildPredictionsJson(fixtureID string, bet []odds_models.Bet) (*m.My
 		away = *fx.Goals.Away
 	}
 	item := &m.MyAnalytics{
-		FixtureID:           fx.Fixture.ID,
-		Date:                common.TimestampUTCDate(fx.Fixture.Timestamp),
-		TimeStamp:           common.Timestamp(fx.Fixture.Timestamp),
+		FixtureID:           fx.FixtureInfo.ID,
+		Date:                common.TimestampUTCDate(fx.FixtureInfo.Timestamp),
+		TimeStamp:           common.Timestamp(fx.FixtureInfo.Timestamp),
 		Country:             fx.League.Country,
 		League:              fx.League.Name,
 		Home:                pred.Teams.Home.Name,
@@ -233,7 +230,7 @@ func ProcessBuildPredictionsJson(fixtureID string, bet []odds_models.Bet) (*m.My
 		AwayFormScore7:      lib.FormScore(7, pred.Teams.Away.League.Form),
 		HomeFormScore5:      lib.FormScore(5, pred.Teams.Home.League.Form),
 		AwayFormScore5:      lib.FormScore(5, pred.Teams.Away.League.Form),
-		MatchFinish:         fx.Fixture.Status.Long,
+		MatchFinish:         fx.FixtureInfo.Status.Long,
 		MatchResult:         fmt.Sprintf("%d-%d", home, away),
 		Handicap:            bet[0],
 	}
@@ -241,7 +238,7 @@ func ProcessBuildPredictionsJson(fixtureID string, bet []odds_models.Bet) (*m.My
 	return item, nil
 }
 
-func PredictionsMany(date string, ids []string, oddsMap map[string][]odds_models.Bet) (*m.RootMyTipsAnalytics, error) {
+func PredictionsMany(date string, ids []string, oddsMap map[string][]m.Bet) (*m.RootMyTipsAnalytics, error) {
 
 	// ใช้ concurrent processing
 	const maxConcurrent = 4 // จำกัด concurrent requests
@@ -266,7 +263,7 @@ func PredictionsMany(date string, ids []string, oddsMap map[string][]odds_models
 		}
 
 		wg.Add(1)
-		go func(id string, idx int, betData []odds_models.Bet) {
+		go func(id string, idx int, betData []m.Bet) {
 			defer wg.Done()
 
 			// Rate limiting

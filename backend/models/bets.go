@@ -1,8 +1,6 @@
-package bets_models
+package models
 
 import (
-	analytic_module "mytipster/models/analytic"
-
 	"github.com/google/uuid"
 	"github.com/uptrace/bun"
 )
@@ -30,5 +28,5 @@ type Bets struct {
 	Comments string `bun:"comments" json:"comments"`
 
 	// belongs-to
-	TipsAnalytics *analytic_module.MyAnalytics `bun:"rel:belongs-to,join:tips_analytics_id=id"`
+	TipsAnalytics *MyAnalytics `bun:"rel:belongs-to,join:tips_analytics_id=id"`
 }

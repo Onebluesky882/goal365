@@ -1,4 +1,4 @@
-package odds_models
+package models
 
 type RootOdds struct {
 	Get        string     `json:"get"`

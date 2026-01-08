@@ -4,9 +4,7 @@ import (
 	"fmt"
 	"mytipster/api"
 	"mytipster/lib"
-	m "mytipster/models/fixture"
-	odds_models "mytipster/models/odds"
-	prediction_models "mytipster/models/prediction"
+	m "mytipster/models"
 )
 
 // get ids
@@ -20,13 +18,13 @@ func GetIds(date string) ([]int, error) {
 	}
 
 	for _, id := range resp {
-		result = append(result, id.Fixture.ID)
+		result = append(result, id.FixtureInfo.ID)
 	}
 	return result, nil
 }
 
 // fixture by id
-func QueryFixtureId(id string) (*m.Response, error) {
+func QueryFixtureId(id string) (*m.FixtureResponse, error) {
 
 	url := fmt.Sprintf(
 		"https://v3.football.api-sports.io/fixtures?id=%s",
@@ -47,7 +45,7 @@ func QueryFixtureId(id string) (*m.Response, error) {
 
 // odds FilterAsianHandicap
 
-func QueryFixtureOdds(id string) (map[int][]odds_models.Bet, error) {
+func QueryFixtureOdds(id string) (map[int][]m.Bet, error) {
 
 	url := fmt.Sprintf(
 		"https://v3.football.api-sports.io/odds?fixture=%s",
@@ -68,7 +66,7 @@ func QueryFixtureOdds(id string) (map[int][]odds_models.Bet, error) {
 }
 
 // fixture date
-func QueryFixtureDate(date string) ([]m.Response, error) {
+func QueryFixtureDate(date string) ([]m.FixtureResponse, error) {
 
 	url := fmt.Sprintf(
 		"https://v3.football.api-sports.io/fixtures?date=%s",
@@ -89,7 +87,7 @@ func QueryFixtureDate(date string) ([]m.Response, error) {
 
 // predictions
 
-func QueryPrediction(id string) (*prediction_models.PredictionResponse, error) {
+func QueryPrediction(id string) (*m.PredictionResponse, error) {
 
 	url := fmt.Sprintf(
 		"https://v3.football.api-sports.io/predictions?fixture=%s",
@@ -108,7 +106,7 @@ func QueryPrediction(id string) (*prediction_models.PredictionResponse, error) {
 }
 
 // my tips
-func QueryMyTipsOdds(id string) (map[int][]odds_models.Bet, error) {
+func QueryMyTipsOdds(id string) (map[int][]m.Bet, error) {
 
 	url := fmt.Sprintf(
 		"https://v3.football.api-sports.io/odds?fixture=%s",

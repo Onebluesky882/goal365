@@ -2,18 +2,16 @@ package bets
 
 import (
 	"context"
-	analytic_module "mytipster/models/analytic"
-	m "mytipster/models/analytic"
-	bets_models "mytipster/models/bets"
+	m "mytipster/models"
 
 	"github.com/google/uuid"
 	"github.com/uptrace/bun"
 )
 
-func GetBetListsByDate(date string, items []m.MyAnalytics, db *bun.DB, ctx context.Context) ([]bets_models.Bets, error) {
+func GetBetListsByDate(date string, items []m.MyAnalytics, db *bun.DB, ctx context.Context) ([]m.Bets, error) {
 
 	// --- 1️⃣ query analytics ของวันนั้นโดยตรง ---
-	var analyticsItems []analytic_module.MyAnalytics
+	var analyticsItems []m.MyAnalytics
 	if err := db.NewSelect().
 		Model(&analyticsItems).
 		Where("date = ?", date).
@@ -21,7 +19,7 @@ func GetBetListsByDate(date string, items []m.MyAnalytics, db *bun.DB, ctx conte
 		return nil, err
 	}
 	if len(analyticsItems) == 0 {
-		return []bets_models.Bets{}, nil
+		return []m.Bets{}, nil
 	}
 
 	// --- 2️⃣ เก็บ IDs ของ analytics ที่ match ---
@@ -31,7 +29,7 @@ func GetBetListsByDate(date string, items []m.MyAnalytics, db *bun.DB, ctx conte
 	}
 
 	// --- 3️⃣ query my-bets ที่ relation กับ analytics ---
-	var bets []bets_models.Bets
+	var bets []m.Bets
 	if err := db.NewSelect().
 		Model(&bets).
 		Relation("TipsAnalytics").
@@ -43,10 +41,10 @@ func GetBetListsByDate(date string, items []m.MyAnalytics, db *bun.DB, ctx conte
 	return bets, nil
 }
 
-func InsertPicked(items []bets_models.Bets, analyticsID uuid.UUID, db *bun.DB, ctx context.Context) error {
-	results := make([]bets_models.Bets, 0, len(items))
+func InsertPicked(items []m.Bets, analyticsID uuid.UUID, db *bun.DB, ctx context.Context) error {
+	results := make([]m.Bets, 0, len(items))
 	for _, fx := range items {
-		results = append(results, bets_models.Bets{
+		results = append(results, m.Bets{
 			ID:              fx.ID,
 			TipsAnalyticsID: analyticsID,
 			BaseModel:       fx.BaseModel,
@@ -76,7 +74,7 @@ func InsertPicked(items []bets_models.Bets, analyticsID uuid.UUID, db *bun.DB, c
 
 func UpdateMyBets(
 	id string,
-	body bets_models.Bets,
+	body m.Bets,
 	db *bun.DB,
 	ctx context.Context,
 ) error {

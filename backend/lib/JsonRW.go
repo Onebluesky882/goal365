@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 	oddsmap "mytipster/lib/odds_map"
-	odds_models "mytipster/models/odds"
+	"mytipster/models"
 	"os"
 	"path/filepath"
 	"time"
@@ -48,14 +48,14 @@ func WriteJSONWithCustomDate(date string, filename string, v any) error {
 }
 
 // อ่าน JSON ที่เป็น map structure
-func ReadOddsMap(path string) (odds_models.OddsMap, error) {
+func ReadOddsMap(path string) (models.OddsMap, error) {
 
 	data, err := os.ReadFile(path)
 	if err != nil {
 		return nil, err
 	}
 
-	var oddsMap odds_models.OddsMap
+	var oddsMap models.OddsMap
 	if err := json.Unmarshal(data, &oddsMap); err != nil {
 		return nil, err
 	}

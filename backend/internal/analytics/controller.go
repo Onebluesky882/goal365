@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"mytipster/lib"
-	m "mytipster/models/analytic"
+	module "mytipster/models"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -118,7 +118,7 @@ func InsertPredictions(service AnalyticService) fiber.Handler {
 		date := c.Query("date")
 
 		// insert db
-		data, err := lib.ReadJson[[]m.MyAnalytics](fmt.Sprintf("bin/%s/predictions.json", date))
+		data, err := lib.ReadJson[[]module.MyAnalytics](fmt.Sprintf("bin/%s/predictions.json", date))
 
 		if err != nil {
 			log.Fatalf("❌ Cannot read predictions.json: %v", err)
