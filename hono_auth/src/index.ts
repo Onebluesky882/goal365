@@ -22,7 +22,7 @@ export const auth = betterAuth({
     provider: "pg",
     schema,
   }),
-  trustedOrigins: [`${process.env.FRONT_END}`],
+  trustedOrigins: [`${process.env.FRONT_END} , "https://goal365-production.up.railway.app"`],
   emailAndPassword: {
     enabled: true,
   },

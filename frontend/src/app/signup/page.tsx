@@ -3,7 +3,8 @@
 import { authClient } from "@/lib/auth-client";
 import React, { FormEvent, useState } from "react";
 
-function LoginForm() {
+export default function SignUpPage() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -12,8 +13,8 @@ function LoginForm() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!email || !password) {
-      setError("กรุณากรอก Email และ Password");
+    if (!name || !email || !password) {
+      setError("กรุณากรอกข้อมูลให้ครบ");
       return;
     }
 
@@ -21,57 +22,59 @@ function LoginForm() {
     setError("");
 
     try {
-      const res = await authClient.signIn.email({
+      const res = await authClient.signUp.email({
+        name,
         email,
         password,
       });
-      console.log("res data user :", res.data?.user);
 
-      const session = await authClient.getSession();
-      console.log("session :", session);
+      console.log("Signup success:", res.data?.user);
+
+      // optional: auto login แล้ว redirect
+      // router.push("/");
+
+      setName("");
       setEmail("");
       setPassword("");
     } catch (err: any) {
       console.error(err);
-      setError(err?.message ?? "Login failed");
+      setError(err?.message ?? "Sign up failed");
     } finally {
       setLoading(false);
     }
   };
 
-  const handleLogout = async () => {
-    await authClient.signOut();
-  };
   return (
     <div style={{ maxWidth: 400, margin: "50px auto" }}>
-      <h2>Login</h2>
+      <h2>Sign Up</h2>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       <form onSubmit={handleSubmit}>
         <input
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <input
           type="email"
+          placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
         />
 
         <input
           type="password"
+          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
         />
 
         <button type="submit" disabled={loading}>
-          {loading ? "Logging in..." : "Login"}
+          {loading ? "Signing up..." : "Sign Up"}
         </button>
       </form>
-      <button onClick={handleLogout} className="bg-red-500 p-2 rounded-xl">
-        logout
-      </button>
     </div>
   );
 }
-
-export default LoginForm;
