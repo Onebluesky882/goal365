@@ -7,7 +7,7 @@ RUN bun install
 
 COPY . .
 
-RUN bun build src/index.ts --outdir dist
+RUN bun build src/index.ts --outdir dist --target bun
 
 ENV NODE_ENV=production
 
