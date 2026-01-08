@@ -1,10 +1,10 @@
-import LoginLine from "@/components/Line/LineLogin";
 import React from "react";
+// import LoginLine from '@/components/Line/LineLogin';
 
 const page = () => {
   return (
     <div>
-      <LoginLine />
+      {/* <LoginLine /> */}
     </div>
   );
 };
