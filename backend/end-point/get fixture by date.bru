@@ -1,17 +1,17 @@
 meta {
-  name: get fixture by id
+  name: get fixture by date
   type: http
-  seq: 2
+  seq: 6
 }
 
 get {
-  url: http://localhost:3009/fixture?id=1383314
+  url: https://v3.football.api-sports.io/fixtures?date=2026-01-08
   body: none
   auth: inherit
 }
 
 params:query {
-  id: 1383314
+  date: 2026-01-08
 }
 
 settings {

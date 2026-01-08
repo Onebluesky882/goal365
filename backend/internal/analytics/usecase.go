@@ -7,6 +7,7 @@ import (
 	"mytipster/lib"
 	"mytipster/lib/common"
 	oddsmap "mytipster/lib/odds_map"
+	"mytipster/models"
 	m "mytipster/models"
 	"os"
 	"path/filepath"
@@ -165,7 +166,7 @@ func PredictionRetryFailed(date string) ([]m.MyAnalytics, []int, error) {
 // Process single fixture with retry
 func ProcessBuildPredictionsJson(fixtureID string, bet []m.Bet) (*m.MyAnalytics, error) {
 	var pred *m.PredictionResponse
-	var fx *m.FixtureResponse
+	var fx *models.FixtureResponse
 	var err error
 
 	// ดึง prediction พร้อม retry
@@ -183,12 +184,15 @@ func ProcessBuildPredictionsJson(fixtureID string, bet []m.Bet) (*m.MyAnalytics,
 	if err != nil {
 		return nil, fmt.Errorf("prediction error for %s: %w", fixtureID, err)
 	}
+
 	// ดึง fixture พร้อม retry
 	err = lib.RetryWithBackoff(func() error {
 		time.Sleep(500 * time.Millisecond)
-		fx, err := fixtures.QueryFixtureId(fixtureID)
-		if err != nil {
-			return err
+
+		var tempErr error
+		fx, tempErr = fixtures.QueryFixtureId(fixtureID)
+		if tempErr != nil {
+			return tempErr
 		}
 		if fx == nil {
 			return fmt.Errorf("fixture is nil")
@@ -200,6 +204,11 @@ func ProcessBuildPredictionsJson(fixtureID string, bet []m.Bet) (*m.MyAnalytics,
 		return nil, fmt.Errorf("fixture error for %s: %w", fixtureID, err)
 	}
 
+	// ✅ เพิ่มการตรวจสอบ nil ก่อนใช้
+	if fx == nil {
+		return nil, fmt.Errorf("fixture is nil after retry")
+	}
+
 	// สร้าง result
 	home, away := 0, 0
 	if fx.Goals.Home != nil {
@@ -208,6 +217,7 @@ func ProcessBuildPredictionsJson(fixtureID string, bet []m.Bet) (*m.MyAnalytics,
 	if fx.Goals.Away != nil {
 		away = *fx.Goals.Away
 	}
+
 	item := &m.MyAnalytics{
 		FixtureID:           fx.FixtureInfo.ID,
 		Date:                common.TimestampUTCDate(fx.FixtureInfo.Timestamp),

@@ -1,9 +1,5 @@
 package models
 
-import (
-	"time"
-)
-
 type RootFixtureResponse struct {
 	Get        string            `json:"get"`
 	Parameters FixtureParameters `json:"parameters"`
@@ -11,7 +7,6 @@ type RootFixtureResponse struct {
 	Results    int               `json:"results"`
 	Paging     FixturePaging     `json:"paging"`
 	Response   []FixtureResponse `json:"response"`
-	Info       string            `json:"info"`
 }
 
 type FixtureParameters struct {
@@ -24,12 +19,11 @@ type FixturePaging struct {
 }
 
 type FixtureResponse struct {
-	PartitionTime time.Time   `bigquery:"_PARTITIONTIME"`
-	FixtureInfo   FixtureInfo `json:"fixture_info" bigquery:"fixture_info"`
-	League        League      `json:"league" bigquery:"league"`
-	Teams         Teams       `json:"teams" bigquery:"teams"`
-	Goals         Goals       `json:"goals" bigquery:"goals"`
-	Score         Score       `json:"score" bigquery:"score"`
+	FixtureInfo FixtureInfo `json:"fixture"`
+	League      League      `json:"league"`
+	Teams       Teams       `json:"teams"`
+	Goals       Goals       `json:"goals"`
+	Score       Score       `json:"score"`
 }
 type FixtureInfo struct {
 	ID        int     `json:"id"`

@@ -1,17 +1,17 @@
 meta {
-  name: get odds by id
+  name: get fixtures by id
   type: http
-  seq: 7
+  seq: 4
 }
 
 get {
-  url: http://localhost:3009/odds?id=1501848
+  url: http://localhost:3009/api/fixture-id?id=1500365
   body: none
   auth: inherit
 }
 
 params:query {
-  id: 1501848
+  id: 1500365
 }
 
 settings {

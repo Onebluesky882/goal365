@@ -27,7 +27,7 @@ func main() {
 	app := fiber.New()
 
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "https://mytipster-production.up.railway.app,https://goal365.thaimongkon777.workers.dev/,http://localhost:3001",
+		AllowOrigins: "https://mytipster-production.up.railway.app,https://goal365.thaimongkon777.workers.dev/,http://localhost:3001,https://goal365.club",
 		AllowMethods: "GET,POST,PUT,DELETE,OPTIONS",
 		AllowHeaders: "Origin, Content-Type, Accept, Authorization",
 	}))
@@ -40,21 +40,15 @@ func main() {
 	app.Get("/date", fixtures.GetFixtureDate)
 
 	// register routes
+	fixtures.RegisterRoutes(app)
 	analytics.RegisterRoutes(app, db)
 	tipsdaily.RegisterRoutes(app)
 	bets.RegisterRoutes(app, db)
-	// auth.RegisterRoute(app, db)
 
-	log.Println("📡 LINE Auth endpoints:")
-	log.Println("   - GET  /api/auth/signin/line")
-	log.Println("   - GET  /api/auth/callback/line")
-	log.Println("   - POST /api/auth/verify-line")
-	log.Println("   - GET  /api/auth/session")
-	log.Println("   - POST /api/auth/signout")
 	port := os.Getenv("PORT")
 
 	if port == "" {
-		port = "8080"
+		port = "3009"
 	}
 
 	log.Println("🚀 Server running on port", port)

@@ -1,0 +1,3778 @@
+{
+  "1378045": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "4.65"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "1.18"
+        },
+        {
+          "value": "Home -1",
+          "odd": "4.15"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.22"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "3.00"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.38"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "2.38"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.55"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "2.12"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.75"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.48"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "2.60"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.35"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "3.10"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.24"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "3.90"
+        },
+        {
+          "value": "Home +1",
+          "odd": "1.12"
+        },
+        {
+          "value": "Away +1",
+          "odd": "6.25"
+        },
+        {
+          "value": "Home -1.5",
+          "odd": "5.25"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "1.16"
+        },
+        {
+          "value": "Home +1.25",
+          "odd": "1.10"
+        },
+        {
+          "value": "Away +1.25",
+          "odd": "6.80"
+        },
+        {
+          "value": "Home +1.5",
+          "odd": "1.10"
+        },
+        {
+          "value": "Away +1.5",
+          "odd": "7.00"
+        }
+      ]
+    }
+  ],
+  "1378048": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "2.10"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "1.78"
+        },
+        {
+          "value": "Home -1",
+          "odd": "1.75"
+        },
+        {
+          "value": "Away -1",
+          "odd": "2.05"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "1.55"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "2.38"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.42"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "2.75"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.27"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "3.55"
+        },
+        {
+          "value": "Home +0",
+          "odd": "1.13"
+        },
+        {
+          "value": "Away +0",
+          "odd": "5.90"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.11"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "6.60"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.10"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "7.00"
+        },
+        {
+          "value": "Home -2",
+          "odd": "3.70"
+        },
+        {
+          "value": "Away -2",
+          "odd": "1.26"
+        },
+        {
+          "value": "Home -1.75",
+          "odd": "2.75"
+        },
+        {
+          "value": "Away -1.75",
+          "odd": "1.42"
+        },
+        {
+          "value": "Home -1.5",
+          "odd": "2.35"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "1.58"
+        },
+        {
+          "value": "Home -2.5",
+          "odd": "4.50"
+        },
+        {
+          "value": "Away -2.5",
+          "odd": "1.19"
+        },
+        {
+          "value": "Home -2.25",
+          "odd": "4.10"
+        },
+        {
+          "value": "Away -2.25",
+          "odd": "1.23"
+        },
+        {
+          "value": "Home -2.75",
+          "odd": "5.90"
+        },
+        {
+          "value": "Away -2.75",
+          "odd": "1.13"
+        }
+      ]
+    }
+  ],
+  "1379169": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "2.30"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "1.60"
+        },
+        {
+          "value": "Home -1",
+          "odd": "2.05"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.80"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "1.72"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "2.08"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.58"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "2.35"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.40"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.85"
+        },
+        {
+          "value": "Home +0",
+          "odd": "1.22"
+        },
+        {
+          "value": "Away +0",
+          "odd": "4.15"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.18"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "4.65"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.15"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "5.50"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.10"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "7.00"
+        },
+        {
+          "value": "Home -2",
+          "odd": "4.15"
+        },
+        {
+          "value": "Away -2",
+          "odd": "1.22"
+        },
+        {
+          "value": "Home -1.75",
+          "odd": "3.10"
+        },
+        {
+          "value": "Away -1.75",
+          "odd": "1.35"
+        },
+        {
+          "value": "Home -1.5",
+          "odd": "2.60"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "1.48"
+        },
+        {
+          "value": "Home -2.5",
+          "odd": "5.25"
+        },
+        {
+          "value": "Away -2.5",
+          "odd": "1.16"
+        },
+        {
+          "value": "Home -2.25",
+          "odd": "4.50"
+        },
+        {
+          "value": "Away -2.25",
+          "odd": "1.19"
+        },
+        {
+          "value": "Home -2.75",
+          "odd": "6.60"
+        },
+        {
+          "value": "Away -2.75",
+          "odd": "1.11"
+        }
+      ]
+    }
+  ],
+  "1398117": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "3.45"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "1.30"
+        },
+        {
+          "value": "Home -1",
+          "odd": "3.00"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.38"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "2.30"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.60"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.78"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.72"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.08"
+        },
+        {
+          "value": "Home +0",
+          "odd": "1.45"
+        },
+        {
+          "value": "Away +0",
+          "odd": "2.68"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.35"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "3.10"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.27"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "3.55"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.18"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "4.80"
+        },
+        {
+          "value": "Home -2",
+          "odd": "6.60"
+        },
+        {
+          "value": "Away -2",
+          "odd": "1.11"
+        },
+        {
+          "value": "Home +1",
+          "odd": "1.10"
+        },
+        {
+          "value": "Away +1",
+          "odd": "6.80"
+        },
+        {
+          "value": "Home -1.75",
+          "odd": "5.00"
+        },
+        {
+          "value": "Away -1.75",
+          "odd": "1.17"
+        },
+        {
+          "value": "Home -1.5",
+          "odd": "3.80"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "1.25"
+        },
+        {
+          "value": "Home -2.25",
+          "odd": "7.00"
+        },
+        {
+          "value": "Away -2.25",
+          "odd": "1.10"
+        }
+      ]
+    }
+  ],
+  "1405524": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "5.50"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "1.15"
+        },
+        {
+          "value": "Home -1",
+          "odd": "5.00"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.17"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "3.55"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.27"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "2.85"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.40"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "2.50"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.50"
+        },
+        {
+          "value": "Home +0",
+          "odd": "2.15"
+        },
+        {
+          "value": "Away +0",
+          "odd": "1.68"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "2.00"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.62"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "2.25"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.48"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "2.60"
+        },
+        {
+          "value": "Home +1",
+          "odd": "1.30"
+        },
+        {
+          "value": "Away +1",
+          "odd": "3.45"
+        },
+        {
+          "value": "Home -1.75",
+          "odd": "7.00"
+        },
+        {
+          "value": "Away -1.75",
+          "odd": "1.10"
+        },
+        {
+          "value": "Home -1.5",
+          "odd": "5.90"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "1.13"
+        },
+        {
+          "value": "Home +1.25",
+          "odd": "1.26"
+        },
+        {
+          "value": "Away +1.25",
+          "odd": "3.70"
+        },
+        {
+          "value": "Home +1.5",
+          "odd": "1.22"
+        },
+        {
+          "value": "Away +1.5",
+          "odd": "4.15"
+        },
+        {
+          "value": "Home +1.75",
+          "odd": "1.15"
+        },
+        {
+          "value": "Away +1.75",
+          "odd": "5.50"
+        }
+      ]
+    }
+  ],
+  "1422794": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "6.25"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "1.12"
+        },
+        {
+          "value": "Home -1",
+          "odd": "5.75"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.14"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "3.55"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.27"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "2.85"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.40"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "2.38"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.55"
+        },
+        {
+          "value": "Home +0",
+          "odd": "1.78"
+        },
+        {
+          "value": "Away +0",
+          "odd": "2.02"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.60"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "2.30"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.45"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "2.68"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.30"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "3.45"
+        },
+        {
+          "value": "Home +1",
+          "odd": "1.15"
+        },
+        {
+          "value": "Away +1",
+          "odd": "5.50"
+        },
+        {
+          "value": "Home -1.5",
+          "odd": "6.80"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "1.10"
+        },
+        {
+          "value": "Home +1.25",
+          "odd": "1.13"
+        },
+        {
+          "value": "Away +1.25",
+          "odd": "5.90"
+        },
+        {
+          "value": "Home +1.5",
+          "odd": "1.12"
+        },
+        {
+          "value": "Away +1.5",
+          "odd": "6.40"
+        }
+      ]
+    }
+  ],
+  "1422797": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "3.30"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "1.32"
+        },
+        {
+          "value": "Home -1",
+          "odd": "2.75"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.42"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "2.15"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.68"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.88"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.92"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.58"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.35"
+        },
+        {
+          "value": "Home +0",
+          "odd": "1.32"
+        },
+        {
+          "value": "Away +0",
+          "odd": "3.30"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.24"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "3.90"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.19"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "4.50"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.12"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "6.40"
+        },
+        {
+          "value": "Home -2",
+          "odd": "6.60"
+        },
+        {
+          "value": "Away -2",
+          "odd": "1.11"
+        },
+        {
+          "value": "Home -1.75",
+          "odd": "4.65"
+        },
+        {
+          "value": "Away -1.75",
+          "odd": "1.18"
+        },
+        {
+          "value": "Home -1.5",
+          "odd": "3.55"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "1.27"
+        },
+        {
+          "value": "Home -2.5",
+          "odd": "6.25"
+        },
+        {
+          "value": "Away -2.5",
+          "odd": "1.12"
+        },
+        {
+          "value": "Home -2.25",
+          "odd": "7.00"
+        },
+        {
+          "value": "Away -2.25",
+          "odd": "1.10"
+        }
+      ]
+    }
+  ],
+  "1422800": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "2.50"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "1.50"
+        },
+        {
+          "value": "Home -1",
+          "odd": "2.15"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.68"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.90"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.62"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "2.25"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.42"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.75"
+        },
+        {
+          "value": "Home +0",
+          "odd": "1.20"
+        },
+        {
+          "value": "Away +0",
+          "odd": "4.40"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.15"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "5.50"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.12"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "6.00"
+        },
+        {
+          "value": "Home -2",
+          "odd": "5.00"
+        },
+        {
+          "value": "Away -2",
+          "odd": "1.17"
+        },
+        {
+          "value": "Home -1.75",
+          "odd": "3.55"
+        },
+        {
+          "value": "Away -1.75",
+          "odd": "1.27"
+        },
+        {
+          "value": "Home -1.5",
+          "odd": "2.85"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "1.40"
+        },
+        {
+          "value": "Home -2.5",
+          "odd": "6.00"
+        },
+        {
+          "value": "Away -2.5",
+          "odd": "1.12"
+        },
+        {
+          "value": "Home -2.25",
+          "odd": "5.75"
+        },
+        {
+          "value": "Away -2.25",
+          "odd": "1.14"
+        }
+      ]
+    }
+  ],
+  "1422801": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "3.45"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "1.30"
+        },
+        {
+          "value": "Home -1",
+          "odd": "3.00"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.38"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "2.35"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.58"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "2.10"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.70"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.70"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.10"
+        },
+        {
+          "value": "Home +0",
+          "odd": "1.40"
+        },
+        {
+          "value": "Away +0",
+          "odd": "2.85"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.30"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "3.45"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.23"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "4.10"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.14"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "5.75"
+        },
+        {
+          "value": "Home +1",
+          "odd": "1.10"
+        },
+        {
+          "value": "Away +1",
+          "odd": "7.00"
+        },
+        {
+          "value": "Home -1.75",
+          "odd": "5.25"
+        },
+        {
+          "value": "Away -1.75",
+          "odd": "1.16"
+        },
+        {
+          "value": "Home -1.5",
+          "odd": "3.90"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "1.24"
+        }
+      ]
+    }
+  ],
+  "1436032": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "2.10"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "1.70"
+        },
+        {
+          "value": "Home -1",
+          "odd": "1.88"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.92"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "1.70"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "2.10"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.58"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "2.35"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.40"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.85"
+        },
+        {
+          "value": "Home +0",
+          "odd": "1.25"
+        },
+        {
+          "value": "Away +0",
+          "odd": "3.80"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.21"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "4.25"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.18"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "4.65"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.12"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "6.00"
+        },
+        {
+          "value": "Home -3",
+          "odd": "7.00"
+        },
+        {
+          "value": "Away -3",
+          "odd": "1.10"
+        },
+        {
+          "value": "Home -2",
+          "odd": "3.45"
+        },
+        {
+          "value": "Away -2",
+          "odd": "1.30"
+        },
+        {
+          "value": "Home -1.75",
+          "odd": "2.75"
+        },
+        {
+          "value": "Away -1.75",
+          "odd": "1.42"
+        },
+        {
+          "value": "Home -1.5",
+          "odd": "2.35"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "1.58"
+        },
+        {
+          "value": "Home -2.5",
+          "odd": "4.00"
+        },
+        {
+          "value": "Away -2.5",
+          "odd": "1.23"
+        },
+        {
+          "value": "Home -2.25",
+          "odd": "3.70"
+        },
+        {
+          "value": "Away -2.25",
+          "odd": "1.26"
+        },
+        {
+          "value": "Home -2.75",
+          "odd": "5.25"
+        },
+        {
+          "value": "Away -2.75",
+          "odd": "1.16"
+        }
+      ]
+    }
+  ],
+  "1436034": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "1.35"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "3.10"
+        },
+        {
+          "value": "Home -1",
+          "odd": "1.23"
+        },
+        {
+          "value": "Away -1",
+          "odd": "4.10"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "1.20"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "4.40"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.18"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "4.80"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.11"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "6.60"
+        },
+        {
+          "value": "Home -3",
+          "odd": "2.75"
+        },
+        {
+          "value": "Away -3",
+          "odd": "1.42"
+        },
+        {
+          "value": "Home -2",
+          "odd": "1.68"
+        },
+        {
+          "value": "Away -2",
+          "odd": "2.15"
+        },
+        {
+          "value": "Home -1.75",
+          "odd": "1.55"
+        },
+        {
+          "value": "Away -1.75",
+          "odd": "2.38"
+        },
+        {
+          "value": "Home -1.5",
+          "odd": "1.45"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "2.68"
+        },
+        {
+          "value": "Home -4",
+          "odd": "5.25"
+        },
+        {
+          "value": "Away -4",
+          "odd": "1.16"
+        },
+        {
+          "value": "Home -2.5",
+          "odd": "2.08"
+        },
+        {
+          "value": "Away -2.5",
+          "odd": "1.72"
+        },
+        {
+          "value": "Home -2.25",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away -2.25",
+          "odd": "1.98"
+        },
+        {
+          "value": "Home -3.75",
+          "odd": "3.90"
+        },
+        {
+          "value": "Away -3.75",
+          "odd": "1.24"
+        },
+        {
+          "value": "Home -3.5",
+          "odd": "3.30"
+        },
+        {
+          "value": "Away -3.5",
+          "odd": "1.32"
+        },
+        {
+          "value": "Home -3.25",
+          "odd": "3.00"
+        },
+        {
+          "value": "Away -3.25",
+          "odd": "1.38"
+        },
+        {
+          "value": "Home -2.75",
+          "odd": "2.35"
+        },
+        {
+          "value": "Away -2.75",
+          "odd": "1.58"
+        },
+        {
+          "value": "Home -4.25",
+          "odd": "5.50"
+        },
+        {
+          "value": "Away -4.25",
+          "odd": "1.15"
+        }
+      ]
+    }
+  ],
+  "1436037": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.75",
+          "odd": "5.25"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.16"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "3.80"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.25"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "3.45"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.30"
+        },
+        {
+          "value": "Home +0",
+          "odd": "3.00"
+        },
+        {
+          "value": "Away +0",
+          "odd": "1.38"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "2.25"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.62"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "1.80"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.70"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "2.10"
+        },
+        {
+          "value": "Home +1",
+          "odd": "1.48"
+        },
+        {
+          "value": "Away +1",
+          "odd": "2.60"
+        },
+        {
+          "value": "Home +2",
+          "odd": "1.12"
+        },
+        {
+          "value": "Away +2",
+          "odd": "6.00"
+        },
+        {
+          "value": "Home +1.25",
+          "odd": "1.38"
+        },
+        {
+          "value": "Away +1.25",
+          "odd": "3.00"
+        },
+        {
+          "value": "Home +1.5",
+          "odd": "1.32"
+        },
+        {
+          "value": "Away +1.5",
+          "odd": "3.30"
+        },
+        {
+          "value": "Home +1.75",
+          "odd": "1.23"
+        },
+        {
+          "value": "Away +1.75",
+          "odd": "4.10"
+        },
+        {
+          "value": "Home +2.25",
+          "odd": "1.12"
+        },
+        {
+          "value": "Away +2.25",
+          "odd": "6.40"
+        },
+        {
+          "value": "Home +2.5",
+          "odd": "1.10"
+        },
+        {
+          "value": "Away +2.5",
+          "odd": "7.00"
+        }
+      ]
+    }
+  ],
+  "1440873": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "2.00"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "1.95"
+        }
+      ]
+    }
+  ],
+  "1440874": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "2.05"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.75"
+        },
+        {
+          "value": "Home +0",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away +0",
+          "odd": "1.95"
+        }
+      ]
+    }
+  ],
+  "1440875": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.95"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "2.00"
+        }
+      ]
+    }
+  ],
+  "1445366": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0",
+          "odd": "2.08"
+        },
+        {
+          "value": "Away +0",
+          "odd": "1.72"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.72"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "2.08"
+        }
+      ]
+    }
+  ],
+  "1445367": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "1.95"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.85"
+        },
+        {
+          "value": "Home +0",
+          "odd": "1.78"
+        },
+        {
+          "value": "Away +0",
+          "odd": "2.02"
+        }
+      ]
+    }
+  ],
+  "1466723": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.90"
+        }
+      ]
+    }
+  ],
+  "1467047": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1",
+          "odd": "6.80"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.10"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "5.90"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.13"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "4.40"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.20"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "3.80"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.25"
+        },
+        {
+          "value": "Home +0",
+          "odd": "3.30"
+        },
+        {
+          "value": "Away +0",
+          "odd": "1.32"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "2.35"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.58"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "1.80"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.72"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "2.08"
+        },
+        {
+          "value": "Home +1",
+          "odd": "1.50"
+        },
+        {
+          "value": "Away +1",
+          "odd": "2.50"
+        },
+        {
+          "value": "Home +2",
+          "odd": "1.12"
+        },
+        {
+          "value": "Away +2",
+          "odd": "6.00"
+        },
+        {
+          "value": "Home +1.25",
+          "odd": "1.40"
+        },
+        {
+          "value": "Away +1.25",
+          "odd": "2.85"
+        },
+        {
+          "value": "Home +1.5",
+          "odd": "1.32"
+        },
+        {
+          "value": "Away +1.5",
+          "odd": "3.30"
+        },
+        {
+          "value": "Home +1.75",
+          "odd": "1.22"
+        },
+        {
+          "value": "Away +1.75",
+          "odd": "4.15"
+        },
+        {
+          "value": "Home +2.25",
+          "odd": "1.11"
+        },
+        {
+          "value": "Away +2.25",
+          "odd": "6.60"
+        },
+        {
+          "value": "Home +2.5",
+          "odd": "1.10"
+        },
+        {
+          "value": "Away +2.5",
+          "odd": "7.00"
+        }
+      ]
+    }
+  ],
+  "1467049": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "3.55"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "1.27"
+        },
+        {
+          "value": "Home -1",
+          "odd": "3.10"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.35"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "2.42"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.52"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "2.08"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.72"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.00"
+        },
+        {
+          "value": "Home +0",
+          "odd": "1.50"
+        },
+        {
+          "value": "Away +0",
+          "odd": "2.50"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.38"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "3.00"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.30"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "3.45"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.20"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "4.40"
+        },
+        {
+          "value": "Home -2",
+          "odd": "7.00"
+        },
+        {
+          "value": "Away -2",
+          "odd": "1.10"
+        },
+        {
+          "value": "Home +1",
+          "odd": "1.10"
+        },
+        {
+          "value": "Away +1",
+          "odd": "6.80"
+        },
+        {
+          "value": "Home -1.75",
+          "odd": "5.25"
+        },
+        {
+          "value": "Away -1.75",
+          "odd": "1.16"
+        },
+        {
+          "value": "Home -1.5",
+          "odd": "4.00"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "1.23"
+        },
+        {
+          "value": "Home +1.25",
+          "odd": "1.10"
+        },
+        {
+          "value": "Away +1.25",
+          "odd": "7.00"
+        }
+      ]
+    }
+  ],
+  "1476739": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "1.98"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.82"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.92"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "1.88"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.92"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "1.88"
+        }
+      ]
+    }
+  ],
+  "1482248": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.90"
+        }
+      ]
+    }
+  ],
+  "1482249": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away +0",
+          "odd": "1.80"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.72"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "2.08"
+        }
+      ]
+    }
+  ],
+  "1482321": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "2.05"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.75"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.88"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "1.92"
+        }
+      ]
+    }
+  ],
+  "1483558": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +1",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away +1",
+          "odd": "1.80"
+        },
+        {
+          "value": "Home +1.25",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away +1.25",
+          "odd": "2.00"
+        },
+        {
+          "value": "Home +1.5",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away +1.5",
+          "odd": "1.95"
+        }
+      ]
+    }
+  ],
+  "1485359": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "2.30"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "1.60"
+        },
+        {
+          "value": "Home -1",
+          "odd": "2.05"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.75"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "1.75"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "2.05"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.60"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "2.30"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.42"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.75"
+        },
+        {
+          "value": "Home +0",
+          "odd": "1.26"
+        },
+        {
+          "value": "Away +0",
+          "odd": "3.70"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.21"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "4.25"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.18"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "4.65"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.12"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "6.40"
+        },
+        {
+          "value": "Home -2",
+          "odd": "4.10"
+        },
+        {
+          "value": "Away -2",
+          "odd": "1.23"
+        },
+        {
+          "value": "Home -1.75",
+          "odd": "3.10"
+        },
+        {
+          "value": "Away -1.75",
+          "odd": "1.35"
+        },
+        {
+          "value": "Home -1.5",
+          "odd": "2.60"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "1.48"
+        },
+        {
+          "value": "Home -2.5",
+          "odd": "5.00"
+        },
+        {
+          "value": "Away -2.5",
+          "odd": "1.17"
+        },
+        {
+          "value": "Home -2.25",
+          "odd": "4.40"
+        },
+        {
+          "value": "Away -2.25",
+          "odd": "1.20"
+        },
+        {
+          "value": "Home -2.75",
+          "odd": "6.40"
+        },
+        {
+          "value": "Away -2.75",
+          "odd": "1.12"
+        }
+      ]
+    }
+  ],
+  "1485360": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "6.00"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "1.12"
+        },
+        {
+          "value": "Home -1",
+          "odd": "5.75"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.14"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "3.80"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.25"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "3.10"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.35"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "2.68"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.45"
+        },
+        {
+          "value": "Home +0",
+          "odd": "2.35"
+        },
+        {
+          "value": "Away +0",
+          "odd": "1.58"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.98"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.82"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.72"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "2.08"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.55"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "2.38"
+        },
+        {
+          "value": "Home +1",
+          "odd": "1.38"
+        },
+        {
+          "value": "Away +1",
+          "odd": "3.00"
+        },
+        {
+          "value": "Home +2",
+          "odd": "1.10"
+        },
+        {
+          "value": "Away +2",
+          "odd": "6.80"
+        },
+        {
+          "value": "Home -1.5",
+          "odd": "6.60"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "1.11"
+        },
+        {
+          "value": "Home +1.25",
+          "odd": "1.30"
+        },
+        {
+          "value": "Away +1.25",
+          "odd": "3.45"
+        },
+        {
+          "value": "Home +1.5",
+          "odd": "1.26"
+        },
+        {
+          "value": "Away +1.5",
+          "odd": "3.70"
+        },
+        {
+          "value": "Home +1.75",
+          "odd": "1.18"
+        },
+        {
+          "value": "Away +1.75",
+          "odd": "4.80"
+        }
+      ]
+    }
+  ],
+  "1485361": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "6.80"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.10"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "7.00"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.10"
+        },
+        {
+          "value": "Home +0",
+          "odd": "6.60"
+        },
+        {
+          "value": "Away +0",
+          "odd": "1.11"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "4.15"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.22"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "3.30"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "1.32"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "2.85"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "1.40"
+        },
+        {
+          "value": "Home +1",
+          "odd": "2.60"
+        },
+        {
+          "value": "Away +1",
+          "odd": "1.48"
+        },
+        {
+          "value": "Home +2",
+          "odd": "1.52"
+        },
+        {
+          "value": "Away +2",
+          "odd": "2.42"
+        },
+        {
+          "value": "Home +3",
+          "odd": "1.17"
+        },
+        {
+          "value": "Away +3",
+          "odd": "5.00"
+        },
+        {
+          "value": "Home +1.25",
+          "odd": "2.15"
+        },
+        {
+          "value": "Away +1.25",
+          "odd": "1.68"
+        },
+        {
+          "value": "Home +1.5",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away +1.5",
+          "odd": "1.90"
+        },
+        {
+          "value": "Home +1.75",
+          "odd": "1.70"
+        },
+        {
+          "value": "Away +1.75",
+          "odd": "2.10"
+        },
+        {
+          "value": "Home +2.25",
+          "odd": "1.42"
+        },
+        {
+          "value": "Away +2.25",
+          "odd": "2.75"
+        },
+        {
+          "value": "Home +2.5",
+          "odd": "1.35"
+        },
+        {
+          "value": "Away +2.5",
+          "odd": "3.10"
+        },
+        {
+          "value": "Home +2.75",
+          "odd": "1.26"
+        },
+        {
+          "value": "Away +2.75",
+          "odd": "3.70"
+        },
+        {
+          "value": "Home +3.5",
+          "odd": "1.14"
+        },
+        {
+          "value": "Away +3.5",
+          "odd": "5.75"
+        },
+        {
+          "value": "Home +3.25",
+          "odd": "1.15"
+        },
+        {
+          "value": "Away +3.25",
+          "odd": "5.50"
+        }
+      ]
+    }
+  ],
+  "1486028": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.80"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.78"
+        },
+        {
+          "value": "Home +0",
+          "odd": "1.88"
+        },
+        {
+          "value": "Away +0",
+          "odd": "1.92"
+        }
+      ]
+    }
+  ],
+  "1486029": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "1.95"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.85"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.98"
+        }
+      ]
+    }
+  ],
+  "1488165": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.5",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "1.98"
+        }
+      ]
+    }
+  ],
+  "1488243": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.78"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.95"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.85"
+        },
+        {
+          "value": "Home +0",
+          "odd": "1.75"
+        },
+        {
+          "value": "Away +0",
+          "odd": "2.05"
+        }
+      ]
+    }
+  ],
+  "1490904": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +1.25",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away +1.25",
+          "odd": "1.90"
+        },
+        {
+          "value": "Home +1.5",
+          "odd": "1.88"
+        },
+        {
+          "value": "Away +1.5",
+          "odd": "1.92"
+        }
+      ]
+    }
+  ],
+  "1490905": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away -1",
+          "odd": "2.00"
+        }
+      ]
+    }
+  ],
+  "1491329": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "5.75"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "1.14"
+        },
+        {
+          "value": "Home -1",
+          "odd": "7.00"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.10"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "4.80"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.18"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "3.55"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.27"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "3.10"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.35"
+        },
+        {
+          "value": "Home +0",
+          "odd": "2.60"
+        },
+        {
+          "value": "Away +0",
+          "odd": "1.48"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.78"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.72"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "2.08"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.52"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "2.42"
+        },
+        {
+          "value": "Home +1",
+          "odd": "1.32"
+        },
+        {
+          "value": "Away +1",
+          "odd": "3.30"
+        },
+        {
+          "value": "Home -1.5",
+          "odd": "6.00"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "1.12"
+        },
+        {
+          "value": "Home +1.25",
+          "odd": "1.26"
+        },
+        {
+          "value": "Away +1.25",
+          "odd": "3.70"
+        },
+        {
+          "value": "Home +1.5",
+          "odd": "1.22"
+        },
+        {
+          "value": "Away +1.5",
+          "odd": "4.15"
+        },
+        {
+          "value": "Home +1.75",
+          "odd": "1.14"
+        },
+        {
+          "value": "Away +1.75",
+          "odd": "5.75"
+        }
+      ]
+    }
+  ],
+  "1491604": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "6.00"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.12"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "5.75"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.14"
+        },
+        {
+          "value": "Home +0",
+          "odd": "5.25"
+        },
+        {
+          "value": "Away +0",
+          "odd": "1.16"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "3.55"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.27"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "2.85"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "1.40"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "2.60"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "1.48"
+        },
+        {
+          "value": "Home +1",
+          "odd": "2.30"
+        },
+        {
+          "value": "Away +1",
+          "odd": "1.60"
+        },
+        {
+          "value": "Home +2",
+          "odd": "1.40"
+        },
+        {
+          "value": "Away +2",
+          "odd": "2.85"
+        },
+        {
+          "value": "Home +3",
+          "odd": "1.13"
+        },
+        {
+          "value": "Away +3",
+          "odd": "5.90"
+        },
+        {
+          "value": "Home +1.25",
+          "odd": "1.98"
+        },
+        {
+          "value": "Away +1.25",
+          "odd": "1.82"
+        },
+        {
+          "value": "Home +1.5",
+          "odd": "1.75"
+        },
+        {
+          "value": "Away +1.5",
+          "odd": "2.05"
+        },
+        {
+          "value": "Home +1.75",
+          "odd": "1.58"
+        },
+        {
+          "value": "Away +1.75",
+          "odd": "2.35"
+        },
+        {
+          "value": "Home +2.25",
+          "odd": "1.35"
+        },
+        {
+          "value": "Away +2.25",
+          "odd": "3.10"
+        },
+        {
+          "value": "Home +2.5",
+          "odd": "1.30"
+        },
+        {
+          "value": "Away +2.5",
+          "odd": "3.45"
+        },
+        {
+          "value": "Home +2.75",
+          "odd": "1.21"
+        },
+        {
+          "value": "Away +2.75",
+          "odd": "4.25"
+        },
+        {
+          "value": "Home +3.25",
+          "odd": "1.12"
+        },
+        {
+          "value": "Away +3.25",
+          "odd": "6.40"
+        }
+      ]
+    }
+  ],
+  "1491605": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "5.75"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.14"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "5.25"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.16"
+        },
+        {
+          "value": "Home +0",
+          "odd": "4.50"
+        },
+        {
+          "value": "Away +0",
+          "odd": "1.19"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "3.30"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.32"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "2.68"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "1.45"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "2.38"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "1.55"
+        },
+        {
+          "value": "Home +1",
+          "odd": "2.15"
+        },
+        {
+          "value": "Away +1",
+          "odd": "1.68"
+        },
+        {
+          "value": "Home +2",
+          "odd": "1.40"
+        },
+        {
+          "value": "Away +2",
+          "odd": "2.85"
+        },
+        {
+          "value": "Home +3",
+          "odd": "1.13"
+        },
+        {
+          "value": "Away +3",
+          "odd": "5.90"
+        },
+        {
+          "value": "Home +1.25",
+          "odd": "1.88"
+        },
+        {
+          "value": "Away +1.25",
+          "odd": "1.92"
+        },
+        {
+          "value": "Home +1.5",
+          "odd": "1.70"
+        },
+        {
+          "value": "Away +1.5",
+          "odd": "2.10"
+        },
+        {
+          "value": "Home +1.75",
+          "odd": "1.55"
+        },
+        {
+          "value": "Away +1.75",
+          "odd": "2.38"
+        },
+        {
+          "value": "Home +2.25",
+          "odd": "1.32"
+        },
+        {
+          "value": "Away +2.25",
+          "odd": "3.30"
+        },
+        {
+          "value": "Home +2.5",
+          "odd": "1.30"
+        },
+        {
+          "value": "Away +2.5",
+          "odd": "3.45"
+        },
+        {
+          "value": "Home +2.75",
+          "odd": "1.21"
+        },
+        {
+          "value": "Away +2.75",
+          "odd": "4.25"
+        },
+        {
+          "value": "Home +3.25",
+          "odd": "1.12"
+        },
+        {
+          "value": "Away +3.25",
+          "odd": "6.25"
+        }
+      ]
+    }
+  ],
+  "1494375": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "4.00"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "1.23"
+        },
+        {
+          "value": "Home -1",
+          "odd": "3.55"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.27"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "2.75"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.42"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "2.30"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.60"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "2.05"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.75"
+        },
+        {
+          "value": "Home +0",
+          "odd": "1.65"
+        },
+        {
+          "value": "Away +0",
+          "odd": "2.20"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.48"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "2.60"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.38"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "3.00"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.26"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "3.70"
+        },
+        {
+          "value": "Home +1",
+          "odd": "1.15"
+        },
+        {
+          "value": "Away +1",
+          "odd": "5.50"
+        },
+        {
+          "value": "Home -1.75",
+          "odd": "5.90"
+        },
+        {
+          "value": "Away -1.75",
+          "odd": "1.13"
+        },
+        {
+          "value": "Home -1.5",
+          "odd": "4.40"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "1.20"
+        },
+        {
+          "value": "Home +1.25",
+          "odd": "1.13"
+        },
+        {
+          "value": "Away +1.25",
+          "odd": "5.90"
+        },
+        {
+          "value": "Home +1.5",
+          "odd": "1.12"
+        },
+        {
+          "value": "Away +1.5",
+          "odd": "6.40"
+        }
+      ]
+    }
+  ],
+  "1500365": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1",
+          "odd": "1.78"
+        },
+        {
+          "value": "Away -1",
+          "odd": "2.02"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "1.75"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "2.05"
+        }
+      ]
+    }
+  ],
+  "1500386": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.75",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.78"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "2.05"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.75"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.88"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.92"
+        }
+      ]
+    }
+  ],
+  "1500422": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.78"
+        }
+      ]
+    }
+  ],
+  "1500423": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away +0",
+          "odd": "1.78"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.78"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "2.02"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "1.78"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "1.98"
+        }
+      ]
+    }
+  ],
+  "1501283": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "2.10"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "1.70"
+        },
+        {
+          "value": "Home -1",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away -1",
+          "odd": "2.00"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "1.68"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "2.15"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.55"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "2.38"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.38"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "3.00"
+        },
+        {
+          "value": "Home +0",
+          "odd": "1.22"
+        },
+        {
+          "value": "Away +0",
+          "odd": "4.15"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.18"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "4.65"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.15"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "5.50"
+        },
+        {
+          "value": "Home +0.75",
+          "odd": "1.10"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "7.00"
+        },
+        {
+          "value": "Home -2",
+          "odd": "3.55"
+        },
+        {
+          "value": "Away -2",
+          "odd": "1.27"
+        },
+        {
+          "value": "Home -1.75",
+          "odd": "2.75"
+        },
+        {
+          "value": "Away -1.75",
+          "odd": "1.42"
+        },
+        {
+          "value": "Home -1.5",
+          "odd": "2.38"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "1.55"
+        },
+        {
+          "value": "Home -2.5",
+          "odd": "4.25"
+        },
+        {
+          "value": "Away -2.5",
+          "odd": "1.21"
+        },
+        {
+          "value": "Home -2.25",
+          "odd": "3.90"
+        },
+        {
+          "value": "Away -2.25",
+          "odd": "1.24"
+        },
+        {
+          "value": "Home -2.75",
+          "odd": "5.75"
+        },
+        {
+          "value": "Away -2.75",
+          "odd": "1.14"
+        }
+      ]
+    }
+  ],
+  "1501596": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.75",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away -1.75",
+          "odd": "1.80"
+        },
+        {
+          "value": "Home -1.5",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away -1.5",
+          "odd": "1.90"
+        }
+      ]
+    }
+  ],
+  "1501597": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "2.05"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.75"
+        },
+        {
+          "value": "Home +0",
+          "odd": "1.78"
+        },
+        {
+          "value": "Away +0",
+          "odd": "2.02"
+        }
+      ]
+    }
+  ],
+  "1501698": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +2",
+          "odd": "1.95"
+        },
+        {
+          "value": "Away +2",
+          "odd": "1.85"
+        }
+      ]
+    }
+  ],
+  "1501699": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +1.5",
+          "odd": "1.92"
+        },
+        {
+          "value": "Away +1.5",
+          "odd": "1.88"
+        },
+        {
+          "value": "Home +1.75",
+          "odd": "1.88"
+        },
+        {
+          "value": "Away +1.75",
+          "odd": "1.92"
+        }
+      ]
+    }
+  ],
+  "1501700": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +1.25",
+          "odd": "1.78"
+        },
+        {
+          "value": "Away +1.25",
+          "odd": "2.02"
+        }
+      ]
+    }
+  ],
+  "1501701": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.75",
+          "odd": "1.95"
+        },
+        {
+          "value": "Away +0.75",
+          "odd": "1.85"
+        },
+        {
+          "value": "Home +1.25",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away +1.25",
+          "odd": "1.90"
+        }
+      ]
+    }
+  ],
+  "1501702": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0.25",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "2.00"
+        }
+      ]
+    }
+  ],
+  "1501703": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "1.95"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.85"
+        }
+      ]
+    }
+  ],
+  "1501784": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +2",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away +2",
+          "odd": "1.90"
+        }
+      ]
+    }
+  ],
+  "1501785": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1",
+          "odd": "1.88"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.92"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.95"
+        }
+      ]
+    }
+  ],
+  "1501786": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.90"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "2.00"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.80"
+        }
+      ]
+    }
+  ],
+  "1501787": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -4.75",
+          "odd": "1.92"
+        },
+        {
+          "value": "Away -4.75",
+          "odd": "1.88"
+        }
+      ]
+    }
+  ],
+  "1502117": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.5",
+          "odd": "1.88"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.92"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.85"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "1.95"
+        }
+      ]
+    }
+  ],
+  "1502194": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.25",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.00"
+        }
+      ]
+    }
+  ],
+  "1502884": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +0",
+          "odd": "1.78"
+        },
+        {
+          "value": "Away +0",
+          "odd": "2.02"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away +0.25",
+          "odd": "1.98"
+        }
+      ]
+    }
+  ],
+  "1502885": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Away +0.25",
+          "odd": "1.82"
+        },
+        {
+          "value": "Home +0.25",
+          "odd": "1.98"
+        },
+        {
+          "value": "Away +0.5",
+          "odd": "1.90"
+        },
+        {
+          "value": "Home +0.5",
+          "odd": "1.90"
+        }
+      ]
+    }
+  ],
+  "1502886": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1",
+          "odd": "1.95"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.85"
+        },
+        {
+          "value": "Home -0.75",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "2.00"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.92"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "1.88"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.00"
+        }
+      ]
+    }
+  ],
+  "1503489": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "1.98"
+        },
+        {
+          "value": "Home -1",
+          "odd": "1.98"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.82"
+        }
+      ]
+    }
+  ],
+  "1503491": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home +2.5",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away +2.5",
+          "odd": "1.90"
+        },
+        {
+          "value": "Home +2.75",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away +2.75",
+          "odd": "1.90"
+        },
+        {
+          "value": "Home +4",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away +4",
+          "odd": "1.90"
+        },
+        {
+          "value": "Home +3.5",
+          "odd": "1.95"
+        },
+        {
+          "value": "Away +3.5",
+          "odd": "1.85"
+        },
+        {
+          "value": "Home +4.5",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away +4.5",
+          "odd": "1.98"
+        },
+        {
+          "value": "Home +3.25",
+          "odd": "1.95"
+        },
+        {
+          "value": "Away +3.25",
+          "odd": "1.85"
+        },
+        {
+          "value": "Home +3.75",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away +3.75",
+          "odd": "1.90"
+        },
+        {
+          "value": "Home +4.25",
+          "odd": "1.92"
+        },
+        {
+          "value": "Away +4.25",
+          "odd": "1.88"
+        }
+      ]
+    }
+  ],
+  "1503608": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -0.75",
+          "odd": "1.95"
+        },
+        {
+          "value": "Away -0.75",
+          "odd": "1.85"
+        },
+        {
+          "value": "Home -0.5",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away -0.5",
+          "odd": "2.00"
+        },
+        {
+          "value": "Home -0.25",
+          "odd": "1.80"
+        },
+        {
+          "value": "Away -0.25",
+          "odd": "2.00"
+        }
+      ]
+    }
+  ],
+  "1503610": [
+    {
+      "id": 4,
+      "name": "Asian Handicap",
+      "values": [
+        {
+          "value": "Home -1.25",
+          "odd": "1.90"
+        },
+        {
+          "value": "Away -1.25",
+          "odd": "1.90"
+        },
+        {
+          "value": "Home -1",
+          "odd": "1.82"
+        },
+        {
+          "value": "Away -1",
+          "odd": "1.98"
+        }
+      ]
+    }
+  ]
+}

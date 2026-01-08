@@ -67,7 +67,9 @@ func QueryFixtureOdds(id string) (map[int][]m.Bet, error) {
 
 // fixture date
 func QueryFixtureDate(date string) ([]m.FixtureResponse, error) {
-
+	if date == "" {
+		return nil, fmt.Errorf("date is required (YYYY-MM-DD)")
+	}
 	url := fmt.Sprintf(
 		"https://v3.football.api-sports.io/fixtures?date=%s",
 		date,
@@ -81,6 +83,8 @@ func QueryFixtureDate(date string) ([]m.FixtureResponse, error) {
 	if len(resp.Response) == 0 {
 		return nil, fmt.Errorf("no fixtures found for date %s", date)
 	}
+
+	fmt.Println(" resp.Response", len(resp.Response))
 
 	return resp.Response, nil
 }
