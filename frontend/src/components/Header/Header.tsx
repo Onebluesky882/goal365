@@ -4,11 +4,20 @@ import { useAuth } from "@/GlobalContext/auth-provider";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import ProfileMenu from "./profileMenu";
+import { OrbitProgress } from "react-loading-indicators";
 const Headers = () => {
   const router = useRouter();
   const { session, isLoading } = useAuth();
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <OrbitProgress
+        variant="dotted"
+        color="#32cd32"
+        size="medium"
+        text=""
+        textColor=""
+      />
+    );
   }
   const user = session?.user;
   console.log(user?.name);
