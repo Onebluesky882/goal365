@@ -8,7 +8,7 @@ import (
 	"github.com/uptrace/bun"
 )
 
-func GetBetListsByDate(date string, items []m.MyAnalytics, db *bun.DB, ctx context.Context) ([]m.Bets, error) {
+func GetBetListsByDate(date string, db *bun.DB, items []m.MyAnalytics, ctx context.Context) ([]m.Bets, error) {
 
 	// --- 1️⃣ query analytics ของวันนั้นโดยตรง ---
 	var analyticsItems []m.MyAnalytics

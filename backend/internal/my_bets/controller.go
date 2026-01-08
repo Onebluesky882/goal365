@@ -46,7 +46,7 @@ func GetBetListsByDateHandler(db *bun.DB) fiber.Handler {
 		}
 
 		// 1. Fetch bets for the given date
-		bets, err := GetBetListsByDate(date, analyticsItems, db, ctx)
+		bets, err := GetBetListsByDate(date, db, analyticsItems, ctx)
 		if err != nil {
 			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
 				"error": err.Error(),
