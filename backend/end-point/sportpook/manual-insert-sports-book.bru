@@ -1,17 +1,17 @@
 meta {
-  name: step 1 : get-odds-today
+  name: manual-insert-sports-book
   type: http
   seq: 2
 }
 
 get {
-  url: http://localhost:3009/api/get-odds-today?date=2026-01-13
+  url: http://localhost:3009/api/manual-insert-sports-book?date=2026-01-10
   body: none
   auth: inherit
 }
 
 params:query {
-  date: 2026-01-13
+  date: 2026-01-10
 }
 
 settings {

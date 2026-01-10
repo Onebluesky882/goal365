@@ -23,6 +23,7 @@ var DefaultRetryConfig = RetryConfig{
 }
 
 // Retry ลอง execute function หลายครั้งจนสำเร็จ
+
 func Retry(fn func() error, config RetryConfig) error {
 	var err error
 	delay := config.InitialDelay

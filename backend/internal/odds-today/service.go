@@ -8,6 +8,7 @@ import (
 	m "mytipster/models"
 	"os"
 	"path/filepath"
+	"strconv"
 	"sync"
 	"time"
 
@@ -16,18 +17,22 @@ import (
 
 var oneMillisecond = 100 * time.Millisecond
 
-func processSingleFixtureOdds(fixtureID int) (map[int][]m.Bet, error) {
-	var oddsMap map[int][]m.Bet
+func processSingleFixtureOdds(fixtureID int) ([]m.Bet, error) {
+	var oddsMaps []m.Bookmaker
 	var err error
-	// idStr := strconv.Itoa(fixtureID)
+	idStr := strconv.Itoa(fixtureID)
 
 	// Query odds พร้อม retry
 	err = lib.RetryWithBackoff(func() error {
-		// oddsMap, err = fixtures.QueryFixtureOdds(idStr)
+		oddsMaps, err := fixtures.QueryFixtureOdds(idStr)
+		fmt.Printf("DEBUG fixture %d => %v, err=%v\n", fixtureID, oddsMaps, err)
 		if err != nil {
+			log.Printf("⚠️ fixture %d query error: %v\n", fixtureID, err)
 			return err
 		}
-		if len(oddsMap) == 0 {
+
+		log.Printf("DEBUG fixture %d got oddsMaps count: %d\n", fixtureID, len(oddsMaps))
+		if len(oddsMaps) == 0 {
 			return fmt.Errorf("odds map is empty")
 		}
 		return nil
@@ -37,91 +42,59 @@ func processSingleFixtureOdds(fixtureID int) (map[int][]m.Bet, error) {
 		return nil, fmt.Errorf("odds error for fixture %d: %w", fixtureID, err)
 	}
 
-	return oddsMap, nil
+	// filter
+	filtered := lib.FilterBookmaker(oddsMaps, []string{"Betano"})
+	for _, bm := range filtered {
+		fmt.Println("BOOKMAKER name =>", fmt.Sprintf("[%s]", bm.Name))
+	}
+	oddsFilter := lib.FilterBetType(filtered, []string{"Asian Handicap"})
+	for _, bm := range oddsFilter {
+		fmt.Println("BOOKMAKER oddsFilter =>", fmt.Sprintf("[%s]", bm.Name))
+	}
+	return oddsFilter, nil
 }
 
-func QueryOdds(date string) (map[int][]m.Bet, error) {
-	// ดึง fixture IDs
+func QueryOdds(date string) ([]m.Bet, error) {
 	ids, err := fixtures.GetIds(date)
 	if err != nil {
-		return nil, fmt.Errorf("failed to get fixture IDs: %w", err)
+		return nil, err
 	}
 
-	log.Printf("🚀 เริ่มดึง odds สำหรับ %d fixtures (date: %s)\n", len(ids), date)
-
-	// ใช้ concurrent processing แบบเดียวกับ Predictions
-	const maxConcurrent = 4 // ทำทีละตัวเพื่อหลีกเลี่ยง rate limit
+	const maxConcurrent = 4
 	sem := make(chan struct{}, maxConcurrent)
 
-	var mu sync.Mutex
-	result := make(map[int][]m.Bet)
-	var wg sync.WaitGroup
+	var (
+		mu     sync.Mutex
+		result []m.Bet
+		wg     sync.WaitGroup
+	)
 
-	successCount := 0
-	errorCount := 0
-
-	var failedFixturesMu sync.Mutex
-	failedFixtures := make([]int, 0)
 	for i, fixtureID := range ids {
 		wg.Add(1)
+		defer wg.Done()
 		go func(id int, idx int) {
-			defer wg.Done()
 
-			// Rate limiting
 			sem <- struct{}{}
 			defer func() { <-sem }()
 
-			log.Printf("⏳ [%d/%d] Processing id : fixture %d \n", idx+1, len(ids), id)
+			log.Printf("⏳ [%d/%d] fixture %d\n", idx+1, len(ids), id)
 
-			// Process with retry
-			oddsMap, err := processSingleFixtureOdds(id)
-
-			mu.Lock()
-			defer mu.Unlock()
-
+			bets, err := processSingleFixtureOdds(id)
 			if err != nil {
-				errorCount++
-				log.Printf("❌ [%d/%d] Failed fixture %d: %v\n",
-					idx+1, len(ids), id, err,
-				)
-				failedFixturesMu.Lock()
-				failedFixtures = append(failedFixtures, id)
-				failedFixturesMu.Unlock()
-
+				log.Printf("❌ fixture %d error: %v\n", id, err)
 				return
 			}
 
-			// Merge odds data
-			for k, bets := range oddsMap {
-				result[k] = append(result[k], bets...)
-			}
+			mu.Lock()
+			result = append(result, bets...) // ✅ merge slice
+			mu.Unlock()
 
-			successCount++
-			log.Printf("✅ [%d/%d] Success fixture %d (%d bet types)\n",
-				idx+1, len(ids), id, len(oddsMap))
 		}(fixtureID, i)
 
-		// Rate limiting between goroutine starts
 		time.Sleep(oneMillisecond)
 	}
 
-	// รอให้ทุก goroutine เสร็จ
 	wg.Wait()
-
-	if len(failedFixtures) > 0 {
-		errFile := "error_query_odds.json"
-		if err := lib.WriteJSONWithCustomDate(date, errFile, failedFixtures); err != nil {
-			log.Println("❌ write error_query_odds.json failed:", err)
-		} else {
-			log.Printf("🧾 wrote %d failed fixtures to %s\n",
-				len(failedFixtures), errFile)
-		}
-	}
-	log.Printf("\n📊 สรุปผลลัพธ์:\n")
-	log.Printf("   ✅ สำเร็จ: %d\n", successCount)
-	log.Printf("   ❌ ล้มเหลว: %d\n", errorCount)
-	log.Printf("   📦 รวมทั้งหมด: %d fixtures with odds\n\n", len(result))
-
 	return result, nil
 }
 
@@ -162,11 +135,6 @@ func GetOddsToday(c *fiber.Ctx) error {
 
 	// --- บันทึก failed fixtures ---
 	var failedFixtures []int
-	for id, bets := range result {
-		if len(bets) == 0 {
-			failedFixtures = append(failedFixtures, id)
-		}
-	}
 
 	if len(failedFixtures) > 0 {
 		if err := lib.WriteJSON(errFile, failedFixtures); err != nil {

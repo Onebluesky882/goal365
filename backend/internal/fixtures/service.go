@@ -23,6 +23,22 @@ func GetIds(date string) ([]int, error) {
 	return result, nil
 }
 
+func GetIdsWithFilterCountry(date string, countries []string) ([]int, error) {
+	var result = make([]int, 0)
+
+	resp, err := QueryFixtureDate(date)
+	if err != nil {
+		return nil, err
+	}
+
+	for _, fx := range resp {
+		if lib.FilterCountry(&fx, countries) {
+			result = append(result, fx.FixtureInfo.ID)
+		}
+	}
+	return result, err
+}
+
 // fixture by id
 func QueryFixtureId(id string) (*m.FixtureResponse, error) {
 

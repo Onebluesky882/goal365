@@ -19,11 +19,11 @@ type FixturePaging struct {
 }
 
 type FixtureResponse struct {
-	FixtureInfo FixtureInfo `json:"fixture"`
-	League      League      `json:"league"`
-	Teams       Teams       `json:"teams"`
-	Goals       Goals       `json:"goals"`
-	Score       Score       `json:"score"`
+	FixtureInfo FixtureInfo   `json:"fixture"`
+	League      FixtureLeague `json:"league"`
+	Teams       Teams         `json:"teams"`
+	Goals       Goals         `json:"goals"`
+	Score       Score         `json:"score"`
 }
 type FixtureInfo struct {
 	ID        int     `json:"id"`

@@ -2,8 +2,10 @@ package database
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"mytipster/models"
+	"time"
 
 	"github.com/uptrace/bun"
 )
@@ -46,4 +48,22 @@ func CreateTables(ctx context.Context, db *bun.DB) error {
 	}
 
 	return nil
+}
+
+func EnsurePartition(ctx context.Context, db *bun.DB, date time.Time) error {
+	if date.IsZero() {
+		return fmt.Errorf("match_date is zero (0001-01-01), cannot create partition")
+	}
+
+	from := date.Format("2006-01-02")
+	to := date.AddDate(0, 0, 1).Format("2006-01-02")
+	table := fmt.Sprintf("sportsbooks_%s", date.Format("2006_01_02"))
+
+	_, err := db.ExecContext(ctx, fmt.Sprintf(`
+		CREATE TABLE IF NOT EXISTS %s
+		PARTITION OF sportsbooks
+		FOR VALUES FROM ('%s') TO ('%s');
+	`, table, from, to))
+
+	return err
 }
