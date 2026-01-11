@@ -32,7 +32,10 @@ func WithContext(ctx context.Context) *bun.DB {
 
 func CreateTables(ctx context.Context, db *bun.DB) error {
 	models := []interface{}{
-		(*models.MyAnalytics)(nil),
+		// (*models.Player)(nil),
+		// (*models.Transaction)(nil),
+		(*models.BetTransaction)(nil),
+		// (*models.MyAnalytics)(nil),
 		// (*models.NaWinTatips)(nil),
 		// (*models.Bets)(nil),
 		// (*models.TipsDaily)(nil),

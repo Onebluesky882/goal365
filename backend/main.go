@@ -4,6 +4,7 @@ import (
 	"context"
 	"log"
 	"mytipster/internal/analytics"
+	betstransections "mytipster/internal/bets-transections"
 	"mytipster/internal/database"
 	"mytipster/internal/fixtures"
 	"mytipster/internal/sportbook"
@@ -47,6 +48,9 @@ func main() {
 
 	// market auth
 	sportbook.RegisterRoutes(app, db)
+
+	// transaction
+	betstransections.RegisterRoutes(app, db)
 
 	port := os.Getenv("PORT")
 

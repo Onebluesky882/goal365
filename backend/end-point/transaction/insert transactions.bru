@@ -1,0 +1,39 @@
+meta {
+  name: insert transactions
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3009/api/bet-slips
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "player_id": "550e8400-e29b-41d4-a716-446655440000",
+    "type": "BET",
+    "bets": [
+      {
+        "fixture_id": 12345,
+        "market": "Match Winner",
+        "selection": "Home",
+        "odds": 1.95,
+        "amount": 500
+      },
+      {
+        "fixture_id": 12346,
+        "market": "Over/Under",
+        "selection": "Over 2.5",
+        "odds": 1.85,
+        "amount": 500
+      }
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
