@@ -19,7 +19,9 @@ func NewTransaction(db *bun.DB) *TransactionService {
 	}
 }
 
-func (s *TransactionService) InsertTransaction(ctx context.Context, body CreateTransactionRequest) (*models.Transaction, error) {
+var req models.CreateTransactionRequest
+
+func (s *TransactionService) InsertTransaction(ctx context.Context, body models.CreateTransactionRequest) (*models.Transaction, error) {
 	playerID := body.PlayerId
 	bets := body.Bets
 	if len(bets) == 0 {

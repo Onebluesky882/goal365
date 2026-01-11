@@ -10,26 +10,28 @@ import (
 type Player struct {
 	bun.BaseModel `bun:"table:players,alias:p"`
 	ID            uuid.UUID `bun:"id,pk,type:uuid,default:gen_random_uuid()"`
-	PlayerNo      string    `bun:"player_no,notnull,unique"`
+	PlayerNo      int64     `bun:"player_no,notnull,unique,default:0"`
+	Name          string    `bun:"name"`
+	Bio           string    `bun:"bio"`
 	Wallet        int64     `bun:"wallet,notnull,default:0"`
 	Locked        int64     `bun:"locked,notnull,default:0"`
 	Level         int64     `bun:"level,default:0"`
+	Exp           int64     `bun:"exp"`
 	// fk
-	UserId uuid.UUID `bun:"user_id,type:uuid,notnull,unique"`
+	UserId string `bun:"user_id,notnull"`
 
 	// ---------- Relations ----------
-	User         *User         `bun:"rel:belongs-to,join:user_id=id"`
+	User         *User         `bun:"rel:belongs-to,join:user_id=id" json:"-"`
 	Transactions []Transaction `bun:"rel:has-many,join:id=player_id"`
 	CreatedAt    time.Time     `bun:"created_at,default:now()"`
 	UpdatedAt    time.Time     `bun:"updated_at,nullzero"`
 }
 
 type User struct {
-	bun.BaseModel `bun:"table:user,alias:u"`
-	ID            uuid.UUID `bun:"id,pk,type:uuid"`
-	Email         string    `bun:"email,notnull,unique"`
-
-	Player *Player `bun:"rel:has-one,join:id=user_id"`
+	bun.BaseModel `bun:"table:user"`
+	ID            string   `bun:"id,pk"`
+	Email         string   `bun:"email,notnull,unique"`
+	Players       []Player `bun:"rel:has-many,join:id=user_id"`
 }
 
 /*
@@ -81,4 +83,17 @@ type BetTransaction struct {
 	UpdatedAt time.Time `bun:"updated_at,nullzero"`
 
 	Transaction *Transaction `bun:"rel:belongs-to,join:transaction_id=id"`
+}
+
+type CreateTransactionRequest struct {
+	PlayerId uuid.UUID        `json:"player_id"`
+	Bets     []BetTransaction `json:"bets"`
+}
+
+type CreatePlayerRequest struct {
+	Name     string `bun:"name" json:"name"`
+	PlayerNo int64  `bun:"player_no,notnull,unique"`
+	Wallet   int64  `bun:"wallet,notnull,default:0"`
+	UserID   string `bun:"user_id" json:"user_id"`
+	// fk
 }

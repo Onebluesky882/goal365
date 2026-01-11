@@ -4,18 +4,12 @@ import (
 	"mytipster/models"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/google/uuid"
 )
-
-type CreateTransactionRequest struct {
-	PlayerId uuid.UUID               `json:"player_id"`
-	Bets     []models.BetTransaction `json:"bets"`
-}
 
 func InsertTransactionHandler(service *TransactionService) fiber.Handler {
 
 	return func(c *fiber.Ctx) error {
-		var req CreateTransactionRequest
+		var req models.CreateTransactionRequest
 		if err := c.BodyParser(&req); err != nil {
 			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 				"error": "invalid request body",

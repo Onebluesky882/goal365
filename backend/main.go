@@ -7,6 +7,7 @@ import (
 	betstransections "mytipster/internal/bets-transections"
 	"mytipster/internal/database"
 	"mytipster/internal/fixtures"
+	player "mytipster/internal/players"
 	"mytipster/internal/sportbook"
 	"mytipster/internal/tipsdaily"
 	"os"
@@ -51,6 +52,9 @@ func main() {
 
 	// transaction
 	betstransections.RegisterRoutes(app, db)
+
+	// player
+	player.RegisterRoutes(app, db)
 
 	port := os.Getenv("PORT")
 
