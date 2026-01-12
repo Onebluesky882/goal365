@@ -14,9 +14,10 @@ type Player struct {
 	Name          string    `bun:"name"`
 	Bio           string    `bun:"bio"`
 	Wallet        int64     `bun:"wallet,notnull,default:0"`
-	Locked        int64     `bun:"locked,notnull,default:0"`
 	Level         int64     `bun:"level,default:0"`
 	Exp           int64     `bun:"exp"`
+	WalletLocked  int64     `bun:"wallet_locked"`        // เงินที่ถูกกันไว้
+	Locked        bool      `bun:"locked,default:false"` // lock account (fraud/admin)
 	// fk
 	UserId string `bun:"user_id,notnull"`
 
@@ -46,31 +47,38 @@ type User struct {
 	•	🔄 retry-safe settlement
 	•	📊 report / statement
 
+2. Transaction Boundary
 
-
+คุณเริ่มถาม BeginTx แล้ว 👍
+ขั้นต่อไปคือ:
+	•	atomic insert (transaction + bets)
+	•	rollback on error
+	•	balance consistency
 */
 
 type Transaction struct {
 	bun.BaseModel `bun:"table:transactions"`
 
-	ID           uuid.UUID `bun:"id,pk,type:uuid,default:gen_random_uuid()"`
-	PlayerId     uuid.UUID `bun:"player_id,type:uuid,notnull"`
-	Type         string    `bun:"type,notnull"` // BET, WIN, REFUND, VOID
-	Total        int64     `bun:"total_amount,notnull"`
-	BalanceAfter int64     `bun:"balance_after,notnull"`
-	Status       string    `bun:"status,notnull,default:'PENDING'"`
-
-	Bets []BetTransaction `bun:"rel:has-many,join:id=transaction_id"`
-
-	CreatedAt time.Time `bun:"created_at,default:now()"`
-	UpdatedAt time.Time `bun:"updated_at,nullzero"`
+	ID           uuid.UUID        `bun:"id,pk,type:uuid,default:gen_random_uuid()"`
+	BillId       int64            `bun:"bill_id"`
+	PlayerId     uuid.UUID        `bun:"player_id,type:uuid,notnull"`
+	Type         string           `bun:"type,notnull"` // BET, WIN, REFUND, VOID
+	Total        int64            `bun:"total_amount,notnull"`
+	BalanceAfter int64            `bun:"balance_after,notnull"`
+	Status       string           `bun:"status,notnull,default:'PENDING'"`
+	MixParlay    bool             `bun:"mix_parlay,notnull,default:false"`
+	Bets         []BetTransaction `bun:"rel:has-many,join:id=transaction_id"`
+	Settled      bool             `bun:"settled,default:false"`
+	CreatedAt    time.Time        `bun:"created_at,default:now()"`
+	UpdatedAt    time.Time        `bun:"updated_at,nullzero"`
 }
 
 type BetTransaction struct {
 	bun.BaseModel `bun:"table:bets"`
 
 	ID            int64     `bun:"id,pk"`
-	TransactionID uuid.UUID `bun:"transaction_id,type:uuid,notnull"` // FK -> Transaction.ID
+	BetId         int64     `bun:"bet_id"`
+	TransactionID uuid.UUID `bun:"transaction_id,type:uuid,notnull,on_delete:cascade "` // FK -> Transaction.ID
 	FixtureID     int       `bun:"fixture_id,notnull"`
 	Market        string    `bun:"market,notnull"`
 	Selection     string    `bun:"selection,notnull"`
@@ -78,11 +86,18 @@ type BetTransaction struct {
 	Amount        int64     `bun:"amount,notnull"`
 	Result        string    `bun:"result"` // WIN | LOSE | VOID
 	Status        string    `bun:"status,notnull,default:'PENDING'"`
-
-	CreatedAt time.Time `bun:"created_at,default:now()"`
-	UpdatedAt time.Time `bun:"updated_at,nullzero"`
+	Settled       bool      `bun:"settled,default:false"`
+	CreatedAt     time.Time `bun:"created_at,default:now()"`
+	UpdatedAt     time.Time `bun:"updated_at,nullzero"`
 
 	Transaction *Transaction `bun:"rel:belongs-to,join:transaction_id=id"`
+}
+
+type UpdateTransactionRequest struct {
+	BillId   int64     `json:"bill_id"`
+	PlayerId uuid.UUID `json:"player_id"`
+
+	Bets []BetTransaction `json:"bets"`
 }
 
 type CreateTransactionRequest struct {
@@ -96,4 +111,13 @@ type CreatePlayerRequest struct {
 	Wallet   int64  `bun:"wallet,notnull,default:0"`
 	UserID   string `bun:"user_id" json:"user_id"`
 	// fk
+}
+
+type UpdatePlayerRequest struct {
+	Name string `json:"name" validate:"required"`
+}
+
+type SetWalletRequest struct {
+	PlayerId uuid.UUID `json:"player_id" validate:"required"`
+	Amount   int64     `json:"amount" validate:"required"`
 }

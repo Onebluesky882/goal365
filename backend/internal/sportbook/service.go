@@ -21,6 +21,10 @@ type SportBook struct {
 	db *bun.DB
 }
 
+
+
+
+
 func NewSportBook(db *bun.DB) *SportBook {
 	return &SportBook{
 		db: db,
@@ -29,7 +33,7 @@ func NewSportBook(db *bun.DB) *SportBook {
 
 func GetMarketOdds(date string) ([]models.SportsBook, error) {
 
-	ids, err := fixtures.GetIdsWithFilterCountry(date, []string{"England"})
+	ids, err := fixtures.GetIdsWithFilterCountry(date, []string{})
 	if len(ids) == 0 {
 		log.Println("⚠️ No fixtures after country filter")
 		return []models.SportsBook{}, nil
@@ -137,8 +141,6 @@ func GetMarketOdds(date string) ([]models.SportsBook, error) {
 
 	log.Printf("✅ JSON written successfully (%d records)", len(markets))
 	// insert db
-
- 
 
 	return markets, nil
 }

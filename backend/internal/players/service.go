@@ -18,6 +18,25 @@ func NewPlayer(db *bun.DB) *PlayerService {
 	}
 }
 
+// todo insert log
+
+func (s *PlayerService) LogPlayerLogin(
+	ctx context.Context,
+	req *models.PlayerLoginLogRequest,
+	ip string,
+	userAgent string,
+) error {
+
+	_, err := s.db.NewInsert().
+		Model(&models.PlayerLoginLog{
+			PlayerID:  req.PlayerID,
+			IPAddress: ip,
+			UserAgent: userAgent,
+		}).
+		Exec(ctx)
+
+	return err
+}
 func (s *PlayerService) CreatePlayer(
 	ctx context.Context,
 	name string,
@@ -34,11 +53,28 @@ func (s *PlayerService) CreatePlayer(
 
 	_, err := s.db.NewInsert().
 		Model(&player).
-		Where("user_id = ?", userID).
 		Exec(ctx)
 
 	if err != nil {
 		return nil, err
 	}
 	return &player, err
+}
+
+func (s *PlayerService) updateProfile(ctx context.Context, p *models.Player) error {
+	_, err := s.db.NewUpdate().
+		Model(p).
+		Column("name", "bio", "updated_at").
+		Where("id = ?", p.ID).
+		Exec(ctx)
+	return err
+}
+
+func (s *PlayerService) updateLevel(ctx context.Context, p *models.Player) error {
+	_, err := s.db.NewUpdate().
+		Model(p).
+		Column("level", "exp", "updated_at").
+		Where("id = ?", p.ID).
+		Exec(ctx)
+	return err
 }

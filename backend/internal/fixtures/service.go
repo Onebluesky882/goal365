@@ -32,11 +32,11 @@ func GetIdsWithFilterCountry(date string, countries []string) ([]int, error) {
 	}
 
 	for _, fx := range resp {
-		if lib.FilterCountry(&fx, countries) {
+		if len(countries) == 0 || lib.FilterCountry(&fx, countries) {
 			result = append(result, fx.FixtureInfo.ID)
 		}
 	}
-	return result, err
+	return result, nil
 }
 
 // fixture by id

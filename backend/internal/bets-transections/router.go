@@ -9,6 +9,7 @@ func RegisterRoutes(app *fiber.App, db *bun.DB) {
 	svc := NewTransaction(db)
 	api := app.Group("/api")
 
+	api.Get("/bill", getTransactionHandler(svc))
 	api.Post("/bet-slips", InsertTransactionHandler(svc))
 
 }

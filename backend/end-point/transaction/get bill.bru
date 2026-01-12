@@ -1,18 +1,18 @@
 meta {
-  name: insert transactions
+  name: get bill
   type: http
-  seq: 1
+  seq: 2
 }
 
-post {
-  url: http://localhost:3009/api/bet-slips
+get {
+  url: http://localhost:3009/api/bill
   body: json
   auth: inherit
 }
 
 body:json {
   {
-    "player_id": "cfb2ccdc-e970-4392-99e0-421468496c13",
+    "player_id": "1947cc32-5b98-44e6-92de-095ebcac1e80",
     "type": "BET",
     "bets": [
       {
@@ -20,14 +20,14 @@ body:json {
         "market": "Match Winner",
         "selection": "Home",
         "odds": 1.95,
-        "amount": 5100
+        "amount": 500
       },
       {
         "fixture_id": 12346,
         "market": "Over/Under",
         "selection": "Over 2.5",
         "odds": 1.85,
-        "amount": 12229500
+        "amount": 500
       }
     ]
   }
