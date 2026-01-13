@@ -28,8 +28,6 @@ export default function SignUpPage() {
         password,
       });
 
-      console.log("Signup success:", res.data?.user);
-
       // optional: auto login แล้ว redirect
       // router.push("/");
 

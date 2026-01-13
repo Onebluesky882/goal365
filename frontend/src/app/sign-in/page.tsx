@@ -1,12 +1,12 @@
 "use client";
 
-import LoginForm from "@/components/LoginForm";
+import AuthForm from "@/components/LoginForm";
 import React from "react";
 
 const page = () => {
   return (
     <div>
-      <LoginForm />
+      <AuthForm />
     </div>
   );
 };

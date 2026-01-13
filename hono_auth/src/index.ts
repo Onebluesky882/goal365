@@ -58,18 +58,17 @@ app.post("/api/auth/sign-in", async (c) => {
     if (playerId) {
       await logLoginToGo(c, playerId);
     }
+    console.log("Player logged in, playerId:", playerId);
   }
 
   return res;
 });
-
 console.log(`🚀 Server running on http://localhost:${port}`);
 
 export default {
   port,
   fetch: app.fetch,
 };
-
 
 async function logLoginToGo(c: any, playerId: string) {
   const ip =

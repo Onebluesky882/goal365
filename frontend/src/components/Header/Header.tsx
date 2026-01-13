@@ -4,24 +4,15 @@ import { useAuth } from "@/GlobalContext/auth-provider";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import ProfileMenu from "./profileMenu";
-import { OrbitProgress } from "react-loading-indicators";
+import LoadingIndicators from "../Loading_indicators";
 const Headers = () => {
   const router = useRouter();
   const { session, isLoading } = useAuth();
   if (isLoading) {
-    return (
-      <OrbitProgress
-        variant="dotted"
-        color="#32cd32"
-        size="medium"
-        text=""
-        textColor=""
-      />
-    );
+    return <LoadingIndicators />;
   }
   const user = session?.user;
-  console.log(user?.name);
-  const credit = `100,000`;
+
   return (
     <>
       <div className="bg-web-bg-dark border-b border-web-primary-dark shadow-md">
@@ -45,29 +36,7 @@ const Headers = () => {
             </nav>
           </div>
 
-          <div className="flex items-center justify-end space-x-4   rounded-xl shadow-md w-full max-w-md">
-            {/* Balance Section */}
-            <div className="flex flex-col items-end">
-              {user ? (
-                <>
-                  <span className="text-sm  text-custom-gray ">
-                    ยอดเงินคงเหลือ
-                  </span>
-                  <p className="text-xl font-bold  text-custom-gray ">{`${credit} บาท`}</p>
-                </>
-              ) : (
-                <span
-                  onClick={() => router.push("/free-bet")}
-                  className="italic text-gray-400 text-sm cursor-pointer"
-                >
-                  รับเครดิตฟรี
-                </span>
-              )}
-            </div>
-
-            {/* Divider */}
-            <div className="w-px h-10 bg-gray-300" />
-
+          <div className="flex items-center justify-end space-x-4 w-full max-w-md">
             {/* User Info or Join Button */}
             <div className="flex flex-col items-start">
               {user ? (

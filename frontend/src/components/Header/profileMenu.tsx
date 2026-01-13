@@ -11,16 +11,25 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { authClient } from "@/lib/auth-client";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const ProfileMenu = ({ name }: { name: string }) => {
+  const router = useRouter();
+  const handleSignOut = () => {
+    authClient.signOut();
+    router.push("/");
+  };
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <div>{name}</div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="" align="start">
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuGroup>
+          <DropdownMenuItem>
+            <Link href={"/players"}>DashBoard</Link>
+          </DropdownMenuItem>
           <DropdownMenuItem>Profile</DropdownMenuItem>
           <DropdownMenuItem>History</DropdownMenuItem>
           <DropdownMenuItem>Settings</DropdownMenuItem>
@@ -28,9 +37,7 @@ const ProfileMenu = ({ name }: { name: string }) => {
 
         <DropdownMenuItem>Support</DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => authClient.signOut()}>
-          Log out
-        </DropdownMenuItem>
+        <DropdownMenuItem onClick={handleSignOut}>Log out</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
