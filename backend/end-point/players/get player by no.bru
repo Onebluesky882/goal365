@@ -1,0 +1,20 @@
+meta {
+  name: get player by no
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:3009/api/player?player_no=1811883807
+  body: json
+  auth: inherit
+}
+
+params:query {
+  player_no: 1811883807
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

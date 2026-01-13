@@ -13,7 +13,8 @@ func RegisterRoutes(app *fiber.App, db *bun.DB) {
 	api := app.Group("/api")
 
 	// 🌍 Public API (frontend เรียกได้)
-	api.Get("/players", getPlayer(svc))
+	api.Get("/player", getPlayersByNoHandler(svc))
+	api.Get("/players", getPlayersHandler(svc))
 	api.Post("/new-player", createPlayerHandler(svc))
 
 	// 🔒 Internal API (backend → backend)

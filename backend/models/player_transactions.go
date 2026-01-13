@@ -9,24 +9,26 @@ import (
 
 type Player struct {
 	bun.BaseModel `bun:"table:players,alias:p"`
-	ID            uuid.UUID `bun:"id,pk,type:uuid,default:gen_random_uuid()"`
-	PlayerNo      int64     `bun:"player_no,notnull,unique,default:0"`
-	Name          string    `bun:"name"`
-	Bio           string    `bun:"bio"`
-	ImageUrl      string    `bun:"image_url"`
-	Wallet        int64     `bun:"wallet,notnull,default:0"`
-	Level         int64     `bun:"level,default:0"`
-	Exp           int64     `bun:"exp"`
-	WalletLocked  int64     `bun:"wallet_locked"`        // เงินที่ถูกกันไว้
-	Locked        bool      `bun:"locked,default:false"` // lock account (fraud/admin)
-	// fk
-	UserId string `bun:"user_id,notnull"`
+
+	ID           uuid.UUID `bun:"id,pk,type:uuid,default:gen_random_uuid()" json:"id"`
+	PlayerNo     int64     `bun:"player_no,notnull,unique,default:0" json:"playerNo"`
+	Name         string    `bun:"name" json:"name"`
+	Bio          string    `bun:"bio" json:"bio"`
+	ImageUrl     string    `bun:"image_url" json:"imageUrl"`
+	Wallet       int64     `bun:"wallet,notnull,default:0" json:"wallet"`
+	Level        int64     `bun:"level,default:0" json:"level"`
+	Exp          int64     `bun:"exp" json:"exp"`
+	WalletLocked int64     `bun:"wallet_locked" json:"walletLocked"`  // เงินที่กันไว้
+	Locked       bool      `bun:"locked,default:false" json:"locked"` // lock account
+
+	UserId string `bun:"user_id,notnull" json:"userId"`
 
 	// ---------- Relations ----------
 	User         *User         `bun:"rel:belongs-to,join:user_id=id" json:"-"`
-	Transactions []Transaction `bun:"rel:has-many,join:id=player_id"`
-	CreatedAt    time.Time     `bun:"created_at,default:now()"`
-	UpdatedAt    time.Time     `bun:"updated_at,nullzero"`
+	Transactions []Transaction `bun:"rel:has-many,join:id=player_id" json:"transactions,omitempty"`
+
+	CreatedAt time.Time `bun:"created_at,default:now()" json:"createdAt"`
+	UpdatedAt time.Time `bun:"updated_at,nullzero" json:"updatedAt"`
 }
 
 type User struct {
@@ -108,10 +110,10 @@ type CreateTransactionRequest struct {
 
 type CreatePlayerRequest struct {
 	Name     string `bun:"name" json:"name"`
+	Bio      string `bun:"bio" json:"bio"`
 	PlayerNo int64  `bun:"player_no,notnull,unique"`
 	Wallet   int64  `bun:"wallet,notnull,default:0"`
 	UserID   string `bun:"user_id" json:"user_id"`
-	// fk
 }
 
 type UpdatePlayerRequest struct {

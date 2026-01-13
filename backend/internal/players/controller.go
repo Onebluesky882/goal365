@@ -16,7 +16,7 @@ func createPlayerHandler(service *PlayerService) fiber.Handler {
 		}
 		ctx := c.Context()
 
-		player, err := service.CreatePlayer(ctx, req.Name, req.UserID)
+		player, err := service.createPlayer(ctx, req.Name, req.Bio, req.UserID)
 		if err != nil {
 			return c.Status(500).JSON(fiber.Map{
 				"error": err.Error(),
@@ -61,11 +61,38 @@ func playerLoginLogsHandler(service *PlayerService) fiber.Handler {
 
 }
 
-func getPlayer(s *PlayerService) fiber.Handler {
-	var req models.PlayerLoginRequest
+func getPlayersHandler(s *PlayerService) fiber.Handler {
 	return func(c *fiber.Ctx) error {
-		c.BodyParser(&req)
-		res, err := s.getPlayers(c.Context(), req.UserId)
+		userId := c.Query("user_id")
+		if userId == "" {
+			return c.Status(400).JSON(fiber.Map{
+				"error": "userId is required",
+			})
+		}
+
+		res, err := s.getPlayers(c.Context(), userId)
+		if err != nil {
+
+			return c.Status(500).JSON(fiber.Map{
+				"error": err.Error(),
+			})
+		}
+
+		return c.Status(201).JSON(res)
+	}
+}
+func getPlayersByNoHandler(s *PlayerService) fiber.Handler {
+	return func(c *fiber.Ctx) error {
+
+		playerNo := c.Query("player_no")
+
+		if playerNo == "" {
+			return c.Status(400).JSON(fiber.Map{
+				"error": "playerNo is required",
+			})
+		}
+
+		res, err := s.getPlayerByNo(c.Context(), playerNo)
 		if err != nil {
 
 			return c.Status(500).JSON(fiber.Map{

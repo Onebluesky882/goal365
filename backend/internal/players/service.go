@@ -37,26 +37,39 @@ func (s *PlayerService) LogPlayerLogin(
 }
 
 func (s *PlayerService) getPlayers(ctx context.Context, userId string) ([]models.Player, error) {
-	var players []models.Player
+	players := make([]models.Player, 0)
 	err := s.db.NewSelect().
 		Model(&players).
 		Where("user_id = ?", userId).
 		Scan(ctx)
-	if err != nil {
-		return nil, err
-	}
+
 	return players, err
 }
 
-func (s *PlayerService) CreatePlayer(
+func (s *PlayerService) getPlayerByNo(ctx context.Context, playerNo string) (*models.Player, error) {
+	var player models.Player
+	err := s.db.NewSelect().
+		Model(&player).
+		Where("player_no = ?", playerNo).
+		Limit(1).
+		Scan(ctx)
+	if err != nil {
+		return nil, err
+	}
+	return &player, nil
+}
+
+func (s *PlayerService) createPlayer(
 	ctx context.Context,
 	name string,
+	bio string,
 	userID string,
 ) (*models.Player, error) {
 
 	player := models.Player{
 		UserId:   userID,
 		Name:     name,
+		Bio:      bio,
 		PlayerNo: common.Random10Digit(),
 		Wallet:   100000,
 		Level:    1,

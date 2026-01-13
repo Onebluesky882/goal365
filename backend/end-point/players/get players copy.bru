@@ -1,0 +1,20 @@
+meta {
+  name: get players copy
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:3009/api/players?user_id=yTMWopjDkQHULZLcMp1VUMsIo97RU6jI
+  body: json
+  auth: inherit
+}
+
+params:query {
+  user_id: yTMWopjDkQHULZLcMp1VUMsIo97RU6jI
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
