@@ -1,10 +1,10 @@
+import Players from "@/pre-load/Players";
 import React from "react";
-// import LoginLine from '@/components/Line/LineLogin';
 
 const page = () => {
   return (
     <div>
-      {/* <LoginLine /> */}
+      <Players />
     </div>
   );
 };
