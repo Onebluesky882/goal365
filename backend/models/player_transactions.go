@@ -13,6 +13,7 @@ type Player struct {
 	PlayerNo      int64     `bun:"player_no,notnull,unique,default:0"`
 	Name          string    `bun:"name"`
 	Bio           string    `bun:"bio"`
+	ImageUrl      string    `bun:"image_url"`
 	Wallet        int64     `bun:"wallet,notnull,default:0"`
 	Level         int64     `bun:"level,default:0"`
 	Exp           int64     `bun:"exp"`

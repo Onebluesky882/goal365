@@ -11,9 +11,10 @@ func RegisterRoutes(app *fiber.App, db *bun.DB) {
 	svc := NewPlayer(db)
 	api := app.Group("/api", middleware.InternalOnly)
 
-	api.Post("/new-player", CreatePlayerHandler(svc))
+	api.Post("/new-player", createPlayerHandler(svc))
 	api.Post(
 		"/player/login-log",
-		PlayerLoginLogsHandler(svc),
+		playerLoginLogsHandler(svc),
 	)
+	api.Get("/players", getPlayer(svc))
 }

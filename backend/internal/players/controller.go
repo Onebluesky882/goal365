@@ -6,7 +6,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func CreatePlayerHandler(service *PlayerService) fiber.Handler {
+func createPlayerHandler(service *PlayerService) fiber.Handler {
 	return func(c *fiber.Ctx) error {
 		var req models.CreatePlayerRequest
 		if err := c.BodyParser(&req); err != nil {
@@ -28,7 +28,7 @@ func CreatePlayerHandler(service *PlayerService) fiber.Handler {
 	}
 }
 
-func PlayerLoginLogsHandler(service *PlayerService) fiber.Handler {
+func playerLoginLogsHandler(service *PlayerService) fiber.Handler {
 	return func(c *fiber.Ctx) error {
 
 		var req models.PlayerLoginLogRequest
@@ -49,6 +49,7 @@ func PlayerLoginLogsHandler(service *PlayerService) fiber.Handler {
 		)
 
 		if err != nil {
+
 			return c.Status(500).JSON(fiber.Map{
 				"error": err.Error(),
 			})
@@ -59,4 +60,19 @@ func PlayerLoginLogsHandler(service *PlayerService) fiber.Handler {
 	}
 
 }
- 
+
+func getPlayer(s *PlayerService) fiber.Handler {
+	var req models.PlayerLoginRequest
+	return func(c *fiber.Ctx) error {
+		c.BodyParser(&req)
+		res, err := s.getPlayers(c.Context(), req.UserId)
+		if err != nil {
+
+			return c.Status(500).JSON(fiber.Map{
+				"error": err.Error(),
+			})
+		}
+
+		return c.Status(201).JSON(res)
+	}
+}

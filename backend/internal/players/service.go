@@ -18,8 +18,6 @@ func NewPlayer(db *bun.DB) *PlayerService {
 	}
 }
 
-// todo insert log
-
 func (s *PlayerService) LogPlayerLogin(
 	ctx context.Context,
 	req *models.PlayerLoginLogRequest,
@@ -37,6 +35,19 @@ func (s *PlayerService) LogPlayerLogin(
 
 	return err
 }
+
+func (s *PlayerService) getPlayers(ctx context.Context, userId string) ([]models.Player, error) {
+	var players []models.Player
+	err := s.db.NewSelect().
+		Model(&players).
+		Where("user_id = ?", userId).
+		Scan(ctx)
+	if err != nil {
+		return nil, err
+	}
+	return players, err
+}
+
 func (s *PlayerService) CreatePlayer(
 	ctx context.Context,
 	name string,

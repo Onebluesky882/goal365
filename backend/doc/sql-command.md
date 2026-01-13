@@ -45,13 +45,6 @@ WHERE transaction_id = 'd42151a6-a958-4a9a-880d-8bbd47c1e87d';
  DROP CONSTRAINT bets_transaction_id_fkey;
 
 
--- ถ้าลบ transaction ก็ลบ bets auto
-ALTER TABLE bets
-ADD CONSTRAINT bets_transaction_id_fkey
-FOREIGN KEY (transaction_id)
-REFERENCES transactions(id)
-ON DELETE CASCADE;
-
 
 -- make index
 -- CREATE INDEX idx_bets_transaction_created_at
@@ -86,5 +79,19 @@ ON sportsbooks (country, match_date);
 --  2.4 Index สำหรับ fx_id (ถ้ามาจาก feed ภายนอก)
 CREATE UNIQUE INDEX idx_sportsbooks_fx_id_match_date
 ON sportsbooks (fx_id, match_date);
+
+
+--เพิ่ม คอลั่่ม
+ALTER TABLE Players
+ADD COLUMN image_url TEXT;
+
+-- สร้าง CASCADE
+-- ถ้าลบ transaction ก็ลบ bets auto
+ALTER TABLE bets
+ADD CONSTRAINT bets_transaction_id_fkey
+FOREIGN KEY (transaction_id)
+REFERENCES transactions(id)
+ON DELETE CASCADE;
+
 
 ```
