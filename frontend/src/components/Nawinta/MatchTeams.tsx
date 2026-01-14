@@ -13,16 +13,22 @@ export default function MatchTeams({ teams }: Props) {
   if (!teams) return null;
 
   return (
-    <div className="grid grid-cols-3 items-center gap-4">
-      <TeamFullCard title="home" team={teams.home} />
-      <div className="text-center font-bold text-gray-400">VS</div>
-      <TeamFullCard title="away" team={teams.away} />
+    <div className="grid grid-cols-7 p-5 ">
+      <div className="col-span-3">
+        <TeamFullCard title="home" team={teams.home} />
+      </div>
+      <div className="text-center   items-center  font-bold text-gray-400 col-span-1">
+        VS
+      </div>
+      <div className="col-span-3">
+        <TeamFullCard title="away" team={teams.away} />
+      </div>
     </div>
   );
 }
 function Section({ title, children }: any) {
   return (
-    <div className="space-y-1">
+    <div className="space-y-1 ">
       <div className="font-semibold text-gray-700">{title}</div>
       {children}
     </div>

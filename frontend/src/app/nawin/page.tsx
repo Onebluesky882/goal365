@@ -6,10 +6,12 @@ const Page = () => {
   const roots = data as PredictionsRoot[];
 
   return (
-    <div className="space-y-10">
+    <div className="">
       {roots.map((root, rootIndex) =>
         root.response.map((item, index) => (
-          <PredictionView key={`${rootIndex}-${index}`} data={item} />
+          <div className=" ">
+            <PredictionView key={`${rootIndex}-${index}`} data={item} />
+          </div>
         ))
       )}
     </div>
