@@ -1,1 +1,0 @@
-1. get odds today 

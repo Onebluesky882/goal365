@@ -1,6 +1,0 @@
-{
-  "version": "1",
-  "name": "Goal365",
-  "type": "collection",
-  "ignore": ["node_modules", ".git"]
-}
