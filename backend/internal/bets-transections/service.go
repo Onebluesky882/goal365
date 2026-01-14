@@ -25,12 +25,13 @@ func (s *TransactionService) getTransaction(ctx context.Context, req models.Upda
 
 	err := s.db.NewSelect().
 		Model(tx).
-		Relation("Bets", func(q *bun.SelectQuery) *bun.SelectQuery {
-			return q.
-				Order("created_at ASC")
-		}).
 		Where("player_no = ?", req.PlayerNo).
-		Where("bill_id = ?", req.BillId).
+		Order("created_at DESC").
+		// Relation("Bets", func(q *bun.SelectQuery) *bun.SelectQuery {
+		// 	return q.
+		// 		Order("created_at ASC")
+		// }).
+		Relation("Bets").
 		Scan(ctx)
 
 	if err != nil {

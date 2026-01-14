@@ -12,30 +12,21 @@ func getTransactionHandler(service *TransactionService) fiber.Handler {
 	return func(c *fiber.Ctx) error {
 		var req models.UpdateTransactionRequest
 
-		billIdStr := c.Query("bill_id")
-		if billIdStr == "" {
+		playerNo := c.Query("player_no")
+
+		if playerNo == "" {
 			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-				"error": "bill_id is required",
+				"error": "player_no is required",
 			})
 		}
 
-		billId, err := strconv.ParseInt(billIdStr, 10, 64)
+		player, err := strconv.ParseInt(playerNo, 10, 64)
 		if err != nil {
 			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 				"error": "invalid bill_id",
 			})
 		}
-
-		// player_id -> uuid.UUID
-		playerIdStr := c.Query("player_id")
-		if playerIdStr == "" {
-			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-				"error": "player_id is required",
-			})
-		}
-
-		req.BillId = billId
-
+		req.PlayerNo = player
 		tx, err := service.getTransaction(c.Context(), req)
 		if err != nil {
 			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{

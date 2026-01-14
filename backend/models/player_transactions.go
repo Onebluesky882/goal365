@@ -89,7 +89,6 @@ type BetTransaction struct {
 	UpdatedAt time.Time `bun:"updated_at,nullzero" json:"updatedAt,omitempty"`
 }
 type UpdateTransactionRequest struct {
-	BillId   int64 `json:"bill_id"`
 	PlayerNo int64 `json:"player_no"`
 
 	Bets []BetTransaction `json:"bets"`

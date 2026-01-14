@@ -5,9 +5,13 @@ meta {
 }
 
 get {
-  url: http://localhost:3009/api/bill
+  url: http://localhost:3009/api/transactions?player_no=6604179126
   body: json
   auth: inherit
+}
+
+params:query {
+  player_no: 6604179126
 }
 
 body:json {
