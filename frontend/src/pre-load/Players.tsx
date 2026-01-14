@@ -53,7 +53,6 @@ const Players = () => {
       <PlayersGrid
         onClick={handlePlayerClick}
         players={players}
-        newPlayerLink={`${limitReached ? "" : "new-player"}  `}
         onCreate={() => {
           if (limitReached) {
             toast.error("สามารถสร้าง Player ได้สูงสุด 2 คน");
