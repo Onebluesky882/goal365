@@ -17,8 +17,8 @@ export default function MatchTeams({ teams }: Props) {
       <div className="col-span-3">
         <TeamFullCard title="home" team={teams.home} />
       </div>
-      <div className="text-center   items-center  font-bold text-gray-400 col-span-1">
-        VS
+      <div className="col-span-1 flex items-center justify-center">
+        <span className="font-bold text-gray-400">VS</span>
       </div>
       <div className="col-span-3">
         <TeamFullCard title="away" team={teams.away} />
@@ -132,20 +132,6 @@ function TeamFullCard({ team, title }: { team: TeamData; title: string }) {
       <Section title="Penalty">
         <Row label="Scored" value={league.penalty.scored.total} />
         <Row label="Missed" value={league.penalty.missed.total} />
-      </Section>
-
-      {/* Lineups */}
-      <Section title="Lineups">
-        {league.lineups.map((l, i) => (
-          <Row key={i} label={l.formation} value={`Played ${l.played}`} />
-        ))}
-      </Section>
-
-      {/* Cards */}
-      <Section title="Cards (Yellow)">
-        {Object.entries(league.cards.yellow).map(([k, v]) => (
-          <Row key={k} label={k} value={v.total ?? "-"} />
-        ))}
       </Section>
     </div>
   );
