@@ -90,7 +90,7 @@ ADD COLUMN image_url TEXT;
 ALTER TABLE bets
 ADD CONSTRAINT bets_transaction_id_fkey
 FOREIGN KEY (transaction_id)
-REFERENCES transactions(id)
+REFERENCES transactions(transaction_id)
 ON DELETE CASCADE;
 
 

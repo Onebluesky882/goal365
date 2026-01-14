@@ -5,7 +5,6 @@ import (
 	"strconv"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/google/uuid"
 )
 
 func getTransactionHandler(service *TransactionService) fiber.Handler {
@@ -35,15 +34,7 @@ func getTransactionHandler(service *TransactionService) fiber.Handler {
 			})
 		}
 
-		playerId, err := uuid.Parse(playerIdStr)
-		if err != nil {
-			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-				"error": "invalid player_id",
-			})
-		}
-
 		req.BillId = billId
-		req.PlayerId = playerId
 
 		tx, err := service.getTransaction(c.Context(), req)
 		if err != nil {
@@ -62,18 +53,34 @@ func getTransactionHandler(service *TransactionService) fiber.Handler {
 }
 
 func InsertTransactionHandler(service *TransactionService) fiber.Handler {
-
 	return func(c *fiber.Ctx) error {
 		var req models.CreateTransactionRequest
+
 		if err := c.BodyParser(&req); err != nil {
 			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 				"error": "invalid request body",
 			})
 		}
 
-		tx, err := service.InsertTransaction(c.Context(), req)
+		// ---- map DTO -> DB model ----
+		bets := make([]models.BetTransaction, len(req.Bets))
+		for i, b := range req.Bets {
+			bets[i] = models.BetTransaction{
+				FixtureID: b.FixtureID,
+				Market:    b.Market,
+				Selection: b.Selection,
+				Odds:      b.Odds,
+				Amount:    b.Amount,
+			}
+		}
+
+		tx, err := service.InsertTransaction(
+			c.Context(),
+			bets,
+			req.PlayerNo,
+		)
 		if err != nil {
-			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 				"error": err.Error(),
 			})
 		}

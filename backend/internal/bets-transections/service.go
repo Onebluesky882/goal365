@@ -29,7 +29,7 @@ func (s *TransactionService) getTransaction(ctx context.Context, req models.Upda
 			return q.
 				Order("created_at ASC")
 		}).
-		Where("player_id = ?", req.PlayerId).
+		Where("player_no = ?", req.PlayerNo).
 		Where("bill_id = ?", req.BillId).
 		Scan(ctx)
 
@@ -39,26 +39,30 @@ func (s *TransactionService) getTransaction(ctx context.Context, req models.Upda
 	return tx, nil
 }
 
-func (s *TransactionService) InsertTransaction(ctx context.Context, req models.CreateTransactionRequest) (*models.Transaction, error) {
-	playerID := req.PlayerId
-	bets := req.Bets
+func (s *TransactionService) InsertTransaction(
+	ctx context.Context,
+	bets []models.BetTransaction,
+	playerNo int64,
+) (*models.Transaction, error) {
+
+	// ---------- validate ----------
 	if len(bets) == 0 {
 		return nil, errors.New("bets is empty")
 	}
 
-	// ---- calculate total ----
+	// ---------- calculate total ----------
 	var total int64
-	for b := range bets {
-		if bets[b].ID == 0 {
-			bets[b].ID = common.Random10Digit()
+	for i := range bets {
+		if bets[i].Amount <= 0 {
+			return nil, errors.New("invalid bet amount")
 		}
-		total += bets[b].Amount
+		total += bets[i].Amount
 	}
 
-	// ---- check player exists ----
+	// ---------- check player exists ----------
 	exists, err := s.db.NewSelect().
 		Model((*models.Player)(nil)).
-		Where("id = ?", playerID).
+		Where("player_no = ?", playerNo).
 		Exists(ctx)
 	if err != nil {
 		return nil, err
@@ -66,64 +70,69 @@ func (s *TransactionService) InsertTransaction(ctx context.Context, req models.C
 	if !exists {
 		return nil, errors.New("player not found")
 	}
-	// ---- single transaction ----
+
+	// ---------- begin transaction ----------
 	tx, err := s.db.BeginTx(ctx, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	// ---- HOLD WALLET FIRST ----
-	if err := s.holdWalletTx(ctx, tx, playerID, total); err != nil {
-		return nil, err
-	}
-
-	// ---- create transaction ----
-
-	transaction := &models.Transaction{
-		BillId:   common.Random10Digit(),
-		PlayerId: playerID,
-		Type:     "BET",
-		Total:    total,
-		Status:   "PENDING",
-	}
-
-	if _, err := tx.NewInsert().
-		Model(transaction).
-		Exec(ctx); err != nil {
-		return nil, err
-	}
-
-	// ---- attach transaction_id to bets ----
-	for i := range bets {
-		bets[i].TransactionID = transaction.ID
-		bets[i].Status = "PENDING"
-	}
-
-	// ----- insert bets ------
-
-	if _, err := tx.NewInsert().
-		Model(&bets).Exec(ctx); err != nil {
-		return nil, err
-	}
-
+	// safety rollback
 	defer func() {
 		if err != nil {
 			_ = tx.Rollback()
 		}
 	}()
 
+	// ---------- HOLD WALLET ----------
+	if err = s.holdWalletTx(ctx, tx, playerNo, total); err != nil {
+		return nil, err
+	}
+
+	// ---------- create transaction ----------
+	transaction := &models.Transaction{
+		PlayerNo: playerNo,
+		Type:     "BET",
+		Total:    total,
+		Status:   "PENDING",
+		Settled:  false,
+	}
+
+	if _, err = tx.NewInsert().
+		Model(transaction).
+		Exec(ctx); err != nil {
+		return nil, err
+	}
+
+	// ---------- attach transaction_id to bets ----------
+	for i := range bets {
+		bets[i].TransactionID = transaction.Id
+		bets[i].BetId = common.Random10Digit()
+		bets[i].Status = "PENDING"
+		bets[i].Settled = false
+	}
+
+	// ---------- insert bets ----------
+	if _, err = tx.NewInsert().
+		Model(&bets).
+		Exec(ctx); err != nil {
+		return nil, err
+	}
+
+	// ---------- commit ----------
 	if err = tx.Commit(); err != nil {
 		return nil, err
 	}
-	transaction.Bets = bets
 
+	// ---------- attach bets ----------
+	transaction.Bets = bets
 	return transaction, nil
 }
 
 func (s *TransactionService) holdWalletTx(
 	ctx context.Context,
 	tx bun.Tx,
-	playerID uuid.UUID,
+	playerNo int64,
 	amount int64,
 ) error {
 
@@ -131,7 +140,7 @@ func (s *TransactionService) holdWalletTx(
 		Model((*models.Player)(nil)).
 		Set("wallet = wallet - ?", amount).
 		Set("wallet_locked = wallet_locked + ?", amount).
-		Where("id = ?", playerID).
+		Where("player_no = ?", playerNo).
 		Where("locked = FALSE").
 		Where("wallet >= ?", amount).
 		Exec(ctx)
