@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import ProfileMenu from "./profileMenu";
 import LoadingIndicators from "../Loading_indicators";
 import { useEffect, useRef, useState } from "react";
+import { CgMenuGridO } from "react-icons/cg";
 const Headers = () => {
   const router = useRouter();
   const { session, isLoading } = useAuth();
@@ -40,7 +41,7 @@ const Headers = () => {
 
   return (
     <div
-      className="sticky top-0 z-50  "
+      className="sticky top-0 z-50 bg-background  "
       style={{
         transform: hideHeader ? "translateY(-100%)" : "translateY(0)",
       }}
@@ -66,18 +67,25 @@ const Headers = () => {
         </div>
 
         <div className="flex items-center justify-end space-x-4 w-full max-w-md">
-          <div className="flex flex-col items-start">
+          <div className="flex gap-3 items-start  ">
             {user ? (
               <>
                 <ProfileMenu name={user.name} />
               </>
             ) : (
-              <button
-                onClick={() => router.push("sign-in")}
-                className="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold px-5 py-2 rounded-full shadow transition-all"
-              >
-                Join Now
-              </button>
+              <>
+                <button
+                  onClick={() => router.push("sign-in")}
+                  className="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold px-5 py-2 rounded-md shadow transition-all"
+                >
+                  เข้าสู่ระบบ
+                </button>
+                <CgMenuGridO
+                  className=" hover:border-blue-500 border rounded-sm  "
+                  size={42}
+                  color="white"
+                />
+              </>
             )}
           </div>
         </div>

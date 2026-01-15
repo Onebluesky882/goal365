@@ -4,6 +4,7 @@ import "./globals.css";
 import { AuthProvider } from "@/GlobalContext/auth-provider";
 import Headers from "@/components/Header/Header";
 import { ToastProvider } from "@/GlobalContext/Toast";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml"></link>
       </head>
@@ -37,7 +38,10 @@ export default function RootLayout({
         <AuthProvider>
           <ToastProvider>
             <Headers />
-            {children}
+            <div className=" min-h-screen bg-primary-foreground/80 h-full pt-10 max-sm:pt-4 space-y-10">
+              {children}
+            </div>
+            <Footer />
           </ToastProvider>
         </AuthProvider>
       </body>

@@ -1,9 +1,8 @@
 "use client";
 
-import { Plus } from "lucide-react";
+import { Plus, Wallet, ShieldCheck, ChevronRight } from "lucide-react";
 import { Player } from "../../../types/player";
 import { getUsageAge } from "@/app/common/getUsageAge";
-import Link from "next/link";
 
 type PlayerProps = {
   players: Player[];
@@ -18,7 +17,6 @@ export default function PlayersGrid({
   onCreate,
   onClick,
 }: PlayerProps) {
-  // Helper: สร้างตัวย่อชื่อสำหรับ avatar
   const getInitials = (name: string) => {
     return name
       .split(" ")
@@ -29,82 +27,138 @@ export default function PlayersGrid({
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-3">
-      {players.map((p) => (
-        <div
-          key={p.playerNo}
-          onClick={() => onClick(p.playerNo)}
-          className="rounded-xl bg-white shadow-sm border border-gray-100 overflow-hidden transition-all hover:shadow-md active:scale-[0.99] cursor-pointer"
-        >
-          <div className="flex items-start gap-3 p-4">
-            {/* Avatar */}
-            <div className="relative shrink-0">
-              {p.imageUrl ? (
-                <img
-                  src={p.imageUrl}
-                  alt={p.name}
-                  className="h-14 w-14 rounded-full object-cover border-2 border-white shadow-sm"
-                />
-              ) : (
-                <div className="h-14 w-14 rounded-full bg-linear-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white font-semibold text-sm">
-                  {getInitials(p.name)}
-                </div>
-              )}
+    <div className=" w-max-160  p-2 mx-2 sm:p-10 sm:mx-10 bg-card/10 border  rounded-md  animate-in fade-in slide-in-from-bottom-4 duration-500 ">
+      {/* Header Section */}
+      <div className="flex items-center justify-between mb-6 px-2">
+        <div>
+          <h2 className="text-xl font-bold text-foreground">DashBoard</h2>
+          <p className="text-xs text-foreground">
+            จัดการและเลือกตัวละครเพื่อเข้าสู่ระบบ
+          </p>
+        </div>
+        <div className="text-right">
+          <span className="text-[10px] font-bold text-foreground uppercase tracking-wider">
+            บัญชีสมาชิก
+          </span>
+          <div className="text-sm font-bold text-[#00acec]">
+            Lv. {players[0]?.level || 1}
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 ">
+        {players.map((p) => (
+          <div
+            key={p.playerNo}
+            onClick={() => onClick(p.playerNo)}
+            className="group relative rounded-xl bg-card border border-border overflow-hidden transition-all hover:border-[#00acec]/50 hover:shadow-[0_0_20px_rgba(0,172,236,0.1)] cursor-pointer active:scale-[0.98]"
+          >
+            {/* ป้าย Player No (Floating Badge สไตล์ taptap) */}
+            <div className="absolute top-0 left-0 bg-[#ff5f00] text-white text-[10px] font-bold px-2 py-1 uppercase z-10 rounded-br-lg">
+              id : {p.playerNo}
             </div>
 
-            {/* Info */}
-            <div className="flex-1 min-w-0">
-              <div className="flex items-baseline gap-2">
-                <h3 className="font-bold text-gray-900 truncate">{p.name}</h3>
-                <span className="text-xs text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">
-                  #{p.playerNo}
-                </span>
+            <div className="p-5 flex items-center gap-5 ">
+              {/* Avatar Section */}
+              <div className="relative">
+                {p.imageUrl ? (
+                  <img
+                    src={p.imageUrl}
+                    alt={p.name}
+                    className="h-16 w-16 rounded-lg object-cover border border-border]"
+                  />
+                ) : (
+                  <div className="h-16 w-16 rounded-lg bg-secondary flex items-center justify-center text-foreground font-bold text-xl border border-border">
+                    {getInitials(p.name)}
+                  </div>
+                )}
+                <div className="absolute -bottom-2 -right-2 bg-[#1a1a1a] border border-border rounded-full p-1">
+                  <ShieldCheck size={14} className="text-[#00acec]" />
+                </div>
               </div>
-              <p className="text-xs text-gray-500 mt-1">
-                ใช้งานมาแล้ว {getUsageAge(p.createdAt)}
-              </p>
 
-              {p.bio && (
-                <p className="text-sm text-gray-600 mt-2 line-clamp-2">
-                  {p.bio}
+              {/* Info Section */}
+              <div className="flex-1 min-w-0">
+                <div className="flex justify-between items-start">
+                  <h3 className="font-bold text-lg text-foreground truncate group-hover:text-[#00acec] transition-colors">
+                    {p.name}
+                  </h3>
+                  <div className="text-[10px] bg-secondary text-foreground px-2 py-0.5 rounded border border-border">
+                    Lv.{p.level}
+                  </div>
+                </div>
+
+                <p className="text-[11px] text-foreground mt-0.5">
+                  ใช้งานมาแล้ว {getUsageAge(p.createdAt)}
                 </p>
-              )}
 
-              <div className="mt-3 flex justify-between items-center text-xs text-gray-600">
-                <span className="font-medium">กระเป๋า: {p.wallet}</span>
-                <span className="bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-full">
-                  Lv.{p.level}
-                </span>
+                {/* Stats Area (คล้ายช่อง Input ของหน้า Login) */}
+                <div className="mt-4 flex items-center gap-3 bg-input rounded-lg p-2 border border-border">
+                  <div className="flex items-center gap-1.5 flex-1 border-r border-border">
+                    <Wallet size={12} className="text-[#00acec]" />
+                    <span className="text-xs font-bold text-foreground">
+                      {p.wallet.toLocaleString()}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1 px-1">
+                    <span className="text-[10px] text-foreground font-medium">
+                      เข้าสู่ระบบ
+                    </span>
+                    <ChevronRight size={14} className="text-[#00acec]" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
 
-      {/* ➕ Create Player */}
-      <button
-        onClick={onCreate}
-        disabled={!canCreate}
-        className={`flex flex-col items-center justify-center rounded-xl border-2 border-dashed ${
-          canCreate
-            ? "border-gray-300 hover:border-indigo-400 hover:bg-indigo-50 text-gray-600"
-            : "border-gray-200 text-gray-400 opacity-70 cursor-not-allowed"
-        } transition-colors p-6 min-h-30`}
-      >
-        {canCreate ? (
-          <>
-            <Link href={"/new-player"}>
-              <Plus size={24} className="mb-2 text-gray-500" />
-              <span className="text-sm font-medium">สร้างตัวละครใหม่</span>
-            </Link>
-          </>
-        ) : (
-          <>
-            <span className="text-xs mb-1">ปลดล็อกที่เลเวล 10</span>
-            <Plus size={24} className="text-gray-300" />
-          </>
-        )}
-      </button>
+        {/* ➕ Create Player Card (ออกแบบให้เหมือน Placeholder) */}
+        <div
+          onClick={() => {
+            if (canCreate) onCreate();
+          }}
+          className={`relative flex flex-col items-center justify-center rounded-xl border-2 border-dashed h-31.5 transition-all
+            ${
+              canCreate
+                ? "border-border bg-card hover:border-[#00acec]/40 hover:bg-[#00acec]/5 cursor-pointer"
+                : "border-border opacity-40 cursor-not-allowed"
+            }`}
+        >
+          {canCreate ? (
+            <div className="flex flex-col items-center gap-2">
+              <div className="p-2 rounded-full bg-secondary text-[#00acec]">
+                <Plus size={24} />
+              </div>
+              <span className="text-sm font-bold text-foreground">
+                สร้างตัวละครใหม่
+              </span>
+              <p className="text-[10px] text-foreground">
+                คุณยังเหลือโควตาว่างสำหรับตัวละครใหม่
+              </p>
+            </div>
+          ) : (
+            <div className="flex flex-col items-center gap-1">
+              <Plus size={20} className="text-foreground" />
+              <span className="text-xs font-bold text-foreground">
+                โควตาเต็มแล้ว
+              </span>
+              <p className="text-[10px] text-foreground">
+                ปลดล็อกช่องเพิ่มที่เลเวล 10
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Footer Support Info */}
+      <div className="mt-8 text-center">
+        <p className="text-[11px] text-foreground">
+          มีปัญหาในการเข้าถึงตัวละคร?{" "}
+          <span className="text-[#00acec] cursor-pointer hover:underline">
+            ติดต่อฝ่ายบริการลูกค้า
+          </span>
+        </p>
+      </div>
     </div>
   );
 }

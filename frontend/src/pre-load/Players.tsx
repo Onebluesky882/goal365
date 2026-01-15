@@ -49,11 +49,15 @@ const Players = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <PlayersGrid
         onClick={handlePlayerClick}
         players={players}
         onCreate={() => {
+          if (!session?.user) {
+            toast.error("กรุณาเข้าสู่ระบบ");
+            return;
+          }
           if (limitReached) {
             toast.error("สามารถสร้าง Player ได้สูงสุด 2 คน");
             return;

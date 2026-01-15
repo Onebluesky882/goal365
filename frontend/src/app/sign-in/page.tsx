@@ -1,6 +1,6 @@
 "use client";
 
-import AuthForm from "@/components/LoginForm";
+import AuthForm from "@/pre-load/LoginForm";
 import React from "react";
 
 const page = () => {
