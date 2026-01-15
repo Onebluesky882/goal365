@@ -2,13 +2,30 @@
 
 import { useAuth } from "@/GlobalContext/auth-provider";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import ProfileMenu from "./profileMenu";
 import LoadingIndicators from "../Loading_indicators";
 import { useEffect, useRef, useState } from "react";
 import { CgMenuGridO } from "react-icons/cg";
+
+export const HeaderComponent = () => {
+  const pathname = usePathname();
+  const [closeHeader, setCloseHeader] = useState(false);
+
+  useEffect(() => {
+    if (pathname.startsWith("/sportbook")) {
+      setCloseHeader(true);
+    } else {
+      setCloseHeader(false);
+    }
+  }, [pathname]);
+
+  return <>{!closeHeader && <Headers />}</>;
+};
+
 const Headers = () => {
   const router = useRouter();
+
   const { session, isLoading } = useAuth();
 
   const user = session?.user;

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/GlobalContext/auth-provider";
-import Headers from "@/components/Header/Header";
+import Headers, { HeaderComponent } from "@/components/Header/Header";
 import { ToastProvider } from "@/GlobalContext/Toast";
 import Footer from "@/components/Footer";
 
@@ -37,7 +37,7 @@ export default function RootLayout({
       >
         <AuthProvider>
           <ToastProvider>
-            <Headers />
+            <HeaderComponent />
             <div className=" min-h-screen bg-primary-foreground/80 h-full pt-1 max-sm:pt-1">
               {children}
             </div>
