@@ -1,6 +1,6 @@
-import { toSnakeCase } from "@/app/common/GroupSnakeCase";
+import { toSnakeCase } from "@/common/GroupSnakeCase";
 import { api } from "./instand";
-import { toSnake } from "@/app/common/stringToSnake";
+import { toSnake } from "@/common/stringToSnake";
 
 export const playersApi = {
   getPlayers: (userId: string) =>
