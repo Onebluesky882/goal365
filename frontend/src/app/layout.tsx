@@ -38,7 +38,7 @@ export default function RootLayout({
         <AuthProvider>
           <ToastProvider>
             <Headers />
-            <div className=" min-h-screen bg-primary-foreground/80 h-full pt-10 max-sm:pt-4 space-y-10">
+            <div className=" min-h-screen bg-primary-foreground/80 h-full pt-1 max-sm:pt-1">
               {children}
             </div>
             <Footer />
