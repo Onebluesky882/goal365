@@ -9,9 +9,7 @@ const Page = () => {
     <div className="">
       {roots.map((root, rootIndex) =>
         root.response.map((item, index) => (
-          <div className=" ">
-            <PredictionView key={`${rootIndex}-${index}`} data={item} />
-          </div>
+          <PredictionView key={`${rootIndex}-${index}`} data={item} />
         ))
       )}
     </div>
