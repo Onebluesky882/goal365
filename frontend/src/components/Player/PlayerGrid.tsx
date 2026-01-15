@@ -2,7 +2,7 @@
 
 import { Plus, Wallet, ShieldCheck, ChevronRight } from "lucide-react";
 import { Player } from "../../../types/player";
-import { getUsageAge } from "@/app/common/getUsageAge";
+import { getUsageAge } from "@/common/getUsageAge";
 
 type PlayerProps = {
   players: Player[];

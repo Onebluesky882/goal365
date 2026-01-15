@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Player } from "../../../types/player";
-import { formatNumber } from "@/app/common/converts_number";
+import { formatNumber } from "@/common/converts_number";
 import { Wallet, Plus, User } from "lucide-react";
 
 type Props = {
