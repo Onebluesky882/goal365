@@ -14,10 +14,10 @@ export default function WalletMinibar({ player }: Props) {
 
   return (
     <div className="sticky top-0 z-50 w-full px-4  flex justify-center pointer-events-none">
-      <div className="pointer-events-auto flex items-center gap-4 bg-[var(--secondary)]/80 backdrop-blur-md border border-[var(--border)] px-4 py-2 rounded-full shadow-2xl shadow-black/50">
+      <div className="pointer-events-auto flex items-center gap-4 bg-secondary/80 backdrop-blur-md border border-border px-4 py-2 rounded-full shadow-2xl shadow-black/50">
         {/* User Info Section */}
-        <div className="flex items-center gap-2 pr-3 border-r border-[var(--border)]">
-          <div className="h-7 w-7 rounded-full bg-[var(--card)] border border-[var(--border)] overflow-hidden flex items-center justify-center">
+        <div className="flex items-center gap-2 pr-3 border-r border-border">
+          <div className="h-7 w-7 rounded-full bg-card border border-border overflow-hidden flex items-center justify-center">
             {player.imageUrl ? (
               <img
                 src={player.imageUrl}
@@ -25,11 +25,11 @@ export default function WalletMinibar({ player }: Props) {
                 className="h-full w-full object-cover"
               />
             ) : (
-              <User size={14} className="text-[var(--muted-foreground)]" />
+              <User size={14} className="text-foreground" />
             )}
           </div>
           <div className="flex flex-col">
-            <span className="text-[10px] font-bold text-[var(--foreground)] truncate max-w-[80px]">
+            <span className="text-[10px] font-bold text-foreground truncate max-w-20">
               {player.name}
             </span>
             <span className="text-[8px] text-[#00acec] font-bold uppercase tracking-tighter">
@@ -45,10 +45,10 @@ export default function WalletMinibar({ player }: Props) {
               <Wallet size={14} className="text-[#ff5f00]" />
             </div>
             <div className="flex flex-col">
-              <span className="text-[9px] text-[var(--muted-foreground)] leading-none mb-0.5">
+              <span className="text-[9px] text-foreground leading-none mb-0.5">
                 ยอดเงินคงเหลือ
               </span>
-              <span className="text-sm font-black text-[var(--foreground)] leading-none">
+              <span className="text-sm font-black text-foreground leading-none">
                 {formatNumber(player.wallet)}
               </span>
             </div>
