@@ -13,23 +13,25 @@ export default function MatchTeams({ teams }: Props) {
   if (!teams) return null;
 
   return (
-    <div className="grid grid-cols-7 p-5 ">
-      <div className="col-span-3">
-        <TeamFullCard title="home" team={teams.home} />
-      </div>
-      <div className="col-span-1 flex items-center justify-center">
-        <span className="font-bold text-gray-400">VS</span>
-      </div>
-      <div className="col-span-3">
-        <TeamFullCard title="away" team={teams.away} />
+    <div className="flex justify-center">
+      <div className="grid grid-cols-7 p-5  w-250 ">
+        <div className="col-span-3">
+          <TeamFullCard title="home" team={teams.home} />
+        </div>
+        <div className="col-span-1 flex items-center justify-center">
+          <span className="font-bold  ">VS</span>
+        </div>
+        <div className="col-span-3">
+          <TeamFullCard title="away" team={teams.away} />
+        </div>
       </div>
     </div>
   );
 }
 function Section({ title, children }: any) {
   return (
-    <div className="space-y-1 ">
-      <div className="font-semibold text-gray-700">{title}</div>
+    <div className="space-y-1  ">
+      <div className="font-semibold ">{title}</div>
       {children}
     </div>
   );
@@ -37,7 +39,7 @@ function Section({ title, children }: any) {
 
 function Row({ label, value }: any) {
   return (
-    <div className="flex justify-between text-xs text-gray-600">
+    <div className="flex justify-between text-xs ">
       <span>{label}</span>
       <span className="font-medium">{value}</span>
     </div>
@@ -53,7 +55,7 @@ function TeamFullCard({ team, title }: { team: TeamData; title: string }) {
   const f = league.fixtures;
 
   return (
-    <div className="border rounded-lg p-4 space-y-4 text-sm">
+    <div className="border rounded-lg p-4 space-y-4 text-sm bg-card/50 ">
       {/* Header */}
       <div className="flex items-center gap-3">
         <img src={team.logo} className="h-10 w-10" />
@@ -66,7 +68,7 @@ function TeamFullCard({ team, title }: { team: TeamData; title: string }) {
       {/* Form */}
       <div>
         <div className="font-semibold">Form</div>
-        <div className="tracking-widest text-gray-600">{league.form}</div>
+        <div className="tracking-widest ">{league.form}</div>
       </div>
 
       {/* Fixtures */}
