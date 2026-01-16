@@ -4,6 +4,7 @@ import React from "react";
 import { Player } from "../../../types/player";
 import { formatNumber } from "@/common/converts_number";
 import { Wallet, Plus, User } from "lucide-react";
+import Image from "next/image";
 
 type Props = {
   player: Player | null;
@@ -19,7 +20,7 @@ export default function WalletMinibar({ player }: Props) {
         <div className="flex items-center gap-2 pr-3 border-r border-border">
           <div className="h-7 w-7 rounded-full bg-card border border-border overflow-hidden flex items-center justify-center">
             {player.imageUrl ? (
-              <img
+              <Image
                 src={player.imageUrl}
                 alt={player.name}
                 className="h-full w-full object-cover"

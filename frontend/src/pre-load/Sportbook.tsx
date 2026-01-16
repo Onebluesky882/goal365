@@ -131,8 +131,14 @@ export default function BettingOddsDisplay() {
       },
     },
   ]);
-
-  const [selectedBet, setSelectedBet] = useState<any>(null);
+  type SelectedBet = {
+    matchId: number;
+    match: string;
+    market: string; // เช่น "HDP" | "OU" | "1X2"
+    selection: string; // เช่น "Home +0.25"
+    odd: string; // odds เก็บเป็น string ตาม data
+  };
+  const [selectedBet, setSelectedBet] = useState<SelectedBet | null>(null);
 
   const handleOddsClick =
     (matchId: number, matchInfo: MatchInfo) =>

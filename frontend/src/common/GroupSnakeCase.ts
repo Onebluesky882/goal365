@@ -1,5 +1,5 @@
-export function toSnakeCase<T extends Record<string, any>>(obj: T) {
-  const result: Record<string, any> = {};
+export function toSnakeCase<T extends Record<string, unknown>>(obj: T) {
+  const result: Record<string, unknown> = {};
 
   for (const key in obj) {
     result[camelToSnake(key)] = obj[key];

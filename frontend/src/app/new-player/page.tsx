@@ -1,4 +1,3 @@
-import CreatePlayerForm from "@/components/Player/CreatePlayer";
 import CreatePlayerContainer from "@/pre-load/new-player";
 import React from "react";
 

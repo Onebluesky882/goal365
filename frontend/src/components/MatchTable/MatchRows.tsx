@@ -3,12 +3,18 @@
 import { TableCell, TableHead, TableRow } from "../ui/table";
 import { OddsButton } from "./TableSportBook";
 
+export type OddsClickHandler = (
+  market: string,
+  selection: string,
+  odd: string
+) => void;
+
 export const MatchRows = ({
   data,
   onOddsClick,
 }: {
   data: BookmakerData;
-  onOddsClick: any;
+  onOddsClick: OddsClickHandler;
 }) => {
   const { matchInfo, markets } = data;
 
@@ -28,7 +34,7 @@ export const MatchRows = ({
       <TableRow className="">
         <TableCell
           className={`text-center font-bold text-[9px] border-r border-gray-700 p-0 ${
-            matchInfo.isLive ? "text-orange-500" : "text-gray-400"
+            matchInfo.isLive ? "text-red-400" : "text-gray-400"
           }`}
         >
           {matchInfo.isLive ? matchInfo.score : matchInfo.time}
@@ -94,10 +100,10 @@ export const MatchRows = ({
 
       {/* Row 2: Draw / VS */}
       <TableRow className="h-9 bg-gray-800/10">
-        <TableCell className="border-r border-gray-700 p-0 text-center text-[7px] text-orange-500 font-black italic">
+        <TableCell className="border-r border-gray-700 p-0 text-center text-[7px] text-red-500 font-black  ">
           {matchInfo.isLive ? "75'" : ""}
         </TableCell>
-        <TableCell className="px-2 border-r border-gray-700 text-center text-[8px] font-bold text-gray-400 italic uppercase">
+        <TableCell className="px-2 border-r border-gray-700  text-[6px] font-bold text-gray-600 italic uppercase">
           vs
         </TableCell>
         <TableCell className="text-center border-r border-gray-700 p-0">

@@ -1,4 +1,4 @@
-type OddsButtonProps = {
+export type OddsButtonProps = {
   market: string;
   selection: string;
   odd: string;

@@ -3,6 +3,7 @@
 import { Plus, Wallet, ShieldCheck, ChevronRight } from "lucide-react";
 import { Player } from "../../../types/player";
 import { getUsageAge } from "@/common/getUsageAge";
+import Image from "next/image";
 
 type PlayerProps = {
   players: Player[];
@@ -62,7 +63,7 @@ export default function PlayersGrid({
               {/* Avatar Section */}
               <div className="relative">
                 {p.imageUrl ? (
-                  <img
+                  <Image
                     src={p.imageUrl}
                     alt={p.name}
                     className="h-16 w-16 rounded-lg object-cover border border-border]"

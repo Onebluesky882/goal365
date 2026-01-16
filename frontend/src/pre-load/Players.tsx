@@ -19,12 +19,12 @@ const Players = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (!session?.user?.id) return;
-
+    const userId = session?.user?.id;
+    if (!userId) return;
     const fetchPlayersAndCheckLimit = async () => {
       setLoading(true);
       try {
-        const res = await playersApi.getPlayers(session?.user?.id!);
+        const res = await playersApi.getPlayers(userId);
         setPlayers(res.data);
 
         if (res.data.length >= 2) {
