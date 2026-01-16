@@ -32,20 +32,20 @@ const Headers = () => {
 
   const lastScrollY = useRef(0);
   const [hideHeader, setHideHeader] = useState(false);
-
+  const SCROLL_THRESHOLD = 280;
   useEffect(() => {
     const onScroll = () => {
       const currentY = window.scrollY;
-
-      if (currentY > lastScrollY.current) {
+      const diff = currentY - lastScrollY.current;
+      if (diff > SCROLL_THRESHOLD) {
         // scroll down
         setHideHeader(true);
-      } else {
-        // scroll up
-        setHideHeader(false);
+        lastScrollY.current = currentY;
       }
-
-      lastScrollY.current = currentY;
+      if (diff < -SCROLL_THRESHOLD) {
+        setHideHeader(false);
+        lastScrollY.current = currentY;
+      }
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -63,9 +63,9 @@ const Headers = () => {
         transform: hideHeader ? "translateY(-100%)" : "translateY(0)",
       }}
     >
-      <div className="  mx-auto px-6 py-4 flex items-center justify-between   ">
+      <div className="  mx-auto px-2 py-2 flex items-center justify-between   ">
         <div className="flex items-center space-x-6">
-          <span className="text-web-primary font-extrabold text-3xl tracking-wide cursor-pointer hover:text-web-primary-dark transition-colors">
+          <span className="text-web-primary font-extrabold text-2xl tracking-wide cursor-pointer hover:text-web-primary-dark transition-colors">
             <Link href={"/"}>Goal365</Link>
           </span>
 
@@ -84,7 +84,7 @@ const Headers = () => {
         </div>
 
         <div className="flex items-center justify-end space-x-4 w-full max-w-md">
-          <div className="flex gap-3 items-start  ">
+          <div className="flex gap-2 items-center ">
             {user ? (
               <>
                 <ProfileMenu name={user.name} />
@@ -93,13 +93,13 @@ const Headers = () => {
               <>
                 <button
                   onClick={() => router.push("sign-in")}
-                  className="bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold px-5 py-2 rounded-md shadow transition-all"
+                  className="text-sm  bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold px-4 py-1 rounded-md shadow transition-all"
                 >
                   เข้าสู่ระบบ
                 </button>
                 <CgMenuGridO
                   className=" hover:border-blue-500 border rounded-sm  "
-                  size={42}
+                  size={32}
                   color="white"
                 />
               </>
