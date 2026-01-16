@@ -17,7 +17,7 @@ const Players = () => {
   const [limitReached, setLimitReached] = useState(false);
   const { setPlayerId } = usePlayerStore();
   const router = useRouter();
-
+  const [db, setDb] = useState(false);
   useEffect(() => {
     const userId = session?.user?.id;
     if (!userId) return;
@@ -26,6 +26,7 @@ const Players = () => {
       try {
         const res = await playersApi.getPlayers(userId);
         setPlayers(res.data);
+        setDb(true);
 
         if (res.data.length >= 2) {
           setLimitReached(true);
@@ -65,6 +66,7 @@ const Players = () => {
           router.push("/new-player");
         }}
         canCreate={!limitReached}
+        db={db}
       />
     </div>
   );
