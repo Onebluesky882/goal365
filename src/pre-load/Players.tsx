@@ -46,14 +46,15 @@ const Players = () => {
   useEffect(() => {
     if (!loading) return;
     const timer = setTimeout(() => {
+      if (db) return;
       toast.error("server not connect");
       router.push("/");
-
-      return () => {
-        clearTimeout(timer);
-      };
     }, 5000);
-  }, [router, loading]);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [router, loading, db]);
   if (loading) return <LoadingIndicators />;
 
   const handlePlayerClick = async (playerNo: number) => {
