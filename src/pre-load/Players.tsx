@@ -49,7 +49,7 @@ const Players = () => {
       if (db) return;
       toast.error("server not connect");
       router.push("/");
-    }, 5000);
+    }, 8000);
 
     return () => {
       clearTimeout(timer);
