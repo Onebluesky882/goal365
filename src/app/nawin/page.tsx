@@ -6,7 +6,7 @@ const Page = () => {
   const roots = data as PredictionsRoot[];
 
   return (
-    <div className="">
+    <div>
       {roots.map((root, rootIndex) =>
         root.response.map((item, index) => (
           <PredictionView key={`${rootIndex}-${index}`} data={item} />
