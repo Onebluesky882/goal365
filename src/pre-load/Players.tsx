@@ -50,7 +50,7 @@ const Players = () => {
   };
 
   return (
-    <div className="">
+    <div className="pt-2">
       <PlayersGrid
         onClick={handlePlayerClick}
         players={players}
