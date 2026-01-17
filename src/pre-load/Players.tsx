@@ -42,6 +42,18 @@ const Players = () => {
 
     fetchPlayersAndCheckLimit();
   }, [session?.user?.id]);
+
+  useEffect(() => {
+    if (!loading) return;
+    const timer = setTimeout(() => {
+      toast.error("server not connect");
+      router.push("/");
+
+      return () => {
+        clearTimeout(timer);
+      };
+    }, 5000);
+  }, [router, loading]);
   if (loading) return <LoadingIndicators />;
 
   const handlePlayerClick = async (playerNo: number) => {
