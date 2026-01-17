@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         destination:
           "https://goal365-production.up.railway.app/api/auth/:path*",
       },
+      {
+        source: "/api/:path*",
+        destination: "https://mytipster-production.up.railway.app/api/:path*",
+      },
     ];
   },
 };
