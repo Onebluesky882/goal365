@@ -69,11 +69,13 @@ export default function Footer() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  useEffect(() => {
-    if ("vibrate" in navigator) {
+  const handleTabClick = (tab: string) => {
+    setActiveTab(tab);
+
+    if (navigator.vibrate) {
       navigator.vibrate(50);
     }
-  }, [activeTab]);
+  };
 
   return (
     <div className="min-h-scree bg-inherit">
@@ -86,7 +88,7 @@ export default function Footer() {
           {tabs.map(({ page, label, icon, notificationCount }) => (
             <button
               key={page}
-              onClick={() => setActiveTab(page)}
+              onClick={() => handleTabClick(page)}
               className={`flex flex-col items-center text-sm font-medium rounded-xl px-3 py-2 relative transition-colors duration-300 ${
                 activeTab === page
                   ? "text-indigo-600 bg-indigo-100 transform -translate-y-0.5"

@@ -1,19 +1,10 @@
 import PredictionView from "@/pre-load/Nawin";
-import data from "./data.json";
-import type { PredictionsRoot } from "../../../types/predictions";
 
-const Page = () => {
-  const roots = data as PredictionsRoot[];
+export default async function page() {
 
   return (
     <div>
-      {roots.map((root, rootIndex) =>
-        root.response.map((item, index) => (
-          <PredictionView key={`${rootIndex}-${index}`} data={item} />
-        )),
-      )}
+      <PredictionView />
     </div>
   );
-};
-
-export default Page;
+}
