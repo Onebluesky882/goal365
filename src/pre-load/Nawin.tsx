@@ -5,6 +5,7 @@ import MatchTeams from "@/components/Nawinta/MatchTeams";
 import LoadingIndicators from "@/components/Loading_indicators";
 import { TeamData } from "../../types/predictions";
 import { nawinApi } from "@/api/api";
+import { H2HMatch } from "../../types/nawin";
 
 type TeamsRoot = {
   home: TeamData;
@@ -21,24 +22,7 @@ export default function PredictionView() {
   const [fixtureId, setFixtureId] = useState("");
   const [teams, setTeams] = useState<TeamsRoot[]>([]);
   const [loading, setLoading] = useState(false);
-
-  // ===== GET FIXTURES =====
-  useEffect(() => {
-    const getData = async () => {
-      setLoading(true);
-
-      const res = await nawinApi.getNawin(); // Nawin[]
-
-      const mappedTeams: TeamsRoot[] = res.flatMap((nawin) =>
-        nawin.Response.map((r) => r.teams),
-      );
-
-      setTeams(mappedTeams);
-      setLoading(false);
-    };
-
-    getData();
-  }, []);
+  const [h2h, setH2h] = useState<H2HMatch[]>([]);
 
   // ===== POST FIXTURE =====
   const submitFixture = async () => {
@@ -47,18 +31,55 @@ export default function PredictionView() {
     try {
       await nawinApi.postNawin(fixtureId);
 
-      // reload list after insert
       const res = await nawinApi.getNawin();
-      const mappedTeams: TeamsRoot[] = res.flatMap((nawin) =>
-        nawin.Response.map((r) => r.teams),
-      );
+
+      const mappedTeams: TeamsRoot[] = [];
+      const mappedH2H: H2HMatch[] = [];
+
+      res.forEach((nawin) => {
+        nawin.Response.forEach((r) => {
+          mappedTeams.push(r.teams);
+
+          if (r.h2h?.length) {
+            mappedH2H.push(...r.h2h);
+          }
+        });
+      });
 
       setTeams(mappedTeams);
+      setH2h(mappedH2H);
       setFixtureId("");
     } catch (err) {
       console.error("postNawin failed:", err);
     }
   };
+
+  useEffect(() => {
+    const getData = async () => {
+      setLoading(true);
+
+      const res = await nawinApi.getNawin(); // Nawin[]
+
+      const mappedTeams: TeamsRoot[] = [];
+      const mappedH2H: H2HMatch[] = [];
+
+      res.forEach((nawin) => {
+        nawin.Response.forEach((r) => {
+          mappedTeams.push(r.teams);
+
+          if (r.h2h?.length) {
+            mappedH2H.push(...r.h2h);
+          }
+        });
+      });
+
+      setTeams(mappedTeams);
+      setH2h(mappedH2H);
+      setLoading(false);
+    };
+
+    getData();
+  }, []);
 
   if (loading) return <LoadingIndicators />;
 
@@ -78,7 +99,11 @@ export default function PredictionView() {
         )}
 
         {teams.map((t, i) => (
-          <MatchTeams key={`${t.home.id}-${t.away.id}-${i}`} teams={t} />
+          <MatchTeams
+            key={`${t.home.id}-${t.away.id}-${i}`}
+            teams={t}
+            h2h={h2h}
+          />
         ))}
       </div>
     </div>

@@ -3,12 +3,14 @@
 import { ReactNode } from "react";
 import { TeamData } from "../../../types/predictions";
 import Image from "next/image";
+import { H2HMatch } from "../../../types/nawin";
 
 type Props = {
   teams: {
     home: TeamData;
     away: TeamData;
   };
+  h2h: H2HMatch[];
 };
 
 type SectionProps = {
@@ -20,9 +22,17 @@ type RowProps = {
   value: ReactNode;
 };
 
-export default function MatchTeams({ teams }: Props) {
+export default function MatchTeams({ teams, h2h }: Props) {
   if (!teams) return null;
+  const filteredH2H = h2h.filter((m) => {
+    const homeName = teams.home.name;
+    const awayName = teams.away.name;
 
+    return (
+      (m.teams.home.name === homeName && m.teams.away.name === awayName) ||
+      (m.teams.home.name === awayName && m.teams.away.name === homeName)
+    );
+  });
   return (
     <div className="flex justify-center">
       <div className="grid grid-cols-7 p-5  w-250 ">
@@ -36,6 +46,29 @@ export default function MatchTeams({ teams }: Props) {
           <TeamFullCard title="away" team={teams.away} />
         </div>
       </div>
+      {filteredH2H.length > 0 && (
+        <div className="col-span-7 mt-6 ">
+          <div className="border rounded-lg p-4 bg-muted/30">
+            <div className="font-semibold mb-3">H2H (Last matches)</div>
+
+            <div className="space-y-2">
+              {filteredH2H.slice(0, 5).map((m) => (
+                <div
+                  key={m.fixture.id}
+                  className="flex justify-between text-xs"
+                >
+                  <span>
+                    {m.teams.home.name} {m.teams.away.name}
+                  </span>
+                  <span className="font-bold">
+                    {m.goals.home} {m.goals.away}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -86,7 +119,9 @@ function TeamFullCard({ team, title }: { team: TeamData; title: string }) {
       {/* Form */}
       <div>
         <div className="font-semibold">Form</div>
-        <div className="tracking-widest ">{league.form}</div>
+        <div className="tracking-widest text-[12px] overflow-scroll ">
+          {league.form}
+        </div>
       </div>
 
       {/* Fixtures */}
