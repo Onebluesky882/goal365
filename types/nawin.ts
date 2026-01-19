@@ -27,3 +27,9 @@ export type H2HMatch = {
     away: number;
   };
 };
+
+export type TeamsRoot = {
+  home: TeamData;
+  away: TeamData;
+};
+

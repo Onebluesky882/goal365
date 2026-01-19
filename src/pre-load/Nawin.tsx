@@ -3,26 +3,29 @@
 import { useEffect, useState } from "react";
 import MatchTeams from "@/components/Nawinta/MatchTeams";
 import LoadingIndicators from "@/components/Loading_indicators";
-import { TeamData } from "../../types/predictions";
 import { nawinApi } from "@/api/api";
-import { H2HMatch } from "../../types/nawin";
-
-type TeamsRoot = {
-  home: TeamData;
-  away: TeamData;
-};
-
-type InsertNawinFixTrueProp = {
-  fixtureId: string;
-  setFixtureId: (value: string) => void;
-  onSubmit: () => void;
-};
+import { H2HMatch, TeamsRoot } from "../../types/nawin";
+import InsertNawinFixTrue from "@/components/Nawinta/InputFixture";
+import { useAuth } from "@/GlobalContext/auth-provider";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 export default function PredictionView() {
+  const { session } = useAuth();
+  const router = useRouter();
+
   const [fixtureId, setFixtureId] = useState("");
   const [teams, setTeams] = useState<TeamsRoot[]>([]);
   const [loading, setLoading] = useState(false);
   const [h2h, setH2h] = useState<H2HMatch[]>([]);
+
+  useEffect(() => {
+    setLoading(true);
+    if (session && session.user?.email !== "wansing882@gmail.com") {
+      toast.error("denied access");
+      router.replace("/");
+    }
+  }, [session, router]);
 
   // ===== POST FIXTURE =====
   const submitFixture = async () => {
@@ -84,15 +87,7 @@ export default function PredictionView() {
   if (loading) return <LoadingIndicators />;
 
   return (
-    <div className="flex flex-col items-center pt-10 w-full">
-      <p className="mb-2 font-semibold">Add fixture Id</p>
-
-      <InsertNawinFixTrue
-        fixtureId={fixtureId}
-        setFixtureId={setFixtureId}
-        onSubmit={submitFixture}
-      />
-
+    <div className="flex  relative flex-col items-center w-full  mb-20  ">
       <div className="space-y-6 w-full max-w-3xl">
         {teams.length === 0 && (
           <p className="text-sm text-gray-500 text-center">No fixtures yet</p>
@@ -106,52 +101,13 @@ export default function PredictionView() {
           />
         ))}
       </div>
-    </div>
-  );
-}
-
-function InsertNawinFixTrue({
-  fixtureId,
-  setFixtureId,
-  onSubmit,
-}: InsertNawinFixTrueProp) {
-  return (
-    <div className="flex items-center gap-2 mb-4">
-      <input
-        type="text"
-        placeholder="Fixture ID"
-        value={fixtureId}
-        onChange={(e) => setFixtureId(e.target.value)}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") {
-            onSubmit();
-          }
-        }}
-        className="
-          w-64
-          px-3
-          py-2
-          border
-          rounded-md
-          text-sm
-          focus:outline-none
-          focus:ring-2
-          focus:ring-blue-500
-        "
-      />
-      <button
-        onClick={onSubmit}
-        className="
-          px-4 py-2
-          bg-blue-600
-          text-white
-          rounded-md
-          hover:bg-blue-700
-          text-sm
-        "
-      >
-        Save
-      </button>
+      <div className="absolute bottom-2    ">
+        <InsertNawinFixTrue
+          fixtureId={fixtureId}
+          setFixtureId={setFixtureId}
+          onSubmit={submitFixture}
+        />
+      </div>
     </div>
   );
 }
