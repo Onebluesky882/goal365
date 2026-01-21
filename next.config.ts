@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 
+console.log("process.env.NEXT_PUBLIC_API_URL", process.env.NEXT_PUBLIC_API_URL);
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
@@ -12,7 +13,7 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
-       {
+      {
         source: "/api/auth/:path*",
         destination:
           "https://goal365-production.up.railway.app/api/auth/:path*",
