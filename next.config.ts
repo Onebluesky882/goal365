@@ -1,6 +1,5 @@
 import type { NextConfig } from "next";
 
-console.log("process.env.NEXT_PUBLIC_API_URL", process.env.NEXT_PUBLIC_API_URL);
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
@@ -20,7 +19,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/api/:path*",
-        destination: `${process.env.NEXT_PUBLIC_API_URL}/api/:path*`,
+        destination: `https://mytipster-production.up.railway.app/api/:path*`,
       },
     ];
   },
