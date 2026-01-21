@@ -11,23 +11,26 @@ import { useAuth } from "@/GlobalContext/auth-provider";
 import PlayersGrid from "@/components/Player/PlayerGrid";
 
 const Players = () => {
-  const { session } = useAuth();
+  const { session, isLoading } = useAuth();
   const [players, setPlayers] = useState<Player[]>([]);
-  const [loading, setLoading] = useState(false);
   const [limitReached, setLimitReached] = useState(false);
   const { setPlayerId } = usePlayerStore();
   const router = useRouter();
   const [db, setDb] = useState(false);
+
+  // call userID
   useEffect(() => {
-    const userId = session?.user?.id;
-    if (!userId) return;
-    const fetchPlayersAndCheckLimit = async () => {
-      setLoading(true);
+    if (isLoading) return;
+    if (!session?.user?.id) {
+      router.push("/");
+      return;
+    }
+    const fetchPlayers = async () => {
       try {
-        const res = await playersApi.getPlayers(userId);
+        const userId = session.user?.id;
+        const res = await playersApi.getPlayers(userId ?? "");
         setPlayers(res.data);
         setDb(true);
-
         if (res.data.length >= 2) {
           setLimitReached(true);
         } else {
@@ -36,26 +39,25 @@ const Players = () => {
       } catch (err) {
         handleError(err, "cannot fetch players");
       } finally {
-        setLoading(false);
       }
     };
 
-    fetchPlayersAndCheckLimit();
-  }, [session?.user?.id]);
+    fetchPlayers();
+  }, [isLoading, session?.user?.id]);
 
   useEffect(() => {
-    if (!loading) return;
+    if (isLoading) return;
+
     const timer = setTimeout(() => {
-      if (db) return;
-      toast.error("server not connect");
-      router.push("/");
+      if (!db) {
+        toast.error("server not connect");
+        router.push("/");
+      }
     }, 8000);
 
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [router, loading, db]);
-  if (loading) return <LoadingIndicators />;
+    return () => clearTimeout(timer);
+  }, [isLoading, db]);
+  if (isLoading) return <LoadingIndicators />;
 
   const handlePlayerClick = async (playerNo: number) => {
     setPlayerId(playerNo);
@@ -64,6 +66,7 @@ const Players = () => {
 
   return (
     <div className="pt-2">
+      <h1>{process.env.NEXT_PUBLIC_API_URL}</h1>
       <PlayersGrid
         onClick={handlePlayerClick}
         players={players}
