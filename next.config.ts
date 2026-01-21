@@ -12,18 +12,14 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
-      {
+       {
         source: "/api/auth/:path*",
         destination:
           "https://goal365-production.up.railway.app/api/auth/:path*",
       },
-      // {
-      //   source: "/api/:path*",
-      //   destination: "https://mytipster-production.up.railway.app/api/:path*",
-      // },
       {
         source: "/api/:path*",
-        destination: "http://localhost:3009/api/:path*",
+        destination: `${process.env.NEXT_PUBLIC_API_URL}/api/:path*`,
       },
     ];
   },
