@@ -49,36 +49,38 @@ export default function CreatePlayerForm({
   };
 
   return (
-    <div className="rounded-md border p-2 border-gray-100 shadow-sm  m-2 mt-4">
-      <h2 className="text-xl font-bold mb-4 text-gray-800">
-        สร้าง Player ใหม่
-      </h2>
+    <div className=" pt-5">
+      <div className="rounded-md border p-2 py-4 border-gray-100 shadow-sm  m-2 ">
+        <h2 className="text-xl text-center font-bold mb-4 text-gray-400">
+          สร้าง Player
+        </h2>
 
-      <input
-        type="text"
-        placeholder="ตั้งชื่อ"
-        value={name}
-        onChange={(e) => onChangeName(e.target.value)}
-        className="w-full rounded-lg border px-4 py-2 mb-3
+        <input
+          type="text"
+          placeholder="ตั้งชื่อ"
+          value={name}
+          onChange={(e) => onChangeName(e.target.value)}
+          className="w-full rounded-lg border px-4 py-2 mb-3
                    focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
+        />
 
-      <textarea
-        placeholder="สเต็ปนอก ตอกเจ็บเจ็บ"
-        value={bio}
-        onChange={(e) => onChangeBio(e.target.value)}
-        rows={3}
-        className="w-full rounded-lg border px-4 py-2 mb-4 resize-none
+        <textarea
+          placeholder="สเต็ปนอก ตอกเจ็บเจ็บ"
+          value={bio}
+          onChange={(e) => onChangeBio(e.target.value)}
+          rows={3}
+          className="w-full rounded-lg border px-4 py-2 mb-4 resize-none
                    focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
+        />
 
-      <button
-        onClick={handleCreate}
-        className="w-full rounded-lg bg-blue-600 text-white py-2 font-semibold
+        <button
+          onClick={handleCreate}
+          className="w-full rounded-lg bg-blue-600 text-white py-2 font-semibold
                    hover:bg-blue-700 transition"
-      >
-        Create Player
-      </button>
+        >
+          Create Player
+        </button>
+      </div>
     </div>
   );
 }

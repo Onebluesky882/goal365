@@ -50,13 +50,6 @@ const Players = () => {
     fetchPlayers();
   }, [isLoading, session?.user?.id]);
 
-  // if no players redirect
-  useEffect(() => {
-    if (!isLoading && db && players.length === 0) {
-      router.push("/new-player");
-    }
-  }, [isLoading, db, players.length]);
-
   // if no db
   useEffect(() => {
     if (isLoading) return;
