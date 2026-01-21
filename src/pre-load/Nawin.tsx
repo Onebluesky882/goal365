@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MatchTeams from "@/components/Nawinta/MatchTeams";
 import LoadingIndicators from "@/components/Loading_indicators";
 import { nawinApi } from "@/api/api";
@@ -17,9 +17,7 @@ export default function PredictionView() {
   const [protecting, setProtecting] = useState(true);
   const { session, isLoading } = useAuth();
   const router = useRouter();
-
-  console.log("teams ", teams);
-
+  const bottomRef = useRef<HTMLDivElement | null>(null);
   // ===== POST FIXTURE =====
   const submitFixture = async () => {
     if (!fixtureId.trim()) return;
@@ -120,6 +118,14 @@ export default function PredictionView() {
         </div>
       ) : (
         <div className="flex relative flex-col items-center w-full mb-20">
+          <button
+            onClick={() =>
+              bottomRef.current?.scrollIntoView({ behavior: "smooth" })
+            }
+            className=" border bg-accent/20 p-3 m-2 rounded-3xl cursor-pointer"
+          >
+            ล่างสุด
+          </button>
           <div className="space-y-6 w-full max-w-3xl">
             {teams.length === 0 && (
               <p className="text-sm text-gray-500 text-center">
@@ -136,7 +142,7 @@ export default function PredictionView() {
             ))}
           </div>
 
-          <div className="fixed bottom-4">
+          <div ref={bottomRef} className="mt-10">
             <InsertNawinFixTrue
               fixtureId={fixtureId}
               setFixtureId={setFixtureId}
