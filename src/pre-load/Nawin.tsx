@@ -18,6 +18,8 @@ export default function PredictionView() {
   const { session, isLoading } = useAuth();
   const router = useRouter();
 
+  console.log("teams ", teams);
+
   // ===== POST FIXTURE =====
   const submitFixture = async () => {
     if (!fixtureId.trim()) return;
@@ -52,7 +54,6 @@ export default function PredictionView() {
     const getData = async () => {
       try {
         const res = await nawinApi.getNawin();
-
         const mappedTeams: TeamsRoot[] = [];
         const mappedH2H: H2HMatch[] = [];
 
@@ -79,21 +80,16 @@ export default function PredictionView() {
   }, []);
 
   useEffect(() => {
-    const Protected = () => {
-      if (isLoading) return <LoadingIndicators />;
+    if (isLoading) return;
 
-      if (session?.user?.email == "wansing882@gmail.com") {
-        setProtecting(false);
-      }
-    };
-    Protected();
+    if (session?.user?.email === "wansing882@gmail.com") {
+      setProtecting(false);
+    } else {
+      setProtecting(true);
+    }
   }, [session, isLoading]);
 
   if (loading) return <LoadingIndicators />;
-  console.log(
-    "process.env.NEXT_PUBLIC_API_URL: ",
-    process.env.NEXT_PUBLIC_API_URL,
-  );
 
   return (
     <>

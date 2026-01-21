@@ -49,10 +49,10 @@ export default function CreatePlayerForm({
   };
 
   return (
-    <div className=" pt-5">
-      <div className="rounded-md border p-2 py-4 border-gray-100 shadow-sm  m-2 ">
-        <h2 className="text-xl text-center font-bold mb-4 text-gray-400">
-          สร้าง Player
+    <div className=" pt-5 m-4 ">
+      <div className="rounded-xl border border-gray-600 shadow-sm m-2 px-10 py-10  bg-accent/10">
+        <h2 className="text-md  pl-5  font-bold mb-4 text-gray-300">
+          New Players
         </h2>
 
         <input

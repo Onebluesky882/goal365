@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 
+console.log("process.env.NEXT_PUBLIC_API_URL", process.env.NEXT_PUBLIC_API_URL);
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
@@ -11,6 +12,8 @@ const nextConfig: NextConfig = {
     ],
   },
   async rewrites() {
+    const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3009";
+    console.log("API_URL", API_URL);
     return [
       {
         source: "/api/auth/:path*",
@@ -19,7 +22,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/api/:path*",
-        destination: `https://mytipster-production.up.railway.app/api/:path*`,
+        destination: `${API_URL}/api/:path*`,
       },
     ];
   },
