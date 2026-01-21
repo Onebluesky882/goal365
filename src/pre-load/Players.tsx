@@ -29,8 +29,11 @@ const Players = () => {
       try {
         const userId = session.user?.id;
         const res = await playersApi.getPlayers(userId ?? "");
-        setPlayers(res.data);
+
         setDb(true);
+        const playersData = Array.isArray(res.data) ? res.data : [];
+        setPlayers(playersData);
+
         if (res.data.length >= 2) {
           setLimitReached(true);
         } else {
@@ -38,6 +41,8 @@ const Players = () => {
         }
       } catch (err) {
         handleError(err, "cannot fetch players");
+        setPlayers([]);
+        setLimitReached(false);
       } finally {
       }
     };
@@ -45,6 +50,14 @@ const Players = () => {
     fetchPlayers();
   }, [isLoading, session?.user?.id]);
 
+  // if no players redirect
+  useEffect(() => {
+    if (!isLoading && db && players.length === 0) {
+      router.push("/new-player");
+    }
+  }, [isLoading, db, players.length]);
+
+  // if no db
   useEffect(() => {
     if (isLoading) return;
 
@@ -53,7 +66,7 @@ const Players = () => {
         toast.error("server not connect");
         router.push("/");
       }
-    }, 8000);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, [isLoading, db]);
