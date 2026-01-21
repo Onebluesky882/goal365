@@ -95,8 +95,6 @@ export default function PredictionView() {
     process.env.NEXT_PUBLIC_API_URL,
   );
 
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  console.log("apiUrl", apiUrl);
   return (
     <>
       {protecting ? (
@@ -126,7 +124,6 @@ export default function PredictionView() {
         </div>
       ) : (
         <div className="flex relative flex-col items-center w-full mb-20">
-          <h1>{apiUrl}</h1>
           <div className="space-y-6 w-full max-w-3xl">
             {teams.length === 0 && (
               <p className="text-sm text-gray-500 text-center">

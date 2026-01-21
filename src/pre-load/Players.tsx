@@ -79,7 +79,6 @@ const Players = () => {
 
   return (
     <div className="pt-2">
-      <h1>{process.env.NEXT_PUBLIC_API_URL}</h1>
       <PlayersGrid
         onClick={handlePlayerClick}
         players={players}
