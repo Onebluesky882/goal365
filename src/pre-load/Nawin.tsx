@@ -87,7 +87,7 @@ export default function PredictionView() {
       }
     };
     Protected();
-  }, [session]);
+  }, [session, isLoading]);
 
   if (loading) return <LoadingIndicators />;
 
