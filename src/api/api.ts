@@ -19,3 +19,16 @@ export const nawinApi = {
   },
   postNawin: (fixtureId: string) => api.post("/nawin", { fixtureId }),
 };
+
+export const sportbookApi = {
+  getById: (id: string) => api.get("/sportsbook/fx", { params: { id } }),
+  getPreMatch: (date: string, status: string) =>
+    api.get("/sportsbook", { params: { date, status } }),
+  getComingSoon: (date: string, status: string) =>
+    api.get("/sportsbook", { params: { date, status } }),
+};
+
+export const myAnalyticApi = {
+  getAnalytics: (date: string) => api.get("/analytics", { params: { date } }),
+};
+// todo post Bet วางเบ็ต record

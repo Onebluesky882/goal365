@@ -1,6 +1,6 @@
 import MenuBar from "@/components/sportbook/MenuBar";
-import SportBook from "@/pre-load/Sportbook";
 import React from "react";
+import SportBook from '@/pre-load/sportbook';
 
 const page = () => {
   return (

@@ -56,6 +56,20 @@ const Headers = () => {
     return <LoadingIndicators />;
   }
 
+  const topMenuBar = [
+    {
+      name: "Today",
+      path: "sportbook",
+    },
+    {
+      name: "Coming Soon",
+      path: "",
+    },
+    {
+      name: "Live",
+      path: "",
+    },
+  ];
   return (
     <div
       className="sticky top-0 z-50 bg-background  "
@@ -70,13 +84,13 @@ const Headers = () => {
           </span>
 
           <nav className="hidden md:flex space-x-8  text-custom-gray  text-sm font-medium">
-            {["Sports", "In-Play", "Casino", "Odds"].map((item) => (
-              <Link key={item} href={`/${item.toLowerCase()}`}>
+            {topMenuBar.map((item) => (
+              <Link key={item.name} href={`/${item.path}`}>
                 <span
-                  key={item}
+                  key={item.name}
                   className="cursor-pointer hover:text-web-primary transition-colors"
                 >
-                  {item}
+                  {item.name}
                 </span>
               </Link>
             ))}
