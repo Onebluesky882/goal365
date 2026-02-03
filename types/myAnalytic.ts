@@ -48,6 +48,7 @@ export type Match = {
     form: string;
   };
   H2H?: H2HMatch[];
+  Score: Score;
 };
 
 // types/match.types.ts - เพิ่ม H2H types
@@ -89,13 +90,16 @@ export type H2HMatch = {
     away: number;
   };
   score: {
-    halftime: {
-      home: number;
-      away: number;
-    };
     fulltime: {
       home: number;
       away: number;
     };
+  };
+};
+
+export type Score = {
+  fulltime?: {
+    home?: number | null;
+    away?: number | null;
   };
 };

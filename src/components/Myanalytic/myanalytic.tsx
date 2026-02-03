@@ -1,9 +1,10 @@
 // components/Myanalytic/myanalytic.tsx
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { AsianHandicap, Match } from "../../../types/myAnalytic";
+import { AsianHandicap, Match, Score } from "../../../types/myAnalytic";
+import { ScoreFullTime } from "./Score";
 
 interface MatchCardProps {
   match: Match;
@@ -71,7 +72,7 @@ export default function MatchCard({ match, onPickChange }: MatchCardProps) {
     if (handicap.line > 0) return match.away; // away ต่อ
     return "-";
   };
-
+  console.log("match score", match.Score);
   return (
     <div className="bg-background rounded-lg shadow-md hover:shadow-xl transition-shadow border border-gray-100">
       {/* Main Card Content */}
@@ -97,13 +98,12 @@ export default function MatchCard({ match, onPickChange }: MatchCardProps) {
             {isPicked ? "✓ Picked" : "Pick"}
           </button>
         </div>
-
         {/* Teams */}
         <div className="space-y-3 mb-3">
           {/* Home Team */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 flex-1 min-w-0">
-              <div className="w-6 h-6 relative flex-shrink-0">
+              <div className="w-6 h-6 relative shrink-0">
                 <Image
                   src={match.home_logo || "/placeholder-team.png"}
                   alt={match.home}
@@ -124,7 +124,7 @@ export default function MatchCard({ match, onPickChange }: MatchCardProps) {
           {/* Away Team */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 flex-1 min-w-0">
-              <div className="w-6 h-6 relative flex-shrink-0">
+              <div className="w-6 h-6 relative shrink-0">
                 <Image
                   src={match.away_logo || "/placeholder-team.png"}
                   alt={match.away}
@@ -142,7 +142,6 @@ export default function MatchCard({ match, onPickChange }: MatchCardProps) {
             </span>
           </div>
         </div>
-
         {/* Form Display */}
         <div className="mb-3">
           <div className="space-y-2">
@@ -185,10 +184,16 @@ export default function MatchCard({ match, onPickChange }: MatchCardProps) {
             )}
           </div>
         </div>
-
+        <div>
+          <ScoreFullTime
+            score={match.Score}
+            homeName={match.home}
+            awayName={match.away}
+          />
+        </div>
         {/* Stats Summary */}
         <div className="grid grid-cols-2 gap-2 mb-3 text-xs">
-          <div className="bg-blue-50 rounded p-2">
+          <div className="bg-blue-300 rounded p-2">
             <div className="text-gray-600 mb-1 font-medium">Home Last 5</div>
             <div className="space-y-1">
               <div className="flex justify-between">
@@ -214,7 +219,7 @@ export default function MatchCard({ match, onPickChange }: MatchCardProps) {
             </div>
           </div>
 
-          <div className="bg-red-50 rounded p-2">
+          <div className="bg-red-300 rounded p-2">
             <div className="text-gray-600 mb-1 font-medium">Away Last 5</div>
             <div className="space-y-1">
               <div className="flex justify-between">
@@ -240,7 +245,6 @@ export default function MatchCard({ match, onPickChange }: MatchCardProps) {
             </div>
           </div>
         </div>
-
         {/* Asian Handicap */}
         <div className="mb-3">
           <div className="text-xs text-gray-600 mb-2 font-medium">
@@ -320,7 +324,6 @@ export default function MatchCard({ match, onPickChange }: MatchCardProps) {
               })}
           </div>
         </div>
-
         {/* View Details Button */}
         <button
           onClick={() => setShowDetails(!showDetails)}
@@ -410,14 +413,6 @@ export default function MatchCard({ match, onPickChange }: MatchCardProps) {
                         {h2h.goals.away}
                       </span>
                     </div>
-                  </div>
-
-                  {/* Score Info */}
-                  <div className="mt-2 pt-2 border-t border-gray-100 flex justify-between text-gray-500">
-                    <span>{h2h.league.name}</span>
-                    <span>
-                      HT: {h2h.score.halftime.home}-{h2h.score.halftime.away}
-                    </span>
                   </div>
                 </div>
               );

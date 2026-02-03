@@ -18,7 +18,8 @@ const MyAnalytics = () => {
     const fetchMatches = async () => {
       try {
         setLoading(true);
-        const currentDate = date || pickDate;
+        // const currentDate = date || pickDate;
+        const currentDate = "2026-02-02";
         setDate(currentDate);
 
         const res = await myAnalyticApi.getAnalytics(currentDate);
@@ -41,15 +42,18 @@ const MyAnalytics = () => {
     fetchMatches();
   }, [date, pickDate]);
 
+
+
   const handlePickChange = (fixtureId: number, picked: boolean) => {
     console.log(`Match ${fixtureId} picked:`, picked);
-    // TODO: Send to API or update state
+
     setMatchesData((prev) =>
       prev.map((match) =>
         match.fixture_id === fixtureId ? { ...match, picked } : match,
       ),
     );
   };
+
 
   return (
     <div className="container mx-auto px-4 py-8">
