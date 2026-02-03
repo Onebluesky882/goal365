@@ -48,7 +48,7 @@ const Players = () => {
     };
 
     fetchPlayers();
-  }, [isLoading, session?.user?.id]);
+  }, [isLoading, session?.user?.id, router]);
 
   // if no db
   useEffect(() => {
@@ -62,7 +62,7 @@ const Players = () => {
     }, 5000);
 
     return () => clearTimeout(timer);
-  }, [isLoading, db]);
+  }, [isLoading, db, router , ]);
   if (isLoading) return <LoadingIndicators />;
 
   const handlePlayerClick = async (playerNo: number) => {

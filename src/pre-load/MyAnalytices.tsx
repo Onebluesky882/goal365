@@ -7,13 +7,12 @@ import MatchCard from "@/components/Myanalytic/myanalytic";
 import React, { useEffect, useState } from "react";
 import { Match } from "../../types/myAnalytic";
 type Props = {
-  params: { date: string };
+  date: string;
 };
 
-const MyAnalytics = ({ params }: Props) => {
+const MyAnalytics = ({ date}: Props) => {
   const [matchesData, setMatchesData] = useState<Match[]>([]);
   const [loading, setLoading] = useState(false);
-  const { date } = params;
   useEffect(() => {
     const fetchMatches = async () => {
       try {
@@ -38,11 +37,9 @@ const MyAnalytics = ({ params }: Props) => {
     };
 
     fetchMatches();
-  }, [params]);
+  }, [date]);
 
   const handlePickChange = (fixtureId: number, picked: boolean) => {
-    console.log(`Match ${fixtureId} picked:`, picked);
-
     setMatchesData((prev) =>
       prev.map((match) =>
         match.fixture_id === fixtureId ? { ...match, picked } : match,

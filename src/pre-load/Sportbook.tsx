@@ -2,24 +2,21 @@
 
 import { sportbookApi } from "@/api/api";
 import React, { useEffect, useState } from "react";
+import { Match } from "../../types/myAnalytic";
 
 const SportBook = () => {
-  const [date, setDate] = useState<string>("");
-  const [sportbook, setSportbook] = useState<any>([]);
+  const [sportbook, setSportbook] = useState<Match>();
+  const today = new Date().toISOString().slice(0, 10);
   useEffect(() => {
-    const today = new Date().toISOString().slice(0, 10);
-
     const fetch = async () => {
       const res = await sportbookApi.getPreMatch(today, "pre_match");
       setSportbook(res.data);
     };
 
     fetch();
-  }, [date]);
+  }, [today]);
 
-  console.log(sportbook);
   return <pre>{JSON.stringify(sportbook, null, 2)}</pre>;
 };
 
 export default SportBook;
-

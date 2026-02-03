@@ -1,18 +1,12 @@
 import MyAnalytics from "@/pre-load/MyAnalytices";
 import React from "react";
-type Props = {
-  params: {
-    date: string;
-  };
+
+type props = {
+  params: Promise<{ date: string }>;
 };
 
-const page = ({ params }: Props) => {
-  const { date } = params;
-  return (
-    <div>
-      <MyAnalytics params={{date}} />
-    </div>
-  );
-};
+export default async function Page({ params }: props) {
+  const { date } = await params;
 
-export default page;
+  return <MyAnalytics date={date} />;
+}

@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { AsianHandicap, Match, Score } from "../../../types/myAnalytic";
+import { AsianHandicap, Match } from "../../../types/myAnalytic";
 import { ScoreFullTime } from "./Score";
 
 interface MatchCardProps {
@@ -343,7 +343,6 @@ export default function MatchCard({ match, onPickChange }: MatchCardProps) {
             {match.H2H.map((h2h, idx) => {
               const isHomeWin = h2h.teams.home.winner;
               const isAwayWin = h2h.teams.away.winner;
-              const isDraw = !isHomeWin && !isAwayWin;
 
               return (
                 <div
