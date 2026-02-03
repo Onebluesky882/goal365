@@ -6,23 +6,21 @@ import { myAnalyticApi } from "@/api/api";
 import MatchCard from "@/components/Myanalytic/myanalytic";
 import React, { useEffect, useState } from "react";
 import { Match } from "../../types/myAnalytic";
+type Props = {
+  params: { date: string };
+};
 
-const MyAnalytics = () => {
-  const [date, setDate] = useState("");
+const MyAnalytics = ({ params }: Props) => {
   const [matchesData, setMatchesData] = useState<Match[]>([]);
   const [loading, setLoading] = useState(false);
-
-  const pickDate = new Date().toISOString().slice(0, 10);
-
+  const { date } = params;
   useEffect(() => {
     const fetchMatches = async () => {
       try {
         setLoading(true);
         // const currentDate = date || pickDate;
-        const currentDate = "2026-02-02";
-        setDate(currentDate);
 
-        const res = await myAnalyticApi.getAnalytics(currentDate);
+        const res = await myAnalyticApi.getAnalytics(date);
 
         if (res.data && Array.isArray(res.data)) {
           setMatchesData(res.data);
@@ -40,9 +38,7 @@ const MyAnalytics = () => {
     };
 
     fetchMatches();
-  }, [date, pickDate]);
-
-
+  }, [params]);
 
   const handlePickChange = (fixtureId: number, picked: boolean) => {
     console.log(`Match ${fixtureId} picked:`, picked);
@@ -54,12 +50,11 @@ const MyAnalytics = () => {
     );
   };
 
-
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-6">
         <h1 className="text-2xl font-bold mb-2">Football Matches Analytics</h1>
-        <p className="text-gray-600">Date: {date || pickDate}</p>
+        <p className="text-gray-600">Date: {date}</p>
       </div>
 
       {loading ? (

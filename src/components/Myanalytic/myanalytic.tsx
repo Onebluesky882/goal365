@@ -1,7 +1,7 @@
 // components/Myanalytic/myanalytic.tsx
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { AsianHandicap, Match, Score } from "../../../types/myAnalytic";
 import { ScoreFullTime } from "./Score";
