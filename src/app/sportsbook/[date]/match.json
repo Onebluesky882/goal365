@@ -1,0 +1,129 @@
+[
+  {
+    "id": 2089613093,
+    "date": "2026-02-04T00:00:00Z",
+    "timestamp": "2026-02-04T09:00:00Z",
+    "fixture_id": 1503442,
+    "home": "Dagon Port",
+    "away": "Dagon",
+    "league": "National League",
+    "country": "Myanmar",
+    "status": "pre_match",
+    "MatchInfo": {
+      "long": "",
+      "short": "NS"
+    },
+    "bookmaker": "Pinnacle",
+    "match_winner": {
+      "home": 5.32,
+      "draw": 4.78,
+      "away": 1.38
+    },
+    "asian_handicap": [
+      {
+        "line": -1.75,
+        "home_odd": 1.59,
+        "away_odd": 2.18,
+        "favorite": "Away",
+        "is_favorite": true
+      },
+      {
+        "line": -1.5,
+        "home_odd": 1.76,
+        "away_odd": 1.95,
+        "favorite": "Away",
+        "is_favorite": true
+      },
+      {
+        "line": -1.25,
+        "home_odd": 1.94,
+        "away_odd": 1.75,
+        "favorite": "Away",
+        "is_favorite": true
+      },
+      {
+        "line": -1,
+        "home_odd": 2.23,
+        "away_odd": 1.55,
+        "favorite": "Away",
+        "is_favorite": true
+      },
+      {
+        "line": -0.75,
+        "home_odd": 2.49,
+        "away_odd": 1.44,
+        "favorite": "Away",
+        "is_favorite": true
+      }
+    ],
+    "over_under_full_time": [
+      {
+        "value": "3.0",
+        "over": 1.38,
+        "under": 2.71
+      },
+      {
+        "value": "3.25",
+        "over": 1.54,
+        "under": 2.24
+      },
+      {
+        "value": "4.0",
+        "over": 2.14,
+        "under": 1.62
+      },
+      {
+        "value": "4.25",
+        "over": 2.35,
+        "under": 1.49
+      },
+      {
+        "value": "4.5",
+        "over": 2.58,
+        "under": 1.41
+      }
+    ],
+    "over_under_fh": [
+      {
+        "value": "1.25",
+        "over": 1.55,
+        "under": 2.25
+      },
+      {
+        "value": "1.75",
+        "over": 2.1,
+        "under": 1.63
+      },
+      {
+        "value": "2.0",
+        "over": 2.65,
+        "under": 1.38
+      }
+    ],
+    "asian_handicap_fh": [
+      {
+        "line": -1.75,
+        "home_odd": 1.59,
+        "away_odd": 2.18,
+        "favorite": "Away",
+        "is_favorite": true
+      },
+      {
+        "line": -1.5,
+        "home_odd": 1.76,
+        "away_odd": 1.95,
+        "favorite": "Away",
+        "is_favorite": true
+      },
+      {
+        "line": -1.25,
+        "home_odd": 1.94,
+        "away_odd": 1.75,
+        "favorite": "Away",
+        "is_favorite": true
+      }
+    ],
+    "created_at": "2026-02-04T04:56:25.492161Z",
+    "updated_at": "2026-02-04T04:56:25.492161Z"
+  }
+]
