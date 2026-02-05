@@ -1,5 +1,5 @@
 import { formatDate } from "@/common/format_date";
-import { MatchCardProps } from "./Myanalytic";
+import { MatchCardProps } from "./MyAnalytic";
 
 export const AnalyserHeader = ({
   match,

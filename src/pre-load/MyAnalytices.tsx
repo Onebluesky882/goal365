@@ -5,7 +5,7 @@
 import { myAnalyticApi } from "@/api/api";
 import React, { useEffect, useState } from "react";
 import { Match } from "../../types/myAnalytic";
-import MatchCard from '../components/Myanalytic/Myanalytic';
+import MatchCard from "../components/Myanalytic/MyAnalytic";
 type Props = {
   date: string;
 };
