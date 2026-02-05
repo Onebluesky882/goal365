@@ -31,6 +31,8 @@ export const sportbookApi = {
 
 export const myAnalyticApi = {
   getAnalytics: (date: string) => api.get("/analytics", { params: { date } }),
+  getReview: (date: string, picked: boolean) =>
+    api.get("/analytics/reviews", { params: { date, picked } }),
   picked: (body: PickedDto) => api.patch("/analytic/picked", body),
 };
 // todo post Bet วางเบ็ต record

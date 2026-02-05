@@ -28,12 +28,6 @@ const MyAnalytics = ({ date }: Props) => {
     fetchMatches();
   }, [date]);
 
-  const handlePickChange = (fixtureId: number, picked: boolean) => {
-    setMatchesData((prev) =>
-      prev.map((m) => (m.fixture_id === fixtureId ? { ...m, picked } : m)),
-    );
-  };
-
   const handlePickToggle = async (fixtureId: number, picked: boolean) => {
     if (!fixtureId) return;
     const body: PickedDto = {
