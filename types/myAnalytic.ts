@@ -48,7 +48,7 @@ export type Match = {
     form: string;
   };
   H2H?: H2HMatch[];
-  Score: Score;
+  score: Score;
 };
 
 // types/match.types.ts - เพิ่ม H2H types

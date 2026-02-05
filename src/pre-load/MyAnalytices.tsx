@@ -3,14 +3,14 @@
 "use client";
 
 import { myAnalyticApi } from "@/api/api";
-import MatchCard from "@/components/Myanalytic/myanalytic";
 import React, { useEffect, useState } from "react";
 import { Match } from "../../types/myAnalytic";
+import MatchCard from '../components/Myanalytic/Myanalytic';
 type Props = {
   date: string;
 };
 
-const MyAnalytics = ({ date}: Props) => {
+const MyAnalytics = ({ date }: Props) => {
   const [matchesData, setMatchesData] = useState<Match[]>([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -21,7 +21,7 @@ const MyAnalytics = ({ date}: Props) => {
 
         const res = await myAnalyticApi.getAnalytics(date);
 
-        if (res.data && Array.isArray(res.data)) {
+        if (res.data) {
           setMatchesData(res.data);
         } else {
           setMatchesData([]);
@@ -38,6 +38,8 @@ const MyAnalytics = ({ date}: Props) => {
 
     fetchMatches();
   }, [date]);
+
+  console.log("matchesData :", matchesData);
 
   const handlePickChange = (fixtureId: number, picked: boolean) => {
     setMatchesData((prev) =>
@@ -69,6 +71,7 @@ const MyAnalytics = ({ date}: Props) => {
               key={match.id}
               match={match}
               onPickChange={handlePickChange}
+              isPicked={false}
             />
           ))}
         </div>

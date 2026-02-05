@@ -5,11 +5,13 @@ import { useState } from "react";
 import Image from "next/image";
 import { AsianHandicap, Match } from "../../../types/myAnalytic";
 import { ScoreFullTime } from "./Score";
+import { AnalyserHeader } from "./AnalyserHeader";
 
-interface MatchCardProps {
+export type MatchCardProps = {
   match: Match;
+  isPicked: boolean;
   onPickChange?: (fixtureId: number, picked: boolean) => void;
-}
+};
 
 export default function MatchCard({ match, onPickChange }: MatchCardProps) {
   const [isPicked, setIsPicked] = useState(match.picked || false);
@@ -19,20 +21,6 @@ export default function MatchCard({ match, onPickChange }: MatchCardProps) {
     const newPickedState = !isPicked;
     setIsPicked(newPickedState);
     onPickChange?.(match.fixture_id, newPickedState);
-  };
-
-  const formatDate = (timestamp: string) => {
-    try {
-      const date = new Date(timestamp);
-      return date.toLocaleString("th-TH", {
-        month: "short",
-        day: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-      });
-    } catch {
-      return timestamp;
-    }
   };
 
   const formatH2HDate = (timestamp: string) => {
@@ -72,32 +60,18 @@ export default function MatchCard({ match, onPickChange }: MatchCardProps) {
     if (handicap.line > 0) return match.away; // away ต่อ
     return "-";
   };
-  console.log("match score", match.Score);
   return (
     <div className="bg-background rounded-lg shadow-md hover:shadow-xl transition-shadow border border-gray-100">
       {/* Main Card Content */}
       <div className="p-4">
         {/* Header */}
-        <p className="text[8px] text-gray-500">match id: {match.fixture_id}</p>
-        <div className="flex justify-between items-start mb-3">
-          <div className="text-xs text-gray-500">
-            <div className="font-medium text-gray-700">{match.league}</div>
-            <div className="text-gray-500">{match.country}</div>
-            <div className="text-gray-400 mt-1">
-              {formatDate(match.timestamp)}
-            </div>
-          </div>
-          <button
-            onClick={handlePickToggle}
-            className={`px-4 py-2 rounded-full font-medium transition-all ${
-              isPicked
-                ? "bg-green-500 text-white hover:bg-green-600 shadow-md"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-            }`}
-          >
-            {isPicked ? "✓ Picked" : "Pick"}
-          </button>
-        </div>
+
+        <AnalyserHeader
+          match={match}
+          handlePickToggle={handlePickToggle}
+          isPicked={isPicked}
+        />
+
         {/* Teams */}
         <div className="space-y-3 mb-3">
           {/* Home Team */}
@@ -186,7 +160,7 @@ export default function MatchCard({ match, onPickChange }: MatchCardProps) {
         </div>
         <div>
           <ScoreFullTime
-            score={match.Score}
+            score={match.score}
             homeName={match.home}
             awayName={match.away}
           />
@@ -275,20 +249,13 @@ export default function MatchCard({ match, onPickChange }: MatchCardProps) {
                       <div
                         className={`text-lg font-bold ${
                           handicap.is_favorite
-                            ? "text-orange-600"
+                            ? "text-orange-600 "
                             : "text-gray-600"
                         }`}
                       >
                         {handicap.line > 0 ? "+" : ""}
                         {handicap.line}
                       </div>
-
-                      {/* favorite badge */}
-                      {handicap.is_favorite && (
-                        <div className="text-[10px] bg-red-400/90 text-white px-2 py-0.5 rounded-full w-fit">
-                          Favorite: {favTeam}
-                        </div>
-                      )}
                     </div>
 
                     {/* ODDS */}
@@ -298,7 +265,7 @@ export default function MatchCard({ match, onPickChange }: MatchCardProps) {
                         <div
                           className={` text-[10px] ${
                             handicap.favorite === "Home"
-                              ? "text-red-400 "
+                              ? "text-red-400 font-bold "
                               : "text-gray-500"
                           }`}
                         >
@@ -311,7 +278,7 @@ export default function MatchCard({ match, onPickChange }: MatchCardProps) {
                         <div
                           className={`text-[10px]  ${
                             handicap.favorite === "Away"
-                              ? "text-red-400 "
+                              ? "text-red-400 font-bold"
                               : "text-gray-500"
                           }`}
                         >
