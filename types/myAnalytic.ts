@@ -103,3 +103,10 @@ export type Score = {
     away?: number | null;
   };
 };
+
+// patch Update picked
+export type PickedDto = {
+  id: string;
+  date: string;
+  picked: boolean;
+};

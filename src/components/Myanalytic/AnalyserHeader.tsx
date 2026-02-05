@@ -1,13 +1,17 @@
 import { formatDate } from "@/common/format_date";
-import { MatchCardProps } from "./MyAnalytic";
+import { Match } from "../../../types/myAnalytic";
+
+type Props = {
+  match: Match;
+  isPicked?: boolean;
+  handlePickToggle?: (fixtureId: number, picked: boolean) => void;
+};
 
 export const AnalyserHeader = ({
   match,
-  handlePickToggle,
   isPicked,
-}: MatchCardProps & {
-  handlePickToggle: () => void;
-}) => {
+  handlePickToggle,
+}: Props) => {
   return (
     <>
       <div className="flex justify-center">
@@ -15,6 +19,7 @@ export const AnalyserHeader = ({
           Match id: {match.fixture_id}
         </p>
       </div>
+
       <div className="flex justify-between items-start mb-3">
         <div className="text-xs text-gray-500">
           <div className="font-medium text-gray-700">{match.league}</div>
@@ -25,7 +30,7 @@ export const AnalyserHeader = ({
         </div>
 
         <button
-          onClick={handlePickToggle}
+          onClick={() => handlePickToggle?.(match.fixture_id, !isPicked)}
           className={`px-4 py-2 rounded-full font-medium transition-all ${
             isPicked
               ? "bg-green-500 text-white hover:bg-green-600 shadow-md"

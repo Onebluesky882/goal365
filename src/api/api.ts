@@ -2,6 +2,7 @@ import { toSnakeCase } from "@/common/GroupSnakeCase";
 import { api } from "./instand";
 import { toSnake } from "@/common/stringToSnake";
 import { Nawin } from "../../types/nawin";
+import { PickedDto } from "../../types/myAnalytic";
 
 export const playersApi = {
   getPlayers: (userId: string) =>
@@ -30,5 +31,6 @@ export const sportbookApi = {
 
 export const myAnalyticApi = {
   getAnalytics: (date: string) => api.get("/analytics", { params: { date } }),
+  picked: (body: PickedDto) => api.patch("/analytic/picked", body),
 };
 // todo post Bet วางเบ็ต record

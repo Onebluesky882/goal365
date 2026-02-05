@@ -12,23 +12,22 @@ import Teams from "./Teams";
 import H2HPreviews from "./H2HPreviews";
 
 export type MatchCardProps = {
+  date?: string;
   match: Match;
   isPicked?: boolean;
-  onPickChange?: (fixtureId: number, picked: boolean) => void;
+  onPickChange?: (fixtureId: string, picked: boolean) => void;
   getFavoriteTeamName?: (handicap: AsianHandicap) => void;
   getFormArray?: (form: string) => string[];
   getFormColor?: (result: string) => string;
+  handlePickToggle?: (fixtureId: number, picked: boolean) => Promise<void>;
 };
 
-export default function MatchCard({ match, onPickChange }: MatchCardProps) {
-  const [isPicked, setIsPicked] = useState(match.picked || false);
+export default function MatchCard({
+  match,
+  handlePickToggle,
+  isPicked,
+}: MatchCardProps) {
   const [showDetails, setShowDetails] = useState(false);
-
-  const handlePickToggle = () => {
-    const newPickedState = !isPicked;
-    setIsPicked(newPickedState);
-    onPickChange?.(match.fixture_id, newPickedState);
-  };
 
   const formatH2HDate = (timestamp: string) => {
     try {
@@ -96,7 +95,7 @@ export default function MatchCard({ match, onPickChange }: MatchCardProps) {
         />
 
         {/* Stats Summary */}
-        <StatsSummary match={match} isPicked={isPicked} />
+        <StatsSummary match={match} />
 
         {/* Asian Handicap */}
         <AsianHandicapSection

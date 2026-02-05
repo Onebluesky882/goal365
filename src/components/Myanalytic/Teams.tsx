@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { MatchCardProps } from "./MyAnalytic";
 
-const Teams = ({match} : MatchCardProps) => {
+const Teams = ({ match }: MatchCardProps) => {
   return (
     <div className="space-y-3 mb-3">
       {/* Home Team */}
@@ -13,6 +13,7 @@ const Teams = ({match} : MatchCardProps) => {
               src={match.home_logo || "/placeholder-team.png"}
               alt={match.home}
               fill
+              sizes="50px"
               className="object-contain"
               onError={(e) => {
                 e.currentTarget.src = "/placeholder-team.png";
@@ -34,6 +35,7 @@ const Teams = ({match} : MatchCardProps) => {
               src={match.away_logo || "/placeholder-team.png"}
               alt={match.away}
               fill
+              sizes="50px"
               className="object-contain"
               onError={(e) => {
                 e.currentTarget.src = "/placeholder-team.png";
