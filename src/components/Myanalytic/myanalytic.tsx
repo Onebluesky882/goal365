@@ -22,11 +22,7 @@ export type MatchCardProps = {
   handlePickToggle?: (fixtureId: number, picked: boolean) => Promise<void>;
 };
 
-export default function MatchCard({
-  match,
-  handlePickToggle,
-  isPicked,
-}: MatchCardProps) {
+export default function MatchCard({ match, handlePickToggle }: MatchCardProps) {
   const [showDetails, setShowDetails] = useState(false);
 
   const formatH2HDate = (timestamp: string) => {
@@ -72,11 +68,7 @@ export default function MatchCard({
       <div className="p-4">
         {/* Header */}
 
-        <AnalyserHeader
-          match={match}
-          handlePickToggle={handlePickToggle}
-          isPicked={isPicked}
-        />
+        <AnalyserHeader match={match} handlePickToggle={handlePickToggle!} />
 
         {/* Teams */}
         <Teams match={match} />

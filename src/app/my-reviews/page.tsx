@@ -7,6 +7,7 @@ type Props = {
   };
 };
 export default function Page({ searchParams }: Props) {
+  console.log(searchParams);
   return (
     <MyReviews
       date={searchParams.date ?? ""}

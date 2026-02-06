@@ -28,6 +28,28 @@ const MyReviews = ({ date, picked }: Props) => {
     fetchMatches();
   }, [date, picked]);
 
+  const handlePickToggle = async (fixtureId: number, picked: boolean) => {
+    // optimistic update
+    setMatchesData((prev) =>
+      prev.map((m) => (m.fixture_id === fixtureId ? { ...m, picked } : m)),
+    );
+
+    try {
+      await myAnalyticApi.picked({
+        date,
+        id: String(fixtureId),
+        picked,
+      });
+    } catch {
+      // rollback
+      setMatchesData((prev) =>
+        prev.map((m) =>
+          m.fixture_id === fixtureId ? { ...m, picked: !picked } : m,
+        ),
+      );
+    }
+  };
+
   return (
     <>
       <div className="container mx-auto px-4 py-8">
@@ -36,7 +58,12 @@ const MyReviews = ({ date, picked }: Props) => {
         ) : (
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {matchesData.map((match) => (
-              <MatchCard key={match.id} match={match} date={date} />
+              <MatchCard
+                key={match.id}
+                match={match}
+                date={date}
+                handlePickToggle={handlePickToggle}
+              />
             ))}
           </div>
         )}

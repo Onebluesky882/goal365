@@ -3,15 +3,12 @@ import { Match } from "../../../types/myAnalytic";
 
 type Props = {
   match: Match;
-  isPicked?: boolean;
-  handlePickToggle?: (fixtureId: number, picked: boolean) => void;
+  handlePickToggle: (fixtureId: number, picked: boolean) => void;
 };
 
-export const AnalyserHeader = ({
-  match,
-  isPicked,
-  handlePickToggle,
-}: Props) => {
+export const AnalyserHeader = ({ match, handlePickToggle }: Props) => {
+  const isPicked = match.picked;
+
   return (
     <>
       <div className="flex justify-center">
@@ -30,14 +27,16 @@ export const AnalyserHeader = ({
         </div>
 
         <button
-          onClick={() => handlePickToggle?.(match.fixture_id, !isPicked)}
+          onClick={async () => {
+            handlePickToggle?.(match.fixture_id, !isPicked);
+          }}
           className={`px-4 py-2 rounded-full font-medium transition-all ${
             isPicked
-              ? "bg-green-500 text-white hover:bg-green-600 shadow-md"
+              ? " text-green-500 hover:bg-green-600 shadow-md"
               : "bg-gray-100 text-gray-700 hover:bg-gray-200"
           }`}
         >
-          {isPicked ? "✓ Picked" : "Pick"}
+          {isPicked ? "Picked" : "Pick"}
         </button>
       </div>
     </>

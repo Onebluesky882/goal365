@@ -29,6 +29,11 @@ const MyAnalytics = ({ date }: Props) => {
   }, [date]);
 
   const handlePickToggle = async (fixtureId: number, picked: boolean) => {
+    console.log("click");
+    setMatchesData((prev) =>
+      prev.map((m) => (m.fixture_id === fixtureId ? { ...m, picked } : m)),
+    );
+
     if (!fixtureId) return;
     const body: PickedDto = {
       date: date,
@@ -42,6 +47,12 @@ const MyAnalytics = ({ date }: Props) => {
     } catch (error) {
       toast.error("Fail! ");
     }
+
+    setMatchesData((prev) =>
+      prev.map((m) =>
+        m.fixture_id === fixtureId ? { ...m, picked: !picked } : m,
+      ),
+    );
   };
 
   return (

@@ -7,6 +7,7 @@ import ProfileMenu from "./profileMenu";
 import LoadingIndicators from "../Loading_indicators";
 import { useEffect, useRef, useState } from "react";
 import { CgMenuGridO } from "react-icons/cg";
+import path from "path";
 
 export const HeaderComponent = () => {
   const pathname = usePathname();
@@ -55,6 +56,15 @@ const Headers = () => {
   if (isLoading) {
     return <LoadingIndicators />;
   }
+  const format = (d: Date) => d.toLocaleDateString("en-CA");
+
+  const todayDate = new Date();
+
+  const today = format(todayDate);
+
+  const yesterdayDate = new Date(todayDate);
+  yesterdayDate.setDate(todayDate.getDate() - 1);
+
 
   const topMenuBar = [
     {
@@ -65,9 +75,18 @@ const Headers = () => {
       name: "Coming Soon",
       path: "",
     },
+
     {
       name: "Live",
       path: "",
+    },
+    {
+      name: "Analytics",
+      path: `my-analytics/${today}`,
+    },
+    {
+      name: "Mytips",
+      path: `my-reviews?date=${today}&picked=true`,
     },
   ];
   return (
