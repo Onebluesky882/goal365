@@ -7,7 +7,6 @@ import ProfileMenu from "./profileMenu";
 import LoadingIndicators from "../Loading_indicators";
 import { useEffect, useRef, useState } from "react";
 import { CgMenuGridO } from "react-icons/cg";
-import path from "path";
 
 export const HeaderComponent = () => {
   const pathname = usePathname();
@@ -65,7 +64,6 @@ const Headers = () => {
   const yesterdayDate = new Date(todayDate);
   yesterdayDate.setDate(todayDate.getDate() - 1);
 
-
   const topMenuBar = [
     {
       name: "Today",
@@ -82,7 +80,7 @@ const Headers = () => {
     },
     {
       name: "Analytics",
-      path: `my-analytics/${today}`,
+      path: `my-analytics`,
     },
     {
       name: "Mytips",

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { myAnalyticApi } from "@/api/api";
 import { Match } from "../../types/myAnalytic";
-import MatchCard from "@/components/Myanalytic/MyAnalytic";
+import MatchCard from "@/components/MyAnalytic/MyAnalytic";
 
 type Props = {
   date: string;

@@ -1,4 +1,3 @@
-// components/Myanalytic/myanalytic.tsx
 "use client";
 
 import { useState } from "react";

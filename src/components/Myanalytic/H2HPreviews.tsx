@@ -1,7 +1,8 @@
 import React from "react";
-import { MatchCardProps } from "./MyAnalytic";
 import Image from "next/image";
-type Props = MatchCardProps & {
+import { MatchCardProps } from "./MyAnalytic";
+
+export type Props = MatchCardProps & {
   formatH2HDate: (timestamp: string) => string;
 };
 
