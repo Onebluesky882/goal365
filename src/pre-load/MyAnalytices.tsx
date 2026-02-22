@@ -61,7 +61,8 @@ const MyAnalytics = ({ date }: Props) => {
         <div>Loading...</div>
       ) : (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {[...matchesData]
+          {matchesData
+            .filter((item) => item.picked == false)
             .sort(
               (a, b) =>
                 new Date(a.timestamp).getTime() -

@@ -57,14 +57,22 @@ const MyReviews = ({ date, picked }: Props) => {
           <div>Loading...</div>
         ) : (
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {matchesData.map((match) => (
-              <MatchCard
-                key={match.id}
-                match={match}
-                date={date}
-                handlePickToggle={handlePickToggle}
-              />
-            ))}
+            {matchesData
+              .filter((item) => item.picked == true)
+              .sort(
+                (a, b) =>
+                  new Date(a.timestamp).getTime() -
+                  new Date(b.timestamp).getTime(),
+              )
+
+              .map((match) => (
+                <MatchCard
+                  key={match.id}
+                  match={match}
+                  date={date}
+                  handlePickToggle={handlePickToggle}
+                />
+              ))}
           </div>
         )}
       </div>

@@ -41,7 +41,7 @@ export default function MatchCard({ match, handlePickToggle }: MatchCardProps) {
   // แปลง form string เป็น array
   const getFormArray = (form: string) => {
     if (!form) return [];
-    return form.split("");
+    return form.split("").reverse();
   };
 
   const getFormColor = (result: string) => {
