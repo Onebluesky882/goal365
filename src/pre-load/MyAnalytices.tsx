@@ -3,22 +3,23 @@
 import { myAnalyticApi } from "@/api/api";
 import React, { useEffect, useState } from "react";
 import { Match, PickedDto } from "../../types/myAnalytic";
-import MatchCard from "../components/Myanalytic/MyAnalytic";
 import { toast } from "sonner";
+import MatchCard from "@/components/MyAnalytic/MyAnalytic";
+import { PickDate } from "@/components/MyAnalytic/PickDate";
+import { formatDate } from "../utils/formatDate";
 
-type Props = {
-  date: string;
-};
-
-const MyAnalytics = ({ date }: Props) => {
+const MyAnalytics = () => {
   const [matchesData, setMatchesData] = useState<Match[]>([]);
   const [loading, setLoading] = useState(false);
+
+  const [date, setDate] = useState<Date>(new Date());
+  const pickDate = formatDate(date);
 
   useEffect(() => {
     const fetchMatches = async () => {
       try {
         setLoading(true);
-        const res = await myAnalyticApi.getAnalytics(date);
+        const res = await myAnalyticApi.getAnalytics(pickDate);
         setMatchesData(res.data || []);
       } finally {
         setLoading(false);
@@ -29,14 +30,13 @@ const MyAnalytics = ({ date }: Props) => {
   }, [date]);
 
   const handlePickToggle = async (fixtureId: number, picked: boolean) => {
-    console.log("click");
     setMatchesData((prev) =>
       prev.map((m) => (m.fixture_id === fixtureId ? { ...m, picked } : m)),
     );
 
     if (!fixtureId) return;
     const body: PickedDto = {
-      date: date,
+      date: pickDate,
       id: String(fixtureId),
       picked: picked,
     };
@@ -61,6 +61,12 @@ const MyAnalytics = ({ date }: Props) => {
         <div>Loading...</div>
       ) : (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <PickDate
+            date={date}
+            setDate={(newDate) => {
+              if (newDate) setDate(newDate);
+            }}
+          />
           {matchesData
             .filter((item) => item.picked == false)
             .sort(
@@ -74,7 +80,7 @@ const MyAnalytics = ({ date }: Props) => {
                 <MatchCard
                   key={match.id}
                   match={match}
-                  date={date}
+                  date={pickDate}
                   handlePickToggle={handlePickToggle}
                 />
               );

@@ -1,5 +1,4 @@
 import React from "react";
-import { MatchCardProps } from "./MyAnalytic";
 import { Match } from "../../../types/myAnalytic";
 
 type FormProps = {
