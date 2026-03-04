@@ -4,7 +4,6 @@ import "./globals.css";
 import { AuthProvider } from "@/GlobalContext/auth-provider";
 import { HeaderComponent } from "@/components/Header/Header";
 import { ToastProvider } from "@/GlobalContext/Toast";
-import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,7 +40,6 @@ export default function RootLayout({
             <div className=" min-h-screen bg-primary-foreground/80 h-full">
               {children}
             </div>
-            <Footer />
           </ToastProvider>
         </AuthProvider>
       </body>
