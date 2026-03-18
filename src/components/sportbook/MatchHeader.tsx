@@ -1,6 +1,6 @@
 "use client";
 
-import { MatchInfo } from "../../../types/sportbookMain";
+import { MatchInfo } from "@/types/sportbook";
 
 export const MatchHeader = ({ matchInfo }: { matchInfo: MatchInfo }) => {
   return (

@@ -2,12 +2,11 @@
 
 import { myAnalyticApi } from "@/api/api";
 import React, { useEffect, useState } from "react";
-import { Match, PickedDto } from "../types/myAnalytic
 import { toast } from "sonner";
 import MatchCard from "@/components/MyAnalytic/MyAnalytic";
 import { PickDate } from "@/components/MyAnalytic/PickDate";
 import { formatDate } from "../utils/formatDate";
-import { useStoreDate } from "@/store/date";
+import { Match, PickedDto } from "@/types/myAnalytic";
 
 const MyAnalytics = () => {
   const [matchesData, setMatchesData] = useState<Match[]>([]);

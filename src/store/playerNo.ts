@@ -6,7 +6,7 @@ type PlayerArea = {
   logout: () => void;
 };
 
-export const rStore = create<PlayerArea>((set) => ({
+export const usePlayerStore = create<PlayerArea>((set) => ({
   playerId: null,
   setPlayerId: (id) => set({ playerId: id }),
   logout: () => set({ playerId: null }),

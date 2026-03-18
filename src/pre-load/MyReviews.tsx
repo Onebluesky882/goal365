@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { myAnalyticApi } from "@/api/api";
-import { Match } from "../../types/myAnalytic";
 import MatchCard from "@/components/MyAnalytic/MyAnalytic";
+import { Match } from "@/types/myAnalytic";
 
 type Props = {
   date: string;
@@ -13,11 +13,11 @@ type Props = {
 const MyReviews = ({ date, picked }: Props) => {
   const [matchesData, setMatchesData] = useState<Match[]>([]);
   const [loading, setLoading] = useState(false);
-
   useEffect(() => {
     const fetchMatches = async () => {
       try {
         setLoading(true);
+        if (!date) return;
         const res = await myAnalyticApi.getReview(date, picked);
         setMatchesData(res.data || []);
       } finally {

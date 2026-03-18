@@ -1,7 +1,6 @@
 "use client";
 import { playersApi } from "@/api/api";
 import { useEffect, useState } from "react";
-import { Player } from "../../types/player";
 import LoadingIndicators from "@/components/Loading_indicators";
 import { handleError } from "@/lib/handleErrors";
 import { toast } from "sonner";
@@ -9,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { usePlayerStore } from "@/store/playerNo";
 import { useAuth } from "@/GlobalContext/auth-provider";
 import PlayersGrid from "@/components/Player/PlayerGrid";
+import { Player } from "@/types/player";
 
 const Players = () => {
   const { session, isLoading } = useAuth();
@@ -62,7 +62,7 @@ const Players = () => {
     }, 5000);
 
     return () => clearTimeout(timer);
-  }, [isLoading, db, router , ]);
+  }, [isLoading, db, router]);
   if (isLoading) return <LoadingIndicators />;
 
   const handlePlayerClick = async (playerNo: number) => {
@@ -92,5 +92,3 @@ const Players = () => {
     </div>
   );
 };
-
-export default Players;

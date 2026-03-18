@@ -1,10 +1,8 @@
-import PreMatch from "@/pre-@/pre-load/sportbookTable";
-import useSWR from "swr";
+import PreMatch from "@/pre-load/sportsbook/Prematch";
 
 export default async function page() {
   return (
     <>
-      /*coming soon */
       <PreMatch />
     </>
   );
