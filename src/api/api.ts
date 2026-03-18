@@ -1,8 +1,8 @@
 import { toSnakeCase } from "@/common/GroupSnakeCase";
 import { api } from "./instand";
 import { toSnake } from "@/common/stringToSnake";
-import { Nawin } from "../../types/nawin";
-import { PickedDto } from "../../types/myAnalytic";
+import { Nawin } from "../types/nawin";
+import { PickedDto } from "../types/myAnalytic";
 
 export const playersApi = {
   getPlayers: (userId: string) =>

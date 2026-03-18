@@ -59,12 +59,18 @@ importers:
       react-loading-indicators:
         specifier: ^1.0.1
         version: 1.0.1(react-dom@19.1.4(react@19.1.4))(react@19.1.4)
+      react-window:
+        specifier: ^2.2.7
+        version: 2.2.7(react-dom@19.1.4(react@19.1.4))(react@19.1.4)
       socket.io-client:
         specifier: ^4.8.3
         version: 4.8.3
       sonner:
         specifier: ^2.0.7
         version: 2.0.7(react-dom@19.1.4(react@19.1.4))(react@19.1.4)
+      swr:
+        specifier: ^2.4.1
+        version: 2.4.1(react@19.1.4)
       tailwind-merge:
         specifier: ^3.4.0
         version: 3.4.0
@@ -3305,6 +3311,10 @@ packages:
     resolution: {integrity: sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==}
     engines: {node: '>= 0.8'}
 
+  dequal@2.0.3:
+    resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
+    engines: {node: '>=6'}
+
   detect-libc@2.1.2:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
@@ -4474,6 +4484,12 @@ packages:
       '@types/react':
         optional: true
 
+  react-window@2.2.7:
+    resolution: {integrity: sha512-SH5nvfUQwGHYyriDUAOt7wfPsfG9Qxd6OdzQxl5oQ4dsSsUicqQvjV7dR+NqZ4coY0fUn3w1jnC5PwzIUWEg5w==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+
   react@19.1.4:
     resolution: {integrity: sha512-DHINL3PAmPUiK1uszfbKiXqfE03eszdt5BpVSuEAHb5nfmNPwnsy7g39h2t8aXFc/Bv99GH81s+j8dobtD+jOw==}
     engines: {node: '>=0.10.0'}
@@ -4736,6 +4752,11 @@ packages:
   supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  swr@2.4.1:
+    resolution: {integrity: sha512-2CC6CiKQtEwaEeNiqWTAw9PGykW8SR5zZX8MZk6TeAvEAnVS7Visz8WzphqgtQ8v2xz/4Q5K+j+SeMaKXeeQIA==}
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   tailwind-merge@3.4.0:
     resolution: {integrity: sha512-uSaO4gnW+b3Y2aWoWfFpX62vn2sR3skfhbjsEnaBI81WD1wBLlHZe5sWf0AqjksNdYTbGBEd0UasQMT3SNV15g==}
@@ -9183,6 +9204,8 @@ snapshots:
 
   depd@2.0.0: {}
 
+  dequal@2.0.3: {}
+
   detect-libc@2.1.2: {}
 
   detect-node-es@1.1.0: {}
@@ -10560,6 +10583,11 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.7
 
+  react-window@2.2.7(react-dom@19.1.4(react@19.1.4))(react@19.1.4):
+    dependencies:
+      react: 19.1.4
+      react-dom: 19.1.4(react@19.1.4)
+
   react@19.1.4: {}
 
   reflect.getprototypeof@1.0.10:
@@ -10935,6 +10963,12 @@ snapshots:
       has-flag: 4.0.0
 
   supports-preserve-symlinks-flag@1.0.0: {}
+
+  swr@2.4.1(react@19.1.4):
+    dependencies:
+      dequal: 2.0.3
+      react: 19.1.4
+      use-sync-external-store: 1.6.0(react@19.1.4)
 
   tailwind-merge@3.4.0: {}
 

@@ -7,13 +7,15 @@ import ProfileMenu from "./profileMenu";
 import LoadingIndicators from "../Loading_indicators";
 import { useEffect, useRef, useState } from "react";
 import { CgMenuGridO } from "react-icons/cg";
+import { formatDate } from "@/utils/formatDate";
+import { useStoreDate } from "@/store/date";
 
 export const HeaderComponent = () => {
   const pathname = usePathname();
   const [closeHeader, setCloseHeader] = useState(false);
 
   useEffect(() => {
-    if (pathname.startsWith("/sportbook")) {
+    if (pathname.startsWith("/sportsbook")) {
       setCloseHeader(true);
     } else {
       setCloseHeader(false);
@@ -22,8 +24,12 @@ export const HeaderComponent = () => {
 
   return <>{!closeHeader && <Headers />}</>;
 };
-
 const Headers = () => {
+  const newDay = new Date();
+  const dateFormat = formatDate(newDay);
+  const setDate = useStoreDate((state) => state.setDate);
+  const date = useStoreDate((state) => state.date);
+
   const router = useRouter();
 
   const { session, isLoading } = useAuth();
@@ -34,6 +40,7 @@ const Headers = () => {
   const [hideHeader, setHideHeader] = useState(false);
   const SCROLL_THRESHOLD = 280;
   useEffect(() => {
+    setDate(dateFormat);
     const onScroll = () => {
       const currentY = window.scrollY;
       const diff = currentY - lastScrollY.current;
@@ -55,14 +62,6 @@ const Headers = () => {
   if (isLoading) {
     return <LoadingIndicators />;
   }
-  const format = (d: Date) => d.toLocaleDateString("en-CA");
-
-  const todayDate = new Date();
-
-  const today = format(todayDate);
-
-  const yesterdayDate = new Date(todayDate);
-  yesterdayDate.setDate(todayDate.getDate() - 1);
 
   const topMenuBar = [
     {
@@ -70,8 +69,8 @@ const Headers = () => {
       path: "sportbook",
     },
     {
-      name: "Coming Soon",
-      path: "",
+      name: "sportsbook",
+      path: "sportsbook",
     },
 
     {
@@ -84,7 +83,7 @@ const Headers = () => {
     },
     {
       name: "Mytips",
-      path: `my-reviews?date=${today}&picked=true`,
+      path: `my-reviews?date=${date}&picked=true`,
     },
   ];
   return (
