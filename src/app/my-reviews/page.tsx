@@ -1,3 +1,4 @@
+// app/my-reviews/page.tsx
 import MyReviews from "@/pre-load/MyReviews";
 
 type Props = {
@@ -6,12 +7,9 @@ type Props = {
     picked?: string;
   };
 };
-export default function Page({ searchParams }: Props) {
-  console.log(searchParams);
-  return (
-    <MyReviews
-      date={searchParams.date ?? ""}
-      picked={searchParams.picked === "true"}
-    />
-  );
+
+export default async function Page({ searchParams }: Props) {
+  const { date, picked } = await searchParams;
+
+  return <MyReviews date={date ?? ""} picked={picked === "true"} />;
 }

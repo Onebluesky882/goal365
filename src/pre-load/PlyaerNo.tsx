@@ -3,10 +3,10 @@ import { useAuth } from "@/GlobalContext/auth-provider";
 import { usePlayerStore } from "@/store/playerNo";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { Player } from "../../types/player";
 import PlayerCard from "@/components/Player/PlayerCard";
 import { playersApi } from "@/api/api";
 import LoadingIndicators from "@/components/Loading_indicators";
+import { Player } from "@/types/player";
 
 const PlayerNo = () => {
   const { session, isLoading } = useAuth();

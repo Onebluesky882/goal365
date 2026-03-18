@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export async function middleware(req: NextRequest) {
+export async function proxy(req: NextRequest) {
   // อ่าน session token จาก Better Auth
   const sessionToken = req.cookies.get("better-auth.session_token");
 
