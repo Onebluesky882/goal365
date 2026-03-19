@@ -1,4 +1,5 @@
 "use client";
+import { MainTable } from "@/components/sportbook/MainTable";
 import MenuBar from "@/components/sportbook/MenuBar";
 import { useSportbookData } from "@/hooks/useSportBookData";
 function PreMatch() {
@@ -16,15 +17,14 @@ function PreMatch() {
   // search team
   if (!preMatch) return;
   const firstPreMatch = preMatch[0];
-  const firstComing = comingSoon[0];
+
   return (
-    <>
+    <div>
       <MenuBar />
-      <h1>PreMatch</h1>
-      <pre>{JSON.stringify(firstPreMatch, null, 2)}</pre>
-      <h1>ComingSoon</h1>
-      <pre>{JSON.stringify(firstComing, null, 2)}</pre>
-    </>
+      {/*<h1>PreMatch</h1>
+      <pre>{JSON.stringify(firstPreMatch, null, 2)}</pre>*/}
+      <MainTable />
+    </div>
   );
 }
 export default PreMatch;
