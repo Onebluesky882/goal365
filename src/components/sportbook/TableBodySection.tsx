@@ -1,52 +1,112 @@
 import { MdExpandCircleDown } from "react-icons/md";
 import { TableBody, TableCell, TableRow } from "../ui/table";
+import {
+  AsianHandicap,
+  AsianHandicapFh,
+  OverUnder,
+  OverUnderFh,
+} from "@/types/sportbook";
 
-export const TableBodySection = () => {
+type SportBookBodyProps = {
+  country: string;
+  leagueName: string;
+  time: string;
+  Home: string;
+  Away: string;
+  asianHandicap: AsianHandicap[];
+  overUnderFullIime: OverUnder[];
+  firstHapdicap: AsianHandicapFh[];
+  overUnderFistHaft: OverUnderFh[];
+};
+
+export const TableBodySection = ({
+  country,
+  leagueName,
+  time,
+  Home,
+  Away,
+  asianHandicap,
+  overUnderFullIime,
+  firstHapdicap,
+  overUnderFistHaft,
+}: SportBookBodyProps) => {
+  const rowSpan = asianHandicap.length;
+
+  // ✅ helper class
+  const cellClass = (val: any, color = "text-gray-400") =>
+    `text-center ${color} ${val !== undefined ? "border" : "border-none"}`;
+
+  // ✅ reusable cell
+  const Cell = ({ val, color }: { val: any; color?: string }) => (
+    <TableCell className={cellClass(val, color)}>{val ?? null}</TableCell>
+  );
+
   return (
     <TableBody>
-      <TableRow className="hover:bg-gray-700/10">
-        <TableCell className="text-center border-r border-gray-700 p-2">
-          12:00
+      {/* League */}
+      <TableRow className="bg-amber-200 border">
+        <TableCell colSpan={14} className="text-left font-semibold text-black">
+          {country} : {leagueName}
         </TableCell>
-
-        <TableCell className="border-r border-gray-700 p-0">
-          <div className="flex items-center justify-between px-2 py-2 cursor-pointer hover:bg-gray-800/40 transition group">
-            {/* Match name */}
-            <span className="text-[12px] text-white truncate group-hover:text-blue-400">
-              Team A vs Team B
-            </span>
-
-            {/* Icon */}
-            <MdExpandCircleDown className="text-blue-700 transition-transform duration-200 group-hover:text-blue-400 group-hover:rotate-180" />
-          </div>
-        </TableCell>
-
-        {/* Full Time */}
-        <TableCell className="text-center border-r border-gray-700 p-2">
-          1-0
-        </TableCell>
-        <TableCell className="text-center border-r border-gray-700 p-2">
-          2-0
-        </TableCell>
-        <TableCell className="text-center border-r border-gray-700 p-2">
-          1-1
-        </TableCell>
-        <TableCell className="text-center border-r border-gray-700 p-2">
-          0-0
-        </TableCell>
-
-        {/* Half Time */}
-        <TableCell className="text-center border-r border-gray-700 p-2">
-          0-0
-        </TableCell>
-        <TableCell className="text-center border-r border-gray-700 p-2">
-          1-0
-        </TableCell>
-        <TableCell className="text-center border-r border-gray-700 p-2">
-          0-1
-        </TableCell>
-        <TableCell className="text-center p-2">1-1</TableCell>
       </TableRow>
+
+      {asianHandicap.map((item, index) => {
+        const homeFavorite = item.favorite === "Home";
+        const awayFavorite = item.favorite === "Away";
+        return (
+          <TableRow key={index} className="hover:bg-gray-700/10">
+            {/* Time */}
+            {index === 0 && (
+              <TableCell
+                rowSpan={rowSpan}
+                className="text-center align-top py-4"
+              >
+                {time}
+              </TableCell>
+            )}
+
+            {/* Match */}
+            {index === 0 && (
+              <TableCell rowSpan={rowSpan} className="align-top border">
+                <div className="flex items-center justify-between py-2 gap-3 group">
+                  <span className={`${homeFavorite && "text-blue-500"}`}>
+                    {Home}
+                  </span>
+                  vs
+                  <span className={`${awayFavorite && "text-blue-500"}`}>
+                    {Away}
+                  </span>
+                  <MdExpandCircleDown className="text-blue-700 group-hover:rotate-180 transition" />
+                </div>
+              </TableCell>
+            )}
+
+            {/* ===== FULL TIME ===== */}
+            <Cell val={item.line} color="text-orange-400" />
+            <Cell val={item.home_odd} />
+            <Cell val={item.away_odd} />
+
+            <Cell
+              val={overUnderFullIime[index]?.value}
+              color="text-orange-400"
+            />
+            <Cell val={overUnderFullIime[index]?.over} />
+            <Cell val={overUnderFullIime[index]?.under} />
+
+            {/* ===== HALF TIME ===== */}
+            <Cell val={firstHapdicap[index]?.line} color="text-orange-400" />
+            <Cell val={firstHapdicap[index]?.home_odd} />
+            <Cell val={firstHapdicap[index]?.away_odd} />
+
+            <Cell
+              val={overUnderFistHaft[index]?.value}
+              color="text-orange-400"
+            />
+            <Cell val={overUnderFistHaft[index]?.over} />
+            <Cell val={overUnderFistHaft[index]?.under} />
+          </TableRow>
+        );
+      })}
     </TableBody>
   );
 };

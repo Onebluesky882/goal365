@@ -6,7 +6,7 @@ import { useState } from "react";
 import { TableBodySection } from "./TableBodySection";
 import { TableHeaderCard } from "./TableHeaderCard";
 import { TableHeaderSection } from "./TableHeaderSection";
-
+import matchJsonv from "@/app/sportsbook/match_demo.json";
 export type OddsClickHandler = (
   market: string,
   selection: string,
@@ -16,52 +16,34 @@ export type OddsClickHandler = (
 export const MatchRows = ({ data }: { data: SportbookRoot }) => {
   const {} = data;
 
-  const mockMatch = {
-    isLive: true,
-    score: "2 - 1",
-    time: "45'",
-    home: "Manchester United",
-  };
-
-  const mockMarkets = {
-    matchWinner: {
-      Home: 1.85,
-      Draw: 3.2,
-      Away: 4.1,
-    },
-  };
-
-  const getVal = (market: Record<string, number | string>, key: string) => {
-    const val = market?.[key];
-    return val !== undefined ? String(val) : "-";
-  };
-  const onOddsClick = (data: any) => {
-    console.log("ODDS CLICK:", data);
-  };
   return (
     <>
       {/* Row 1: Home */}
-      <TableRow className="">
-        <MatchWinner
-          markets={mockMarkets.matchWinner}
-          onOddsClick={onOddsClick}
-          getVal={getVal}
-        />
-      </TableRow>
+      <TableRow className=""></TableRow>
     </>
   );
 };
 
 export function MainTable() {
   const [search, setSearch] = useState(false);
-  console.log(search);
+
   return (
     <>
       <TableHeaderCard search={search} setSearch={setSearch} />
 
-      <Table className="min-w-[800px] border border-gray-700">
+      <Table className="min-w-200 border border-gray-700">
         <TableHeaderSection />
-        <TableBodySection />
+        <TableBodySection
+          Away={matchJsonv.away}
+          Home={matchJsonv.home}
+          asianHandicap={matchJsonv.asian_handicap}
+          country={matchJsonv.country}
+          firstHapdicap={matchJsonv.asian_handicap_fh}
+          leagueName={matchJsonv.league}
+          overUnderFistHaft={matchJsonv.over_under_fh}
+          overUnderFullIime={matchJsonv.over_under_full_time}
+          time={matchJsonv.timestamp}
+        />
       </Table>
     </>
   );
