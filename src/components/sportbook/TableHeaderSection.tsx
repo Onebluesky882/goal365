@@ -2,7 +2,7 @@ import { TableHead, TableHeader, TableRow } from "../ui/table";
 
 export const TableHeaderSection = () => {
   return (
-    <TableHeader>
+    <TableHeader className="sticky top-0">
       {/* Main header row */}
       <TableRow className="hover:bg-gray-800/20">
         <TableHead

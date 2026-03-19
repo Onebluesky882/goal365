@@ -38,14 +38,19 @@ export const TableBodySection = ({
 
   // ✅ reusable cell
   const Cell = ({ val, color }: { val: any; color?: string }) => (
-    <TableCell className={cellClass(val, color)}>{val ?? null}</TableCell>
+    <TableCell className={["cursor-pointer", cellClass(val, color)].join(" ")}>
+      {val ?? null}
+    </TableCell>
   );
 
   return (
     <TableBody>
       {/* League */}
-      <TableRow className="bg-amber-200 border">
-        <TableCell colSpan={14} className="text-left font-semibold text-black">
+      <TableRow className="bg-amber-300 border">
+        <TableCell
+          colSpan={14}
+          className="text-left font-semibold text-black hover:bg-amber-100"
+        >
           {country} : {leagueName}
         </TableCell>
       </TableRow>
@@ -67,7 +72,10 @@ export const TableBodySection = ({
 
             {/* Match */}
             {index === 0 && (
-              <TableCell rowSpan={rowSpan} className="align-top border">
+              <TableCell
+                rowSpan={rowSpan}
+                className="align-top border cursor-pointer"
+              >
                 <div className="flex items-center justify-between py-2 gap-3 group">
                   <span className={`${homeFavorite && "text-blue-500"}`}>
                     {Home}
