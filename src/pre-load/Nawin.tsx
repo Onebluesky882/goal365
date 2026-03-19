@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import MatchTeams from "@/components/Nawinta/MatchTeams";
 import LoadingIndicators from "@/components/Loading_indicators";
 import { nawinApi } from "@/api/api";
-import { H2HMatch, TeamsRoot } from "../../types/nawin";
 import InsertNawinFixTrue from "@/components/Nawinta/InputFixture";
 import { useAuth } from "@/GlobalContext/auth-provider";
 import { useRouter } from "next/navigation";
+import { H2HMatch, TeamsRoot } from "@/types/nawin";
 
 export default function PredictionView() {
   const [fixtureId, setFixtureId] = useState("");

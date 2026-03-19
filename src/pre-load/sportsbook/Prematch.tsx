@@ -1,6 +1,13 @@
 "use client";
 import MenuBar from "@/components/sportbook/MenuBar";
+import { TableBodySection } from "@/components/sportbook/TableBodySection";
+import { TableHeaderCard } from "@/components/sportbook/TableHeaderCard";
+import { TableHeaderSection } from "@/components/sportbook/TableHeaderSection";
+import { Table } from "@/components/ui/table";
 import { useSportbookData } from "@/hooks/useSportBookData";
+import matchJsonv from "@/app/sportsbook/match_demo.json";
+import { useState } from "react";
+
 function PreMatch() {
   const { preMatch, comingSoon, loading, error } = useSportbookData();
 
@@ -16,15 +23,29 @@ function PreMatch() {
   // search team
   if (!preMatch) return;
   const firstPreMatch = preMatch[0];
-  const firstComing = comingSoon[0];
+  const [search, setSearch] = useState(false);
   return (
-    <>
+    <div>
       <MenuBar />
-      <h1>PreMatch</h1>
-      <pre>{JSON.stringify(firstPreMatch, null, 2)}</pre>
-      <h1>ComingSoon</h1>
-      <pre>{JSON.stringify(firstComing, null, 2)}</pre>
-    </>
+      <div className="overflow-y-auto overflow-x-hidden">
+        <TableHeaderCard search={search} setSearch={setSearch} />
+
+        <Table className="min-w-200 border border-gray-700">
+          <TableHeaderSection />
+          <TableBodySection
+            Away={matchJsonv.away}
+            Home={matchJsonv.home}
+            asianHandicap={matchJsonv.asian_handicap}
+            country={matchJsonv.country}
+            firstHapdicap={matchJsonv.asian_handicap_fh}
+            leagueName={matchJsonv.league}
+            overUnderFistHaft={matchJsonv.over_under_fh}
+            overUnderFullIime={matchJsonv.over_under_full_time}
+            time={matchJsonv.timestamp}
+          />
+        </Table>
+      </div>
+    </div>
   );
 }
 export default PreMatch;

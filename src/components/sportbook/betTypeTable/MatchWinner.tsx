@@ -1,7 +1,7 @@
 // betTypeTable/MatchWinner.tsx
 import { TableCell } from "@/components/ui/table";
 import React from "react";
-import { OddsButton } from "../TableSportBook";
+import { OddsButton } from "../OddsButton";
 
 export type MatchWinnerProps = {
   markets: Record<string, number | string>; // Home/Draw/Away + odd
@@ -29,7 +29,6 @@ export const MatchWinner = ({
             market="1X2"
             selection={selection}
             odd={getVal(markets, selection)}
-            color="text-blue-400"
             onClick={() =>
               onOddsClick({
                 market: "1X2",
