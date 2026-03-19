@@ -1,4 +1,6 @@
-export interface SportbookRoot {
+import { MatchWinner } from "@/components/sportbook/betTypeTable/MatchWinner";
+
+export type SportbookRoot = {
   id: number;
   date: string;
   timestamp: string;
@@ -12,7 +14,7 @@ export interface SportbookRoot {
   bookmaker: string;
   match_winner?: MatchWinner;
   asian_handicap?: AsianHandicap[];
-  over_under_full_time?: OverUnderFullTime[];
+  over_under_full_time?: OverUnder[];
   both_teams_score?: BothTeamsScore;
   odd_even?: OddEven;
   win_to_nil_home?: WinToNilHome;
@@ -33,130 +35,114 @@ export interface SportbookRoot {
   odd_even_fh?: OddEvenFh;
   created_at?: string;
   updated_at?: string;
-}
+};
 
-export interface MatchInfo {
+export type MatchInfo = {
   long: string;
   short: string;
-}
+};
 
-export interface MatchWinner {
+export type MatchWinner = {
   home: number;
   draw: number;
   away: number;
-}
+};
+export type FirstHalfWinner = MatchWinner;
 
-export interface AsianHandicap {
+
+export type AsianHandicap = {
   line: number;
   home_odd: number;
   away_odd: number;
   favorite: string;
   is_favorite: boolean;
-}
+};
+export type AsianHandicapFh = AsianHandicap;
 
-export interface OverUnderFullTime {
+export type OverUnder = {
   value: string;
   over: number;
   under: number;
-}
+};
+export type OverUnderFh = OverUnder;
 
-export interface BothTeamsScore {
+export type BothTeamsScore = {
   yes: number;
   no: number;
-}
+};
 
-export interface OddEven {
+export type OddEven = {
   odd: number;
   even: number;
-}
+};
 
-export interface WinToNilHome {
+export type WinToNilHome = {
   yes: number;
   no: number;
-}
+};
 
-export interface WinToNilAway {
+export type WinToNilAway = {
   yes: number;
   no: number;
-}
+};
 
-export interface ExactScore {
+export type ExactScore = {
   score: string;
   odd: number;
-}
+};
 
-export interface ExactGoalsNumber {
+export type ExactGoalsNumber = {
   value: string;
   odd: number;
-}
+};
 
-export interface DoubleChance {
+export type DoubleChance = {
   home_draw: number;
   home_away: number;
   draw_away: number;
-}
+};
 
-export interface ResultAndTotalGoal {
+export type ResultAndTotalGoal = {
   value: string;
   odd: number;
-}
+};
 
-export interface CornersOverUnder {
+export type CornersOverUnder = {
   value: string;
   over: number;
   under: number;
-}
+};
 
-export interface CardsOverUnder {
+export type CardsOverUnder = {
   value: string;
   over: number;
   under: number;
-}
+};
 
-export interface HomeCorners {
+export type HomeCorners = {
   value: string;
   over: number;
   under: number;
-}
+};
 
-export interface AwayCorners {
+export type AwayCorners = {
   value: string;
   over: number;
   under: number;
-}
+};
 
-export interface FirstHalfWinner {
-  home: number;
-  draw: number;
-  away: number;
-}
-
-export interface OverUnderFh {
+export type CornersOverUnderFh = {
   value: string;
   over: number;
   under: number;
-}
+};
 
-export interface AsianHandicapFh {
-  line: number;
-  home_odd: number;
-  away_odd: number;
-  favorite: string;
-  is_favorite: boolean;
-}
-
-export interface CornersOverUnderFh {
-  value: string;
-  over: number;
-  under: number;
-}
-
-export interface BothTeamsScoreFh {
+export type BothTeamsScoreFh = {
   yes: number;
   no: number;
-}
+};
 
-export interface OddEvenFh {
+export type OddEvenFh = {
   odd: number;
   even: number;
-}
+};
