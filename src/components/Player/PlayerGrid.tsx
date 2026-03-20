@@ -1,12 +1,12 @@
 "use client";
 
 import { Plus, Wallet, ShieldCheck, ChevronRight } from "lucide-react";
-import { Player } from "../../../types/player";
 import { getUsageAge } from "@/common/getUsageAge";
 import Image from "next/image";
 import LoadingIndicators from "../Loading_indicators";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { Player } from "@/types/player";
 
 type PlayerProps = {
   players: Player[];
@@ -42,7 +42,6 @@ export default function PlayersGrid({
     return () => clearTimeout(timer);
   }, [db, router]);
 
-  console.log(db);
   if (!db) return <LoadingIndicators />;
   return (
     <div className=" w-max-160  p-2 mx-2 sm:p-10 sm:mx-10 bg-card/10 border  rounded-md  animate-in fade-in slide-in-from-bottom-4 duration-500 ">
