@@ -4,13 +4,12 @@ import React from "react";
 import { IoIosPaper } from "react-icons/io";
 import { HiUserGroup } from "react-icons/hi2";
 import { HiHome } from "react-icons/hi2";
-import { useAuth } from "@/GlobalContext/auth-provider";
+import { useRouter } from "next/navigation";
 const MenuBar = () => {
-  const { session } = useAuth();
-  console.log(session?.user?.email);
+  const router = useRouter();
   return (
     <div className=" flex p-2 gap-2  w-full  ">
-      <HiHome />
+      <HiHome onClick={() => router.push("/")} />
       <div className="  justify-end  ml-auto flex items-center gap-2">
         <HiUserGroup />
         <IoIosPaper />

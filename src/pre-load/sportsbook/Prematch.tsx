@@ -5,12 +5,11 @@ import { TableHeaderCard } from "@/components/sportbook/TableHeaderCard";
 import { TableHeaderSection } from "@/components/sportbook/TableHeaderSection";
 import { Table } from "@/components/ui/table";
 import { useSportbookData } from "@/hooks/useSportBookData";
-import matchJsonv from "@/app/sportsbook/match_demo.json";
 import { useState } from "react";
 
 function PreMatch() {
   const { preMatch, comingSoon, loading, error } = useSportbookData();
-
+  const [search, setSearch] = useState(false);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
 
@@ -21,28 +20,38 @@ function PreMatch() {
   // diff time
 
   // search team
+  //
+  console.log("preMatch :", preMatch);
+
   if (!preMatch) return;
-  const firstPreMatch = preMatch[0];
-  const [search, setSearch] = useState(false);
   return (
     <div>
       <MenuBar />
-      <div className="overflow-y-auto overflow-x-hidden">
-        <TableHeaderCard search={search} setSearch={setSearch} />
 
-        <Table className="min-w-200 border border-gray-700">
+      <TableHeaderCard search={search} setSearch={setSearch} />
+
+      {/* ✅ scroll container */}
+      <div className="max-h-[600px] overflow-y-auto">
+        <Table className="min-w-[900px] border border-gray-700">
+          {/* Header */}
           <TableHeaderSection />
-          <TableBodySection
-            Away={matchJsonv.away}
-            Home={matchJsonv.home}
-            asianHandicap={matchJsonv.asian_handicap}
-            country={matchJsonv.country}
-            firstHapdicap={matchJsonv.asian_handicap_fh}
-            leagueName={matchJsonv.league}
-            overUnderFistHaft={matchJsonv.over_under_fh}
-            overUnderFullIime={matchJsonv.over_under_full_time}
-            time={matchJsonv.timestamp}
-          />
+
+          {/* Body */}
+
+          {preMatch.map((match, index) => (
+            <TableBodySection
+              key={index}
+              Away={match.away}
+              Home={match.home}
+              asianHandicap={match.asian_handicap ?? []}
+              country={match.country}
+              firstHapdicap={match.asian_handicap_fh ?? []}
+              leagueName={match.league}
+              overUnderFistHaft={match.over_under_fh ?? []}
+              overUnderFullIime={match.over_under_full_time ?? []}
+              time={match.timestamp}
+            />
+          ))}
         </Table>
       </div>
     </div>
