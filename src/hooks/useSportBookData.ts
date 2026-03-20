@@ -4,8 +4,11 @@
 import useSWR from "swr";
 import { sportbookApi } from "@/api/api";
 import { useStoreDate } from "@/store/date";
+import { SportbookRoot } from "@/types/sportbook";
 
-const fetchMatches = async ([status, date]: [string, string]) => {
+const fetchMatches = async ([status, date]: [string, string]): Promise<
+  SportbookRoot[]
+> => {
   const res = await sportbookApi.getPreMatch(date, status);
   return res.data ?? [];
 };
@@ -15,23 +18,27 @@ export const useSportbookData = () => {
 
   // preMatch
   const {
-    data: preMatch = [],
+    data: preMatch,
     error: err1,
     isLoading: loading1,
-  } = useSWR(date ? ["pre_match", date] : null, fetchMatches, {
+  } = useSWR<SportbookRoot[]>(date ? ["pre_match", date] : null, fetchMatches, {
     revalidateOnFocus: false,
     keepPreviousData: true,
   });
 
   // comingSoon
   const {
-    data: comingSoon = [],
+    data: comingSoon,
     error: err2,
     isLoading: loading2,
-  } = useSWR(date ? ["coming_soon", date] : null, fetchMatches, {
-    revalidateOnFocus: false,
-    keepPreviousData: true,
-  });
+  } = useSWR<SportbookRoot[]>(
+    date ? ["coming_soon", date] : null,
+    fetchMatches,
+    {
+      revalidateOnFocus: false,
+      keepPreviousData: true,
+    },
+  );
 
   return {
     preMatch,
