@@ -1,9 +1,9 @@
 // components/prediction/MatchTeams.tsx
 
 import { ReactNode } from "react";
-import { TeamData } from "../../../types/predictions";
+import { TeamData } from "@/types/predictions";
 import Image from "next/image";
-import { H2HMatch } from "../../../types/nawin";
+import { H2HMatch } from "@/types/nawin";
 
 type Props = {
   teams: {

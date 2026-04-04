@@ -6,6 +6,7 @@ import {
   OverUnder,
   OverUnderFh,
 } from "@/types/sportbook";
+import { formatTime, getTime } from "@/utils/formatTime";
 
 type SportBookBodyProps = {
   country: string;
@@ -56,6 +57,8 @@ export const TableBodySection = ({
       </TableRow>
 
       {asianHandicap.map((item, index) => {
+        const bangkokTime = formatTime(time);
+        const onlyTime = getTime(bangkokTime);
         const homeFavorite = item.favorite === "Home";
         const awayFavorite = item.favorite === "Away";
         return (
@@ -66,7 +69,7 @@ export const TableBodySection = ({
                 rowSpan={rowSpan}
                 className="text-center align-top py-4"
               >
-                {time}
+                {onlyTime}
               </TableCell>
             )}
 

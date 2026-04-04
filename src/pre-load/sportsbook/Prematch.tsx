@@ -10,8 +10,6 @@ import { useState } from "react";
 function PreMatch() {
   const { preMatch, comingSoon, loading, error } = useSportbookData();
   const [search, setSearch] = useState(false);
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error</p>;
 
   // const groupCountry = Array.from(uniqueMap.values());
   // console.log("groupCountry :", groupCountry);
@@ -21,22 +19,18 @@ function PreMatch() {
 
   // search team
   //
-  console.log("preMatch :", preMatch);
-
+  const [scrolled, setScrolled] = useState(false);
   if (!preMatch) return;
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error</p>;
   return (
     <div>
       <MenuBar />
 
       <TableHeaderCard search={search} setSearch={setSearch} />
-
-      {/* ✅ scroll container */}
-      <div className="max-h-[600px] overflow-y-auto">
-        <Table className="min-w-[900px] border border-gray-700">
-          {/* Header */}
-          <TableHeaderSection />
-
-          {/* Body */}
+      <div className="max-h-[900px] overflow-y-auto">
+        <Table className="min-w-[1200px] border border-gray-700">
+          <TableHeaderSection scrolled={scrolled} setScrolled={setScrolled} />
 
           {preMatch.map((match, index) => (
             <TableBodySection

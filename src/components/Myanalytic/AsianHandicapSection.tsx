@@ -1,4 +1,3 @@
-import React from "react";
 import { MatchCardProps } from "./MyAnalytic";
 
 const AsianHandicapSection = ({ match }: MatchCardProps) => {

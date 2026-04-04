@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ScoreFullTime } from "./Score";
 import { AnalyserHeader } from "./AnalyserHeader";
 import StatsSummary from "./StatsSummary";
-import { AsianHandicap, Match } from "../../../types/myAnalytic";
+import { AsianHandicap, Match } from "@/types/myAnalytic";
 import AsianHandicapSection from "./AsianHandicapSection";
 import FormDisplay from "./FormDisplay";
 import Teams from "./Teams";
@@ -14,30 +14,25 @@ export type MatchCardProps = {
   date?: string;
   match: Match;
   isPicked?: boolean;
-  onPickChange?: (fixtureId: string, picked: boolean) => void;
-  getFavoriteTeamName?: (handicap: AsianHandicap) => void;
-  getFormArray?: (form: string) => string[];
-  getFormColor?: (result: string) => string;
   handlePickToggle?: (fixtureId: number, picked: boolean) => Promise<void>;
 };
 
 export default function MatchCard({ match, handlePickToggle }: MatchCardProps) {
   const [showDetails, setShowDetails] = useState(false);
 
-  const formatH2HDate = (timestamp: string) => {
+  // ✅ ใช้ timestamp number (ถูกต้องกับ API)
+  const formatH2HDate = (timestamp: number) => {
     try {
-      const date = new Date(timestamp);
-      return date.toLocaleDateString("th-TH", {
+      return new Date(timestamp * 1000).toLocaleDateString("th-TH", {
         year: "numeric",
         month: "short",
         day: "numeric",
       });
     } catch {
-      return timestamp;
+      return "";
     }
   };
 
-  // แปลง form string เป็น array
   const getFormArray = (form: string) => {
     if (!form) return [];
     return form.split("").reverse();
@@ -57,17 +52,23 @@ export default function MatchCard({ match, handlePickToggle }: MatchCardProps) {
   };
 
   const getFavoriteTeamName = (handicap: AsianHandicap) => {
-    if (handicap.line < 0) return match.home; // home ต่อ
-    if (handicap.line > 0) return match.away; // away ต่อ
+    if (handicap.line < 0) return match.home;
+    if (handicap.line > 0) return match.away;
     return "-";
   };
+
+  // ✅ safe handler (แก้ !)
+  const onPickToggle = async () => {
+    if (!handlePickToggle) return;
+    await handlePickToggle(match.fixture_id, true);
+  };
+
   return (
     <div className="bg-background rounded-lg shadow-md hover:shadow-xl transition-shadow border border-gray-100">
       {/* Main Card Content */}
       <div className="p-4">
         {/* Header */}
-
-        <AnalyserHeader match={match} handlePickToggle={handlePickToggle!} />
+        <AnalyserHeader match={match} handlePickToggle={onPickToggle} />
 
         {/* Teams */}
         <Teams match={match} />
@@ -89,10 +90,8 @@ export default function MatchCard({ match, handlePickToggle }: MatchCardProps) {
         <StatsSummary match={match} />
 
         {/* Asian Handicap */}
-        <AsianHandicapSection
-          match={match}
-          getFavoriteTeamName={getFavoriteTeamName}
-        />
+        <AsianHandicapSection match={match} />
+
         {/* View Details Button */}
         <button
           onClick={() => setShowDetails(!showDetails)}
@@ -103,7 +102,7 @@ export default function MatchCard({ match, handlePickToggle }: MatchCardProps) {
       </div>
 
       {/* H2H Details */}
-      {showDetails && match.H2H && match.H2H.length > 0 && (
+      {showDetails && (match.H2H?.length ?? 0) > 0 && (
         <H2HPreviews match={match} formatH2HDate={formatH2HDate} />
       )}
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Match } from "../../../types/myAnalytic";
+import { Match } from "@/types/myAnalytic";
 
 type FormProps = {
   match: Match;

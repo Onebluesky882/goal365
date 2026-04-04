@@ -1,18 +1,22 @@
-import React from "react";
 import Image from "next/image";
 import { MatchCardProps } from "./MyAnalytic";
+import { Match } from "@/types/myAnalytic";
 
-export type Props = MatchCardProps & {
-  formatH2HDate: (timestamp: string) => string;
+// 👇 fix ชน type match
+export type Props = Omit<MatchCardProps, "match"> & {
+  match: Match;
+  formatH2HDate: (timestamp: number) => string;
 };
 
 const H2HPreviews = ({ formatH2HDate, match }: Props) => {
-  if (!match.H2H || match.H2H.length === 0) return null;
+  if (!match?.H2H?.length) return null;
+
   return (
     <div className="border-t p-4 bg-gray-600">
       <h3 className="text-sm font-bold mb-3 text-gray-300">
         Head to Head ({match.H2H.length} matches)
       </h3>
+
       <div className="space-y-2 max-h-96 overflow-y-auto">
         {match.H2H.map((h2h, idx) => {
           const isHomeWin = h2h.teams.home.winner;
@@ -25,13 +29,13 @@ const H2HPreviews = ({ formatH2HDate, match }: Props) => {
             >
               <div className="flex justify-between items-start mb-2">
                 <div className="text-gray-500">
-                  {formatH2HDate(h2h.fixture.date)}
+                  {formatH2HDate(Number(h2h.fixture.date))}
                 </div>
                 <div className="text-gray-500">{h2h.league.round}</div>
               </div>
 
               <div className="space-y-1">
-                {/* Home Team */}
+                {/* Home */}
                 <div
                   className={`flex items-center justify-between p-1.5 rounded ${
                     isHomeWin ? "text-blue-500" : ""
@@ -50,6 +54,7 @@ const H2HPreviews = ({ formatH2HDate, match }: Props) => {
                       {h2h.teams.home.name}
                     </span>
                   </div>
+
                   <span
                     className={`font-bold ml-2 ${
                       isHomeWin ? "text-green-600" : "text-gray-600"
@@ -59,7 +64,7 @@ const H2HPreviews = ({ formatH2HDate, match }: Props) => {
                   </span>
                 </div>
 
-                {/* Away Team */}
+                {/* Away */}
                 <div
                   className={`flex items-center justify-between p-1.5 rounded ${
                     isAwayWin ? "text-blue-500" : ""
@@ -78,6 +83,7 @@ const H2HPreviews = ({ formatH2HDate, match }: Props) => {
                       {h2h.teams.away.name}
                     </span>
                   </div>
+
                   <span
                     className={`font-bold ml-2 ${
                       isAwayWin ? "text-green-600" : "text-gray-600"
