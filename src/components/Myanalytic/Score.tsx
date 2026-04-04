@@ -1,5 +1,4 @@
-import React from "react";
-import { Score as S } from "../../../types/myAnalytic";
+import { Score as S } from "@/types/myAnalytic";
 
 type Props = {
   score?: S; // optional กัน undefined

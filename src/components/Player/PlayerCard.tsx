@@ -1,10 +1,9 @@
 "use client";
 
-import React from "react";
-import { Player } from "../../../types/player";
 import { formatNumber } from "@/common/converts_number";
 import { Wallet, Plus, User } from "lucide-react";
 import Image from "next/image";
+import { Player } from "@/types/player";
 
 type Props = {
   player: Player | null;

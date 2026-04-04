@@ -1,10 +1,32 @@
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { TableHead, TableHeader, TableRow } from "../ui/table";
+import { Display } from "next/dist/compiled/@next/font";
 
-export const TableHeaderSection = () => {
+type TableHeaderSectionProps = {
+  setScrolled: Dispatch<SetStateAction<boolean>>;
+  scrolled: Boolean;
+};
+export const TableHeaderSection = ({
+  scrolled,
+  setScrolled,
+}: TableHeaderSectionProps) => {
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50); // 👉 ปรับ threshold ได้
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  console.log("scrolled :", scrolled);
   return (
-    <TableHeader className="sticky top-0">
+    <TableHeader
+      className={`sticky top-0 z-20 ${
+        scrolled ? "bg-gray-900 shadow-md" : "bg-transparent"
+      }`}
+    >
       {/* Main header row */}
-      <TableRow className="hover:bg-gray-800/20">
+      <TableRow>
         <TableHead
           rowSpan={2}
           className="text-center text-sm font-bold border-r border-gray-700      "

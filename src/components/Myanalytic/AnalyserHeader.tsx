@@ -1,5 +1,5 @@
 import { formatDate } from "@/common/format_date";
-import { Match } from "../../../types/myAnalytic";
+import { Match } from "@/types/myAnalytic";
 
 type Props = {
   match: Match;

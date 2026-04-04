@@ -1,5 +1,5 @@
 import { SportbookRoot } from "@/types/sportbook";
-import { create } from "zustand@/types/sportbook
+import { create } from "zustand";
 
 // store/sportbook.ts
 
