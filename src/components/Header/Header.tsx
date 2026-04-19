@@ -29,16 +29,13 @@ const Headers = () => {
   const dateFormat = formatDate(newDay);
   const setDate = useStoreDate((state) => state.setDate);
   const date = useStoreDate((state) => state.date);
-
   const router = useRouter();
-
   const { session, isLoading } = useAuth();
-
   const user = session?.user;
-
   const lastScrollY = useRef(0);
   const [hideHeader, setHideHeader] = useState(false);
   const SCROLL_THRESHOLD = 280;
+
   useEffect(() => {
     setDate(dateFormat);
     const onScroll = () => {
@@ -59,10 +56,6 @@ const Headers = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  if (isLoading) {
-    return <LoadingIndicators />;
-  }
-
   const topMenuBar = [
     {
       name: "Today",
@@ -74,16 +67,12 @@ const Headers = () => {
     },
 
     {
-      name: "Live",
-      path: "",
-    },
-    {
       name: "Analytics",
-      path: `my-analytics`,
+      path: `analytics`,
     },
     {
       name: "Mytips",
-      path: `my-reviews?date=${date}&picked=true`,
+      path: `reviews?date=${date}&picked=true`,
     },
   ];
   return (
@@ -114,27 +103,29 @@ const Headers = () => {
         </div>
 
         <div className="flex items-center justify-end space-x-4 w-full max-w-md">
-          <div className="flex gap-2 items-center ">
-            {user ? (
-              <>
-                <ProfileMenu name={user.name} />
-              </>
-            ) : (
-              <>
-                <button
-                  onClick={() => router.push("sign-in")}
-                  className="text-sm  bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold px-4 py-1 rounded-md shadow transition-all"
-                >
-                  เข้าสู่ระบบ
-                </button>
-                <CgMenuGridO
-                  className=" hover:border-blue-500 border rounded-sm  "
-                  size={32}
-                  color="white"
-                />
-              </>
-            )}
-          </div>
+          {!isLoading && (
+            <div className="flex gap-2 items-center ">
+              {user ? (
+                <>
+                  <ProfileMenu name={user.name} />
+                </>
+              ) : (
+                <>
+                  <button
+                    onClick={() => router.push("sign-in")}
+                    className="text-sm  bg-yellow-400 hover:bg-yellow-500 text-gray-800 font-semibold px-4 py-1 rounded-md shadow transition-all"
+                  >
+                    เข้าสู่ระบบ
+                  </button>
+                  <CgMenuGridO
+                    className=" hover:border-blue-500 border rounded-sm  "
+                    size={32}
+                    color="white"
+                  />
+                </>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>
