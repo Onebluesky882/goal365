@@ -45,9 +45,12 @@ const MyReviews = ({ date, picked }: Props) => {
     } catch {
       // rollback
       setMatchesData((prev) =>
-        prev.map((m) =>
-          m.fixture_id === fixtureId ? { ...m, picked: !picked } : m,
-        ),
+        prev.map((m) => {
+          if (m.fixture_id === fixtureId) {
+            return { ...m, picked: !picked };
+          }
+          return m;
+        }),
       );
     }
   };
@@ -67,11 +70,11 @@ const MyReviews = ({ date, picked }: Props) => {
 
   return (
     <>
-      <div className="container mx-auto px-4 py-8">
+      <div className="   px-4 py-8 max-sm:px-3 max-sm:py-2">
         {loading ? (
           <div>Loading...</div>
         ) : (
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid max-sm:grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {matchesData
               .filter((item) => item.picked == true)
               .sort(

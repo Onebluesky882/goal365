@@ -57,6 +57,10 @@ const Headers = () => {
 
   const topMenuBar = [
     {
+      name: "Analytics",
+      path: `analytics`,
+    },
+    {
       name: "Mytips",
       path: `reviews?date=${date}&picked=true`,
     },
@@ -74,7 +78,7 @@ const Headers = () => {
             <Link href={"/"}>Goal365</Link>
           </span>
 
-          <nav className="hidden md:flex space-x-8  text-custom-gray  text-sm font-medium">
+          <nav className="  md:flex space-x-8  text-custom-gray  text-sm font-medium">
             {topMenuBar.map((item) => (
               <Link key={item.name} href={`/${item.path}`}>
                 <span
