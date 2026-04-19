@@ -1,12 +1,12 @@
 "use client";
 
 import { myAnalyticApi } from "@/api/api";
+import MatchCard from "@/components/Analytic/AnalyticCard";
+import { PickDate } from "@/components/Analytic/PickDate";
+import { Match, PickedDto } from "@/types/myAnalytic";
+import { formatDate } from "@/utils/formatDate";
 import React, { useEffect, useState } from "react";
 import { toast } from "sonner";
-import MatchCard from "@/components/MyAnalytic/MyAnalytic";
-import { PickDate } from "@/components/MyAnalytic/PickDate";
-import { formatDate } from "../utils/formatDate";
-import { Match, PickedDto } from "@/types/myAnalytic";
 
 const MyAnalytics = () => {
   const [matchesData, setMatchesData] = useState<Match[]>([]);

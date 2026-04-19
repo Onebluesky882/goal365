@@ -1,4 +1,4 @@
-import { MatchCardProps } from "./MyAnalytic";
+import { MatchCardProps } from "./AnalyticCard";
 
 const AsianHandicapSection = ({ match }: MatchCardProps) => {
   return (

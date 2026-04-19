@@ -1,5 +1,5 @@
 import React from "react";
-import { MatchCardProps } from "./MyAnalytic";
+import { MatchCardProps } from "./AnalyticCard";
 
 const StatsSummary = ({ match }: MatchCardProps) => {
   return (

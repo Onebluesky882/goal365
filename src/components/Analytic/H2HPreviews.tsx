@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MatchCardProps } from "./MyAnalytic";
+import { MatchCardProps } from "./AnalyticCard";
 import { Match } from "@/types/myAnalytic";
 
 // 👇 fix ชน type match

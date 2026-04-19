@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { myAnalyticApi } from "@/api/api";
-import MatchCard from "@/components/MyAnalytic/MyAnalytic";
+import MatchCard from "@/components/Analytic/AnalyticCard";
 import { Match } from "@/types/myAnalytic";
 import { useAuth } from "@/GlobalContext/auth-provider";
 import { useRouter } from "next/navigation";
