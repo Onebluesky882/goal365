@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { myAnalyticApi } from "@/api/api";
 import MatchCard from "@/components/MyAnalytic/MyAnalytic";
 import { Match } from "@/types/myAnalytic";
+import { useAuth } from "@/GlobalContext/auth-provider";
+import { useRouter } from "next/navigation";
 
 type Props = {
   date: string;
@@ -49,6 +51,19 @@ const MyReviews = ({ date, picked }: Props) => {
       );
     }
   };
+
+  const { session, isLoading } = useAuth();
+  const router = useRouter();
+
+  const userAllow = ["wansing882@gmail.com"];
+
+  useEffect(() => {
+    if (!isLoading) {
+      if (!userAllow.includes(session?.user?.email || "")) {
+        router.replace("/"); // 🔥 redirect
+      }
+    }
+  }, [session, isLoading]);
 
   return (
     <>
