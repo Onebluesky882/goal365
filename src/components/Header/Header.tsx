@@ -58,19 +58,6 @@ const Headers = () => {
 
   const topMenuBar = [
     {
-      name: "Today",
-      path: "sportbook",
-    },
-    {
-      name: "sportsbook",
-      path: "sportsbook",
-    },
-
-    {
-      name: "Analytics",
-      path: `analytics`,
-    },
-    {
       name: "Mytips",
       path: `reviews?date=${date}&picked=true`,
     },
