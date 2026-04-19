@@ -1,6 +1,5 @@
-import React from "react";
 import Image from "next/image";
-import { MatchCardProps } from "./MyAnalytic";
+import { MatchCardProps } from "./AnalyticCard";
 
 const Teams = ({ match }: MatchCardProps) => {
   return (
