@@ -4,7 +4,6 @@ import { useAuth } from "@/GlobalContext/auth-provider";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import ProfileMenu from "./profileMenu";
-import LoadingIndicators from "../Loading_indicators";
 import { useEffect, useRef, useState } from "react";
 import { CgMenuGridO } from "react-icons/cg";
 import { formatDate } from "@/utils/formatDate";
