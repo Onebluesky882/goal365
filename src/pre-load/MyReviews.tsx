@@ -70,7 +70,7 @@ const MyReviews = ({ date, picked }: Props) => {
 
   return (
     <>
-      <div className="   px-4 py-8 max-sm:px-3 max-sm:py-2">
+      <div className=" w-7xl  mx-auto  px-4 py-8 max-sm:px-3 max-sm:py-2">
         {loading ? (
           <div>Loading...</div>
         ) : (
