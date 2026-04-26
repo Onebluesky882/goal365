@@ -81,6 +81,21 @@ const MyReviews = ({ date, picked }: Props) => {
       behavior: "smooth",
     });
   };
+
+  const [showEmpty, setShowEmpty] = useState(false);
+  useEffect(() => {
+    let timer: NodeJS.Timeout | undefined;
+
+    if (!loading && matchesData.length === 0) {
+      timer = setTimeout(() => {
+        setShowEmpty(true);
+      }, 3000); // 3 sec
+    } else {
+      setShowEmpty(false);
+    }
+
+    return () => clearTimeout(timer);
+  }, [loading, matchesData]);
   return (
     <>
       <div className=" lg:w-7xl  mx-auto  px-4 py-8 max-sm:px-6 max-sm:py-4">
@@ -116,7 +131,7 @@ const MyReviews = ({ date, picked }: Props) => {
         )}
       </div>
 
-      {matchesData.length === 0 ? (
+      {showEmpty ? (
         <p className="text-center text-gray-300 col-span-full">
           ยังไม่ได้เลือกวันนี้
         </p>
