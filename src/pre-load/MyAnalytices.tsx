@@ -54,12 +54,31 @@ const MyAnalytics = () => {
     );
   };
 
+  const goDown = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    });
+  };
+  const goTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
       {loading ? (
         <div>Loading...</div>
       ) : (
         <div className="grid gap-4 max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <button
+            onClick={goDown}
+            className="hidden  max-sm:block w-20 justify-self-center   items-center justify-center border border-gray-400 rounded-lg"
+          >
+            godown
+          </button>
           <PickDate
             date={date}
             setDate={(newDate) => {
@@ -86,6 +105,14 @@ const MyAnalytics = () => {
             })}
         </div>
       )}
+      <div className="flex justify-center">
+        <button
+          onClick={goTop}
+          className="hidden mt-4 mb-8  max-sm:block   w-20    items-center  border border-gray-400 rounded-lg"
+        >
+          goTop
+        </button>
+      </div>
     </div>
   );
 };

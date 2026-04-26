@@ -80,7 +80,7 @@ const Headers = () => {
 
           <nav className="  md:flex space-x-8  text-custom-gray  text-sm font-medium">
             {topMenuBar.map((item) => (
-              <Link key={item.name} href={`/${item.path}`}>
+              <Link key={item.name} href={`/${item.path}`} target="_black">
                 <span
                   key={item.name}
                   className="cursor-pointer hover:text-web-primary transition-colors"

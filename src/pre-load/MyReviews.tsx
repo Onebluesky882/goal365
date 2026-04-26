@@ -68,13 +68,34 @@ const MyReviews = ({ date, picked }: Props) => {
     }
   }, [session, isLoading]);
 
+  const goDown = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    });
+  };
+
+  const goTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
-      <div className=" w-7xl  mx-auto  px-4 py-8 max-sm:px-3 max-sm:py-2">
+      <div className=" lg:w-7xl  mx-auto  px-4 py-8 max-sm:px-6 max-sm:py-4">
         {loading ? (
           <div>Loading...</div>
         ) : (
           <div className="grid max-sm:grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {matchesData.length > 0 && (
+              <button
+                onClick={goDown}
+                className="hidden  max-sm:block w-20 justify-self-center   items-center justify-center border border-gray-400 rounded-lg"
+              >
+                godown
+              </button>
+            )}
             {matchesData
               .filter((item) => item.picked == true)
               .sort(
@@ -94,6 +115,19 @@ const MyReviews = ({ date, picked }: Props) => {
           </div>
         )}
       </div>
+
+      {matchesData.length === 0 ? (
+        <p className="text-center text-gray-300 col-span-full">
+          ยังไม่ได้เลือกวันนี้
+        </p>
+      ) : (
+        <button
+          onClick={goTop}
+          className="hidden mt-4 mb-8 max-sm:block w-20 justify-self-center   items-center justify-center border border-gray-400 rounded-lg"
+        >
+          goTop
+        </button>
+      )}
     </>
   );
 };
