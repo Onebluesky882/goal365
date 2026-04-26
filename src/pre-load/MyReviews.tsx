@@ -131,11 +131,13 @@ const MyReviews = ({ date, picked }: Props) => {
         )}
       </div>
 
-      {showEmpty ? (
+      {showEmpty && (
         <p className="text-center text-gray-300 col-span-full">
           ยังไม่ได้เลือกวันนี้
         </p>
-      ) : (
+      )}
+
+      {matchesData.length > 0 && (
         <button
           onClick={goTop}
           className="hidden mt-4 mb-8 max-sm:block w-20 justify-self-center   items-center justify-center border border-gray-400 rounded-lg"
