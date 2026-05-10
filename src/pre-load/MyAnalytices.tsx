@@ -5,7 +5,7 @@ import MatchCard from "@/components/Analytic/AnalyticCard";
 import { PickDate } from "@/components/Analytic/PickDate";
 import { Match, PickedDto } from "@/types/myAnalytic";
 import { formatDate } from "@/utils/formatDate";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 const MyAnalytics = () => {
@@ -14,6 +14,7 @@ const MyAnalytics = () => {
 
   const [date, setDate] = useState<Date>(new Date());
   const pickDate = formatDate(date);
+
   useEffect(() => {
     const fetchMatches = async () => {
       try {

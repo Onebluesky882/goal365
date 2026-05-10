@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { MatchCardProps } from "./AnalyticCard";
 
 const Teams = ({ match }: MatchCardProps) => {
@@ -8,10 +7,9 @@ const Teams = ({ match }: MatchCardProps) => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2 flex-1 min-w-0">
           <div className="w-6 h-6 relative shrink-0">
-            <Image
+            <img
               src={match.home_logo || "/placeholder-team.png"}
               alt={match.home}
-              fill
               sizes="50px"
               className="object-contain"
               onError={(e) => {
@@ -30,10 +28,9 @@ const Teams = ({ match }: MatchCardProps) => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2 flex-1 min-w-0">
           <div className="w-6 h-6 relative shrink-0">
-            <Image
+            <img
               src={match.away_logo || "/placeholder-team.png"}
               alt={match.away}
-              fill
               sizes="50px"
               className="object-contain"
               onError={(e) => {
