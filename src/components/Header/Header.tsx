@@ -55,6 +55,12 @@ const Headers = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const yesterday = new Date();
+
+  yesterday.setDate(yesterday.getDate() - 1);
+
+  const formatted = yesterday.toISOString().split("T")[0];
+
   const topMenuBar = [
     {
       name: "Analytics",
@@ -62,7 +68,11 @@ const Headers = () => {
     },
     {
       name: "Mytips",
-      path: `reviews?date=${date}&picked=true`,
+      path: `mytips?date=${date}&picked=true`,
+    },
+    {
+      name: "Result",
+      path: `result?date=${formatted}&picked=true`,
     },
   ];
   return (
